@@ -1,130 +1,141 @@
 ﻿@model IEnumerable<AlianzaPetrolera.Models.AlianzaBD.Persona>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Usuarios";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<br />
+<div class="container">
+   
+    <h1>Vista Usuarios</h1>
+    <button type="button" class="btn btn-warning"> @Html.ActionLink("Registrar Nuevo Usuario", "Create" )</button>
+    <br />
+    <br />
+    <br />
+    <table class="table table-hover table-dark">
+        <tr class="bg-warning text-white text-center">
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Pers_NickNom)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Pers_Pwd)
+                </th>*@
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Pers_Nom)
+            </th>
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Pers_Lstn1)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Pers_Lstn2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pers_TypeDoc)
+                </th>*@
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Pers_Doc)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Pers_Birth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pers_Dir)
+                </th>*@
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Pers_Tel1)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Pers_Tel2)
+                </th>*@
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Pers_Mail1)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Pers_Mail2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pers_Ingreso)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pers_TotalPoints)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ubic_Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rolp_Id)
+                </th>*@
+            <th style="border: none;"></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_NickNom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Pwd)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Nom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Lstn1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Lstn2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_TypeDoc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Doc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Birth)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Dir)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Tel1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Tel2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Mail1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Mail2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_Ingreso)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pers_TotalPoints)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ubic_Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rolp_Id)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr  class="text-center">
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Pers_NickNom)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Pers_Pwd)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pers_Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pers_Lstn1)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Pers_Lstn2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pers_TypeDoc)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pers_Doc)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Pers_Birth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pers_Dir)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pers_Tel1)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Pers_Tel2)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pers_Mail1)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Pers_Mail2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pers_Ingreso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pers_TotalPoints)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ubic_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rolp_Id)
+                    </td>*@
+                <td>
+                   
+                     
+                    
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Pers_Cod }, htmlAttributes: new { @style = "color:#fff; " })        </button>
+                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", new { id = item.Pers_Cod }, htmlAttributes: new { @style = "color:#fff; " })  </button>
+                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Eliminar", "Delete", new { id = item.Pers_Cod }, htmlAttributes: new { @style = "color:#fff; " })      </button>
+                    </div>
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_NickNom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Pwd)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Nom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Lstn1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Lstn2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_TypeDoc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Doc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Birth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Dir)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Tel1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Tel2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Mail1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Mail2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Ingreso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_TotalPoints)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ubic_Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rolp_Id)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Pers_Cod }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Pers_Cod }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Pers_Cod })
-        </td>
-    </tr>
-}
+    </table>
 
-</table>
+</div>

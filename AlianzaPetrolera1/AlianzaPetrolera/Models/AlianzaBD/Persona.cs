@@ -37,7 +37,7 @@ namespace AlianzaPetrolera.Models.AlianzaBD
         public string Pers_Tel1 { get; set; }
         [Display(Name = "Telefono")]
         public string Pers_Tel2 { get; set; }
-        [Display(Name = "Correo 1")]
+        [Display(Name = "Correo Electronico")]
         public string Pers_Mail1 { get; set; }
         [Display(Name = "Correo 2")]
         public string Pers_Mail2 { get; set; }

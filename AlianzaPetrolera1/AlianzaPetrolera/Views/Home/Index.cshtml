@@ -3,72 +3,22 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Espacio para describir y dar bienvenida a la plataforma</h1>
-    @*<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>*@
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Ver mas &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>REGISTRO</h2>
-        <p>
-            Espacio para invitar a registrarse
-        </p>
-        <p><a class="btn btn-default" href="~/RegistroPersona/Create">RESGISTRARME</a></p>
-    </div>
-    @*<div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>*@
-    <div class="col-md-4">
-        <h2>Inicio de Sesión</h2>
-        <p>
-            <section id="loginForm">
-                @using (Html.BeginForm("Login", "Persona", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <h4>Use una cuenta local para iniciar sesión.</h4>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Pers_NickNom, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Pers_NickNom, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Pers_NickNom, "", new { @class = "text-danger" })
-                        </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/images/background.jpg" class="d-block" alt="...">
+                <div class="container-fluid">
+                    <div class="carousel-caption text-left">
+                        <h1 style="margin-top:-7em">¡Haz parte de nuestra escuela!</h1>
+                        <p>Te estamos esperando</p>
+                  
                     </div>
-                    <div class="form-group" style="margin-right:-125px;">
-                        @Html.LabelFor(m => m.Pers_Pwd, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.Pers_Pwd, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Pers_Pwd, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    @*<div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <div class="checkbox">
-                                    @Html.CheckBoxFor(m => m.RememberMe)
-                                    @Html.LabelFor(m => m.RememberMe)
-                                </div>
-                            </div>
-                        </div>*@
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Iniciar sesión" class="btn btn-default" />
-                        </div>
-                    </div>
-            <p>
-                @Html.ActionLink("Registrar como nuevo usuario", "Register")
-            </p>
-            //Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
-            <p>
-                @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
-            </p>
-        }
-                </section>
-                </p>
-
+                </div>
             </div>
+          
+           
         </div>
+       
+    </div>
+ 
