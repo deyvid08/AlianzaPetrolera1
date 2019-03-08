@@ -51,6 +51,10 @@ namespace AlianzaPetrolera.Models
     public class LoginViewModel
     {
         [Required]
+        [Display(Name = "Usuario")]
+        public string Pers_NickNom { get; set; }
+
+        [Required]
         [Display(Name = "Correo electrónico")]
         [EmailAddress]
         public string Email { get; set; }
@@ -66,6 +70,14 @@ namespace AlianzaPetrolera.Models
 
     public class RegisterViewModel
     {
+        [Key]
+        [Display(Name = "Codigo")]
+        public string Pers_Cod { get; set; }
+
+        [Required]
+        [Display(Name = "Usuario")]
+        public string Pers_NickNom { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]
@@ -77,10 +89,38 @@ namespace AlianzaPetrolera.Models
         [Display(Name = "Contraseña")]
         public string Password { get; set; }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirmar contraseña")]
-        [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
-        public string ConfirmPassword { get; set; }
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Confirmar contraseña")]
+        //[Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
+        //public string ConfirmPassword { get; set; }
+        
+        [Display(Name = "Nombres")]
+        public string Pers_Nom { get; set; }
+        [Display(Name = "Apellidos")]
+        public string Pers_Lstn1 { get; set; }
+        [Display(Name = "Segundo Apellido")]
+        public string Pers_Lstn2 { get; set; }
+        [Display(Name = "Tipo de Documento")]
+        public TipoDoc Pers_TypeDoc { get; set; }
+        [Display(Name = "Documento")]
+        public string Pers_Doc { get; set; }
+        [Display(Name = "Fecha de Nacimiento")]
+        [DataType(DataType.Date)]
+        public DateTime Pers_Birth { get; set; }
+        [Display(Name = "Dirección")]
+        public string Pers_Dir { get; set; }
+        [Display(Name = "Celular")]
+        public string Pers_Tel1 { get; set; }
+        [Display(Name = "Telefono")]
+        public string Pers_Tel2 { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime Pers_Ingreso { get; set; }
+        [Display(Name = "Total de Puntos")]
+        public int Pers_TotalPoints { get; set; }
+        [Display(Name = "Ubicación")]
+        public int Ubic_Id { get; set; }
+        [Display(Name = "ROL")]
+        public Roles Rolp_Id { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -75,7 +75,7 @@ namespace AlianzaPetrolera.Controllers
 
             // No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
             // Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Pers_NickNom, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -151,7 +151,8 @@ namespace AlianzaPetrolera.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Pers_NickNom, Email = model.Email, Pers_Nom = model.Pers_Nom,Pers_Lstn1 = model.Pers_Lstn1,Pers_Lstn2 = model.Pers_Lstn2,Pers_TypeDoc = model.Pers_TypeDoc,Pers_Doc = model.Pers_Doc, Pers_Birth = model.Pers_Birth,Pers_Dir = model.Pers_Dir, Pers_Tel1 = model.Pers_Tel1,Pers_Tel2 = model.Pers_Tel2,Ubic_Id = model.Ubic_Id, Rolp_Id = model.Rolp_Id
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

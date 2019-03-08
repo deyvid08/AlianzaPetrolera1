@@ -13,6 +13,11 @@ namespace AlianzaPetrolera.Models
     // Para agregar datos de perfil del usuario, agregue más propiedades a su clase ApplicationUser. Visite https://go.microsoft.com/fwlink/?LinkID=317594 para obtener más información.
     public class ApplicationUser : IdentityUser
     {
+        [Key]
+        [Display(Name = "Codigo")]
+        public string Pers_Cod { get; set; }
+        [Display(Name = "Usuario")]
+        public string Pers_NickNom { get; set; }
         [Display(Name = "Nombres")]
         public string Pers_Nom { get; set; }
         [Display(Name = "Apellidos")]
@@ -63,5 +68,7 @@ namespace AlianzaPetrolera.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AlianzaPetrolera.Models.RegisterViewModel> RegisterViewModels { get; set; }
     }
 }
