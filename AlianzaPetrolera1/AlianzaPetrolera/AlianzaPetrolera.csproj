@@ -174,18 +174,30 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\InscripcionController.cs" />
+    <Compile Include="Controllers\Admin\RegistroUbicacionController.cs" />
     <Compile Include="Controllers\Enum\Enum.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\RegistroPersonaController.cs" />
-    <Compile Include="Controllers\RegistroRolPController.cs" />
+    <Compile Include="Controllers\Admin\RegistroPersonaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903110824403_InitialCreate.cs" />
+    <Compile Include="Migrations\201903110824403_InitialCreate.Designer.cs">
+      <DependentUpon>201903110824403_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903111455340_inscripcion.cs" />
+    <Compile Include="Migrations\201903111455340_inscripcion.Designer.cs">
+      <DependentUpon>201903111455340_inscripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
+    <Compile Include="Models\Admin\Inscripcion.cs" />
     <Compile Include="Models\AlianzaBD\Persona.cs" />
     <Compile Include="Models\AlianzaBD\RolPersona.cs" />
+    <Compile Include="Models\AlianzaBD\Ubicacion.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -289,11 +301,13 @@
     <Content Include="Views\RegistroPersona\Edit.cshtml" />
     <Content Include="Views\RegistroPersona\Delete.cshtml" />
     <Content Include="Views\AdminViews\RegistroPersona.cshtml" />
+    <Content Include="Views\Inscripcion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\RegistroRolPersona\" />
+    <Folder Include="Views\RegistroUbicacion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -307,6 +321,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903110824403_InitialCreate.resx">
+      <DependentUpon>201903110824403_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903111455340_inscripcion.resx">
+      <DependentUpon>201903111455340_inscripcion.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,7 +12,7 @@ namespace AlianzaPetrolera.Controllers.Enum
         Tarjeta_de_identidad,
         Tarjeta_de_identidad_extranjera,
         NUIP
-        
+
     }
     public enum Roles
     {

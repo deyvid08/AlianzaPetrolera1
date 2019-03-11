@@ -1,56 +1,63 @@
 ﻿using AlianzaPetrolera.Models;
+using AlianzaPetrolera.Models.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AlianzaPetrolera.Controllers
+namespace AlianzaPetrolera.Controllers.Admin
 {
-    public class RegistroRolPController : Controller
+    public class InscripcionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        // GET: RegistroRolPersona
+        // GET: Inscripcion
         public ActionResult Index()
         {
-            return View(db.Roles.ToList());
+            return View(db.Incripciones.ToList());
         }
 
-        // GET: RegistroRolPersona/Details/5
+        // GET: Inscripcion/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: RegistroRolPersona/Create
+        // GET: Inscripcion/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: RegistroRolPersona/Create
+        // POST: Inscripcion/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Inscripcion Incripciones)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    
+                    db.Incripciones.Add(Incripciones);
+                    db.SaveChanges();
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                return View(Incripciones);
             }
             catch
             {
-                return View();
+                return View(Incripciones);
             }
         }
 
-        // GET: RegistroRolPersona/Edit/5
+        // GET: Inscripcion/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: RegistroRolPersona/Edit/5
+        // POST: Inscripcion/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -66,13 +73,13 @@ namespace AlianzaPetrolera.Controllers
             }
         }
 
-        // GET: RegistroRolPersona/Delete/5
+        // GET: Inscripcion/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: RegistroRolPersona/Delete/5
+        // POST: Inscripcion/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

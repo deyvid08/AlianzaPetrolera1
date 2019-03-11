@@ -22,7 +22,7 @@ namespace AlianzaPetrolera.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -34,9 +34,9 @@ namespace AlianzaPetrolera.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -75,7 +75,7 @@ namespace AlianzaPetrolera.Controllers
 
             // No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
             // Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Pers_NickNom, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -120,7 +120,7 @@ namespace AlianzaPetrolera.Controllers
             // Si un usuario introduce códigos incorrectos durante un intervalo especificado de tiempo, la cuenta del usuario 
             // se bloqueará durante un período de tiempo especificado. 
             // Puede configurar el bloqueo de la cuenta en IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -151,13 +151,12 @@ namespace AlianzaPetrolera.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Pers_NickNom, Email = model.Email, Pers_Nom = model.Pers_Nom,Pers_Lstn1 = model.Pers_Lstn1,Pers_Lstn2 = model.Pers_Lstn2,Pers_TypeDoc = model.Pers_TypeDoc,Pers_Doc = model.Pers_Doc, Pers_Birth = model.Pers_Birth,Pers_Dir = model.Pers_Dir, Pers_Tel1 = model.Pers_Tel1,Pers_Tel2 = model.Pers_Tel2,Ubic_Id = model.Ubic_Id, Rolp_Id = model.Rolp_Id
-                };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Pers_Nom = model.Pers_Nom, Pers_Lstn1 = model.Pers_Lstn1, Pers_Lstn2 = model.Pers_Lstn2, Pers_TypeDoc = model.Pers_TypeDoc, Pers_Doc = model.Pers_Doc, RolP_Id = model.RolP_Id, Pers_Birth = model.Pers_Birth, Pers_Dir = model.Pers_Dir, Pers_Cel = model.Pers_Cel, Pers_Tel = model.Pers_Tel };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar correo electrónico con este vínculo
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

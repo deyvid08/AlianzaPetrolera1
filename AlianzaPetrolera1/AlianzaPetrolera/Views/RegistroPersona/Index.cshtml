@@ -120,9 +120,11 @@
             @Html.DisplayFor(modelItem => item.Rolp_Id)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Pers_Cod }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Pers_Cod }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Pers_Cod })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Pers_Cod }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Pers_Cod }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Pers_Cod })
+            @Html.ActionLink("Inscribir", "Delete","Admin", new { id = item.Pers_Cod })
+
         </td>
     </tr>
 }
