@@ -15,9 +15,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Pers_Doc)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Insc_Fecha)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -26,9 +26,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Pers_Doc)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Insc_Fecha)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Insc_ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.Insc_ID }) |
