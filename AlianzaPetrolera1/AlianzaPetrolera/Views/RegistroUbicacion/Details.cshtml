@@ -1,0 +1,27 @@
+﻿@model AlianzaPetrolera.Models.AlianzaBD.Ubicacion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles Ubicación</h2>
+
+<div>
+    <h4>Ubicacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ubic_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ubic_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Ubic_Id }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

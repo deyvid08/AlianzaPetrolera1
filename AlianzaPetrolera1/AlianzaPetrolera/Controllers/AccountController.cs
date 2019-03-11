@@ -9,12 +9,16 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AlianzaPetrolera.Models;
+using AlianzaPetrolera.Models.AlianzaBD;
+using AlianzaPetrolera.Models.Admin;
+using System.Collections.Generic;
 
 namespace AlianzaPetrolera.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        protected ApplicationDbContext ApplicationDbContext { get; set; }
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -133,13 +137,32 @@ namespace AlianzaPetrolera.Controllers
                     return View(model);
             }
         }
-
+        //Llamado de datos desde la tabla ubicacion para ser listadas en el DropDownList en el campo Ubicacion
+        //private IEnumerable<SelectListItem> GetUbicacionesIEnum()
+        //{
+        //    List<Ubicacion> dbUbicaciones = ApplicationDbContext.Ubicaciones.ToList();
+        //    var Ubicaciones = dbUbicaciones
+        //                .Select(ubic =>
+        //                        new SelectListItem
+        //                        {
+        //                            Value = ubic.Ubic_Id.ToString(),
+        //                            Text = ubic.Ubic_Name
+        //                        });
+        //    return new SelectList(Ubicaciones, "Value", "Text");
+        //}
         //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            //RegisterViewModel model = new RegisterViewModel();
+            ////model.Users = ApplicationDbContext.Users.ToList();
+            //model.Ubicaciones = GetUbicacionesIEnum();
+
+            //return PartialView("Register", model);
+
+            return View("Index");
+
         }
 
         //
@@ -151,7 +174,8 @@ namespace AlianzaPetrolera.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Pers_Nom = model.Pers_Nom, Pers_Lstn1 = model.Pers_Lstn1, Pers_Lstn2 = model.Pers_Lstn2, Pers_TypeDoc = model.Pers_TypeDoc, Pers_Doc = model.Pers_Doc, RolP_Id = model.RolP_Id, Pers_Birth = model.Pers_Birth, Pers_Dir = model.Pers_Dir, Pers_Cel = model.Pers_Cel, Pers_Tel = model.Pers_Tel };
+                Ubicacion ubic = ApplicationDbContext.Ubicaciones.Find(model.Ubic_Id);
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Pers_Nom = model.Pers_Nom, Pers_Lstn1 = model.Pers_Lstn1, Pers_Lstn2 = model.Pers_Lstn2, Pers_TypeDoc = model.Pers_TypeDoc, Pers_Doc = model.Pers_Doc, RolP_Id = model.RolP_Id, Pers_Birth = model.Pers_Birth, Pers_Dir = model.Pers_Dir, Pers_Cel = model.Pers_Cel, Pers_Tel = model.Pers_Tel /*Ubic_Id = model.Ubic_Id */};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -165,6 +189,13 @@ namespace AlianzaPetrolera.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
+                //else
+                //{
+                //    model.Users = ApplicationDbContext.Users.ToList();
+                //    model.Ubicaciones = GetUbicacionesIEnum();
+                //    return View("Users", model);
+                //}
+                //// Se comenta por que no es necesario en este momento.
                 AddErrors(result);
             }
 

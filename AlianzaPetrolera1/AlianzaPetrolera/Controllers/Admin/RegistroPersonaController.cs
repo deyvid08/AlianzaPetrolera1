@@ -100,7 +100,7 @@ namespace AlianzaPetrolera.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                // Se realiza la edicion de los datos dentro de la tabla persona
                 var item = db.Personas.Where(x => x.Pers_Cod == model.Pers_Cod).First();
                 item.Pers_Cod =     model.Pers_Cod;
                 item.Pers_NickNom = model.Pers_NickNom;

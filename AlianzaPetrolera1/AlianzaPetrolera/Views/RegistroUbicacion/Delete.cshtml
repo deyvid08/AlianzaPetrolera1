@@ -1,0 +1,33 @@
+﻿@model AlianzaPetrolera.Models.AlianzaBD.Ubicacion
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar Ubicación</h2>
+
+<h3>Estas seguro de eliminar esta ubicación?</h3>
+<div>
+    <h4>Ubicacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ubic_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ubic_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

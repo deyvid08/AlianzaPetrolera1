@@ -46,6 +46,9 @@ namespace AlianzaPetrolera.Models
         [Display(Name = "Telefono")]
         public string Pers_Tel { get; set; }
 
+        [Display(Name = "Ubicación")]
+        public int Ubic_Id { get; set; }
+
 
 
 

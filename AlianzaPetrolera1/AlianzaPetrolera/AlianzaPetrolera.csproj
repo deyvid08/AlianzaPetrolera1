@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201903111455340_inscripcion.Designer.cs">
       <DependentUpon>201903111455340_inscripcion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903111926426_ubicaciones.cs" />
+    <Compile Include="Migrations\201903111926426_ubicaciones.Designer.cs">
+      <DependentUpon>201903111926426_ubicaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -302,12 +306,16 @@
     <Content Include="Views\RegistroPersona\Delete.cshtml" />
     <Content Include="Views\AdminViews\RegistroPersona.cshtml" />
     <Content Include="Views\Inscripcion\Index.cshtml" />
+    <Content Include="Views\RegistroUbicacion\Index.cshtml" />
+    <Content Include="Views\RegistroUbicacion\Details.cshtml" />
+    <Content Include="Views\RegistroUbicacion\Create.cshtml" />
+    <Content Include="Views\RegistroUbicacion\Edit.cshtml" />
+    <Content Include="Views\RegistroUbicacion\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\RegistroRolPersona\" />
-    <Folder Include="Views\RegistroUbicacion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -328,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903111455340_inscripcion.resx">
       <DependentUpon>201903111455340_inscripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903111926426_ubicaciones.resx">
+      <DependentUpon>201903111926426_ubicaciones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

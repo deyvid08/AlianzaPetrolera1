@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace AlianzaPetrolera.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -85,45 +86,52 @@ namespace AlianzaPetrolera.Models
         [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ingresa tu nombre")]
         [Display(Name = "Nombres")]
         public string Pers_Nom { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ingresa tu primer apellido")]
         [Display(Name = "Primer Apellido")]
         public string Pers_Lstn1 { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ingresa tu segundo apellido")]
         [Display(Name = "Segundo Apellido")]
         public string Pers_Lstn2 { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escoge el tipo de tu documento de identidad")]
         [Display(Name = "Tipo Documento")]
         public TipoDoc Pers_TypeDoc { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ingresa tu Documento de identidad")]
         [Display(Name = "Documento")]
         public string Pers_Doc { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Escoge tu Rol")]
         [Display(Name = "Rol")]
         public Roles RolP_Id { get; set; }
 
-        [Required]
-        [Display(Name = "Fecha de Cumpleaños")]
+        [Required(ErrorMessage = "Ingresa tu Fecha de Nacimiento")]
+        [Display(Name = "Fecha de Nacimiento")]
         [DataType(DataType.Date)]
         public DateTime Pers_Birth { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ingresa tu Dirección de residencia")]
         [Display(Name = "Dirección")]
         public string Pers_Dir { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ingresa tu numero de celular")]
         [Display(Name = "Celular")]
         public string Pers_Cel { get; set; }
 
         [Display(Name = "Telefono")]
         public string Pers_Tel { get; set; }
+
+        [Display(Name = "Ubicación")]
+        [Required(ErrorMessage = "Se Debe Contar con una Ubicación")]
+        public int Ubic_Id { get; set; }
+
+        //public List<ApplicationUser> Users { get; set; }
+        //public IEnumerable<System.Web.Mvc.SelectListItem> Ubicaciones { get; set; }
 
     }
 

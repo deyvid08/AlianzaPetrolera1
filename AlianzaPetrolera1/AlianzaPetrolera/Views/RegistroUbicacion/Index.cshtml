@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AlianzaPetrolera.Models.AlianzaBD.Ubicacion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista Ubicaciones</h2>
+
+<p>
+    @Html.ActionLink("Crear Ubicación", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubic_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubic_Name)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ubic_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ubic_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Ubic_Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.Ubic_Id }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.Ubic_Id })
+        </td>
+    </tr>
+}
+
+</table>
