@@ -7,6 +7,6 @@ namespace AlianzaPetrolera.Models.Admin
 {
     public class AdminRegistroPersona
     {
-
+        
     }
 }

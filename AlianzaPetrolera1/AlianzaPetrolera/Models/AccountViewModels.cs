@@ -65,6 +65,9 @@ namespace AlianzaPetrolera.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "Id")]
+        public int UserId { get; set; }
+
         [Required]
         [Display(Name = "Usuario")]
         public string UserName { get; set; }

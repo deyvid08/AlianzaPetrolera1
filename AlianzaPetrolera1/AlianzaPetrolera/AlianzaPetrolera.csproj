@@ -306,6 +306,7 @@
     <Content Include="Views\RegistroPersona\Delete.cshtml" />
     <Content Include="Views\AdminViews\RegistroPersona.cshtml" />
     <Content Include="Views\Inscripcion\Index.cshtml" />
+    <Content Include="Views\AdminViews\ListarPadres.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
