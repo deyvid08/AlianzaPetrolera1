@@ -40,13 +40,13 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
 
-        // GET: RegistroPersona/Create
+        // GET: Inscripcion/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: RegistroPersona/Create
+        // POST: Inscripcion/Create
         [HttpPost]
         public ActionResult Create(Inscripcion Inscripciones)
         {
@@ -67,22 +67,22 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
-        // GET: RegistroPersona/Edit/5
+        // GET: Inscripcion/Edit/5
         public ActionResult Edit(string id)
         {
-            var item = db.Personas.Where(x => x.Pers_Cod == id).First();
+            var item = db.Inscripciones.Where(x => x.UserId == id).First();
             return View(item);
         }
 
-        // POST: RegistroPersona/Edit/5
+        // POST: Inscripcion/Edit/5
         [HttpPost]
         public ActionResult Edit(string id, FormCollection collection, Inscripcion model)
         {
             try
             {
                 // TODO: Add update logic here
-                var item = db.Inscripciones.Where(x => x.Pers_Cod == model.Pers_Cod).First();
-                item.Pers_Cod = model.Pers_Cod;
+                var item = db.Inscripciones.Where(x => x.UserId == model.UserId).First();
+                item.UserId = model.UserId;
                 
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -93,8 +93,8 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
-        // GET: RegistroPersona/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Inscripcion/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -102,7 +102,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
             else
             {
-                Persona X = db.Personas.Find(id);
+                Inscripcion X = db.Inscripciones.Find(id);
                 if (X == null)
                 {
                     return HttpNotFound();
@@ -115,15 +115,15 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         }
 
-        // POST: RegistroPersona/Delete/5
+        // POST: Inscripcion/Delete/5
         [HttpPost]
-        public ActionResult Delete(string id, FormCollection collection, Persona X)
+        public ActionResult Delete(int id, FormCollection collection, Inscripcion X)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    X = db.Personas.Find(id);
+                    X = db.Inscripciones.Find(id);
 
                     if (X == null)
                     {
@@ -131,7 +131,7 @@ namespace AlianzaPetrolera.Controllers.Admin
                     }
                     else
                     {
-                        db.Personas.Remove(X);
+                        db.Inscripciones.Remove(X);
                         db.SaveChanges();
                     }
                     return RedirectToAction("Index");
