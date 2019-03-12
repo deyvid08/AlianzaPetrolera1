@@ -175,6 +175,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\InscripcionController.cs" />
+    <Compile Include="Controllers\Admin\RegistroCategoriaController.cs" />
     <Compile Include="Controllers\Admin\RegistroUbicacionController.cs" />
     <Compile Include="Controllers\Enum\Enum.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -194,6 +195,10 @@
     <Compile Include="Migrations\201903112213235_Inscripcion2.cs" />
     <Compile Include="Migrations\201903112213235_Inscripcion2.Designer.cs">
       <DependentUpon>201903112213235_Inscripcion2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903122053584_Add-Migration Persona.cs" />
+    <Compile Include="Migrations\201903122053584_Add-Migration Persona.Designer.cs">
+      <DependentUpon>201903122053584_Add-Migration Persona.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -266,7 +271,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -308,6 +315,11 @@
     <Content Include="Views\AdminViews\RegistroPersona.cshtml" />
     <Content Include="Views\Inscripcion\Index.cshtml" />
     <Content Include="Views\AdminViews\ListarPadres.cshtml" />
+    <Content Include="Views\RegistroCategoria\Create.cshtml" />
+    <Content Include="Views\RegistroCategoria\Delete.cshtml" />
+    <Content Include="Views\RegistroCategoria\Details.cshtml" />
+    <Content Include="Views\RegistroCategoria\Edit.cshtml" />
+    <Content Include="Views\RegistroCategoria\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903112213235_Inscripcion2.resx">
       <DependentUpon>201903112213235_Inscripcion2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903122053584_Add-Migration Persona.resx">
+      <DependentUpon>201903122053584_Add-Migration Persona.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

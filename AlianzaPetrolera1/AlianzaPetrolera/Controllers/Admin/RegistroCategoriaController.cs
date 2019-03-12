@@ -1,0 +1,148 @@
+﻿using AlianzaPetrolera.Models;
+using AlianzaPetrolera.Models.Admin;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+
+namespace AlianzaPetrolera.Controllers.Admin
+{
+    public class RegistroCategoriaController : Controller
+    {
+        private ApplicationDbContext db = new ApplicationDbContext();
+        // GET: Categoria
+        public ActionResult Index()
+        {
+            return View(db.Categorias.ToList());
+        }
+
+        // GET: Categoria/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                Categoria X = db.Categorias.Find(id);
+                if (X == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(X);
+                }
+            }
+        }
+
+
+        // GET: Categoria/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Categoria/Create
+        [HttpPost]
+        public ActionResult Create(Categoria Categorias)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    
+                    db.Categorias.Add(Categorias);
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+                return View(Categorias);
+            }
+            catch
+            {
+                return View(Categorias);
+            }
+        }
+
+        // GET: RegistroPersona/Edit/5
+        public ActionResult Edit(int id)
+        {
+            var item = db.Categorias.Where(x => x.Cate_Id == id).First();
+            return View(item);
+        }
+
+        // POST: RegistroPersona/Edit/5
+        [HttpPost]
+        public ActionResult Edit(string id, FormCollection collection, Categoria model)
+        {
+            try
+            {
+                // TODO: Add update logic here
+                var item = db.Categorias.Where(x => x.Cate_Id == model.Cate_Id).First();
+                item.Cate_Id = model.Cate_Id;
+                
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Categoria/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                Categoria X = db.Categorias.Find(id);
+                if (X == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(X);
+                }
+            }
+
+        }
+
+        // POST: RegistroPersona/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection, Categoria X)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    X = db.Categorias.Find(id);
+
+                    if (X == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    else
+                    {
+                        db.Categorias.Remove(X);
+                        db.SaveChanges();
+                    }
+                    return RedirectToAction("Index");
+                }
+                return View(X);
+            }
+            catch
+            {
+                return View(X);
+            }
+        }
+    }
+}
