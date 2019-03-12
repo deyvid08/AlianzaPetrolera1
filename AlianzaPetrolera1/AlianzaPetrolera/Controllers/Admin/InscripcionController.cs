@@ -15,6 +15,9 @@ namespace AlianzaPetrolera.Controllers.Admin
         // GET: Inscripcion
         public ActionResult Index()
         {
+
+            var datospersona = db.Inscripciones.Join(db.Users, ins => ins.Pers_Doc, use => use.Id, (ins, use) => new { ins, use }).ToString();
+
             return View(db.Inscripciones.ToList());
         }
 
@@ -68,21 +71,21 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
         // GET: RegistroPersona/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
-            var item = db.Personas.Where(x => x.Pers_Cod == id).First();
+            var item = db.Inscripciones.Where(x => x.Insc_ID == id).First();
             return View(item);
         }
 
         // POST: RegistroPersona/Edit/5
         [HttpPost]
-        public ActionResult Edit(string id, FormCollection collection, Inscripcion model)
+        public ActionResult Edit(int id, FormCollection collection, Inscripcion model)
         {
             try
             {
                 // TODO: Add update logic here
-                var item = db.Inscripciones.Where(x => x.Pers_Cod == model.Pers_Cod).First();
-                item.Pers_Cod = model.Pers_Cod;
+                var item = db.Inscripciones.Where(x => x.Insc_ID == model.Insc_ID).First();
+                item.Insc_ID = model.Insc_ID;
                 
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -102,7 +105,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
             else
             {
-                Persona X = db.Personas.Find(id);
+                Inscripcion X = db.Inscripciones.Find(id);
                 if (X == null)
                 {
                     return HttpNotFound();
@@ -117,13 +120,13 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         // POST: RegistroPersona/Delete/5
         [HttpPost]
-        public ActionResult Delete(string id, FormCollection collection, Persona X)
+        public ActionResult Delete(int id, FormCollection collection, Inscripcion X)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    X = db.Personas.Find(id);
+                    X = db.Inscripciones.Find(id);
 
                     if (X == null)
                     {
@@ -131,7 +134,7 @@ namespace AlianzaPetrolera.Controllers.Admin
                     }
                     else
                     {
-                        db.Personas.Remove(X);
+                        db.Inscripciones.Remove(X);
                         db.SaveChanges();
                     }
                     return RedirectToAction("Index");

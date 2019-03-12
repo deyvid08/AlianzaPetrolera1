@@ -198,6 +198,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
+    <Compile Include="Models\Admin\Categoria.cs" />
     <Compile Include="Models\Admin\Inscripcion.cs" />
     <Compile Include="Models\AlianzaBD\Persona.cs" />
     <Compile Include="Models\AlianzaBD\RolPersona.cs" />
