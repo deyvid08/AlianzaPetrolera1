@@ -213,6 +213,7 @@
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
     <Compile Include="Models\Admin\Categoria.cs" />
     <Compile Include="Models\Admin\Inscripcion.cs" />
+    <Compile Include="Models\Admin\Matricula.cs" />
     <Compile Include="Models\AlianzaBD\Persona.cs" />
     <Compile Include="Models\AlianzaBD\RolPersona.cs" />
     <Compile Include="Models\AlianzaBD\Ubicacion.cs" />
