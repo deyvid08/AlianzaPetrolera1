@@ -13,5 +13,10 @@ namespace AlianzaPetrolera.Models.Admin
         public int Insc_ID { get; set; }
         [Display(Name = "Codigo Persona")]
         public string Pers_Doc { get; set; }
+        [Display(Name = "Nombre Estudiante")]
+        public string Insc_NomEst { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Fecha Inscripción")]
+        public DateTime Insc_FechInsc { get; set; }
     }
 }

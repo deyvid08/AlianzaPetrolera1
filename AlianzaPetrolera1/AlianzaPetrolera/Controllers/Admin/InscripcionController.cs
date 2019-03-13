@@ -16,7 +16,7 @@ namespace AlianzaPetrolera.Controllers.Admin
         public ActionResult Index()
         {
 
-            var datospersona = db.Inscripciones.Join(db.Users, ins => ins.Pers_Doc, use => use.Id, (ins, use) => new { ins, use }).ToString();
+            //var datospersona = db.Inscripciones.Join(db.Users, ins => ins.Pers_Doc, use => use.Id, (ins, use) => new { ins, use }).ToString();
 
             return View(db.Inscripciones.ToList());
         }

@@ -1,5 +1,6 @@
 ﻿using AlianzaPetrolera.Models;
 using AlianzaPetrolera.Models.AlianzaBD;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 namespace AlianzaPetrolera.Controllers
 {
     public class RegistroPersonaController : Controller
+
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: RegistroPersona
@@ -45,35 +47,14 @@ namespace AlianzaPetrolera.Controllers
         {
             return View();
         }
-
-        // POST: RegistroPersona/Create
+         // POST: RegistroPersona/Create
         [HttpPost]
         public ActionResult Create(Persona Personas)
         {
             try
             {
-                if (ModelState.IsValid) { 
-                //Persona tbl = new Persona();
-
-                //    // TODO: Add insert logic here
-                //    tbl.Pers_Cod = Personas.Pers_Cod;        
-                //    tbl.Pers_NickNom    = Personas.Pers_NickNom;
-                //    tbl.Pers_Pwd        = Personas.Pers_Pwd;
-                //    tbl.Pers_Nom        = Personas.Pers_Nom;
-                //    tbl.Pers_Lstn1      = Personas.Pers_Lstn1;
-                //    tbl.Pers_Lstn2      = Personas.Pers_Lstn2;
-                //    tbl.Pers_TypeDoc    = Personas.Pers_TypeDoc;
-                //    tbl.Pers_Doc        = Personas.Pers_Doc;
-                //    tbl.Pers_Birth      = Personas.Pers_Birth;
-                //    tbl.Pers_Dir        = Personas.Pers_Dir;
-                //    tbl.Pers_Tel1       = Personas.Pers_Tel1;
-                //    tbl.Pers_Tel2       = Personas.Pers_Tel2;
-                //    tbl.Pers_Mail1      = Personas.Pers_Mail1;
-                //    tbl.Pers_Mail2      = Personas.Pers_Mail2;
-                //    tbl.Pers_Ingreso    = Personas.Pers_Ingreso;
-                //    tbl.Pers_TotalPoints= Personas.Pers_TotalPoints;
-                //    tbl.Ubic_Id = Personas.Ubic_Id;      
-                //    tbl.Rolp_Id         = Personas.Rolp_Id;
+                if (ModelState.IsValid) {
+                                      
                     db.Personas.Add(Personas);
                     db.SaveChanges();
 

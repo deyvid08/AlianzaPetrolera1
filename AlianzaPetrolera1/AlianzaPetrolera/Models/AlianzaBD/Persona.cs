@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlianzaPetrolera.Controllers.Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace AlianzaPetrolera.Models.AlianzaBD
         [Display(Name = "Segundo Apellido")]
         public string Pers_Lstn2 { get; set; }
         [Display(Name = "Tipo de Documento")]
-        public string Pers_TypeDoc { get; set; }
+        public TipoDoc Pers_TypeDoc { get; set; }
         [Display(Name = "Documento")]
         public string Pers_Doc { get; set; }
         [Display(Name = "Fecha de Nacimiento")]
@@ -49,6 +50,8 @@ namespace AlianzaPetrolera.Models.AlianzaBD
         [Display(Name = "Ubicación")]
         public Nullable<int> Ubic_Id { get; set; }
         [Display(Name = "ROL")]
-        public Nullable<int> Rolp_Id { get; set; }
+        public RolHijo Rolp_Id { get; set; }
+        [Display(Name ="Padre")]
+        public string Padre_Id { get; set; }
     }
 }

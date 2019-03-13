@@ -200,6 +200,14 @@
     <Compile Include="Migrations\201903122053584_Add-Migration Persona.Designer.cs">
       <DependentUpon>201903122053584_Add-Migration Persona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903122138156_campopapa.cs" />
+    <Compile Include="Migrations\201903122138156_campopapa.Designer.cs">
+      <DependentUpon>201903122138156_campopapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903130002385_Modinscripcion.cs" />
+    <Compile Include="Migrations\201903130002385_Modinscripcion.Designer.cs">
+      <DependentUpon>201903130002385_Modinscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -352,6 +360,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903122053584_Add-Migration Persona.resx">
       <DependentUpon>201903122053584_Add-Migration Persona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903122138156_campopapa.resx">
+      <DependentUpon>201903122138156_campopapa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903130002385_Modinscripcion.resx">
+      <DependentUpon>201903130002385_Modinscripcion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
 ﻿@model AlianzaPetrolera.Models.AlianzaBD.Persona
+@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Create";
@@ -8,10 +9,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Persona</h4>
         <hr />
@@ -67,7 +68,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Pers_TypeDoc, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Pers_TypeDoc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EnumDropDownListFor(model => model.Pers_TypeDoc, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Pers_TypeDoc, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -135,7 +136,13 @@
                 @Html.ValidationMessageFor(model => model.Pers_Ingreso, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <div class="form-group">
+            @Html.LabelFor(model => model.Padre_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Padre_Id, new { htmlAttributes = new { @class = "form-control", @Value = User.Identity.GetUserId() } })
+                @Html.ValidationMessageFor(model => model.Padre_Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Pers_TotalPoints, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -155,7 +162,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Rolp_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Rolp_Id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EnumDropDownListFor(model => model.Rolp_Id, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Rolp_Id, "", new { @class = "text-danger" })
             </div>
         </div>
