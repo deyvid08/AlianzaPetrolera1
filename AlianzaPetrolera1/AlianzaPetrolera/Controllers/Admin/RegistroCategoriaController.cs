@@ -1,5 +1,6 @@
 ﻿using AlianzaPetrolera.Models;
 using AlianzaPetrolera.Models.Admin;
+using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,14 @@ namespace AlianzaPetrolera.Controllers.Admin
         // GET: Categoria
         public ActionResult Index()
         {
-            return View(db.Categorias.ToList());
+            var TodasCate = db.Categorias.ToList();
+            return View(TodasCate);
+        }
+
+        public ActionResult ImprimirTodas()
+        {
+            var q = new ActionAsPdf("Index");
+            return q;
         }
 
         // GET: Categoria/Details/5
@@ -144,5 +152,9 @@ namespace AlianzaPetrolera.Controllers.Admin
                 return View(X);
             }
         }
+
     }
+
+
+
 }
