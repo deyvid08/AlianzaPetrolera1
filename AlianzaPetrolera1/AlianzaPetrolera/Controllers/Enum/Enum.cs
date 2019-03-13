@@ -30,4 +30,20 @@ namespace AlianzaPetrolera.Controllers.Enum
         Entrenador,
         SuperAdmin
     }
+    public enum Periodo
+    {
+        Semestre_Uno,
+        Semestre_Dos
+    }
+    public enum EstadoMatricula
+    {
+        Activo,
+        Inactivo
+    }
+    public enum ReciEstado
+    {
+        Pago,
+        No_Pago
+    }
+
 }

@@ -2,28 +2,29 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+
 using System.Linq;
 using System.Web;
 
 namespace AlianzaPetrolera.Models.Admin
 {
-    public class Matricula
+    public class ReciboCaja
     {
         [Key]
         [Display(Name = "Id")]
-        public int Matri_Id { get; set; }
+        public int Reci_Id { get; set; }
 
-        [Display(Name = "Incripción")]
-        public string Insc_Id { get; set; }
-        
+        [Display(Name = "Matricula")]
+        public int Costo_Matri { get; set; }
 
-        [Display(Name = "Periodo")]
-        public Periodo Peri_Id { get; set; }
+        [Display(Name = "Poliza de Accidente")]
+        public int Costo_Poli { get; set; }
 
-        [Display(Name = "Incripción")]
-        public string Cate_Id { get; set; }
-        
+        [Display(Name = "Uniforme")]
+        public int Costo_Unif { get; set; }
+
+        [Display(Name = "Mensualidad")]
+        public int Costo_Mensu { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Fecha Matricula")]
@@ -31,5 +32,7 @@ namespace AlianzaPetrolera.Models.Admin
 
         [Display(Name = "Estado")]
         public EstadoMatricula Matri_Esta { get; set; }
+
+
     }
 }

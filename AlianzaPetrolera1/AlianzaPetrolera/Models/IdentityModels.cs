@@ -67,6 +67,8 @@ namespace AlianzaPetrolera.Models
         public DbSet<Ubicacion> Ubicaciones { set; get; }
         public DbSet<Inscripcion> Inscripciones { set; get; }
         public DbSet<Categoria> Categorias { set; get; }
+        public DbSet<Matricula> Matriculas { set; get; }
+        public DbSet<ReciboCaja> RecibosCajas { set; get; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

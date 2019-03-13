@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Categoria>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Matricula";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Gestión Matricula/Categoria</h2>
+<h2>Matricula</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -26,7 +26,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Cate_Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Cate_Id }) |
-            @Html.ActionLink("Generar Recibo", "index", "Recibo", new { id=item.Cate_Id })
+            @Html.ActionLink("Delete", "Delete", new { id=item.Cate_Id })
         </td>
     </tr>
 }
