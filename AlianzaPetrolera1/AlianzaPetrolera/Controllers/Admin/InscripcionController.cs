@@ -43,13 +43,13 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
 
-        // GET: RegistroPersona/Create
+        // GET: Inscripcion/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: RegistroPersona/Create
+        // POST: Inscripcion/Create
         [HttpPost]
         public ActionResult Create(Inscripcion Inscripciones)
         {
@@ -77,7 +77,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             return View(item);
         }
 
-        // POST: RegistroPersona/Edit/5
+        // POST: Inscripcion/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection, Inscripcion model)
         {
@@ -96,8 +96,8 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
-        // GET: RegistroPersona/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Inscripcion/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -118,7 +118,7 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         }
 
-        // POST: RegistroPersona/Delete/5
+        // POST: Inscripcion/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection, Inscripcion X)
         {
