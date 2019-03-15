@@ -33,6 +33,105 @@ namespace AlianzaPetrolera.Models.Admin
         [Display(Name = "Estado")]
         public EstadoMatricula Matri_Esta { get; set; }
 
+        [Display(Name = "Costo Total")]
+        public Nullable<decimal> Matri_CosTota {get; set; }
+    }
+    public class Calculadora
+    {
+        private int a, b, c, d;
 
+        public int A
+        {
+            get
+            {
+                return a;
+            }
+
+            set
+            {
+                a = value;
+            }
+        }
+
+        public int B
+        {
+            get
+            {
+                return b;
+            }
+
+            set
+            {
+                b = value;
+            }
+
+        }
+        public int C
+        {
+            get
+            {
+                return c;
+            }
+
+            set
+            {
+                c = value;
+            }
+        }
+        public int D
+        {
+            get
+            {
+                return d;
+            }
+
+            set
+            {
+                d = value;
+            }
+        }
+
+        public Calculadora()
+        {
+
+        }
+
+        public int Matricula(int a, int b)
+        {
+            int totaldesc = 0;
+            int totalpag = 0;
+
+            totaldesc = ((a * b)/100);
+            totalpag = (a - totaldesc);
+            return totalpag;
+        }
+
+        public int Poliac(int a, int b)
+        {
+            int totaldesc = 0;
+            int totalpag = 0;
+
+            totaldesc = ((a * b) / 100);
+            totalpag = (a - totaldesc);
+            return totalpag;
+        }
+        public int Uniforme(int a, int b)
+        {
+            int totaldesc = 0;
+            int totalpag = 0;
+
+            totaldesc = ((a * b) / 100);
+            totalpag = (a - totaldesc);
+            return totalpag;
+        }
+        public int Mensualidad(int a, int b)
+        {
+            int totaldesc = 0;
+            int totalpag = 0;
+
+            totaldesc = ((a * b) / 100);
+            totalpag = (a - totaldesc);
+            return totalpag;
+        }
     }
 }

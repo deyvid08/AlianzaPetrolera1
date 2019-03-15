@@ -1,0 +1,57 @@
+﻿@model AlianzaPetrolera.Models.Admin.ReciboCaja
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <tittle>CALCULADORA</tittle>
+</head>
+<body>
+    <div>
+        
+        <form method="post">
+            <div class="form-row">
+                Matricula:
+                <input type="text" name="value1" />
+                <br />
+                Descuento Matricula:
+                <input type="text" name="value2" />
+                <br />
+            </div>
+            <div class="form-row">
+                Poliza de Accidentes:
+                <input type="text" name="value3" />
+                <br />
+                Descuento Poliza de Accidentes:
+                <input type="text" name="value4" />
+                <br />
+            </div>
+            <div class="form-row">
+                Uniforme:
+                <input type="text" name="value5" />
+                <br />
+                Descuento Uniforme:
+                <input type="text" name="value6" />
+                <br />
+            </div>
+            <div class="form-row">
+                Mensualidad:
+                <input type="text" name="value7" />
+                <br />
+                Descuento Mensualidad:
+                <input type="text" name="value8" />
+                <br />
+            </div>
+            @*<input type="radio" name="calc" value="+" />Sumar<br />*@
+
+            <input type="submit" name="calc" value="factura" />
+            <label>Total a pagar</label><input type="text" name="value9" />
+            <br />
+
+
+        </div>
+    </body>
+</html>

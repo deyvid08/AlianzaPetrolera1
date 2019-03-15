@@ -1,4 +1,5 @@
 ﻿using AlianzaPetrolera.Models;
+using AlianzaPetrolera.Models.Admin;
 using Rotativa;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Web.Mvc;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
-    public class ReciboController : Controller
+    public class ReciboCajaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: RegistroPersona
@@ -38,13 +39,40 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(int value1, int value2, int value3, int value4, int value5, int value6, int value7, int value8, String calc)
         {
             try
             {
-                // TODO: Add insert logic here
+                    ReciboCaja r = new ReciboCaja();
 
-                return RedirectToAction("Index");
+                    Calculadora c = new Calculadora();
+                    decimal totalma = 0;
+                    decimal totalp = 0;
+                    decimal totalu = 0;
+                    decimal totalme = 0;
+                    decimal totalpago = 0;
+                    decimal factura = 0;
+
+                    switch (calc)
+                    {
+                        case "factura":
+                        totalma = c.Matricula(value1, value2);
+                        totalp = c.Poliac(value3, value4);
+                        totalu = c.Uniforme(value5, value6);
+                        totalme = c.Mensualidad(value7, value8);
+                        totalpago = (totalma + totalp + totalu + totalme);
+                        break;
+                        default:
+                        
+                        break;
+
+                    }
+                    
+                    r.Matri_CosTota = totalpago;
+                    return Content("Resultado:" + totalpago);
+
+
+                    //return RedirectToAction("Index");
             }
             catch
             {
