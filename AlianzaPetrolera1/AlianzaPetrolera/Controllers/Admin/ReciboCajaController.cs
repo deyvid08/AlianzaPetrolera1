@@ -51,23 +51,15 @@ namespace AlianzaPetrolera.Controllers.Admin
                     decimal totalu = 0;
                     decimal totalme = 0;
                     decimal totalpago = 0;
-                    decimal factura = 0;
-
-                    switch (calc)
-                    {
-                        case "factura":
-                        totalma = c.Matricula(value1, value2);
-                        totalp = c.Poliac(value3, value4);
-                        totalu = c.Uniforme(value5, value6);
-                        totalme = c.Mensualidad(value7, value8);
-                        totalpago = (totalma + totalp + totalu + totalme);
-                        break;
-                        default:
-                        
-                        break;
-
-                    }
                     
+
+                    totalma = c.Matricula(value1, value2);
+                    totalp = c.Poliac(value3, value4);
+                    totalu = c.Uniforme(value5, value6);
+                    totalme = c.Mensualidad(value7, value8);
+                    totalpago = (totalma + totalp + totalu + totalme);
+
+                                   
                     r.Matri_CosTota = totalpago;
                     return Content("Resultado:" + totalpago);
 
