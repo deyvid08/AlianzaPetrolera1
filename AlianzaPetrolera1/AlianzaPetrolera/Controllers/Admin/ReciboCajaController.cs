@@ -21,7 +21,7 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         public ActionResult ImprimirTodas()
         {
-            var q = new ActionAsPdf("Index");
+            var q = new ActionAsPdf("Create");
             return q;
         }
 
@@ -32,15 +32,23 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
         // GET: Recibo/Create
-        public ActionResult Create()
+        public ActionResult Create(string nombrecate,string nombreestu)
         {
+            ViewBag.Message = nombrecate;
+            ViewBag.Message2 = nombreestu;
             return View();
         }
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(int value1, int value2, int value3, int value4, int value5, int value6, int value7, int value8, String calc)
+        public ActionResult Create(int value1, int value2, int value3, int value4, int value5, int value6, int value7, int value8, String calc,string nombrecate,string nombreestu)
         {
+
+
+            ViewBag.Message = nombrecate;
+            ViewBag.Message2 = nombreestu;
+
+
             try
             {
                     ReciboCaja r = new ReciboCaja();
@@ -58,13 +66,13 @@ namespace AlianzaPetrolera.Controllers.Admin
                     totalu = c.Uniforme(value5, value6);
                     totalme = c.Mensualidad(value7, value8);
                     totalpago = (totalma + totalp + totalu + totalme);
-
+                    ViewBag.totfin = "Total a pagar" + totalpago;
                                    
                     r.Matri_CosTota = totalpago;
-                    return Content("Resultado:" + totalpago);
+                    //return Content("Resultado:" + totalpago);
+                return View();
 
-
-                    //return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
             catch
             {

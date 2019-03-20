@@ -1,12 +1,21 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
 }
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+}
+
+
+#fondo {
+    /* The image used */
+    /*background-image: url("images/background.png");*/
+    /* Full height */
+    height: 10%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +30,17 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#logoutForm {
+    margin-left: 15em;
+}
+
+.jumbotron {
+    margin-top: -9em;
+    padding: 0 !important;
+}
+
+#fondobanner {
+    background-color: rgba(0, 0, 0, 0.7);
 }
