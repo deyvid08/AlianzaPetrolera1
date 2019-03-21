@@ -41,7 +41,7 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(int value1, int value2, int value3, int value4, int value5, int value6, int value7, int value8, String calc,string nombrecate,string nombreestu)
+        public ActionResult Create(float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc,string nombrecate,string nombreestu)
         {
 
 
@@ -54,11 +54,11 @@ namespace AlianzaPetrolera.Controllers.Admin
                     ReciboCaja r = new ReciboCaja();
 
                     Calculadora c = new Calculadora();
-                    decimal totalma = 0;
-                    decimal totalp = 0;
-                    decimal totalu = 0;
-                    decimal totalme = 0;
-                    decimal totalpago = 0;
+                    float totalma = 0;
+                    float totalp = 0;
+                    float totalu = 0;
+                    float totalme = 0;
+                    float totalpago = 0;
                     
 
                     totalma = c.Matricula(value1, value2);

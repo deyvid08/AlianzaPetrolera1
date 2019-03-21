@@ -37,7 +37,7 @@
         <p>
             <section id="loginForm">
                 @using (Html.BeginForm("Login", "Persona", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
+                 {
                     @Html.AntiForgeryToken()
                     <h4 class="text-white">Use una cuenta local para iniciar sesión.</h4>
                     <hr />
@@ -69,16 +69,18 @@
                             <input type="submit" value="Iniciar sesión" class="btn btn-default" />
                         </div>
                     </div>
-            <p>
-                @Html.ActionLink("Registrar como nuevo usuario", "Register")
-            </p>
-            //Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
-            <p>
-                @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
-            </p>
-        }
-                </section>
-                </p>
+                    
+                        <p>
+                            @Html.ActionLink("Registrar como nuevo usuario", "Register")
+                        </p>
+                        //Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
+                        <p>
+                            @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                        </p>
 
-            </div>
-        </div>
+                 }
+          </section>
+        </p>
+
+    </div>
+</div>

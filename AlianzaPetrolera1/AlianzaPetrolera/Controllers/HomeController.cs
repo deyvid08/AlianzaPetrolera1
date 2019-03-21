@@ -16,29 +16,43 @@ namespace AlianzaPetrolera.Controllers
             if (User.Identity.IsAuthenticated)
             {
 
-
                 using (ApplicationDbContext db = new ApplicationDbContext())
                 {
                     var userId = User.Identity.GetUserId();
 
                     var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
 
-                    //Crear Role 
+                    ////Crear Role 
 
-                    var resultado = roleManager.Create(new IdentityRole("Padre"));
+                    //var resultado = roleManager.Create(new IdentityRole("Administrador"));
 
+                    //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+
+                    ////Agregar Usuario A Role
+
+                    //resultado = userManager.AddToRole(userId, "Administrador");
+
+                    ////Usuario Esta En Rol?
+                    //var usuarioEstaEnRol = userManager.IsInRole(userId, "Administrador");
                     var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                    var usuariorol = userManager.IsInRole(userId, "Administrador");
+                    var usuariorol2 = userManager.IsInRole(userId, "Padre");
+                    if (usuariorol == true)
+                    {
+                        return RedirectToAction("AdminIndex", "Admin");
 
-                    //Agregar Usuario A Role
-
-                    resultado = userManager.AddToRole(userId, "Padre");
-
-                    //Usuario Esta En Rol?
-                    var usuarioEstaEnRol = userManager.IsInRole(userId, "Padre");
-
+                    }
+                    else if (usuariorol2 == true)
+                    {
+                        return RedirectToAction("PadreIndex", "RegistroPersona");
+                    }
                 }
             }
-            return View();
+
+
+
+
+            return View("");
         }
         [Authorize(Users = "Dmartinez")]
         public ActionResult About()

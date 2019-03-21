@@ -40,7 +40,11 @@ namespace AlianzaPetrolera.Controllers
                 }
             }
         }
-
+        //Vista principal usuario padre
+        public ActionResult PadreIndex()
+        {
+            return View();
+        }
 
         // GET: RegistroPersona/Create
         public ActionResult Create()

@@ -34,13 +34,13 @@ namespace AlianzaPetrolera.Models.Admin
         public EstadoMatricula Matri_Esta { get; set; }
 
         [Display(Name = "Costo Total")]
-        public Nullable<decimal> Matri_CosTota {get; set; }
+        public Nullable<float> Matri_CosTota {get; set; }
     }
     public class Calculadora
     {
-        private int a, b, c, d;
+        private float a, b, c, d;
 
-        public int A
+        public float A
         {
             get
             {
@@ -53,7 +53,7 @@ namespace AlianzaPetrolera.Models.Admin
             }
         }
 
-        public int B
+        public float B
         {
             get
             {
@@ -66,68 +66,43 @@ namespace AlianzaPetrolera.Models.Admin
             }
 
         }
-        public int C
-        {
-            get
-            {
-                return c;
-            }
-
-            set
-            {
-                c = value;
-            }
-        }
-        public int D
-        {
-            get
-            {
-                return d;
-            }
-
-            set
-            {
-                d = value;
-            }
-        }
-
         public Calculadora()
         {
 
         }
 
-        public int Matricula(int a, int b)
+        public float Matricula(float a, float b)
         {
-            int totaldesc = 0;
-            int totalpag = 0;
+            float totaldesc = 0;
+            float totalpag = 0;
 
             totaldesc = ((a * b)/100);
             totalpag = (a - totaldesc);
             return totalpag;
         }
 
-        public int Poliac(int a, int b)
+        public float Poliac(float a, float b)
         {
-            int totaldesc = 0;
-            int totalpag = 0;
+            float totaldesc = 0;
+            float totalpag = 0;
 
             totaldesc = ((a * b) / 100);
             totalpag = (a - totaldesc);
             return totalpag;
         }
-        public int Uniforme(int a, int b)
+        public float Uniforme(float a, float b)
         {
-            int totaldesc = 0;
-            int totalpag = 0;
+            float  totaldesc = 0;
+            float totalpag = 0;
 
             totaldesc = ((a * b) / 100);
             totalpag = (a - totaldesc);
             return totalpag;
         }
-        public int Mensualidad(int a, int b)
+        public float Mensualidad(float a, float b)
         {
-            int totaldesc = 0;
-            int totalpag = 0;
+            float  totaldesc = 0;
+            float totalpag = 0;
 
             totaldesc = ((a * b) / 100);
             totalpag = (a - totaldesc);

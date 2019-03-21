@@ -57,6 +57,8 @@ namespace AlianzaPetrolera.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -66,12 +68,13 @@ namespace AlianzaPetrolera.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl )
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
+
 
             // No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
             // Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
@@ -79,6 +82,7 @@ namespace AlianzaPetrolera.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                   
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
