@@ -47,8 +47,8 @@ namespace AlianzaPetrolera.Models.AlianzaBD
         public Nullable<System.DateTime> Pers_Ingreso { get; set; }
         [Display(Name = "Total de Puntos")]
         public int Pers_TotalPoints { get; set; }
-        [Display(Name = "Ubicación")]
-        public Nullable<int> Ubic_Id { get; set; }
+        [Display(Name = "Ciudad")]
+        public Ubic Ubic_Id { get; set; }
         [Display(Name = "ROL")]
         public RolHijo Rolp_Id { get; set; }
         [Display(Name ="Padre")]

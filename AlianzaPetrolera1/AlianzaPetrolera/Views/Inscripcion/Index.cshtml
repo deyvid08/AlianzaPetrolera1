@@ -6,52 +6,67 @@
 }
 
 
-<h1>Matricula Usuarios</h1>
-<button type="button" class="btn btn-warning"> @Html.ActionLink("Registrar Nuevo Usuario", "Create")</button>
+<h1>Usuarios Inscritos</h1>
 <br />
 <br />
 <br />
-
-<table class="table table-hover table-dark">
-    <tr class="bg-warning text-white text-center">
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Pers_Doc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Insc_NomEst)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.Insc_FechInsc)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pers_Doc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Insc_NomEst)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Insc_FechInsc)
-        </td>
-
-        <td>
+<div class="container">
+    <table class="table table-hover table-dark">
+        <tr class="bg-warning text-white text-center">
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Pers_Doc)
+            </th>
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Insc_NomEst)
+            </th>
+            <th style="border: none;">
+             Apellido
+            </th>
+            <th style="border: none;">
+                Documento
+            </th>
 
 
+            <th style="border: none;">
+                @Html.DisplayNameFor(model => model.Insc_FechInsc)
+            </th>
+            <th style="border: none;"></th>
+        </tr>
 
-            <div class="btn-group" role="group" aria-label="Basic example">
-                @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
-                <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })  </button>
-                <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Matricular", "index","RegistroCategoria", new { nombreestudiante = item.Insc_NomEst }, htmlAttributes: new { @style = "color:#fff; " })      </button>
-            </div>
-        </td>
-      
-    </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr class="text-center">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pers_Doc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insc_NomEst)
+                </td>
+                <td>
 
-</table>
+                </td>
+
+                <td>
+
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insc_FechInsc)
+                </td>
+
+                <td>
+
+
+
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
+                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })  </button>
+                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst }, htmlAttributes: new { @style = "color:#fff; " })      </button>
+                    </div>
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

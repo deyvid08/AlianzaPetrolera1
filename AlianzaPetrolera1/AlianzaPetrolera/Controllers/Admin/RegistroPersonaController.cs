@@ -17,7 +17,11 @@ namespace AlianzaPetrolera.Controllers
         // GET: RegistroPersona
         public ActionResult Index()
         {
-            return View(db.Personas.ToList());
+            var userId = User.Identity.GetUserId();
+
+            var hijos = db.Personas.Where(x => x.Padre_Id == userId).ToList();
+
+            return View(hijos);
         }
 
         // GET: RegistroPersona/Details/5

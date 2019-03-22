@@ -147,49 +147,48 @@
 
     </div>
     <div class="form-row">
-        <div class="form-group col-md-4">
+        @*<div class="form-group col-md-4">
             @Html.LabelFor(model => model.Padre_Id, htmlAttributes: new { @class = "control-label col-md-12" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Padre_Id, new { htmlAttributes = new { @class = "form-control", @Value = User.Identity.GetUserId() } })
                 @Html.ValidationMessageFor(model => model.Padre_Id, "", new { @class = "text-danger" })
             </div>
-        </div>
-        <div class="form-group col-md-4">
+        </div>*@
+        @*<div class="form-group col-md-4">
             @Html.LabelFor(model => model.Pers_TotalPoints, htmlAttributes: new { @class = "control-label col-md-12" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Pers_TotalPoints, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Pers_TotalPoints, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group col-md-4">
             @Html.LabelFor(model => model.Ubic_Id, htmlAttributes: new { @class = "control-label col-md-12" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Ubic_Id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EnumDropDownListFor(model => model.Ubic_Id, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Ubic_Id, "", new { @class = "text-danger" })
             </div>
         </div>
-
-    </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Rolp_Id, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(model => model.Rolp_Id, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Rolp_Id, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rolp_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Rolp_Id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Rolp_Id, "", new { @class = "text-danger" })
             </div>
+        </div>
+    </div>
+            
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Registar" class="btn btn-warning" />
                 </div>
             </div>
-        </div>
-        }
+ </div>
+}
 
         <div>
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Mis Hijos", "Index")
         </div>
 
         @section Scripts {

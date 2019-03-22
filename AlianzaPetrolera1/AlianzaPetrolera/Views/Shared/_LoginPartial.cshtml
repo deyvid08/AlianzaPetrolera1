@@ -7,9 +7,9 @@
 
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a> @Html.ActionLink("   Hola " + User.Identity.GetUserName() + "! ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</a>
+                <a> @Html.ActionLink("   Hola " + User.Identity.GetUserName() + "! ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @style = "color:#fff" })</a>
             </li>
-            <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()">| | Cerrar sesión</a></li>
+            <li class="nav-item text-white"><a href="javascript:document.getElementById('logoutForm').submit()" style="color:#fff">| | Cerrar sesión</a></li>
         </ul>
     }
 }

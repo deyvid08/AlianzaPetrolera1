@@ -23,7 +23,7 @@ namespace AlianzaPetrolera.Controllers.Enum
     }
     public enum RolHijo
     {
-        Estudiante=1
+        Estudiante=0
     }
     public enum Roles_Admin
     {
@@ -45,5 +45,13 @@ namespace AlianzaPetrolera.Controllers.Enum
         Pago,
         No_Pago
     }
-
+    public enum Ubic
+    {
+        Barrancabermeja,
+        Barranquito,
+        La_Cira,
+        Barranquita,
+        Bogotá,
+        Medellin
+    }
 }

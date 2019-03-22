@@ -1,5 +1,5 @@
-﻿@model AlianzaPetrolera.Models.AlianzaBD.Persona
-
+﻿@*@model AlianzaPetrolera.Models.AlianzaBD.Persona*@
+@model LoginViewModel
 
 @using AlianzaPetrolera.Models;
 
@@ -19,13 +19,16 @@
 
 
 <div class="row">
+
     <div class="col-md-6" style="background-color:#dfd003;">
-        <h2>REGISTRO</h2>
+        <div class="container">
+            <h2>REGISTRO</h2>
 
 
 
 
-        <p><a class="btn btn-default" href="~/RegistroPersona/Create">RESGISTRARME</a></p>
+            <p><a class="btn btn-default" href="~/RegistroPersona/Create">RESGISTRARME</a></p>
+        </div>
     </div>
     @*<div class="col-md-4">
             <h2>Get more libraries</h2>
@@ -33,54 +36,33 @@
             <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
         </div>*@
     <div class="col-md-6" style="background-color:#2d2d2d;">
-        <h2 class="text-white">Inicio de Sesión</h2>
-        <p>
-            <section id="loginForm">
-                @using (Html.BeginForm("Login", "Persona", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                 {
-                    @Html.AntiForgeryToken()
-                    <h4 class="text-white">Use una cuenta local para iniciar sesión.</h4>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Pers_NickNom, new { @class = "col-md-2 control-label", @style = "color:#fff" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Pers_NickNom, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Pers_NickNom, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="margin-right:-125px;">
-                        @Html.LabelFor(m => m.Pers_Pwd, new { @class = "col-md-2 control-label", @style = "color:#fff" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.Pers_Pwd, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Pers_Pwd, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    @*<div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <div class="checkbox">
-                                    @Html.CheckBoxFor(m => m.RememberMe)
-                                    @Html.LabelFor(m => m.RememberMe)
-                                </div>
-                            </div>
-                        </div>*@
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Iniciar sesión" class="btn btn-default" />
-                        </div>
-                    </div>
-                    
-                        <p>
-                            @Html.ActionLink("Registrar como nuevo usuario", "Register")
-                        </p>
-                        //Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
-                        <p>
-                            @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
-                        </p>
+        <div class="container">
 
-                 }
-          </section>
-        </p>
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="~/Content/images/logo.png" id="icon" alt="User Icon" style="margin-left:8em;" />
+            </div>
+            <br />
+            <!-- Login Form -->
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
 
+                <form>
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Usuario", @style = "margin-left:5em;" })
+                    <br />
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Contraseña", @id = "password", @style = "margin-left:5em;" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger fadeIn third", @id = "password", @style = "margin-left:5em;" })
+                    <br />
+                    <input type="submit" value="Iniciar sesión"style="margin-left:10em;" class="btn btn-warning" />
+                </form>
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                    <a class="underlineHover" href="#">¿Olvido Su Contraseña?</a>
+                </div>
+            }
+        </div>
     </div>
+
 </div>

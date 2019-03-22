@@ -1,6 +1,7 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "PadreIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!doctype html>
@@ -91,7 +92,7 @@ h3{
                             <span>Aqui Puedes Registrar a tus hijos.</span>
                         </div>
 
-                        <a href="#">Registrar</a>
+                         @Html.ActionLink("Registrar", "Create")
 
                     </div>
                 </div>
@@ -110,7 +111,7 @@ h3{
                             <span>Aqui Se Listan Tus Hijos</span>
                         </div>
 
-                        <a href="#">Ver Hijos</a>
+                        @Html.ActionLink("Ver Hijos","Index")
 
                     </div>
                 </div>
