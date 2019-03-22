@@ -31,7 +31,7 @@ namespace AlianzaPetrolera.Controllers
                     ////Agregar Usuario A Role
                     var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
                     resultado = userManager.AddToRole(userId, "Padre");
-
+               
                     ////Usuario Esta En Rol?
                     //var usuarioEstaEnRol = userManager.IsInRole(userId, "Administrador");
 
@@ -40,7 +40,6 @@ namespace AlianzaPetrolera.Controllers
                     if (usuariorol == true)
                     {
                         return RedirectToAction("AdminIndex", "Admin");
-
                     }
                     else if (usuariorol2 == true)
                     {
