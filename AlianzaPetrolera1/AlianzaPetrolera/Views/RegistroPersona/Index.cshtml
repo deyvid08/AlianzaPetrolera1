@@ -18,11 +18,11 @@
     <table class="table table-hover table-dark">
         <tr class="bg-warning text-white text-center">
             @*<th>
-                @Html.DisplayNameFor(model => model.Pers_NickNom)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Pers_NickNom)
+                </th>*@
             @*<th>
-                @Html.DisplayNameFor(model => model.Pers_Pwd)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Pers_Pwd)
+                </th>*@
             <th style="border: none;">
                 @Html.DisplayNameFor(model => model.Pers_Nom)
             </th>
@@ -39,23 +39,23 @@
                 @Html.DisplayNameFor(model => model.Pers_Doc)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Pers_Birth)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Pers_Birth)
+                </th>*@
             @*<th>
-                @Html.DisplayNameFor(model => model.Pers_Dir)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Pers_Dir)
+                </th>*@
             <th style="border: none;">
                 @Html.DisplayNameFor(model => model.Pers_Tel1)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Pers_Tel2)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Pers_Tel2)
+                </th>*@
             @*<th>
-                @Html.DisplayNameFor(model => model.Pers_Mail1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pers_Mail2)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Pers_Mail1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pers_Mail2)
+                </th>*@
             <th style="border: none;">
                 @Html.DisplayNameFor(model => model.Pers_Ingreso)
             </th>
@@ -63,11 +63,11 @@
                 @Html.DisplayNameFor(model => model.Pers_TotalPoints)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Ubic_Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rolp_Id)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Ubic_Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rolp_Id)
+                </th>*@
             <th style="border: none;"></th>
         </tr>
 
@@ -75,11 +75,11 @@
         {
             <tr class="text-center">
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Pers_NickNom)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Pers_NickNom)
+                    </td>*@
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Pers_Pwd)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Pers_Pwd)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Pers_Nom)
                 </td>
@@ -96,23 +96,23 @@
                     @Html.DisplayFor(modelItem => item.Pers_Doc)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Pers_Birth)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Pers_Birth)
+                    </td>*@
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Pers_Dir)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Pers_Dir)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Pers_Tel1)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Pers_Tel2)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Pers_Tel2)
+                    </td>*@
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Pers_Mail1)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Pers_Mail2)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Pers_Mail1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pers_Mail2)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Pers_Ingreso)
                 </td>
@@ -120,11 +120,11 @@
                     @Html.DisplayFor(modelItem => item.Pers_TotalPoints)
                 </td>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Ubic_Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rolp_Id)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Ubic_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rolp_Id)
+                    </td>*@
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
 
@@ -140,4 +140,5 @@
         }
 
     </table>
-    </div>
+    <button type="button" class="btn btn-warning">  @Html.ActionLink("Regresar", "PadreIndex")</button>
+</div>

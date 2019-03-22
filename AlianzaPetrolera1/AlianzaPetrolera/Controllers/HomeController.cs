@@ -24,17 +24,17 @@ namespace AlianzaPetrolera.Controllers
 
                     ////Crear Role 
 
-                    //var resultado = roleManager.Create(new IdentityRole("Administrador"));
+                    var resultado = roleManager.Create(new IdentityRole("Padre"));
 
                     //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
                     ////Agregar Usuario A Role
-
-                    //resultado = userManager.AddToRole(userId, "Administrador");
+                    var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                    resultado = userManager.AddToRole(userId, "Padre");
 
                     ////Usuario Esta En Rol?
                     //var usuarioEstaEnRol = userManager.IsInRole(userId, "Administrador");
-                    var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+
                     var usuariorol = userManager.IsInRole(userId, "Administrador");
                     var usuariorol2 = userManager.IsInRole(userId, "Padre");
                     if (usuariorol == true)

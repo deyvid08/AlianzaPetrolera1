@@ -240,6 +240,14 @@
     <Compile Include="Migrations\201903220119439_RegistroHijoCiudad.Designer.cs">
       <DependentUpon>201903220119439_RegistroHijoCiudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903221643156_incripciondetalles.cs" />
+    <Compile Include="Migrations\201903221643156_incripciondetalles.Designer.cs">
+      <DependentUpon>201903221643156_incripciondetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903221821532_inscripcionid.cs" />
+    <Compile Include="Migrations\201903221821532_inscripcionid.Designer.cs">
+      <DependentUpon>201903221821532_inscripcionid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -376,6 +384,8 @@
     <Content Include="Views\ReciboCaja\Create.cshtml" />
     <Content Include="Views\RegistroPersona\PadreIndex.cshtml" />
     <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\Inscripcion\Details.cshtml" />
+    <Content Include="Views\Inscripcion\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -430,6 +440,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903220119439_RegistroHijoCiudad.resx">
       <DependentUpon>201903220119439_RegistroHijoCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903221643156_incripciondetalles.resx">
+      <DependentUpon>201903221643156_incripciondetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903221821532_inscripcionid.resx">
+      <DependentUpon>201903221821532_inscripcionid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

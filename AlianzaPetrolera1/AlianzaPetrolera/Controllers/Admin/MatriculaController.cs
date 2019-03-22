@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
+    [Authorize(Roles = "Administrador")]
     public class MatriculaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

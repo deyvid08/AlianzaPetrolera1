@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
+    [Authorize(Roles = "Administrador")]
     public class InscripcionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -22,7 +23,7 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
         // GET: Inscripcion/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {

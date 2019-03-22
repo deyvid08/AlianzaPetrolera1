@@ -1,0 +1,59 @@
+﻿@model AlianzaPetrolera.Models.Admin.Inscripcion
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<div>
+    <h4>Inscripcion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pers_Doc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pers_Doc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Insc_NomEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Insc_NomEst)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Insc_ApeEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Insc_ApeEst)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Insc_DocEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Insc_DocEst)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Insc_FechInsc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Insc_FechInsc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Insc_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

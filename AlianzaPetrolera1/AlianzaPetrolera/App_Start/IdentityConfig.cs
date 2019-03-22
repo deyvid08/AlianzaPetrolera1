@@ -53,7 +53,7 @@ namespace AlianzaPetrolera
             // Configure la lógica de validación de contraseñas
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 8,
+                RequiredLength = 6,
                 RequireNonLetterOrDigit = false,
                 RequireDigit = false,
                 RequireLowercase = false,

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
+   
     public class ReciboCajaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,12 +19,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             var TodoRecibo = db.RecibosCajas.ToList();
             return View(TodoRecibo);
         }
-
-        public ActionResult ImprimirTodas()
-        {
-            var q = new ActionAsPdf("Create");
-            return q;
-        }
+     
 
         // GET: Recibo/Details/5
         public ActionResult Details(int id)
@@ -80,6 +76,12 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
+        [AllowAnonymous]
+        public ActionResult ImprimirTodas()
+        {
+            var q = new ActionAsPdf("Index");
+            return q;
+        }
         // GET: Recibo/Edit/5
         public ActionResult Edit(int id)
         {
