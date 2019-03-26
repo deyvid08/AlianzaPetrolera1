@@ -23,5 +23,7 @@ namespace AlianzaPetrolera.Models.Admin
         [DataType(DataType.Date)]
         [Display(Name = "Fecha Inscripción")]
         public DateTime Insc_FechInsc { get; set; }
+        
+        public List<Matricula> Matriculas { get; set; }
     }
 }

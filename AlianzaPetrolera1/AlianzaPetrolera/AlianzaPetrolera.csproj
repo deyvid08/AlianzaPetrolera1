@@ -248,6 +248,18 @@
     <Compile Include="Migrations\201903260651039_errorinscripcion.Designer.cs">
       <DependentUpon>201903260651039_errorinscripcion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903261654405_restauracionBD.cs" />
+    <Compile Include="Migrations\201903261654405_restauracionBD.Designer.cs">
+      <DependentUpon>201903261654405_restauracionBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903261951057_fkinscri2.cs" />
+    <Compile Include="Migrations\201903261951057_fkinscri2.Designer.cs">
+      <DependentUpon>201903261951057_fkinscri2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903261957000_fkinscri3.cs" />
+    <Compile Include="Migrations\201903261957000_fkinscri3.Designer.cs">
+      <DependentUpon>201903261957000_fkinscri3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -453,6 +465,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903260651039_errorinscripcion.resx">
       <DependentUpon>201903260651039_errorinscripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903261654405_restauracionBD.resx">
+      <DependentUpon>201903261654405_restauracionBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903261951057_fkinscri2.resx">
+      <DependentUpon>201903261951057_fkinscri2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903261957000_fkinscri3.resx">
+      <DependentUpon>201903261957000_fkinscri3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

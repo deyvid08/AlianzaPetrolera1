@@ -15,7 +15,8 @@ namespace AlianzaPetrolera.Models.Admin
         public int Matri_Id { get; set; }
 
         [Display(Name = "Incripción")]
-        public int Insc_Id { get; set; }
+        //public int Insc_Id { get; set; }
+        public Inscripcion Insc_Id { get; set; }
 
         [Display(Name = "Periodo")]
         public Periodo Peri_Id { get; set; }
@@ -29,5 +30,7 @@ namespace AlianzaPetrolera.Models.Admin
 
         [Display(Name = "Estado")]
         public EstadoMatricula Matri_Esta { get; set; }
+
+        
     }
 }

@@ -73,5 +73,11 @@ namespace AlianzaPetrolera.Models
         {
             return new ApplicationDbContext();
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Matricula>().HasRequired(x => x.Insc_Id);
+        }
     }
 }
