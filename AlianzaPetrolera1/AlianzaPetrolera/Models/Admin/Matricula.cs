@@ -15,15 +15,13 @@ namespace AlianzaPetrolera.Models.Admin
         public int Matri_Id { get; set; }
 
         [Display(Name = "Incripción")]
-        public string Insc_Id { get; set; }
-        
+        public int Insc_Id { get; set; }
 
         [Display(Name = "Periodo")]
         public Periodo Peri_Id { get; set; }
 
         [Display(Name = "Incripción")]
         public string Cate_Id { get; set; }
-        
 
         [DataType(DataType.Date)]
         [Display(Name = "Fecha Matricula")]

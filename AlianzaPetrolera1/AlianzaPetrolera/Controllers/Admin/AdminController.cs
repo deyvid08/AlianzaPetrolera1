@@ -18,5 +18,17 @@ namespace AlianzaPetrolera.Controllers.Admin
         {
             return View();
         }
+        public ActionResult AdminJefe()
+        {
+            return View();
+        }
+        public ActionResult Entrenador()
+        {
+            return View();
+        }
+        public ActionResult SuperAdmin()
+        {
+            return View();
+        }
     }
 }

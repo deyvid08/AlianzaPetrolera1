@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "AdminJefe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+    <title>Vista Admin</title>
+</head>
+<body>
+    <br>
+    <style type="text/css">
+
+
+        body {
+            background: #f2f2f2;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        h3 {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .box {
+            padding: 60px 0px;
+        }
+
+        .box-part {
+            background: #FFF;
+            border-radius: 10px;
+            padding: 60px 10px;
+            margin: 30px 0px;
+        }
+
+            .box-part:hover {
+                background: #000;
+            }
+
+        .tittle {
+            margin-top: -4em;
+        }
+
+        .box-part:hover .fas,
+        .box-part:hover .title,
+        .box-part:hover .text,
+        .box-part:hover a {
+            color: #FFF;
+            -webkit-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+        }
+
+        .text {
+            margin: 20px 0px;
+        }
+
+        .fas {
+            color: #FDEF02;
+        }
+    </style>
+
+    <br>
+    <br>
+    <div class="box">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+                        <i class="fas fa-percent fa-5x"></i>
+                     
+
+                        <br>
+                        <div class="title">
+                            <h3>Aprobar Descuentos</h3>
+                        </div>
+
+                        <div class="text">
+                            <span>Aqui Puede Aprobar Los Recibos</span>
+                        </div>
+
+                        <a @Html.ActionLink("Ver Recibos", "Index", "Inscripcion")</a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+
+                        <i class="fas fa-users fa-5x"></i>
+
+                        <div class="title">
+                            <h3>Otra Funcionalidad</h3>
+                        </div>
+
+                        <div class="text">
+                            <span>Otra Funcionalidad</span>
+                        </div>
+
+                        <a @Html.ActionLink("Otra Funcionalidad", "Index", "RegistroCategoria") </a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+
+                        <i class="fas fa-user-edit fa-5x"></i>
+                        <div class="title">
+                            <h3>Otra Funcionalidad</h3>
+                        </div>
+
+                        <div class="text">
+                            <span>Otra Funcionalidad</span>
+                        </div>
+
+                        <a href="#">Ver</a>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+

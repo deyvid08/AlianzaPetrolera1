@@ -77,6 +77,29 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
+
+
+        //// GET: Categoria/Create
+        //public ActionResult Matricular()
+        //{
+        //    return View();
+        //}
+
+        //// POST: Categoria/Create
+        //[HttpPost]
+        //public ActionResult Matricular(Matricula Matriculas, int Insc_Id1)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var Matricula = new Matricula { Insc_Id = Insc_Id1,};
+
+        //    }
+
+        //}
+
+
+
+
         // GET: RegistroPersona/Edit/5
         public ActionResult Edit(int id)
         {

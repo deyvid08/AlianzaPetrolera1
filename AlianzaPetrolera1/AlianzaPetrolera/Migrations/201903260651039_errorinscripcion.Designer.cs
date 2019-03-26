@@ -7,13 +7,13 @@ namespace AlianzaPetrolera.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class inscripcionid : IMigrationMetadata
+    public sealed partial class errorinscripcion : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(inscripcionid));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(errorinscripcion));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903221821532_inscripcionid"; }
+            get { return "201903260651039_errorinscripcion"; }
         }
         
         string IMigrationMetadata.Source

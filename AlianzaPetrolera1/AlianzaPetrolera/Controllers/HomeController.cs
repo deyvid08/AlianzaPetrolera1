@@ -24,19 +24,25 @@ namespace AlianzaPetrolera.Controllers
 
                     ////Crear Role 
 
-                    var resultado = roleManager.Create(new IdentityRole("Padre"));
+                    //var resultado = roleManager.Create(new IdentityRole("Padre"));
+                    //var resultado2 = roleManager.Create(new IdentityRole("AdminJefe"));
+                    //var resultado3 = roleManager.Create(new IdentityRole("Entrenador"));
 
                     //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
                     ////Agregar Usuario A Role
                     var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-                    resultado = userManager.AddToRole(userId, "Padre");
+                    //resultado = userManager.AddToRole(userId, "Padre");
                
                     ////Usuario Esta En Rol?
                     //var usuarioEstaEnRol = userManager.IsInRole(userId, "Administrador");
 
                     var usuariorol = userManager.IsInRole(userId, "Administrador");
                     var usuariorol2 = userManager.IsInRole(userId, "Padre");
+                    var usuariorol3 = userManager.IsInRole(userId, "SuperAdmin");
+                    var usuariorol4 = userManager.IsInRole(userId, "AdminJefe");
+                    var usuariorol5 = userManager.IsInRole(userId, "Entrenador");
+
                     if (usuariorol == true)
                     {
                         return RedirectToAction("AdminIndex", "Admin");
@@ -45,6 +51,25 @@ namespace AlianzaPetrolera.Controllers
                     {
                         return RedirectToAction("PadreIndex", "RegistroPersona");
                     }
+
+                    else if (usuariorol3 == true)
+                    {
+                        return RedirectToAction("SuperAdmin", "Admin");
+                    }
+
+                    else if (usuariorol4 == true)
+                    {
+                        return RedirectToAction("AdminJefe", "Admin");
+                    }
+
+                    else if (usuariorol5 == true)
+                    {
+                        return RedirectToAction("Entrenador", "Admin");
+                    }
+
+
+
+
                 }
             }
 

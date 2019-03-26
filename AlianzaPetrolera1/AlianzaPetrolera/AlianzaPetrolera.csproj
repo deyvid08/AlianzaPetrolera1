@@ -244,9 +244,9 @@
     <Compile Include="Migrations\201903221643156_incripciondetalles.Designer.cs">
       <DependentUpon>201903221643156_incripciondetalles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903221821532_inscripcionid.cs" />
-    <Compile Include="Migrations\201903221821532_inscripcionid.Designer.cs">
-      <DependentUpon>201903221821532_inscripcionid.cs</DependentUpon>
+    <Compile Include="Migrations\201903260651039_errorinscripcion.cs" />
+    <Compile Include="Migrations\201903260651039_errorinscripcion.Designer.cs">
+      <DependentUpon>201903260651039_errorinscripcion.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -386,11 +386,18 @@
     <Content Include="Views\Admin\AdminIndex.cshtml" />
     <Content Include="Views\Inscripcion\Details.cshtml" />
     <Content Include="Views\Inscripcion\Delete.cshtml" />
+    <Content Include="Views\Admin\AdminJefe.cshtml" />
+    <Content Include="Views\Admin\Entrenador.cshtml" />
+    <Content Include="Views\Admin\SuperAdmin.cshtml" />
+    <Content Include="Views\Matricula\Index.cshtml" />
+    <Content Include="Views\Matricula\Details.cshtml" />
+    <Content Include="Views\Matricula\Create.cshtml" />
+    <Content Include="Views\Matricula\Edit.cshtml" />
+    <Content Include="Views\Matricula\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\Matricula\" />
     <Folder Include="Views\RegistroRolPersona\" />
     <Folder Include="Views\RegistroUbicacion\" />
   </ItemGroup>
@@ -444,8 +451,8 @@
     <EmbeddedResource Include="Migrations\201903221643156_incripciondetalles.resx">
       <DependentUpon>201903221643156_incripciondetalles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903221821532_inscripcionid.resx">
-      <DependentUpon>201903221821532_inscripcionid.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903260651039_errorinscripcion.resx">
+      <DependentUpon>201903260651039_errorinscripcion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
