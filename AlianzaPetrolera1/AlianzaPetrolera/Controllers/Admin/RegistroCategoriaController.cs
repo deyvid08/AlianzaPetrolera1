@@ -14,10 +14,18 @@ namespace AlianzaPetrolera.Controllers.Admin
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Categoria
-        public ActionResult Index(string nombreestudiante)
+        public ActionResult Index( string nombreestudiante, int Insc_Id1, int documentoestu,string apellidoestu,string idestu)
         {
+            
             ViewBag.Message = "El Estudiante Es: " +nombreestudiante;
-            var TodasCate = db.Categorias.ToList();
+            ViewBag.IdInscripcion = Insc_Id1;
+            ViewBag.documentoestud = documentoestu;
+            ViewBag.apellidoes = apellidoestu;
+            ViewBag.idest = idestu;
+
+
+
+           var TodasCate = db.Categorias.ToList();
             return View(TodasCate);
         }
 

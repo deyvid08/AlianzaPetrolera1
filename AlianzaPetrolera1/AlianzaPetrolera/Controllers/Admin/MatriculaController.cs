@@ -41,16 +41,26 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
         // GET: Matricula/Create
-        public ActionResult Create()
+        public ActionResult Create(string Nomcategoria, string cod_persona, string nom_estu, string apell_estu, int documento_estu, int idinscripcion)
         {
+            
+            ViewBag.NombreEstu = nom_estu;
+            ViewBag.CodPers = cod_persona;
+            ViewBag.IdInscripcion = idinscripcion;
+            ViewBag.documentoestud = documento_estu;
+            ViewBag.apellidoes = apell_estu;
+            ViewBag.Nomcategoria = Nomcategoria;
 
             return View();
         }
 
         // POST: Matricula/Create
         [HttpPost]
-        public ActionResult Create(Matricula Matriculas)
+        public ActionResult Create(Matricula Matriculas )
         {
+         
+
+
             try
             {
                 if (ModelState.IsValid)
@@ -84,10 +94,10 @@ namespace AlianzaPetrolera.Controllers.Admin
             {
                 // TODO: Add update logic here
                 var item = db.Matriculas.Where(x => x.Matri_Id == model.Matri_Id).First();
-                item.Insc_Id = model.Insc_Id;
-                item.Peri_Id = model.Peri_Id;
-                item.Cate_Id = model.Cate_Id;
-                item.Matr_Fecha = model.Matr_Fecha;
+                //item.Insc_Id = model.Insc_Id;
+                //item.Peri_Id = model.Peri_Id;
+                //item.Cate_Id = model.Cate_Id;
+                //item.Matr_Fecha = model.Matr_Fecha;
                 item.Matri_Esta = model.Matri_Esta;
                 
                 db.SaveChanges();

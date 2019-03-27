@@ -40,8 +40,9 @@ namespace AlianzaPetrolera.Controllers.Enum
     }
     public enum EstadoMatricula
     {
-        Activo,
-        Inactivo
+        Inactivo,
+        Activo
+        
     }
     public enum ReciEstado
     {

@@ -61,7 +61,7 @@
                     <div class="btn-group" role="group" aria-label="Basic example">
                         @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
                         <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })  </button>
-                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })      </button>
+                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new {nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID,documentoestu= item.Insc_DocEst,apellidoestu=item.Insc_ApeEst,idestu=item.Pers_Doc }, htmlAttributes: new { @style = "color:#fff; " })      </button>
                     </div>
                 </td>
 
