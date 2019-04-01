@@ -15,9 +15,18 @@ namespace AlianzaPetrolera.Models.Admin
         public int Matri_Id { get; set; }
 
         [Display(Name = "Inscripción")]
-        //public int Insc_Id { get; set; }
-        public Inscripcion Insc_Id { get; set; }
+        public int Insc_Id { get; set; }
+        //public Inscripcion Insc_Id { get; set; }
 
+        [Display(Name = "Id Estudiante")]
+        public string Mat_IdEst { get; set; }
+        [Display(Name = "Nombre")]
+        public string Mat_Nom { get; set; }
+        [Display(Name = "Apellido")]
+        public string Mat_Apel { get; set; }
+        [Display(Name = "Documento")]
+        public string Mat_Doc { get; set; }
+        
         [Display(Name = "Periodo")]
         public Periodo Peri_Id { get; set; }
 

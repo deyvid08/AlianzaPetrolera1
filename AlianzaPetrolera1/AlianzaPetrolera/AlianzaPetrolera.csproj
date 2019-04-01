@@ -260,6 +260,10 @@
     <Compile Include="Migrations\201903261957000_fkinscri3.Designer.cs">
       <DependentUpon>201903261957000_fkinscri3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903291909095_Matricula1.cs" />
+    <Compile Include="Migrations\201903291909095_Matricula1.Designer.cs">
+      <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -403,9 +407,9 @@
     <Content Include="Views\Admin\SuperAdmin.cshtml" />
     <Content Include="Views\Matricula\Index.cshtml" />
     <Content Include="Views\Matricula\Details.cshtml" />
+    <Content Include="Views\Matricula\Create.cshtml" />
     <Content Include="Views\Matricula\Edit.cshtml" />
     <Content Include="Views\Matricula\Delete.cshtml" />
-    <Content Include="Views\Matricula\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -474,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903261957000_fkinscri3.resx">
       <DependentUpon>201903261957000_fkinscri3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903291909095_Matricula1.resx">
+      <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

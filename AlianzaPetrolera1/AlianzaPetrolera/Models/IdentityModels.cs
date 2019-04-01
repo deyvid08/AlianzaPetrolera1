@@ -77,7 +77,7 @@ namespace AlianzaPetrolera.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Matricula>().HasRequired(x => x.Insc_Id);
+            //modelBuilder.Entity<Matricula>().HasRequired(x => x.Insc_Id);
         }
     }
 }

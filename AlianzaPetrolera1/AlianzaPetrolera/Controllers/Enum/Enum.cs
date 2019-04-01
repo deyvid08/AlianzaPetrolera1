@@ -16,11 +16,7 @@ namespace AlianzaPetrolera.Controllers.Enum
     }
     public enum Roles
     {
-        Admin = 2,
-        Entrenador_Lider,
-        Entrenador,
-        SuperAdmin,
-        AdminJefe
+        Padre
 
     }
     public enum RolHijo
@@ -30,8 +26,12 @@ namespace AlianzaPetrolera.Controllers.Enum
     }
     public enum Roles_Admin
     {
+        Admin = 2,
+        Entrenador_Lider,
+        Entrenador,
+        SuperAdmin,
+        AdminJefe
         
-        Padre
     }
     public enum Periodo
     {

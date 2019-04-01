@@ -17,7 +17,7 @@ namespace AlianzaPetrolera.Controllers.Admin
         public ActionResult Index( string nombreestudiante, int Insc_Id1, int documentoestu,string apellidoestu,string idestu)
         {
             
-            ViewBag.Message = "El Estudiante Es: " +nombreestudiante;
+            ViewBag.Message = nombreestudiante;
             ViewBag.IdInscripcion = Insc_Id1;
             ViewBag.documentoestud = documentoestu;
             ViewBag.apellidoes = apellidoestu;

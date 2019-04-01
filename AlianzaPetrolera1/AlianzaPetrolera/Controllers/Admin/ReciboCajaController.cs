@@ -62,7 +62,7 @@ namespace AlianzaPetrolera.Controllers.Admin
                     totalu = c.Uniforme(value5, value6);
                     totalme = c.Mensualidad(value7, value8);
                     totalpago = (totalma + totalp + totalu + totalme);
-                    ViewBag.totfin = "Total a pagar" + totalpago;
+                    ViewData["totfin"] = "Total a pagar : $" + totalpago;
                                    
                     r.Matri_CosTota = totalpago;
                     //return Content("Resultado:" + totalpago);
@@ -76,11 +76,29 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
-        [AllowAnonymous]
+      
         public ActionResult ImprimirTodas()
         {
-            var q = new ActionAsPdf("Index");
-            return q;
+
+            var report = new ViewAsPdf("Create")
+            {
+
+            
+
+            CustomSwitches =
+            "--footer-center \"  Created Date: " +
+          DateTime.Now.Date.ToString("dd/MM/yyyy") + "  Page: [page]/[toPage]\"" +
+          " --footer-line --footer-font-size \"12\" --footer-spacing 1 --footer-font-name \"Segoe UI\""
+
+
+            };
+            return report;
+
+
+
+
+
+
         }
         // GET: Recibo/Edit/5
         public ActionResult Edit(int id)

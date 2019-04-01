@@ -13,10 +13,23 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Recibo</title>
 </head>
 <body>
+
+    <style type="text/css">
+        input[type=number] {
+            border: none;
+            border-bottom: 2px solid #808080;
+            width: 13em;
+        }
+
+        input[type=text] {
+            border: none;
+            border-bottom: 2px solid #808080;
+        }
+    </style>
 
     <div class="container">
         <br />
@@ -64,68 +77,157 @@
                 <h6>#1215684-154541-12152</h6>
             </div>
         </div>
-
-
         <br />
         <br />
         <div class="container" style=" border:1px solid;border-color: #A59D9B; padding:10px 10px 10px 10px;">
             <div class="container">
                 <form method="post">
 
-                    <br />
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Matricula: </span>
-                        </div>
+                    <table class="egt">
 
-                        <input id="number" type="text" aria-label="First name" name="value1" value="80000" class="form-control">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Descuento: </span>
-                        </div>
-                        <input type="text" aria-label="Last name" name="value2" class="form-control">
-                    </div>
-                    <br />
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Poliza Accidentes: </span>
-                        </div>
+                        <tr>
 
-                        <input type="text" aria-label="First name" name="value3" value="10000" class="form-control">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Descuento: </span>
-                        </div>
-                        <input type="text" aria-label="Last name" name="value4" class="form-control">
-                    </div>
-                    <br />
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> Uniforme: </span>
-                        </div>
+                            <th scope="row">Matricula</th>
 
-                        <input type="text" aria-label="First name" name="value5" value="50000" class="form-control">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Descuento: </span>
-                        </div>
-                        <input type="text" aria-label="Last name" name="value6" class="form-control">
-                    </div>
-                    <br />
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">  Mensualidad: </span>
-                        </div>
+                            <th>Poliza Accidentes : </th>
 
-                        <input type="text" aria-label="First name" name="value7" value="80000" class="form-control">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Descuento: </span>
-                        </div>
-                        <input type="text" aria-label="Last name" name="value8" class="form-control">
-                    </div>
-                 
+                            <th>Uniforme : </th>
+
+                            <th>Mensualidad : </th>
+
+
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                                <input type="number" id="number" name="value1" class="text-center" value="800000" >
+
+                            </td>
+                            <td>
+                                <input type="number" name="value3" value="800000" class="text-center">
+
+                            </td>
+
+                            <td>
+                                <input type="number" name="value5" value="800000" class="text-center">
+                            </td>
+
+                            <td>
+                                <input type="number" name="value7" value="800000" class="text-center">
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Descuento </th>
+
+
+                            <th>Descuento </th>
+
+
+                            <th>Descuento</th>
+
+
+                            <th>Descuento</th>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+
+                                <input type="number" name="value2" class="text-center" value="0">
+
+                            </td>
+                            <td>
+                                <input type="number" name="value4" class="text-center" value="0">
+
+                            </td>
+
+                            <td>
+                                <input type="number" name="value6" class="text-center" value="0">
+                            </td>
+
+                            <td>
+                                <input type="number" name="value8" class="text-center" value="0">
+                            </td>
+
+                        </tr>
+
+                    
+
+                    </table>
+
+                    <br />
+                    <br />
+                    <br />
+
+
                     <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
-                    <B><h2>@ViewBag.totfin</h2></B>
+                    <B><h2>@ViewData["totfin"]</h2></B>
                     <p>
                         @Html.ActionLink("Generar Recibo", "ImprimirTodas")
                     </p>
+
+
+
+
+                    @*<br />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Matricula: </span>
+                            </div>
+
+                            <input id="number" type="text" aria-label="First name" name="value1" value="80000" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Descuento: </span>
+                            </div>
+                            <input type="text" aria-label="Last name" name="value2" class="form-control">
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Poliza Accidentes: </span>
+                            </div>
+
+                            <input type="text" aria-label="First name" name="value3" value="10000" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Descuento: </span>
+                            </div>
+                            <input type="text" aria-label="Last name" name="value4" class="form-control">
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> Uniforme: </span>
+                            </div>
+
+                            <input type="text" aria-label="First name" name="value5" value="50000" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Descuento: </span>
+                            </div>
+                            <input type="text" aria-label="Last name" name="value6" class="form-control">
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  Mensualidad: </span>
+                            </div>
+
+                            <input type="text" aria-label="First name" name="value7" value="80000" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Descuento: </span>
+                            </div>
+                            <input type="text" aria-label="Last name" name="value8" class="form-control">
+                        </div>
+
+                        <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
+                        <B><h2>@ViewBag.totfin</h2></B>
+                        <p>
+                            @Html.ActionLink("Generar Recibo", "ImprimirTodas")
+                        </p>*@
                 </form>
             </div>
 
@@ -136,11 +238,19 @@
     </div>
     <br />
     <br />
+    @section script {
+        <script>
+           
 
+
+
+        </script>
+    }
     <script type="text/javascript" src="~/Scripts/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+
 </body>
 </html>

@@ -16,6 +16,18 @@
             @Html.DisplayNameFor(model => model.Insc_Id)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Mat_IdEst)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mat_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mat_Apel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mat_Doc)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Peri_Id)
         </th>
         <th>
@@ -36,6 +48,18 @@
             @Html.DisplayFor(modelItem => item.Insc_Id)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Mat_IdEst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mat_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mat_Apel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mat_Doc)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Peri_Id)
         </td>
         <td>
@@ -48,9 +72,9 @@
             @Html.DisplayFor(modelItem => item.Matri_Esta)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Matri_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Matri_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Matri_Id })
+            @Html.ActionLink("Activar", "Edit", new { id=item.Matri_Id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Matri_Id }) |
+            @Html.ActionLink("Recibo", "Create","ReciboCaja", new { id=item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom })
         </td>
     </tr>
 }

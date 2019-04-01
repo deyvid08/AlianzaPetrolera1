@@ -44,11 +44,11 @@ namespace AlianzaPetrolera.Controllers.Admin
         public ActionResult Create(string Nomcategoria, string cod_persona, string nom_estu, string apell_estu, int documento_estu, int idinscripcion)
         {
 
-            ViewBag.NombreEstu = nom_estu;
-            ViewBag.CodPers = cod_persona;
             ViewBag.IdInscripcion = idinscripcion;
-            ViewBag.documentoestud = documento_estu;
+            ViewBag.CodPers = cod_persona;
+            ViewBag.NombreEstu = nom_estu;
             ViewBag.apellidoes = apell_estu;
+            ViewBag.documentoestud = documento_estu;
             ViewBag.Nomcategoria = Nomcategoria;
 
             return View();
