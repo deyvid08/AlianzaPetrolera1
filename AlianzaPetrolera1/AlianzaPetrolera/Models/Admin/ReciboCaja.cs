@@ -15,16 +15,19 @@ namespace AlianzaPetrolera.Models.Admin
         public int Reci_Id { get; set; }
 
         [Display(Name = "Matricula")]
-        public int Costo_Matri { get; set; }
+        public Nullable<float> Costo_Matri { get; set; }
 
         [Display(Name = "Poliza de Accidente")]
-        public int Costo_Poli { get; set; }
+        public Nullable<float> Costo_Poli { get; set; }
 
         [Display(Name = "Uniforme")]
-        public int Costo_Unif { get; set; }
+        public Nullable<float> Costo_Unif { get; set; }
 
         [Display(Name = "Mensualidad")]
-        public int Costo_Mensu { get; set; }
+        public Nullable<float> Costo_Mensu { get; set; }
+
+        [Display(Name = "Costo Total")]
+        public Nullable<float> Matri_CosTota { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Fecha Matricula")]
@@ -33,8 +36,7 @@ namespace AlianzaPetrolera.Models.Admin
         [Display(Name = "Estado")]
         public EstadoMatricula Matri_Esta { get; set; }
 
-        [Display(Name = "Costo Total")]
-        public Nullable<float> Matri_CosTota {get; set; }
+        
     }
     public class Calculadora
     {

@@ -74,8 +74,8 @@
         <td>
             @Html.ActionLink("Activar", "Edit", new { id=item.Matri_Id }) |
             @Html.ActionLink("Eliminar", "Delete", new { id=item.Matri_Id }) |
-            @Html.ActionLink("Recibo", "Create","ReciboCaja", new { id=item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom })
-        </td>
+            <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { id = item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom }, htmlAttributes: new { @style = "color:#fff; " })      </button>
+</td>
     </tr>
 }
 

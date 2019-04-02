@@ -15,10 +15,6 @@ namespace AlianzaPetrolera.Models.AlianzaBD
         public IEnumerable<SelectListItem> Ubicaciones { get; set; }
         [Key] [Display(Name = "Codigo")]
         public string Pers_Cod { get; set; }
-        [Display(Name = "Usuario")]
-        public string Pers_NickNom { get; set; }
-        [Display(Name = "Contraseña")]
-        public string Pers_Pwd { get; set; }
         [Display(Name = "Nombre")]
         public string Pers_Nom { get; set; }
         [Display(Name = "Primer Apellido")]

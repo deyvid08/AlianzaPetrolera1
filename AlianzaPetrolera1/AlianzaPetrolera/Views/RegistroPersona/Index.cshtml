@@ -17,12 +17,7 @@
 <div class="container">
     <table class="table table-hover table-dark">
         <tr class="bg-warning text-white text-center">
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Pers_NickNom)
-                </th>*@
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Pers_Pwd)
-                </th>*@
+           
             <th style="border: none;">
                 @Html.DisplayNameFor(model => model.Pers_Nom)
             </th>
@@ -74,12 +69,7 @@
         @foreach (var item in Model)
         {
             <tr class="text-center">
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Pers_NickNom)
-                    </td>*@
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Pers_Pwd)
-                    </td>*@
+               
                 <td>
                     @Html.DisplayFor(modelItem => item.Pers_Nom)
                 </td>

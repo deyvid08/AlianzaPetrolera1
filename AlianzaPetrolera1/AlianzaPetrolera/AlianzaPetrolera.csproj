@@ -264,6 +264,14 @@
     <Compile Include="Migrations\201903291909095_Matricula1.Designer.cs">
       <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904021619175_ReciboCajaCamposalmacenados.cs" />
+    <Compile Include="Migrations\201904021619175_ReciboCajaCamposalmacenados.Designer.cs">
+      <DependentUpon>201904021619175_ReciboCajaCamposalmacenados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904022050216_DatosHijo.cs" />
+    <Compile Include="Migrations\201904022050216_DatosHijo.Designer.cs">
+      <DependentUpon>201904022050216_DatosHijo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -396,7 +404,6 @@
     <Content Include="Views\RegistroCategoria\Edit.cshtml" />
     <Content Include="Views\RegistroCategoria\Index.cshtml" />
     <Content Include="Views\RegistroCategoria\Matricula.cshtml" />
-    <Content Include="Views\ReciboCaja\Index.cshtml" />
     <Content Include="Views\ReciboCaja\Create.cshtml" />
     <Content Include="Views\RegistroPersona\PadreIndex.cshtml" />
     <Content Include="Views\Admin\AdminIndex.cshtml" />
@@ -410,6 +417,8 @@
     <Content Include="Views\Matricula\Create.cshtml" />
     <Content Include="Views\Matricula\Edit.cshtml" />
     <Content Include="Views\Matricula\Delete.cshtml" />
+    <Content Include="Views\ReciboCaja\ImprimirTodas.cshtml" />
+    <Content Include="Views\ReciboCaja\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -481,6 +490,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903291909095_Matricula1.resx">
       <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904021619175_ReciboCajaCamposalmacenados.resx">
+      <DependentUpon>201904021619175_ReciboCajaCamposalmacenados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904022050216_DatosHijo.resx">
+      <DependentUpon>201904022050216_DatosHijo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

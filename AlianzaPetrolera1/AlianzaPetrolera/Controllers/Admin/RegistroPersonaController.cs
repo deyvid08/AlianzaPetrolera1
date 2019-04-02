@@ -92,8 +92,6 @@ namespace AlianzaPetrolera.Controllers
                 // TODO: Add update logic here
                 var item = db.Personas.Where(x => x.Pers_Cod == model.Pers_Cod).First();
                 item.Pers_Cod =     model.Pers_Cod;
-                item.Pers_NickNom = model.Pers_NickNom;
-                item.Pers_Pwd =     model.Pers_Pwd;
                 item.Pers_Nom =     model.Pers_Nom;
                 item.Pers_Lstn1 =   model.Pers_Lstn1;
                 item.Pers_Lstn2 =   model.Pers_Lstn2;
