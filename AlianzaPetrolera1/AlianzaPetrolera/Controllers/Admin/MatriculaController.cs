@@ -70,7 +70,9 @@ namespace AlianzaPetrolera.Controllers.Admin
                     db.SaveChanges();
 
                     return RedirectToAction("Index");
-                }
+                }   
+
+
                 return View(Matriculas);
             }
             catch
