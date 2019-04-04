@@ -10,6 +10,7 @@ namespace AlianzaPetrolera.Models.Admin
 {
     public class Matricula
     {
+
         [Key]
         [Display(Name = "Id")]
         public int Matri_Id { get; set; }
