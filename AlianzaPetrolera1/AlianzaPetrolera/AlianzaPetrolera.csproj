@@ -196,73 +196,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903110824403_InitialCreate.cs" />
-    <Compile Include="Migrations\201903110824403_InitialCreate.Designer.cs">
-      <DependentUpon>201903110824403_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201904041810239_matri.cs" />
+    <Compile Include="Migrations\201904041810239_matri.Designer.cs">
+      <DependentUpon>201904041810239_matri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903111455340_inscripcion.cs" />
-    <Compile Include="Migrations\201903111455340_inscripcion.Designer.cs">
-      <DependentUpon>201903111455340_inscripcion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903112213235_Inscripcion2.cs" />
-    <Compile Include="Migrations\201903112213235_Inscripcion2.Designer.cs">
-      <DependentUpon>201903112213235_Inscripcion2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903122053584_Add-Migration Persona.cs" />
-    <Compile Include="Migrations\201903122053584_Add-Migration Persona.Designer.cs">
-      <DependentUpon>201903122053584_Add-Migration Persona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903122138156_campopapa.cs" />
-    <Compile Include="Migrations\201903122138156_campopapa.Designer.cs">
-      <DependentUpon>201903122138156_campopapa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903130002385_Modinscripcion.cs" />
-    <Compile Include="Migrations\201903130002385_Modinscripcion.Designer.cs">
-      <DependentUpon>201903130002385_Modinscripcion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903131847316_matricula.cs" />
-    <Compile Include="Migrations\201903131847316_matricula.Designer.cs">
-      <DependentUpon>201903131847316_matricula.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903131919533_Recibocaja.cs" />
-    <Compile Include="Migrations\201903131919533_Recibocaja.Designer.cs">
-      <DependentUpon>201903131919533_Recibocaja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903141944177_Recibocaja2.cs" />
-    <Compile Include="Migrations\201903141944177_Recibocaja2.Designer.cs">
-      <DependentUpon>201903141944177_Recibocaja2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903211529055_recibo3.cs" />
-    <Compile Include="Migrations\201903211529055_recibo3.Designer.cs">
-      <DependentUpon>201903211529055_recibo3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903220119439_RegistroHijoCiudad.cs" />
-    <Compile Include="Migrations\201903220119439_RegistroHijoCiudad.Designer.cs">
-      <DependentUpon>201903220119439_RegistroHijoCiudad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903221643156_incripciondetalles.cs" />
-    <Compile Include="Migrations\201903221643156_incripciondetalles.Designer.cs">
-      <DependentUpon>201903221643156_incripciondetalles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903260651039_errorinscripcion.cs" />
-    <Compile Include="Migrations\201903260651039_errorinscripcion.Designer.cs">
-      <DependentUpon>201903260651039_errorinscripcion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903261654405_restauracionBD.cs" />
-    <Compile Include="Migrations\201903261654405_restauracionBD.Designer.cs">
-      <DependentUpon>201903261654405_restauracionBD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903261951057_fkinscri2.cs" />
-    <Compile Include="Migrations\201903261951057_fkinscri2.Designer.cs">
-      <DependentUpon>201903261951057_fkinscri2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903261957000_fkinscri3.cs" />
-    <Compile Include="Migrations\201903261957000_fkinscri3.Designer.cs">
-      <DependentUpon>201903261957000_fkinscri3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903291909095_Matricula1.cs" />
-    <Compile Include="Migrations\201903291909095_Matricula1.Designer.cs">
-      <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>
+    <Compile Include="Migrations\201904041848291_matri2.cs" />
+    <Compile Include="Migrations\201904041848291_matri2.Designer.cs">
+      <DependentUpon>201904041848291_matri2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -283,6 +223,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-AliPetrolera-20190308044741.mdf" />
+    <Content Include="App_Data\aspnet-AliPetrolera-20190308044741_log.ldf">
+      <DependentUpon>aspnet-AliPetrolera-20190308044741.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\dbo.Trigger.sql" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
@@ -312,6 +257,7 @@
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\bienvenidapadre.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -410,9 +356,10 @@
     <Content Include="Views\Matricula\Create.cshtml" />
     <Content Include="Views\Matricula\Edit.cshtml" />
     <Content Include="Views\Matricula\Delete.cshtml" />
+    <Content Include="Views\Matricula\Create.cshtml" />
+    <Content Include="Views\Admin\BienvenidaPadre.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\RegistroRolPersona\" />
     <Folder Include="Views\RegistroUbicacion\" />
@@ -431,53 +378,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903110824403_InitialCreate.resx">
-      <DependentUpon>201903110824403_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904041810239_matri.resx">
+      <DependentUpon>201904041810239_matri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903111455340_inscripcion.resx">
-      <DependentUpon>201903111455340_inscripcion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903112213235_Inscripcion2.resx">
-      <DependentUpon>201903112213235_Inscripcion2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903122053584_Add-Migration Persona.resx">
-      <DependentUpon>201903122053584_Add-Migration Persona.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903122138156_campopapa.resx">
-      <DependentUpon>201903122138156_campopapa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903130002385_Modinscripcion.resx">
-      <DependentUpon>201903130002385_Modinscripcion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903131847316_matricula.resx">
-      <DependentUpon>201903131847316_matricula.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903131919533_Recibocaja.resx">
-      <DependentUpon>201903131919533_Recibocaja.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903141944177_Recibocaja2.resx">
-      <DependentUpon>201903141944177_Recibocaja2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903211529055_recibo3.resx">
-      <DependentUpon>201903211529055_recibo3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903220119439_RegistroHijoCiudad.resx">
-      <DependentUpon>201903220119439_RegistroHijoCiudad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903221643156_incripciondetalles.resx">
-      <DependentUpon>201903221643156_incripciondetalles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903260651039_errorinscripcion.resx">
-      <DependentUpon>201903260651039_errorinscripcion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903261654405_restauracionBD.resx">
-      <DependentUpon>201903261654405_restauracionBD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903261951057_fkinscri2.resx">
-      <DependentUpon>201903261951057_fkinscri2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903261957000_fkinscri3.resx">
-      <DependentUpon>201903261957000_fkinscri3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904041848291_matri2.resx">
+      <DependentUpon>201904041848291_matri2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903291909095_Matricula1.resx">
       <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>

@@ -22,6 +22,8 @@ namespace AlianzaPetrolera.Controllers
 
                     var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
 
+
+                    
                     ////Crear Role 
 
                     //var resultado = roleManager.Create(new IdentityRole("Padre"));

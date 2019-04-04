@@ -14,9 +14,9 @@ namespace AlianzaPetrolera.Controllers.Admin
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Categoria
-        public ActionResult Index( string nombreestudiante, int Insc_Id1, int documentoestu,string apellidoestu,string idestu)
+        public ActionResult Index(string nombreestudiante, int Insc_Id1, int documentoestu, string apellidoestu, string idestu)
         {
-            
+
             ViewBag.Message = nombreestudiante;
             ViewBag.IdInscripcion = Insc_Id1;
             ViewBag.documentoestud = documentoestu;
@@ -25,7 +25,7 @@ namespace AlianzaPetrolera.Controllers.Admin
 
 
 
-           var TodasCate = db.Categorias.ToList();
+            var TodasCate = db.Categorias.ToList();
             return View(TodasCate);
         }
 
@@ -71,7 +71,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             {
                 if (ModelState.IsValid)
                 {
-                    
+
                     db.Categorias.Add(Categorias);
                     db.SaveChanges();
 
@@ -124,7 +124,7 @@ namespace AlianzaPetrolera.Controllers.Admin
                 // TODO: Add update logic here
                 var item = db.Categorias.Where(x => x.Cate_Id == model.Cate_Id).First();
                 item.Cate_Id = model.Cate_Id;
-                
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
