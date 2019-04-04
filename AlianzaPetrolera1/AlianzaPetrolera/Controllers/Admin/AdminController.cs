@@ -58,22 +58,31 @@ namespace AlianzaPetrolera.Controllers.Admin
                     case "Admin":
 
                         var resultado1 = roleManager.Create(new IdentityRole("Administrador"));
-                        resultado = userManager.AddToRole(userId, "Administrador");
+                        resultado1 = userManager.AddToRole(userId, "Administrador");
 
                         break;
 
                     case "AdminJefe":
 
                         var resultado2 = roleManager.Create(new IdentityRole("AdminJefe"));
-                        resultado = userManager.AddToRole(userId, "AdminJefe");
+                        resultado2 = userManager.AddToRole(userId, "AdminJefe");
 
                         break;
 
                     case "Entrenador":
 
                         var resultado3 = roleManager.Create(new IdentityRole("Entrenador"));
-                        resultado = userManager.AddToRole(userId, "Entrenador");
+                        resultado3 = userManager.AddToRole(userId, "Entrenador");
                         break;
+
+                    //default:
+                    //       ////rear Role 
+                    //    var resultado7 = roleManager.Create(new IdentityRole("Padre"));
+                    //    ////Agregar Usuario A Role
+
+                    //    resultado7 = userManager.AddToRole(userId, "Padre");
+
+                    //    break;
 
                     
 

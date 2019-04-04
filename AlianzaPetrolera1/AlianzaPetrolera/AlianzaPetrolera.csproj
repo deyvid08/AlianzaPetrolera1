@@ -223,6 +223,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-AliPetrolera-20190308044741.mdf" />
+    <Content Include="App_Data\aspnet-AliPetrolera-20190308044741_log.ldf">
+      <DependentUpon>aspnet-AliPetrolera-20190308044741.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\dbo.Trigger.sql" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
@@ -354,7 +359,6 @@
     <Content Include="Views\Admin\BienvenidaPadre.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\RegistroRolPersona\" />
     <Folder Include="Views\RegistroUbicacion\" />
