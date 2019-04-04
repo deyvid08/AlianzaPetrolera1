@@ -1,29 +1,29 @@
 ﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Categoria>
 
-@{
+    @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    }
 
-<br />
-<br />
-<h2>Gestión Matricula/Categoria</h2>
+    <br />
+    <br />
+    <h2>Gestión Matricula/Categoria</h2>
 
-<div class="p-3 mb-2 bg-secondary text-white">@ViewBag.Message</div>
+    <div class="p-3 mb-2 bg-secondary text-white">@ViewBag.Message</div>
 
-<br />
-<br />
-<div class="container">
-    <table class="table table-hover table-dark">
-        <tr class="bg-warning text-white text-center">
-            <th style="border: none;">
-                @Html.DisplayNameFor(model => model.Cate_Name)
-            </th>
-            <th style="border: none;"></th>
-        </tr>
+    <br />
+    <br />
+    <div class="container">
+        <table class="table table-hover table-dark">
+            <tr class="bg-warning text-white text-center">
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Cate_Name)
+                </th>
+                <th style="border: none;"></th>
+            </tr>
 
-        @foreach (var item in Model)
-        {
+            @foreach (var item in Model)
+            {
             <tr class="text-center">
                 <td>
                     @Html.DisplayFor(modelItem => item.Cate_Name)
@@ -31,8 +31,8 @@
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         @*<button type="button" class="btn btn-warning text-white">
-            @Html.ActionLink("Edit", "Edit", new { id = item.Cate_Id }, htmlAttributes: new { @style = "color:#fff; " })
-        </button>*@
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Cate_Id }, htmlAttributes: new { @style = "color:#fff; " })
+                        </button>*@
                         @*<button type="button" class="btn btn-warning text-white">
                             @Html.ActionLink("Details", "Details", new { id = item.Cate_Id }, htmlAttributes: new { @style = "color:#fff; " })
                         </button>*@
@@ -40,11 +40,11 @@
                             @Html.ActionLink("Matricular", "Create", "Matricula", new { Nomcategoria = item.Cate_Name ,cod_persona= @ViewBag.idest, nom_estu=@ViewBag.Message, apell_estu = @ViewBag.apellidoes,documento_estu= @ViewBag.documentoestud,idinscripcion= @ViewBag.IdInscripcion }, htmlAttributes: new { @style = "color:#fff; " })
                         </button>
                         @*@Html.ActionLink("Generar Recibo", "index", "ReciboCaja", new { id = item.Cate_Id })*@
-                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { nombrecate = item.Cate_Name, nombreestu = ViewBag.Message }, htmlAttributes: new { @style = "color:#fff; " })      </button>
+                        @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { nombrecate = item.Cate_Name, nombreestu = ViewBag.Message }, htmlAttributes: new { @style = "color:#fff; " })      </button>*@
                     </div>
                 </td>
             </tr>
-        }
+            }
 
-    </table>
+        </table>
     </div>

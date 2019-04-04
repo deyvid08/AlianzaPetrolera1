@@ -7,13 +7,13 @@ namespace AlianzaPetrolera.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class nuevamigracion : IMigrationMetadata
+    public sealed partial class matri : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(nuevamigracion));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(matri));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903272152493_nuevamigracion"; }
+            get { return "201904041810239_matri"; }
         }
         
         string IMigrationMetadata.Source

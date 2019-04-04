@@ -93,15 +93,14 @@
                     @Html.TextBoxFor(m => m.Pers_Doc, new { @class = "form-control" })
                 </div>
             </div>
-            @if(User.IsInRole("Administrador"))
-            {
+           
             <div class="form-group col-md-4">
                 @Html.LabelFor(m => m.RolP_Id, new { @class = "col-md-2 control-label" })
                 <div class="col-md-10">
                     @Html.EnumDropDownListFor(m => m.RolP_Id, new { @class = "form-control" })
                 </div>
             </div>
-            }
+           
 
             
         </div>

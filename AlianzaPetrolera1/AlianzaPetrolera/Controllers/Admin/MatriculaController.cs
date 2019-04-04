@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
-    
+
     public class MatriculaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -44,11 +44,11 @@ namespace AlianzaPetrolera.Controllers.Admin
         public ActionResult Create(string Nomcategoria, string cod_persona, string nom_estu, string apell_estu, int documento_estu, int idinscripcion)
         {
 
-            ViewBag.NombreEstu = nom_estu;
-            ViewBag.CodPers = cod_persona;
             ViewBag.IdInscripcion = idinscripcion;
-            ViewBag.documentoestud = documento_estu;
+            ViewBag.CodPers = cod_persona;
+            ViewBag.NombreEstu = nom_estu;
             ViewBag.apellidoes = apell_estu;
+            ViewBag.documentoestud = documento_estu;
             ViewBag.Nomcategoria = Nomcategoria;
 
             return View();
@@ -56,9 +56,9 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         // POST: Matricula/Create
         [HttpPost]
-        public ActionResult Create(Matricula Matriculas )
+        public ActionResult Create(Matricula Matriculas)
         {
-         
+
 
 
             try
@@ -99,7 +99,7 @@ namespace AlianzaPetrolera.Controllers.Admin
                 //item.Cate_Id = model.Cate_Id;
                 //item.Matr_Fecha = model.Matr_Fecha;
                 item.Matri_Esta = model.Matri_Esta;
-                
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
