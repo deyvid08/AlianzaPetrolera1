@@ -1,114 +1,156 @@
 ﻿@model AlianzaPetrolera.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Registrarse";
+    ViewBag.Title = "Registro Padre Familia";
 }
 
-<h2>@ViewBag.Title</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Cree una cuenta nueva.</h4>
+<div class="container">
+    
+    <br />
+    <br />
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
+    <h2>@ViewBag.Title</h2>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_Nom, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Pers_Nom, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_Lstn1, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Pers_Lstn1, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_Lstn2, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Pers_Lstn2, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_TypeDoc, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.EnumDropDownListFor(m => m.Pers_TypeDoc, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_Doc, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Pers_Doc, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.RolP_Id, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.EnumDropDownListFor(m => m.RolP_Id, new { @class = "form-control" })
-        </div>
-    </div>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_Birth, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(m => m.Pers_Birth, new { htmlAttributes = new { @class = "form-control datepicker" } })
-            @Html.ValidationMessageFor(m => m.Pers_Birth, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_Dir, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Pers_Dir, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_Cel, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Pers_Cel, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Pers_Tel, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Pers_Tel, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Registrarse" />
-        </div>
-    </div>
-}
+        <hr />
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                </div>
+            </div>
 
-<div>
-    @Html.ActionLink("Volver", "Index")
-</div>
+            <div class="form-group col-md-6">
+                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                <div class="col-md-6">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+
+                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+
+        </div>
+
+        <hr />
+        <h4>Datos Personales</h4>
+        <div class="form-row">
+
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.Pers_Nom, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Pers_Nom, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.Pers_Lstn1, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Pers_Lstn1, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.Pers_Lstn2, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Pers_Lstn2, new { @class = "form-control" })
+                </div>
+            </div>
+
+        </div>
+
+        <hr />
+
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.Pers_TypeDoc, new { @class = " control-label" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(m => m.Pers_TypeDoc, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.Pers_Doc, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Pers_Doc, new { @class = "form-control" })
+                </div>
+            </div>
+            @if(User.IsInRole("Administrador"))
+            {
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.RolP_Id, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(m => m.RolP_Id, new { @class = "form-control" })
+                </div>
+            </div>
+            }
+
+            
+        </div>
+
+
+        <br />
+        <hr />
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.Pers_Birth, htmlAttributes: new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.Pers_Birth, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                    @Html.ValidationMessageFor(m => m.Pers_Birth, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.Pers_Dir, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Pers_Dir, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(m => m.Pers_Cel, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Pers_Cel, new { @class = "form-control" })
+                </div>
+            </div>
+         </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Pers_Tel, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Pers_Tel, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-warning" value="Registrarse" />
+                </div>
+            </div>
+            }
+        </div>
+        <div>
+            @Html.ActionLink("Volver", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

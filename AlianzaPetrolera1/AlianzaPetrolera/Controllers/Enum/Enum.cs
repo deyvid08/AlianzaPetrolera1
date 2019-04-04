@@ -16,8 +16,8 @@ namespace AlianzaPetrolera.Controllers.Enum
     }
     public enum Roles
     {
-        Admin = 2,
-        Entrenador_Lider,
+        Padre = 0,
+        Admin,
         Entrenador,
         SuperAdmin,
         AdminJefe

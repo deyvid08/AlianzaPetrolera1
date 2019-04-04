@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AlianzaPetrolera.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Net.Mail;
 
 namespace AlianzaPetrolera.Controllers
 {
@@ -161,16 +162,19 @@ namespace AlianzaPetrolera.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                   
-                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                        // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
-                        // Enviar correo electrónico con este vínculo
-                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                        // await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
 
-                        return RedirectToAction("Index", "Home");
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
+                    // Enviar correo electrónico con este vínculo
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
+                    SendEmail(model.Email + " " + model.Email, model.Email, model.Email);
+                  
+
+                    return RedirectToAction("BienvenidaPadre", "Admin",new { roles=model.RolP_Id });
                     }
                 
                 
@@ -185,6 +189,38 @@ namespace AlianzaPetrolera.Controllers
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
             return View(model);
         }
+
+      
+
+        private void SendEmail(string NameUser, string Email, string Usuario)
+        {
+            MailMessage solicitud = new MailMessage();
+            solicitud.Subject = "Bienvenida a la familia";
+            solicitud.Body = "Cordial saludo " + "<br/>" +
+                "Sr(a). " + NameUser + "<br/>" +
+               "<br/>" + "Es un placer darle la bienvenida a la Plataforma " +
+               "<br/>" + "Ingrese y comience con su proceso " +
+               "<br/>" +
+               "<br/>" + "Tus datos de accesos son los siguientes" +
+               "<br/>" +
+               "<br/>" + "Usuario: " + Usuario +
+               "<br/>" + "Contraseña: " + Usuario +
+            "<br/>" + "link:" + "https://www.aprendeyavanza2.com.co/Gastronomia/" +
+            "<br/>" +
+            "<br/>" + "¡Éxitos!" +
+            "<br/>" +
+            "<br/>" + "Equipo de Soporte SCORE";
+
+            solicitud.To.Add(Email);
+            solicitud.IsBodyHtml = true;
+            var smtp2 = new SmtpClient();
+            smtp2.Send(solicitud);
+        }
+
+
+       
+
+
 
         //
         // GET: /Account/ConfirmEmail
