@@ -41,7 +41,7 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
         // GET: Matricula/Create
-        public ActionResult Create(string Nomcategoria, string cod_persona, string nom_estu, string apell_estu, int documento_estu, int idinscripcion)
+        public ActionResult Create(string Nomcategoria, string cod_persona, string nom_estu, string apell_estu, string documento_estu, int? idinscripcion)
         {
 
             ViewBag.IdInscripcion = idinscripcion;

@@ -1,9 +1,19 @@
 ﻿using AlianzaPetrolera.Models;
 using AlianzaPetrolera.Models.Admin;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using iTextSharp.tool.xml.parser;
+using iTextSharp.tool.xml.pipeline.css;
+using iTextSharp.tool.xml.pipeline.end;
+using iTextSharp.tool.xml.pipeline.html;
+using Microsoft.AspNet.Identity;
 using Rotativa;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,6 +23,8 @@ namespace AlianzaPetrolera.Controllers.Admin
     public class ReciboCajaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected ApplicationDbContext ApplicationDbContext { get; set; }
+        protected UserManager<ApplicationUser> UserManager { get; set; }
         // GET: RegistroPersona
         public ActionResult Index()
         {
@@ -77,8 +89,10 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
       
-        public ActionResult ImprimirTodas()
+        public ActionResult ImprimirTodas(string nombrecate, string nombreestu)
         {
+            ViewBag.Message = nombrecate;
+            ViewBag.Message2 = nombreestu;
 
             var report = new ViewAsPdf("Create")
             {
@@ -143,5 +157,203 @@ namespace AlianzaPetrolera.Controllers.Admin
                 return View();
             }
         }
+
+        public ActionResult CreatePdf2(string id, string nombrecate, string nombreestu)
+        {
+            //var user = ApplicationDbContext.Users.Find(GetActualUserId().Id);
+            //var cert = ApplicationDbContext.Certifications.FirstOrDefault(x => x.Enrollment.Modu_Id == id && x.User_Id == user.Id);
+            //var enrollments = ApplicationDbContext.Enrollments.Single(x => x.Modu_Id == id && x.User_Id == user.Id);
+
+            var NomCate = ViewBag.Message = nombrecate;
+             ViewBag.Message2 = nombreestu;
+
+            var inputString = @"<html>
+                                <body> 
+                                    <div class='form-horizontal'>
+                                        <br />
+                                        <br />
+                                        <div class='form-row'>
+                                            <div class='col-sm-6'>
+                                                < img src='C:/Users/ADMIN/source/repos/AlianzaPetrolera12/AlianzaPetrolera1/AlianzaPetrolera/Content/images/logo.png'width='200px';height='250px'/>
+                                            </ div >
+                                    
+                                            <div class='col-sm-6' style='margin-top:2em;'>
+                                                <h5 ALIGN = 'RIGHT' style='font-family:Arial Black, Gadget, sans-serif; font-size: 35px;color:#0A122A;'>N° Recibo: " + ViewBag.Message + @"</h5>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <br /> 
+                                    <div class='row'>
+                                        <div class='col-sm-8'>
+                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>Estudiante:" + @ViewBag.Message2 + @"</h6>
+                                        </div>
+                                    
+                                        <div class='col-sm-4'>
+                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>Fecha Y Generalización Recibo</h6>
+                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>" + DateTime.Now + @"</h6>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <br />
+                                    <div class='row'>
+                                        <div class='col-sm-8'>
+                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>Tipo Cuenta: Ahorros</h6>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>Bancolombia</h6>
+                                        </div>
+                                        <div class='col-sm-12'>
+                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>#1215684-154541-12152</h6>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <br />
+                                    <div class='container' style=' border: 1px solid; border - color: #A59D9B; padding:10px 10px 10px 10px;'>
+                                        <div class='container'>
+                                            <form method='post'>
+                                                <table class='egt'>  
+                                                    <tr>
+                                    
+                                                    <th scope='row'>Matricula</th>
+                                    
+                                                    <th> Poliza Accidentes: </th>
+                                      
+                                                    <th> Uniforme : </th>
+                                         
+                                                    <th> Mensualidad : </th>
+                                                    
+                                                    </ tr >
+                                                    
+                                                    <tr>
+                                                        <td>
+                                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>$ 80.000</h6>
+                                                        </td>
+                                      
+                                                        <td>
+                                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>$ 10.000</h6>
+                                                        </td>
+                                    
+                                                        <td>
+                                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>$ 50.000</h6>
+                                                         </td>
+                                    
+                                                        <td>
+                                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>$ 80.000</h6>
+                                                        </td>
+                                    
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                    
+                                                        <th>Descuento </th>
+                                    
+                                                        <th>Descuento </th>
+                                    
+                                                        <th>Descuento </th>
+                                    
+                                                        <th>Descuento </th>
+                                    
+                                                    </tr>
+                                    
+                                                    <tr>
+                                    
+                                                        <td>
+                                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>5 %</h6>
+                                                        </td>
+                                      
+                                                        <td>
+                                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>10 %</h6>
+                                                        </td>
+                                    
+                                                        <td>
+                                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>15 %</h6>
+                                                        </td>
+                                    
+                                                        <td>
+                                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>20 %</h6>
+                                                        </td>
+                                    
+                                                    </tr>
+                                                </table>
+                                                <div class='col-sm-12'>
+                                                    <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>Total a Pagar: ""</h6>
+                                                </div>
+                                            </form >
+                                        </div>
+                                    </div>
+                                </div>
+                                </body>
+                                </html>";
+
+  //          < div  style = 'float:left;width:550px;height='200px; '>
+  //                                         < h4 style = 'font-family:Arial Black, Gadget, sans-serif; font-size: 70px;color:#0A122A;' > CERTIFICADO </ h4 >
+ 
+  //                                   </ div >
+ 
+  //                                   < div style = 'float:right;' >
+  
+  //                                        < img src = 'http://localhost/SaludVida/Recursos/logo-campana.png'width = '150px'; height = '150px' />
+       
+  //                                         </ div >
+       
+  //                                         < H3 ALIGN = 'center'style = 'font-family:Arial Black, Gadget, sans-serif; font-size: 40px; margin: -20px;color:#0A122A;' >< strong > Otorgado a:</ strong >  </ H3 >
+               
+  //                                                 < br ></ br >
+               
+  //                                                 < h3 ALIGN = 'center' style = 'font-family:Britannic Bold; font-size: 30px;color:#FF9800;' ></ h3 >
+                  
+  //                                                    < h4 ALIGN = 'center'style = 'font-family:Britannic Bold;' > Identificado(a) con cédula de ciudadanía número </ h4 >
+                       
+  //                                                         < H4 ALIGN = 'center'style = 'font-family:Britannic Bold;' > Por haber aprobado el curso virtual de:</H4>
+  //                                  < H4 ALIGN = 'center'style='font-family:Arial Black,Gadget,sans-serif; font-size: 60px;color:#0A122A;' > </ H4 >
+  //                                  < h4 ALIGN = 'center'style='font-family:Britannic Bold;'>En testimonio de lo anterior se firma en</h4>
+  //                                  <div ALIGN = 'center' >
+  
+  //                                        < br ></ br >< br ></ br >
+  
+  //                                        < h3 ALIGN= 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > ________________________ </ h3 >
+  
+  //                                        < h3 ALIGN= 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > Camilo Jaramillo Botero</h3>
+  //                                      <h5 ALIGN = 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > Gerente de Ventas y Mercadeo</h5>
+  //                                  </div>  
+  //                                  <div style = 'float:left' >
+  
+  //                                    </ div >
+  //
+
+
+              List<string> cssFiles = new List<string>();
+            cssFiles.Add(@"/Content/bootstrap.css");
+            var output = new MemoryStream();
+            var input = new MemoryStream(Encoding.UTF8.GetBytes(inputString));
+            Document document = new Document(PageSize.A4);
+            var writer = PdfWriter.GetInstance(document, output);
+            writer.CloseStream = false;
+            document.Open();
+            var htmlContext = new HtmlPipelineContext(null);
+            htmlContext.SetTagFactory(iTextSharp.tool.xml.html.Tags.GetHtmlTagProcessorFactory());
+            ICSSResolver cssResolver = XMLWorkerHelper.GetInstance().GetDefaultCssResolver(false);
+            cssFiles.ForEach(i => cssResolver.AddCssFile(System.Web.HttpContext.Current.Server.MapPath(i), true));
+            var pipeline = new CssResolverPipeline(cssResolver, new HtmlPipeline(htmlContext, new PdfWriterPipeline(document, writer)));
+            var worker = new XMLWorker(pipeline, true);
+            var p = new XMLParser(worker);
+            p.Parse(input);
+            document.Close();
+            output.Position = 0;
+            Response.Clear();
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("Content-Disposition", "attachment; filename=Certificado.pdf");
+            Response.BinaryWrite(output.ToArray());
+            Response.Flush();
+            Response.Close();
+            Response.End();
+            return RedirectToAction("Report_Person");
+        }
+        //public ApplicationUser GetActualUserId()
+        //{
+        //    var userId = User.Identity.GetUserId();
+        //    var user = UserManager.FindById(userId);
+        //    return user;
+        //}
     }
 }

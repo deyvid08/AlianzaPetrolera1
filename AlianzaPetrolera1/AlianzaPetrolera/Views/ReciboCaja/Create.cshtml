@@ -39,7 +39,7 @@
                 <img src="~/Content/images/logo.png" />
             </div>
 
-            <div class="col-sm-2" style="margin-top:2em;">
+            <div  class="col-sm-2" style="margin-top:2em;">
                 <h5>N° Recibo 0001</h5>
             </div>
         </div>
@@ -101,20 +101,20 @@
                         <tr>
                             <td>
 
-                                <input type="number" id="number" name="value1" class="text-center" value="800000" >
+                                <input type="number" name="value1" value="80000" class="text-center">
 
                             </td>
                             <td>
-                                <input type="number" name="value3" value="800000" class="text-center">
+                                <input type="number" name="value3" value="10000" class="text-center">
 
                             </td>
 
                             <td>
-                                <input type="number" name="value5" value="800000" class="text-center">
+                                <input type="number" name="value5" value="50000" class="text-center">
                             </td>
 
                             <td>
-                                <input type="number" name="value7" value="800000" class="text-center">
+                                <input type="number" name="value7" value="80000" class="text-center">
                             </td>
 
                         </tr>
@@ -156,7 +156,7 @@
 
                         </tr>
 
-                    
+
 
                     </table>
 
@@ -170,64 +170,67 @@
                     <p>
                         @Html.ActionLink("Generar Recibo", "ImprimirTodas")
                     </p>
+                    <p>
+                        @Html.ActionLink("Imprimir Pdf2", "CreatePdf2","ReciboCaja", new { nombrecate = @ViewBag.Message, nombreestu = @ViewBag.Message2 })
+                    </p>
 
 
 
 
                     @*<br />
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Matricula: </span>
-                            </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Matricula: </span>
+            </div>
 
-                            <input id="number" type="text" aria-label="First name" name="value1" value="80000" class="form-control">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Descuento: </span>
-                            </div>
-                            <input type="text" aria-label="Last name" name="value2" class="form-control">
-                        </div>
-                        <br />
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Poliza Accidentes: </span>
-                            </div>
+            <input id="number" type="text" aria-label="First name" name="value1" value="80000" class="form-control">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Descuento: </span>
+            </div>
+            <input type="text" aria-label="Last name" name="value2" class="form-control">
+        </div>
+        <br />
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Poliza Accidentes: </span>
+            </div>
 
-                            <input type="text" aria-label="First name" name="value3" value="10000" class="form-control">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Descuento: </span>
-                            </div>
-                            <input type="text" aria-label="Last name" name="value4" class="form-control">
-                        </div>
-                        <br />
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> Uniforme: </span>
-                            </div>
+            <input type="text" aria-label="First name" name="value3" value="10000" class="form-control">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Descuento: </span>
+            </div>
+            <input type="text" aria-label="Last name" name="value4" class="form-control">
+        </div>
+        <br />
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> Uniforme: </span>
+            </div>
 
-                            <input type="text" aria-label="First name" name="value5" value="50000" class="form-control">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Descuento: </span>
-                            </div>
-                            <input type="text" aria-label="Last name" name="value6" class="form-control">
-                        </div>
-                        <br />
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">  Mensualidad: </span>
-                            </div>
+            <input type="text" aria-label="First name" name="value5" value="50000" class="form-control">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Descuento: </span>
+            </div>
+            <input type="text" aria-label="Last name" name="value6" class="form-control">
+        </div>
+        <br />
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">  Mensualidad: </span>
+            </div>
 
-                            <input type="text" aria-label="First name" name="value7" value="80000" class="form-control">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Descuento: </span>
-                            </div>
-                            <input type="text" aria-label="Last name" name="value8" class="form-control">
-                        </div>
+            <input type="text" aria-label="First name" name="value7" value="80000" class="form-control">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Descuento: </span>
+            </div>
+            <input type="text" aria-label="Last name" name="value8" class="form-control">
+        </div>
 
-                        <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
-                        <B><h2>@ViewBag.totfin</h2></B>
-                        <p>
-                            @Html.ActionLink("Generar Recibo", "ImprimirTodas")
-                        </p>*@
+        <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
+        <B><h2>@ViewBag.totfin</h2></B>
+        <p>
+            @Html.ActionLink("Generar Recibo", "ImprimirTodas")
+        </p>*@
                 </form>
             </div>
 

@@ -5,46 +5,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2 aling="center">Matriculas</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
+</p>*@
+<table class="table table-hover table-dark">
+    <tr class="bg-warning text-white text-center">
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Insc_Id)
         </th>
-        <th>
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Mat_IdEst)
         </th>
-        <th>
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Mat_Nom)
         </th>
-        <th>
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Mat_Apel)
         </th>
-        <th>
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Mat_Doc)
         </th>
-        <th>
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Peri_Id)
         </th>
-        <th>
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Cate_Id)
         </th>
-        <th>
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Matr_Fecha)
         </th>
-        <th>
+        <th style="border: none;">
             @Html.DisplayNameFor(model => model.Matri_Esta)
         </th>
-        <th></th>
+        <th style="border: none;"></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr class="text-center">
             <td>
                 @Html.DisplayFor(modelItem => item.Insc_Id)
             </td>
@@ -73,9 +73,17 @@
                 @Html.DisplayFor(modelItem => item.Matri_Esta)
             </td>
             <td>
-                @Html.ActionLink("Activar", "Edit", new { id = item.Matri_Id }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.Matri_Id }) |
-                @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { id = item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom })
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-warning text-white">
+                        @Html.ActionLink("Activar", "Edit", new { id = item.Matri_Id })
+                    </button>
+                    <button type="button" class="btn btn-warning text-white">
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.Matri_Id })
+                    </button>
+                    <button type="button" class="btn btn-warning text-white">
+                        @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { id = item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom }, htmlAttributes: new { @style = "color:#fff; " })
+                    </button>
+                </div>
             </td>
         </tr>
     }
