@@ -8,7 +8,6 @@ using iTextSharp.tool.xml.pipeline.css;
 using iTextSharp.tool.xml.pipeline.end;
 using iTextSharp.tool.xml.pipeline.html;
 using Microsoft.AspNet.Identity;
-using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -42,23 +41,25 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
         // GET: Recibo/Create
-        public ActionResult Create(string nombrecate,string nombreestu, string idcod)
+        public ActionResult Create(string nombrecate,string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
             Session["MySessionVariable3"] = nombrecate;
+            Session["MySessionVariable9"] = documentoestud;
+            Session["MySessionVariable1"] = apellidoes;
             return View();
         }
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod)
+        public ActionResult Create(float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
             Session["MySessionVariable3"] = nombrecate;
-
-            
+            Session["MySessionVariable9"] = documentoestud;
+            Session["MySessionVariable1"] = apellidoes;
 
             //ViewBag.Message = nombrecate;
             //ViewBag.Message2 = nombreestu;
@@ -100,32 +101,6 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
-      
-        public ActionResult ImprimirTodas(string nombrecate/*, string nombreestu*/)
-        {
-            ViewBag.Message = nombrecate;
-            //ViewBag.Data["nombreestu"] = nombreestu;
-
-            var report = new ViewAsPdf("Create")
-            {
-
-            
-
-            CustomSwitches =
-            "--footer-center \"  Created Date: " +
-          DateTime.Now.Date.ToString("dd/MM/yyyy") + "  Page: [page]/[toPage]\"" +
-          " --footer-line --footer-font-size \"12\" --footer-spacing 1 --footer-font-name \"Segoe UI\""
-
-
-            };
-            return report;
-
-
-
-
-
-
-        }
         // GET: Recibo/Edit/5
         public ActionResult Edit(int id)
         {

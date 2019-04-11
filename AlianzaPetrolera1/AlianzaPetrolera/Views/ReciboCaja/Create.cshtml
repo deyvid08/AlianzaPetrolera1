@@ -47,9 +47,9 @@
         <br />
         <div class="row">
             <div class="col-sm-8">
-                <h6>Estudiante: @Session["MySessionVariable"].ToString() </h6>
+                <h6>Estudiante: @Session["MySessionVariable"].ToString() @Session["MySessionVariable1"].ToString() </h6>
             </div>
-
+            
             <div class="col-sm-4">
                 <h6>Fecha de Generación Recibo</h6>
                 <h6> @Session["MySessionVariable2"].ToString() </h6>
@@ -59,7 +59,10 @@
         <hr />
         <br />
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-8">
+                <h6>Documento: @Session["MySessionVariable9"].ToString() </h6>
+            </div>
+            <div class="col-sm-4">
                 <h6>Categoria: @Session["MySessionVariable3"].ToString() </h6>
             </div>
 
