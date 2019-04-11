@@ -60,7 +60,7 @@ namespace AlianzaPetrolera.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ConexAlianzaPA", throwIfV1Schema: false)
         {
         }
         public DbSet<Persona> Personas { set; get; }

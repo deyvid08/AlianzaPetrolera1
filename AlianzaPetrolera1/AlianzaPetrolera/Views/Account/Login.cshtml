@@ -65,8 +65,8 @@
     <div id="formContent">
         <!-- Tabs Titles -->
         <!-- Icon -->
-        <div class="fadeIn first">
-            <img src="~/Content/images/logo.png" id="icon" alt="User Icon" />
+        <div class="imagenLogin fadeIn first" style="margin:5%">
+            <img  src="~/Content/images/logo.png" />
         </div>
         <!-- Login Form -->
         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -74,8 +74,8 @@
             @Html.AntiForgeryToken()
 
             <form>
-                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Usuario" })
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Contraseña", @id = "password",@style="margin-left:5em;" })
+                @Html.TextBoxFor(m => m.UserName, new {@class= "fadeIn two", @placeholder = "Usuario" })
+                @Html.PasswordFor(m => m.Password, new { @class = "fadeIn two", @placeholder = "Contraseña", @id = "password" })
                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger fadeIn third", @id = "password" })
 
                 <input type="submit" value="Iniciar sesión" class="btn btn-default" />

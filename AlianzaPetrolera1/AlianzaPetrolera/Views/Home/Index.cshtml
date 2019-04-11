@@ -8,61 +8,61 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-
-    <img src="~/Content/images/background.jpg" class="img-fluid" id="fondo" alt="Responsive image">
-
-</div>
-
-<br />
-<br />
-
-
-<div class="row">
-
-    <div class="col-md-6" style="background-color:#dfd003;">
-        <div class="container">
-            <h2>REGISTRO</h2>
-
-
-
-
-            <p><a class="btn btn-default" href="~/RegistroPersona/Create">RESGISTRARME</a></p>
+<div class="imagenPrincipal">
+    
+    <div class="tituloBienvenida">
+        <div class="titulosPrincipales">
+            <h1>¡Haz parte de nuestra Escuela!</h1>
+            <h3 class="centrarSub">Te estamos Esperando</h3>
         </div>
+    </div>
+    <img src="~/Content/images/background.jpg" class="img-fluid" id="fondo" alt="Responsive image">
+</div>
+<div class="imagenesEmpresariales">
+    <div class="imagenBanner">
+        <img src="~/Content/images/aasssd (1).png" alt="Alternate Text" />
+    </div>
+    <div class="imagenBanner">
+        <img src="~/Content/images/aasssd (2).png" alt="Alternate Text" />
+    </div>
+    <div class="imagenBanner">
+        <img src="~/Content/images/logo.png" alt="Alternate Text" />
+    </div>
+</div>
+<div class="contenedorPrincipal">
+    <div class="primerContenedor">
+            <h2 class="tituloRegistro">REGISTRO</h2>
+        <p>Haz clic en el botón registrarme para que inscribas a tu hijo(a) y comienza a ser parte de nuestra institucion</p>
+            <h2 class="tituloRegistro"><a class="btn btn-default" href="~/RegistroPersona/Create">RESGISTRARME</a></h2>
     </div>
     @*<div class="col-md-4">
             <h2>Get more libraries</h2>
             <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
             <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
         </div>*@
-    <div class="col-md-6" style="background-color:#2d2d2d;">
-        <div class="container">
-
+    <div class="segundoContenedor">
             <!-- Tabs Titles -->
             <!-- Icon -->
-            <div class="fadeIn first">
-                <img src="~/Content/images/logo.png" id="icon" alt="User Icon" style="margin-left:8em;" />
+            <div class="imagenFormulario">
+                <img src="~/Content/images/logo.png" id="icon" alt="User Icon"/>
             </div>
-            <br />
             <!-- Login Form -->
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
+            <div class="formularioIngreso">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <form>
+                        @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Usuario"})
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Contraseña", @id = "password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger fadeIn third", @id = "password" })
+                        <input type="submit" value="Iniciar sesión" />
+                    </form>
+                    @*<div class="formFooter">
+                        <a class="underlineHover" href="#">¿Olvido Su Contraseña?</a>
+                    </div>*@
+                    <!-- Remind Passowrd -->
 
-                <form>
-                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Usuario", @style = "margin-left:5em;" })
-                    <br />
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Contraseña", @id = "password", @style = "margin-left:5em;" })
-                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger fadeIn third", @id = "password", @style = "margin-left:5em;" })
-                    <br />
-                    <input type="submit" value="Iniciar sesión"style="margin-left:10em;" class="btn btn-warning" />
-                </form>
-                <!-- Remind Passowrd -->
-                <div id="formFooter">
-                    <a class="underlineHover" href="#">¿Olvido Su Contraseña?</a>
-                </div>
-            }
-        </div>
+                }
+            </div>
     </div>
-
 </div>

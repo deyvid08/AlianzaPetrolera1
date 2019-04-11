@@ -1,0 +1,7 @@
+Instalar desde administrador de Nuget la siguiente libreria:
+
+Install-Package Microsoft.ApplicationInsights.Web
+
+Esta libreria corrige el error en el servidor
+
+'Could not load file or assembly 'Microsoft.AI.Web' or one of its dependencies. The system cannot find the file specified.'
