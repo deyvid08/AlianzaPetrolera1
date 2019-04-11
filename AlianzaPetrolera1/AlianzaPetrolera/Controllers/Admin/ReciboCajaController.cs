@@ -16,6 +16,8 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
+using HiQPdf;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
@@ -40,21 +42,26 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
         // GET: Recibo/Create
-        public ActionResult Create(string nombrecate,string nombreestu)
+        public ActionResult Create(string nombrecate,string nombreestu, string idcod)
         {
-            ViewBag.Message = nombrecate;
-            ViewBag.Message2 = nombreestu;
+            Session["MySessionVariable"] = nombreestu;
+            Session["MySessionVariable2"] = DateTime.Now;
+            Session["MySessionVariable3"] = nombrecate;
             return View();
         }
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc,string nombrecate,string nombreestu)
+        public ActionResult Create(float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod)
         {
+            Session["MySessionVariable"] = nombreestu;
+            Session["MySessionVariable2"] = DateTime.Now;
+            Session["MySessionVariable3"] = nombrecate;
 
+            
 
-            ViewBag.Message = nombrecate;
-            ViewBag.Message2 = nombreestu;
+            //ViewBag.Message = nombrecate;
+            //ViewBag.Message2 = nombreestu;
 
 
             try
@@ -74,10 +81,15 @@ namespace AlianzaPetrolera.Controllers.Admin
                     totalu = c.Uniforme(value5, value6);
                     totalme = c.Mensualidad(value7, value8);
                     totalpago = (totalma + totalp + totalu + totalme);
-                    ViewData["totfin"] = "Total a pagar : $" + totalpago;
+                    Session["MySessionVariable4"] = totalpago;
                                    
                     r.Matri_CosTota = totalpago;
-                    //return Content("Resultado:" + totalpago);
+                //return Content("Resultado:" + totalpago);
+
+                    Session["MySessionVariable5"] = value2;
+                    Session["MySessionVariable6"] = value4;
+                    Session["MySessionVariable7"] = value6;
+                    Session["MySessionVariable8"] = value8;
                 return View();
 
                 //return RedirectToAction("Index");
@@ -89,10 +101,10 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
       
-        public ActionResult ImprimirTodas(string nombrecate, string nombreestu)
+        public ActionResult ImprimirTodas(string nombrecate/*, string nombreestu*/)
         {
             ViewBag.Message = nombrecate;
-            ViewBag.Message2 = nombreestu;
+            //ViewBag.Data["nombreestu"] = nombreestu;
 
             var report = new ViewAsPdf("Create")
             {
@@ -158,15 +170,18 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
-        public ActionResult CreatePdf2(string id, string nombrecate, string nombreestu)
+        public ActionResult CreatePdf2(string idcod)
         {
             //var user = ApplicationDbContext.Users.Find(GetActualUserId().Id);
             //var cert = ApplicationDbContext.Certifications.FirstOrDefault(x => x.Enrollment.Modu_Id == id && x.User_Id == user.Id);
             //var enrollments = ApplicationDbContext.Enrollments.Single(x => x.Modu_Id == id && x.User_Id == user.Id);
 
-            var NomCate = ViewBag.Message = nombrecate;
-             ViewBag.Message2 = nombreestu;
+            Session["idcod"] = idcod;
 
+            //var Nombrestu = ApplicationDbContext.Personas.First(x=> x.Pers_Cod == idcod );
+            //ViewBag.Message = nombreestu;
+
+            //var otro = "Estudiante" + ViewBag.Message;
             var inputString = @"<html>
                                 <body> 
                                     <div class='form-horizontal'>
@@ -178,14 +193,14 @@ namespace AlianzaPetrolera.Controllers.Admin
                                             </ div >
                                     
                                             <div class='col-sm-6' style='margin-top:2em;'>
-                                                <h5 ALIGN = 'RIGHT' style='font-family:Arial Black, Gadget, sans-serif; font-size: 35px;color:#0A122A;'>N° Recibo: " + ViewBag.Message + @"</h5>
+                                                <h5 ALIGN = 'RIGHT' style='font-family:Arial Black, Gadget, sans-serif; font-size: 35px;color:#0A122A;'>N° Recibo: " + Session["idcod"] + @"</h5>
                                             </div>
                                         </div>
                                         <hr />
                                         <br /> 
                                     <div class='row'>
                                         <div class='col-sm-8'>
-                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>Estudiante:" + @ViewBag.Message2 + @"</h6>
+                                            <h6 style='font-family:Arial Black, Gadget, sans-serif; font-size: 15px;color:#0A122A;'>Estudiante:" + Session["idcod"] + @"</h6>
                                         </div>
                                     
                                         <div class='col-sm-4'>
@@ -355,5 +370,81 @@ namespace AlianzaPetrolera.Controllers.Admin
         //    var user = UserManager.FindById(userId);
         //    return user;
         //}
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public string RenderViewAsString(string viewName, object model)
+        {
+            // create a string writer to receive the HTML code
+            StringWriter stringWriter = new StringWriter();
+
+            // get the view to render
+            ViewEngineResult viewResult = ViewEngines.Engines.FindView(ControllerContext, viewName, null);
+            // create a context to render a view based on a model
+            ViewContext viewContext = new ViewContext(
+                    ControllerContext,
+                    viewResult.View,
+                    new ViewDataDictionary(model),
+                    new TempDataDictionary(),
+                    stringWriter
+                    );
+
+            // render the view to a HTML code
+            viewResult.View.Render(viewContext, stringWriter);
+
+            // return the HTML code
+            return stringWriter.ToString();
+        }
+
+        [HttpPost]
+        public ActionResult ConvertThisPageToPdf(string idcod)
+        {
+            // get the HTML code of this view
+            string htmlToConvert = RenderViewAsString("Create", null);
+
+            // the base URL to resolve relative images and css
+            String thisPageUrl = this.ControllerContext.HttpContext.Request.Url.AbsoluteUri;
+            String baseUrl = thisPageUrl.Substring(0, thisPageUrl.Length - "ReciboCaja/ConvertThisPageToPdf".Length);
+
+            // instantiate the HiQPdf HTML to PDF converter
+            HtmlToPdf htmlToPdfConverter = new HtmlToPdf();
+
+            // hide the button in the created PDF
+            htmlToPdfConverter.HiddenHtmlElements = new string[] { "#convertThisPageButtonDiv" };
+
+            // render the HTML code as PDF in memory
+            byte[] pdfBuffer = htmlToPdfConverter.ConvertHtmlToMemory(htmlToConvert, baseUrl);
+
+            // send the PDF file to browser
+            FileResult fileResult = new FileContentResult(pdfBuffer, "application/pdf");
+            fileResult.FileDownloadName = "Recibo_Alianza_Petrolera.pdf";
+
+            return fileResult;
+        }
+
+        [HttpPost]
+        public ActionResult ConvertAboutPageToPdf()
+        {
+            // get the About view HTML code
+            string htmlToConvert = RenderViewAsString("About", null);
+
+            // the base URL to resolve relative images and css
+            String thisPageUrl = this.ControllerContext.HttpContext.Request.Url.AbsoluteUri;
+            String baseUrl = thisPageUrl.Substring(0, thisPageUrl.Length - "ReciboCaja/ConvertAboutPageToPdf".Length);
+
+            // instantiate the HiQPdf HTML to PDF converter
+            HtmlToPdf htmlToPdfConverter = new HtmlToPdf();
+
+            // render the HTML code as PDF in memory
+            byte[] pdfBuffer = htmlToPdfConverter.ConvertHtmlToMemory(htmlToConvert, baseUrl);
+
+            // send the PDF file to browser
+            FileResult fileResult = new FileContentResult(pdfBuffer, "application/pdf");
+            fileResult.FileDownloadName = "Recibo_Alianza_Petrolera.pdf";
+
+            return fileResult;
+        }
     }
 }

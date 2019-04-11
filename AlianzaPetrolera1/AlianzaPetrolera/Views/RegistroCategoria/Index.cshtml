@@ -40,7 +40,7 @@
                             @Html.ActionLink("Matricular", "Create", "Matricula", new { Nomcategoria = item.Cate_Name ,cod_persona= @ViewBag.idest, nom_estu=@ViewBag.Message, apell_estu = @ViewBag.apellidoes,documento_estu= @ViewBag.documentoestud,idinscripcion= @ViewBag.IdInscripcion }, htmlAttributes: new { @style = "color:#fff; " })
                         </button>
                         @*@Html.ActionLink("Generar Recibo", "index", "ReciboCaja", new { id = item.Cate_Id })*@
-                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { nombrecate = item.Cate_Name, nombreestu = ViewBag.Message }, htmlAttributes: new { @style = "color:#fff; " })      </button>
+                        @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { nombrecate = item.Cate_Name, nombreestu = ViewBag.Message }, htmlAttributes: new { @style = "color:#fff; " })      </button>*@
                     </div>
                 </td>
             </tr>

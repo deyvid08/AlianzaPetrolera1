@@ -86,7 +86,7 @@
 
                     <table class="egt">
 
-                        <tr class="text-center">
+                        <tr>
 
                             <th scope="row">Matricula</th>
 
@@ -101,99 +101,57 @@
 
                         <tr>
                             <td>
-                                <input type="text" name="value1" value="80000" class="text-center" readonly>
+                                <input type="number" name="value1" value="80000" class="text-center">
 
                             </td>
                             <td>
-                                <input type="text" name="value3" value="10000" class="text-center" readonly>
+                                <input type="number" name="value3" value="10000" class="text-center">
 
                             </td>
 
                             <td>
-                                <input type="text" name="value5" value="50000" class="text-center" readonly>
+                                <input type="number" name="value5" value="50000" class="text-center">
                             </td>
 
                             <td>
-                                <input type="text" name="value7" value="80000" class="text-center" readonly>
+                                <input type="number" name="value7" value="80000" class="text-center">
                             </td>
 
                         </tr>
 
                         <tr>
 
-                            <th>
-                                <br />
-                                <br />
-                                <select name="value2" style="width:13em;">
-                                    <option selected value="0"> Descuento </option>
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10">10%</option>
-                                    <option value="15">15%</option>
-                                    <option value="20">20%</option>
-                                </select>
-                            </th>
+                            <th>Descuento </th>
 
 
-                            <th>
-                                <br />
-                                <br />
-                                <select name="value4" style="width:13em;">
-                                    <option selected value="0"> Descuento </option>
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10">10%</option>
-                                    <option value="15">15%</option>
-                                    <option value="20">20%</option>
-                                </select>
-                            </th>
+                            <th>Descuento </th>
 
 
-                            <th>
-                                <br />
-                                <br />
-                                <select name="value6" style="width:13em;">
-                                    <option selected value="0"> Descuento </option>
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10">10%</option>
-                                    <option value="15">15%</option>
-                                    <option value="20">20%</option>
-                                </select>
-                            </th>
+                            <th>Descuento</th>
 
 
-                            <th>
-                                <br />
-                                <br />
-                                <select name="value8" style="width:13em;">
-                                    <option selected value="0"> Descuento </option>
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10">10%</option>
-                                    <option value="15">15%</option>
-                                    <option value="20">20%</option>
-                                </select>
-                            </th>
+                            <th>Descuento</th>
 
                         </tr>
 
                         <tr>
-                            <td class="text-center">
-                                @*<input type="number" name="value2" class="text-center" value="0">*@
-                                <label text-aling="center"> @Session["MySessionVariable5"] %</label>
+
+                            <td>
+
+                                <input type="number" name="value2" class="text-center" value="0">
+
+                            </td>
+                            <td>
+                                <input type="number" name="value4" class="text-center" value="0">
+
                             </td>
 
-                            <td class="text-center">
-                                <label> @Session["MySessionVariable6"] %</label>
+                            <td>
+                                <input type="number" name="value6" class="text-center" value="0">
                             </td>
 
-                            <td class="text-center">
-                                <label> @Session["MySessionVariable7"] %</label>
-                            </td>
-
-                            <td class="text-center">
-                                <label> @Session["MySessionVariable8"] %</label>
+                            <td>
+                                <input type="number" name="value8" class="text-center" value="0">
                             </td>
 
                         </tr>
@@ -205,52 +163,47 @@
                     <br />
                     <br />
                     <br />
-                    <B><h2>Total a pagar: $ @Session["MySessionVariable4"]</h2></B>
+                    <B><h2>Total a pagar: @ViewData["totfin"]</h2></B>
 
                     <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
 
-
+                    
                     @*<br />*@
                     @using (Html.BeginForm("ConvertThisPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
                     {
                         <div id="convertThisPageButtonDiv">
                             @*<input type="submit" value="Convert
-                                This Page To PDF" />*@
+                        This Page To PDF" />*@
                         </div>
                     }
                     @*<br />*@
                     @*@using (Html.BeginForm("ConvertAboutPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
-                        {
-                            <div id="convertAboutPageButtonDiv">
-                                <input type="submit" value="Convert
-                            About Page To PDF" />
-                            </div>
-                        }*@
+                    {
+                        <div id="convertAboutPageButtonDiv">
+                            <input type="submit" value="Convert
+                        About Page To PDF" />
+                        </div>
+                    }*@
 
-                    <form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
+                    <form action="~/GeneracionRecibo/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
                         <div id="convertThisPageButtonDiv">
                             <input type="submit" value="Recibo Alianza PDF" />
                         </div>
                     </form>
-                    <form method="post">
-                        <div id="convertThisPageButtonDiv">
-                            @Html.ActionLink("Regresar", "AdminIndex", "Admin")
-                        </div>
-                    </form>
                     <br />
                     @*<form action="~/GeneracionRecibo/ConvertAboutPageToPdf" id="convertAboutPageForm"
-                              method="post">
-                            <div id="convertAboutPageButtonDiv">
-                                <input type="submit" value="Convert
-                            About Page To PDF" />
-                            </div>
-                        </form>*@
+                          method="post">
+                        <div id="convertAboutPageButtonDiv">
+                            <input type="submit" value="Convert
+                        About Page To PDF" />
+                        </div>
+                    </form>*@
                     <br />
                     <br />
-
+                    
                     <br />
                     <br />
-
+                    
                     </asp:Content>
 
 
@@ -273,10 +226,9 @@
     <br />
     @section script {
         <script>
-            $("#calc").click(function () {
-                $(this).fadeOut(3000);
-                $("textarea").fadeIn(2000);
-            });
+
+
+
 
         </script>
     }

@@ -26,21 +26,244 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 #logoutForm {
     margin-left: 15em;
 }
 
-.jumbotron {
-    margin-top: -9em;
-    padding: 0 !important;
+
+.fondoBanner {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-#fondobanner {
-    background-color: rgba(0, 0, 0, 0.7);
+.contenedorImagen {
+    display: flex;
+    margin: 2%;
+    width: 13%;
 }
+
+    .contenedorImagen img {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+
+.contenedorMenu {
+    display: flex;
+    width: 80%;
+    float: left;
+    margin: auto;
+}
+
+.contenedorPrincipal {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.primerContenedor {
+    width: 50%;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background: rgba(255,175,75,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(224,168,0,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(224,168,0,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(224,168,0,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(224,168,0,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(224,168,0,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(255,175,75,1) 0%, rgba(224,168,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#e0a800', GradientType=1 );
+    overflow: hidden;
+    padding: 20px;
+    border: 2px solid #e0a800;
+}
+
+.imagenesEmpresariales {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    padding: 2%;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.fotterPrincipal {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 2%;
+    justify-content: center;
+}
+
+    .fotterPrincipal p {
+        font-size: 18px;
+    }
+
+.segundoContenedor {
+    display: block;
+    background: rgba(89,89,89,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(89,89,89,1) 0%, rgba(102,102,102,1) 0%, rgba(83,83,83,1) 33%, rgba(73,73,73,1) 49%, rgba(58,58,58,1) 75%, rgba(43,43,43,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(89,89,89,1)), color-stop(0%, rgba(102,102,102,1)), color-stop(33%, rgba(83,83,83,1)), color-stop(49%, rgba(73,73,73,1)), color-stop(75%, rgba(58,58,58,1)), color-stop(100%, rgba(43,43,43,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(89,89,89,1) 0%, rgba(102,102,102,1) 0%, rgba(83,83,83,1) 33%, rgba(73,73,73,1) 49%, rgba(58,58,58,1) 75%, rgba(43,43,43,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(89,89,89,1) 0%, rgba(102,102,102,1) 0%, rgba(83,83,83,1) 33%, rgba(73,73,73,1) 49%, rgba(58,58,58,1) 75%, rgba(43,43,43,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(89,89,89,1) 0%, rgba(102,102,102,1) 0%, rgba(83,83,83,1) 33%, rgba(73,73,73,1) 49%, rgba(58,58,58,1) 75%, rgba(43,43,43,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(89,89,89,1) 0%, rgba(102,102,102,1) 0%, rgba(83,83,83,1) 33%, rgba(73,73,73,1) 49%, rgba(58,58,58,1) 75%, rgba(43,43,43,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#2b2b2b', GradientType=1 );
+    width: 50%;
+    float: left;
+    padding: 2%;
+}
+
+.imagenFormulario img {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin: auto;
+}
+
+.formularioIngreso form {
+    display: block;
+    width: 60%;
+    margin: auto;
+}
+
+.titulosPrincipal {
+    display: flex;
+    justify-content: center;
+    background-color: #e0a800;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+
+.contenedorCrear {
+    display: block;
+    width: 65%;
+    margin: auto;
+    padding: 2%;
+}
+
+
+
+
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #e0a800;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+    input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+        background-color: #e0a800;
+    }
+
+    input[type=button]:active, input[type=submit]:active, input[type=reset], input[type=email]:active {
+        -moz-transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        -o-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+
+input[type=text], input[type=password], input[type=email] {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    input[type=text], input[type=email]:focus {
+        background-color: #fff;
+        border-bottom: 2px solid #e0a800;
+    }
+
+    input[type=text], input[type=email]:placeholder {
+        color: #cccccc;
+    }
+
+    input[type=password]:focus {
+        background-color: #fff;
+        border-bottom: 2px solid #e0a800;
+    }
+
+    input[type=password]:placeholder {
+        color: #cccccc;
+    }
+
+.imagenPrincipal {
+    position: relative;
+}
+
+.titulosPrincipales {
+    position: absolute;
+    color: #Fff;
+    margin: auto;
+    margin: 20% 0% 2% 5%;
+}
+
+    .titulosPrincipales h1 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 58px;
+    }
+
+.centrarSub {
+    text-align: center;
+    letter-spacing: 8px;
+}
+
+.plegable {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 500ms ease-out;
+    -moz-transition: max-height 500ms ease-out;
+    -o-transition: max-height 500ms ease-out;
+    transition: max-height 500ms ease-out;
+}
+
+    .plegable.desplegado {
+        max-height: 1000px;
+        -webkit-transition: max-height 500ms ease-out;
+        -moz-transition: max-height 500ms ease-out;
+        -o-transition: max-height 500ms ease-out;
+        transition: max-height 500ms ease-out;
+        overflow: auto;
+    }
+
+.formularioRegistro {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+    .formularioRegistro input[type=text], input[type=password], input[type=email] {
+        width: 60%;
+    }

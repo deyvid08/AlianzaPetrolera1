@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 aling="center">Matriculas</h2>
+<h2 >Matriculas</h2>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
@@ -81,7 +81,7 @@
                         @Html.ActionLink("Eliminar", "Delete", new { id = item.Matri_Id })
                     </button>
                     <button type="button" class="btn btn-warning text-white">
-                        @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { id = item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom }, htmlAttributes: new { @style = "color:#fff; " })
+                        @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { id = item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom ,idcod=item.Mat_IdEst }, htmlAttributes: new { @style = "color:#fff; " })
                     </button>
                 </div>
             </td>
