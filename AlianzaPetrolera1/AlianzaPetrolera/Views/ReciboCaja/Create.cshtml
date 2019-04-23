@@ -35,23 +35,23 @@
         <br />
         <br />
         <div class="row">
-            <div class="col-sm-10">
+            <div class="col-sm-8">
                 <img src="~/Content/images/logo.png" />
             </div>
 
-            <div class="col-sm-2" style="margin-top:2em;">
-                <h5>N° Recibo 0001</h5>
+            <div class="col-sm-4" style="margin-top:2em;">
+                <h5>N° Recibo: </h5>
             </div>
         </div>
         <hr />
         <br />
         <div class="row">
             <div class="col-sm-8">
-                <h6>Estudiante: @Session["MySessionVariable"].ToString() @Session["MySessionVariable1"].ToString() </h6>
+                <h6><b>Estudiante:</b> @Session["MySessionVariable"].ToString() @Session["MySessionVariable1"].ToString() </h6>
             </div>
             
             <div class="col-sm-4">
-                <h6>Fecha de Generación Recibo</h6>
+                <h6><b>Fecha de Generación Recibo</b></h6>
                 <h6> @Session["MySessionVariable2"].ToString() </h6>
             </div>
         </div>
@@ -60,10 +60,10 @@
         <br />
         <div class="row">
             <div class="col-sm-8">
-                <h6>Documento: @Session["MySessionVariable9"].ToString() </h6>
+                <h6><b>Documento:</b> @Session["MySessionVariable9"].ToString() </h6>
             </div>
             <div class="col-sm-4">
-                <h6>Categoria: @Session["MySessionVariable3"].ToString() </h6>
+                <h6><b>Categoria:</b>@Session["MySessionVariable3"].ToString() </h6>
             </div>
 
         </div>
@@ -72,7 +72,7 @@
 
         <div class="row">
             <div class="col-sm-8">
-                <h6>Tipo Cuenta: Ahorros</h6>
+                <h6><b>Tipo Cuenta:</b>  Ahorros</h6>
             </div>
             <div class="col-sm-4">
                 <h6>Bancolombia</h6>
@@ -208,53 +208,54 @@
                     <br />
                     <br />
                     <br />
-                    <B><h2>Total a pagar: $ @Session["MySessionVariable4"]</h2></B>
+                    <h2 class="text-center"><b>Total a pagar: $ @Session["MySessionVariable4"]</b></h2>
 
-                    <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
+                    <div id="convertThisPageButtonDiv">
+                        <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
+                    </div>
 
-
-                    @*<br />*@
-                    @using (Html.BeginForm("ConvertThisPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
-                    {
-                        <div id="convertThisPageButtonDiv">
-                            @*<input type="submit" value="Convert
-                                This Page To PDF" />*@
-                        </div>
-                    }
-                    @*<br />*@
-                    @*@using (Html.BeginForm("ConvertAboutPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
+                        @*<br />*@
+                        @using (Html.BeginForm("ConvertThisPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
                         {
-                            <div id="convertAboutPageButtonDiv">
-                                <input type="submit" value="Convert
-                            About Page To PDF" />
+                            <div id="convertThisPageButtonDiv">
+                                @*<input type="submit" value="Convert
+                    This Page To PDF" />*@
                             </div>
-                        }*@
+                        }
+                        @*<br />*@
+                        @*@using (Html.BeginForm("ConvertAboutPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
+            {
+                <div id="convertAboutPageButtonDiv">
+                    <input type="submit" value="Convert
+                About Page To PDF" />
+                </div>
+            }*@
 
-                    <form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
-                        <div id="convertThisPageButtonDiv">
-                            <input type="submit" value="Recibo Alianza PDF" />
-                        </div>
-                    </form>
-                    <form method="post">
-                        <div id="convertThisPageButtonDiv">
-                            @Html.ActionLink("Regresar", "AdminIndex", "Admin")
-                        </div>
-                    </form>
-                    <br />
-                    @*<form action="~/GeneracionRecibo/ConvertAboutPageToPdf" id="convertAboutPageForm"
-                              method="post">
-                            <div id="convertAboutPageButtonDiv">
-                                <input type="submit" value="Convert
-                            About Page To PDF" />
+                        <form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
+                            <div id="convertThisPageButtonDiv">
+                                <input type="submit" value="Recibo Alianza PDF" />
                             </div>
-                        </form>*@
-                    <br />
-                    <br />
+                        </form>
+                        <form method="post">
+                            <div id="convertThisPageButtonDiv">
+                                @Html.ActionLink("Regresar", "AdminIndex", "Admin")
+                            </div>
+                        </form>
+                        <br />
+                        @*<form action="~/GeneracionRecibo/ConvertAboutPageToPdf" id="convertAboutPageForm"
+                  method="post">
+                <div id="convertAboutPageButtonDiv">
+                    <input type="submit" value="Convert
+                About Page To PDF" />
+                </div>
+            </form>*@
+                        <br />
+                        <br />
 
-                    <br />
-                    <br />
+                        <br />
+                        <br />
 
-                    </asp:Content>
+                        </asp:Content>
 
 
 
