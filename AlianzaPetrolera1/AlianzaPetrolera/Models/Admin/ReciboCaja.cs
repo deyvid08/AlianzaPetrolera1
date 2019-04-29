@@ -17,13 +17,13 @@ namespace AlianzaPetrolera.Models.Admin
         [Display(Name = "N° Recibo:")]
         public int Reci_Num { get; set; }
 
-        [Display(Name = "Nombre Estudiante")]
+        [Display(Name = "Estudiante:")]
         public string Reci_NomUs { get; set; }
         [Display(Name = "Apellido Estudiante")]
         public string Reci_ApeUs { get; set; }
-        [Display(Name = "Documento Estudiante")]
+        [Display(Name = "Documento:")]
         public string Reci_DocUs { get; set; }
-        [Display(Name = "Categoria")]
+        [Display(Name = "Categoria:")]
         public string Reci_CateUs { get; set; }
         [Display(Name = "Fecha Matricula")]
         public DateTime Matr_Fecha { get; set; }
@@ -40,16 +40,16 @@ namespace AlianzaPetrolera.Models.Admin
         [Display(Name = "Mensualidad")]
         public Nullable<float> Costo_Mensu { get; set; }
 
-        [Display(Name = "Descuento Matricula")]
+        [Display(Name = "Descto. Matricula")]
         public Nullable<float> Desc_Matri { get; set; }
-        [Display(Name = "Descuento Poliza de Accidentes")]
+        [Display(Name = "Descto. Poliza de Accidentes")]
         public Nullable<float> Desc_Poli { get; set; }
-        [Display(Name = "Descuento Uniforme")]
+        [Display(Name = "Descto. Uniforme")]
         public Nullable<float> Desc_Unif { get; set; }
-        [Display(Name = "Descuento Mensualidad")]
+        [Display(Name = "Descto. Mensualidad")]
         public Nullable<float> Desc_Mensu { get; set; }
 
-        [Display(Name = "Costo Total")]
+        [Display(Name = "Total a Pagar")]
         public Nullable<float> Matri_CosTota { get; set; }
     }
     public class Calculadora

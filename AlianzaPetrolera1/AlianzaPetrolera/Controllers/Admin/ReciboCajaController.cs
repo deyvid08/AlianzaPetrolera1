@@ -57,6 +57,10 @@ namespace AlianzaPetrolera.Controllers.Admin
             Session["MySessionVariable3"] = nombrecate;
             Session["MySessionVariable9"] = documentoestud;
             Session["MySessionVariable1"] = apellidoes;
+            Session["matricula"] = 80000;
+            Session["poliza"] = 10000;
+            Session["uniforme"] = 50000;
+            Session["mensualidad"] = 80000;
             return View();
         }
 
@@ -103,6 +107,10 @@ namespace AlianzaPetrolera.Controllers.Admin
                     Session["MySessionVariable6"] = value4;
                     Session["MySessionVariable7"] = value6;
                     Session["MySessionVariable8"] = value8;
+                    Session["matricula"] = 80000;
+                    Session["poliza"] = 10000;
+                    Session["uniforme"] = 50000;
+                    Session["mensualidad"] = 80000;
 
                     //Registro de datos en la tabla recibo
 
