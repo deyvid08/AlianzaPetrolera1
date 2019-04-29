@@ -20,7 +20,7 @@ using HiQPdf;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
-   
+
     public class ReciboCajaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -32,7 +32,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             var TodoRecibo = db.RecibosCajas.ToList();
             return View(TodoRecibo);
         }
-     
+
 
         // GET: Recibo/Details/5
         public ActionResult Details(int id)
@@ -40,8 +40,20 @@ namespace AlianzaPetrolera.Controllers.Admin
             return View();
         }
 
+
+        //public ActionResult maxrecibo()
+        //{
+
+        //    var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
+
+        //    return maxrecibirix;
+        //}
+
+
+
+
         // GET: Recibo/Create
-        public ActionResult Create(string nombrecate,string nombreestu, string idcod, string documentoestud, string apellidoes)
+        public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
@@ -53,7 +65,7 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
+        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
@@ -61,39 +73,75 @@ namespace AlianzaPetrolera.Controllers.Admin
             Session["MySessionVariable9"] = documentoestud;
             Session["MySessionVariable1"] = apellidoes;
 
-            //ViewBag.Message = nombrecate;
-            //ViewBag.Message2 = nombreestu;
-
-
             try
             {
+                if (ModelState.IsValid)
+                {
+
                     ReciboCaja r = new ReciboCaja();
 
+                    //Operacion Matematica para efectuar los descuentos en la matricula del estudiante.
                     Calculadora c = new Calculadora();
                     float totalma = 0;
                     float totalp = 0;
                     float totalu = 0;
                     float totalme = 0;
                     float totalpago = 0;
-                    
 
                     totalma = c.Matricula(value1, value2);
                     totalp = c.Poliac(value3, value4);
                     totalu = c.Uniforme(value5, value6);
                     totalme = c.Mensualidad(value7, value8);
                     totalpago = (totalma + totalp + totalu + totalme);
-                    Session["MySessionVariable4"] = totalpago;
-                                   
-                    r.Matri_CosTota = totalpago;
-                //return Content("Resultado:" + totalpago);
 
+                    //Variables para almacenar los datos en el pdf que se imprime
+                    Session["MySessionVariable4"] = totalpago;
                     Session["MySessionVariable5"] = value2;
                     Session["MySessionVariable6"] = value4;
                     Session["MySessionVariable7"] = value6;
                     Session["MySessionVariable8"] = value8;
-                return View();
 
-                //return RedirectToAction("Index");
+                    //Registro de datos en la tabla recibo
+
+                    r.Reci_Id = ReciboCajas.Reci_Id;
+                    r.Costo_Matri = totalma;
+                    r.Costo_Poli = totalp;
+                    r.Costo_Unif = totalu;
+                    r.Costo_Mensu = totalme;
+                    r.Desc_Matri = value2;
+                    r.Desc_Poli = value4;
+                    r.Desc_Unif = value6;
+                    r.Desc_Mensu = value8;
+                    r.Matri_CosTota = totalpago;
+
+
+                    //item.Reci_Id = ReciboCajas.Reci_Id;
+                    //item.Reci_Num = model.Pers_Cod;
+                    //item.Costo_Matri = model.Pers_NickNom;
+                    //item.Costo_Poli = model.Pers_Pwd;
+                    //item.Costo_Unif = model.Pers_Nom;
+                    //item.Costo_Mensu = model.Pers_Lstn1;
+                    //item.Desc_Matri = model.Pers_Lstn2;
+                    //item.Desc_Poli = model.Pers_TypeDoc;
+                    //item.Desc_Unif = model.Pers_Doc;
+                    //item.Desc_Mensu = model.Pers_Birth;
+                    //item. = model.Pers_Dir;
+                    //item. = model.Pers_Tel1;
+                    //item. = model.Pers_Tel2;
+                    //item. = model.Pers_Mail1;
+                    //item. = model.Pers_Mail2;
+                    //item. = model.Pers_Ingreso;
+                    //item. = model.Pers_TotalPoints;
+                    //item. = model.Ubic_Id;
+                    //item. = model.Rolp_Id;
+
+
+                    db.RecibosCajas.Add(ReciboCajas);
+                    db.SaveChanges();
+                    return View();
+
+                }
+                return View(ReciboCajas);
             }
             catch
             {
@@ -275,44 +323,44 @@ namespace AlianzaPetrolera.Controllers.Admin
                                 </body>
                                 </html>";
 
-  //          < div  style = 'float:left;width:550px;height='200px; '>
-  //                                         < h4 style = 'font-family:Arial Black, Gadget, sans-serif; font-size: 70px;color:#0A122A;' > CERTIFICADO </ h4 >
- 
-  //                                   </ div >
- 
-  //                                   < div style = 'float:right;' >
-  
-  //                                        < img src = 'http://localhost/SaludVida/Recursos/logo-campana.png'width = '150px'; height = '150px' />
-       
-  //                                         </ div >
-       
-  //                                         < H3 ALIGN = 'center'style = 'font-family:Arial Black, Gadget, sans-serif; font-size: 40px; margin: -20px;color:#0A122A;' >< strong > Otorgado a:</ strong >  </ H3 >
-               
-  //                                                 < br ></ br >
-               
-  //                                                 < h3 ALIGN = 'center' style = 'font-family:Britannic Bold; font-size: 30px;color:#FF9800;' ></ h3 >
-                  
-  //                                                    < h4 ALIGN = 'center'style = 'font-family:Britannic Bold;' > Identificado(a) con cédula de ciudadanía número </ h4 >
-                       
-  //                                                         < H4 ALIGN = 'center'style = 'font-family:Britannic Bold;' > Por haber aprobado el curso virtual de:</H4>
-  //                                  < H4 ALIGN = 'center'style='font-family:Arial Black,Gadget,sans-serif; font-size: 60px;color:#0A122A;' > </ H4 >
-  //                                  < h4 ALIGN = 'center'style='font-family:Britannic Bold;'>En testimonio de lo anterior se firma en</h4>
-  //                                  <div ALIGN = 'center' >
-  
-  //                                        < br ></ br >< br ></ br >
-  
-  //                                        < h3 ALIGN= 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > ________________________ </ h3 >
-  
-  //                                        < h3 ALIGN= 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > Camilo Jaramillo Botero</h3>
-  //                                      <h5 ALIGN = 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > Gerente de Ventas y Mercadeo</h5>
-  //                                  </div>  
-  //                                  <div style = 'float:left' >
-  
-  //                                    </ div >
-  //
+            //          < div  style = 'float:left;width:550px;height='200px; '>
+            //                                         < h4 style = 'font-family:Arial Black, Gadget, sans-serif; font-size: 70px;color:#0A122A;' > CERTIFICADO </ h4 >
+
+            //                                   </ div >
+
+            //                                   < div style = 'float:right;' >
+
+            //                                        < img src = 'http://localhost/SaludVida/Recursos/logo-campana.png'width = '150px'; height = '150px' />
+
+            //                                         </ div >
+
+            //                                         < H3 ALIGN = 'center'style = 'font-family:Arial Black, Gadget, sans-serif; font-size: 40px; margin: -20px;color:#0A122A;' >< strong > Otorgado a:</ strong >  </ H3 >
+
+            //                                                 < br ></ br >
+
+            //                                                 < h3 ALIGN = 'center' style = 'font-family:Britannic Bold; font-size: 30px;color:#FF9800;' ></ h3 >
+
+            //                                                    < h4 ALIGN = 'center'style = 'font-family:Britannic Bold;' > Identificado(a) con cédula de ciudadanía número </ h4 >
+
+            //                                                         < H4 ALIGN = 'center'style = 'font-family:Britannic Bold;' > Por haber aprobado el curso virtual de:</H4>
+            //                                  < H4 ALIGN = 'center'style='font-family:Arial Black,Gadget,sans-serif; font-size: 60px;color:#0A122A;' > </ H4 >
+            //                                  < h4 ALIGN = 'center'style='font-family:Britannic Bold;'>En testimonio de lo anterior se firma en</h4>
+            //                                  <div ALIGN = 'center' >
+
+            //                                        < br ></ br >< br ></ br >
+
+            //                                        < h3 ALIGN= 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > ________________________ </ h3 >
+
+            //                                        < h3 ALIGN= 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > Camilo Jaramillo Botero</h3>
+            //                                      <h5 ALIGN = 'center'style= 'font-family:Arial Black, Gadget, sans-serif;color:#000;' > Gerente de Ventas y Mercadeo</h5>
+            //                                  </div>  
+            //                                  <div style = 'float:left' >
+
+            //                                    </ div >
+            //
 
 
-              List<string> cssFiles = new List<string>();
+            List<string> cssFiles = new List<string>();
             cssFiles.Add(@"/Content/bootstrap.css");
             var output = new MemoryStream();
             var input = new MemoryStream(Encoding.UTF8.GetBytes(inputString));

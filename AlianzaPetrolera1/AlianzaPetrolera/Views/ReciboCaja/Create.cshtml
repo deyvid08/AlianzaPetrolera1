@@ -34,245 +34,186 @@
     <div class="container">
         <br />
         <br />
-        <div class="row">
-            <div class="col-sm-8">
-                <img src="~/Content/images/logo.png" />
-            </div>
 
-            <div class="col-sm-4" style="margin-top:2em;">
-                <h5>N° Recibo: </h5>
-            </div>
-        </div>
-        <hr />
-        <br />
-        <div class="row">
-            <div class="col-sm-8">
-                <h6><b>Estudiante:</b> @Session["MySessionVariable"].ToString() @Session["MySessionVariable1"].ToString() </h6>
-            </div>
-            
-            <div class="col-sm-4">
-                <h6><b>Fecha de Generación Recibo</b></h6>
-                <h6> @Session["MySessionVariable2"].ToString() </h6>
-            </div>
-        </div>
-        <br />
-        <hr />
-        <br />
-        <div class="row">
-            <div class="col-sm-8">
-                <h6><b>Documento:</b> @Session["MySessionVariable9"].ToString() </h6>
-            </div>
-            <div class="col-sm-4">
-                <h6><b>Categoria:</b>@Session["MySessionVariable3"].ToString() </h6>
-            </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        </div>
-        <hr />
-        <br />
+            <div class="form-horizontal">
 
-        <div class="row">
-            <div class="col-sm-8">
-                <h6><b>Tipo Cuenta:</b>  Ahorros</h6>
-            </div>
-            <div class="col-sm-4">
-                <h6>Bancolombia</h6>
-            </div>
-            <div class="col-sm-12">
-                <h6>#1215684-154541-12152</h6>
-            </div>
-        </div>
-        <br />
-        <br />
-        <div class="container" style=" border:1px solid;border-color: #A59D9B; padding:10px 10px 10px 10px;">
-            <div class="container">
-                <form method="post">
+                <!--Primer contenedor logo de la escuala y numero del recibo-->
+                <div class="row">
+                    <div class="col-sm-8">
+                        <img src="~/Content/images/logo.png" />
+                    </div>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Reci_Num, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Reci_Num, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Reci_Num, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <!--Segundo contenedor campos Nombre apellido estudiante y Fecha recibo-->
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Reci_NomUs, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Reci_NomUs, new { htmlAttributes = new { @class = "control-label col-md-6", @Style = "border:none", @Value = @Session["MySessionVariable"].ToString(), @ReadOnly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.Reci_NomUs, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                    <table class="egt">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Reci_ApeUs, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Reci_ApeUs, new { htmlAttributes = new { @class = "control-label col-md-6", @Style = "border:none", @Value = @Session["MySessionVariable1"].ToString(), @ReadOnly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.Reci_ApeUs, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                        <tr class="text-center">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Matr_Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Matr_Fecha, new { htmlAttributes = new { @class = "control-label col-md-12", @Style = "border:none", @Value = @Session["MySessionVariable2"].ToString(), @ReadOnly = "ReadOnly" } })
+                            @Html.ValidationMessageFor(model => model.Matr_Fecha, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <!--Tercer contenedor campos Documento y categoria-->
+                <div class="row">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Reci_DocUs, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Reci_DocUs, new { htmlAttributes = new { @class = "control-label col-md-6", @Style = "border:none", @Value = @Session["MySessionVariable9"].ToString(), @ReadOnly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.Reci_DocUs, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                            <th scope="row">Matricula</th>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Reci_CateUs, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Reci_CateUs, new { htmlAttributes = new { @class = "control-label col-md-6", @Style = "border:none", @Value = @Session["MySessionVariable3"].ToString(), @ReadOnly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.Reci_CateUs, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <!--Cuarto contenedor campos Tipo cuenta y Banco-->
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h6><b>Tipo Cuenta:</b>  Ahorros</h6>
+                    </div>
+                    <div class="col-sm-4">
+                        <h6>Bancolombia</h6>
+                    </div>
+                    <div class="col-sm-12">
+                        <h6>#1215684-154541-12152</h6>
+                    </div>
+                </div>
+                <hr />
+                <br />
+                <br />
+                <!--Recuadro para discriminar la parte de calculo de los descuentos-->
+                <div class="container" style=" border:1px solid;border-color: #A59D9B; padding:10px 10px 10px 10px;">
+                    <!--Campos sobre los valores estipulados para los items en el recibo-->
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Costo_Matri, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Costo_Matri, new { htmlAttributes = new { @class = "form-control", @Value = 80000, @Name = "value1" } })
+                                @Html.ValidationMessageFor(model => model.Costo_Matri, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-                            <th>Poliza Accidentes : </th>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Costo_Poli, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Costo_Poli, new { htmlAttributes = new { @class = "form-control", @Value = 10000, @Name = "value3" } })
+                                @Html.ValidationMessageFor(model => model.Costo_Poli, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-                            <th>Uniforme : </th>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Costo_Unif, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Costo_Unif, new { htmlAttributes = new { @class = "form-control", @Value = 50000, @Name = "value5" } })
+                                @Html.ValidationMessageFor(model => model.Costo_Unif, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-                            <th>Mensualidad : </th>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Costo_Mensu, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Costo_Mensu, new { htmlAttributes = new { @class = "form-control", @Value = 80000, @Name = "value7" } })
+                                @Html.ValidationMessageFor(model => model.Costo_Mensu, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <!--Campos sobre los decuentos estipulados para los items en el recibo-->
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Desc_Matri, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Desc_Matri, new { htmlAttributes = new { @class = "form-control", @Name = "value2" } })
+                                @Html.ValidationMessageFor(model => model.Desc_Matri, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Desc_Poli, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Desc_Poli, new { htmlAttributes = new { @class = "form-control", @Name = "value4" } })
+                                @Html.ValidationMessageFor(model => model.Desc_Poli, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-                        </tr>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Desc_Unif, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Desc_Unif, new { htmlAttributes = new { @class = "form-control", @Name = "value6" } })
+                                @Html.ValidationMessageFor(model => model.Desc_Unif, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-                        <tr>
-                            <td>
-                                <input type="text" name="value1" value="80000" class="text-center" readonly>
-
-                            </td>
-                            <td>
-                                <input type="text" name="value3" value="10000" class="text-center" readonly>
-
-                            </td>
-
-                            <td>
-                                <input type="text" name="value5" value="50000" class="text-center" readonly>
-                            </td>
-
-                            <td>
-                                <input type="text" name="value7" value="80000" class="text-center" readonly>
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <th>
-                                <br />
-                                <br />
-                                <select name="value2" style="width:13em;">
-                                    <option selected value="0"> Descuento </option>
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10">10%</option>
-                                    <option value="15">15%</option>
-                                    <option value="20">20%</option>
-                                </select>
-                            </th>
-
-
-                            <th>
-                                <br />
-                                <br />
-                                <select name="value4" style="width:13em;">
-                                    <option selected value="0"> Descuento </option>
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10">10%</option>
-                                    <option value="15">15%</option>
-                                    <option value="20">20%</option>
-                                </select>
-                            </th>
-
-
-                            <th>
-                                <br />
-                                <br />
-                                <select name="value6" style="width:13em;">
-                                    <option selected value="0"> Descuento </option>
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10">10%</option>
-                                    <option value="15">15%</option>
-                                    <option value="20">20%</option>
-                                </select>
-                            </th>
-
-
-                            <th>
-                                <br />
-                                <br />
-                                <select name="value8" style="width:13em;">
-                                    <option selected value="0"> Descuento </option>
-                                    <option value="0">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="10">10%</option>
-                                    <option value="15">15%</option>
-                                    <option value="20">20%</option>
-                                </select>
-                            </th>
-
-                        </tr>
-
-                        <tr>
-                            <td class="text-center">
-                                @*<input type="number" name="value2" class="text-center" value="0">*@
-                                <label text-aling="center"> @Session["MySessionVariable5"] %</label>
-                            </td>
-
-                            <td class="text-center">
-                                <label> @Session["MySessionVariable6"] %</label>
-                            </td>
-
-                            <td class="text-center">
-                                <label> @Session["MySessionVariable7"] %</label>
-                            </td>
-
-                            <td class="text-center">
-                                <label> @Session["MySessionVariable8"] %</label>
-                            </td>
-
-                        </tr>
-
-
-
-                    </table>
-
-                    <br />
-                    <br />
-                    <br />
-                    <h2 class="text-center"><b>Total a pagar: $ @Session["MySessionVariable4"]</b></h2>
-
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Desc_Mensu, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Desc_Mensu, new { htmlAttributes = new { @class = "form-control", @Name = "value8" } })
+                                @Html.ValidationMessageFor(model => model.Desc_Mensu, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <!--Costo total de la n-->
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Matri_CosTota, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Matri_CosTota, new { htmlAttributes = new { @class = "form-control", @Value = @Session["MySessionVariable4"] } })
+                            @Html.ValidationMessageFor(model => model.Matri_CosTota, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                     <div id="convertThisPageButtonDiv">
                         <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
                     </div>
-
-                        @*<br />*@
-                        @using (Html.BeginForm("ConvertThisPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
-                        {
-                            <div id="convertThisPageButtonDiv">
-                                @*<input type="submit" value="Convert
-                    This Page To PDF" />*@
-                            </div>
-                        }
-                        @*<br />*@
-                        @*@using (Html.BeginForm("ConvertAboutPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
-            {
-                <div id="convertAboutPageButtonDiv">
-                    <input type="submit" value="Convert
-                About Page To PDF" />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
                 </div>
-            }*@
-
-                        <form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
-                            <div id="convertThisPageButtonDiv">
-                                <input type="submit" value="Recibo Alianza PDF" />
-                            </div>
-                        </form>
-                        <form method="post">
-                            <div id="convertThisPageButtonDiv">
-                                @Html.ActionLink("Regresar", "AdminIndex", "Admin")
-                            </div>
-                        </form>
-                        <br />
-                        @*<form action="~/GeneracionRecibo/ConvertAboutPageToPdf" id="convertAboutPageForm"
-                  method="post">
-                <div id="convertAboutPageButtonDiv">
-                    <input type="submit" value="Convert
-                About Page To PDF" />
-                </div>
-            </form>*@
-                        <br />
-                        <br />
-
-                        <br />
-                        <br />
-
-                        </asp:Content>
-
-
-
-
-
-
-
-
-
-                </form>
             </div>
+        }
 
-
+        <div>
+            @Html.ActionLink("Back to List", "Index")
         </div>
-
-
     </div>
+    </div>
+
     <br />
     <br />
     @section script {

@@ -233,6 +233,10 @@
     <Compile Include="Migrations\201904041848291_matri2.Designer.cs">
       <DependentUpon>201904041848291_matri2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904291543294_reciboconcecutivo.cs" />
+    <Compile Include="Migrations\201904291543294_reciboconcecutivo.Designer.cs">
+      <DependentUpon>201904291543294_reciboconcecutivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -417,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903291909095_Matricula1.resx">
       <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904291543294_reciboconcecutivo.resx">
+      <DependentUpon>201904291543294_reciboconcecutivo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
