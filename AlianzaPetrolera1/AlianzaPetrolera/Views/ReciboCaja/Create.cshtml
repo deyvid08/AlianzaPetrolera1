@@ -151,7 +151,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--Campos sobre los decuentos estipulados para los items en el recibo-->
+                        <!--Campos sobre los descuentos estipulados para los items en el recibo-->
                         <div class="row">
                             <div class="form-group col-sm-3">
                                 @Html.LabelFor(model => model.Desc_Matri, htmlAttributes: new { @class = "control-label text-center" })
@@ -207,17 +207,17 @@
                             {
                                 <div id="convertThisPageButtonDiv">
                                     @*<input type="submit" value="Convert
-                This Page To PDF" />*@
+                                        This Page To PDF" />*@
                                 </div>
                             }
                             @*<br />*@
                             @*@using (Html.BeginForm("ConvertAboutPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
-        {
-            <div id="convertAboutPageButtonDiv">
-                <input type="submit" value="Convert
-            About Page To PDF" />
-            </div>
-        }*@
+                                {
+                                    <div id="convertAboutPageButtonDiv">
+                                        <input type="submit" value="Convert
+                                    About Page To PDF" />
+                                    </div>
+                                }*@
 
                             <form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
                                 <div class="col-sm-6">
