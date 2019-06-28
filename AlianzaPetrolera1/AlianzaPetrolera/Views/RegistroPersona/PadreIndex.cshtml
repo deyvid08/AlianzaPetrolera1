@@ -20,7 +20,7 @@
 
     <title>Vista Padre</title>
 </head>
-<body>
+<body class="fondo-padre-index">
     <br>
     <style type="text/css">
   
@@ -85,11 +85,11 @@ h3{
 
                         <br>
                         <div class="title">
-                            <h3>Registrar Nuevo Hijo </h3>
+                            <h3>Registrar Hijo </h3>
                         </div>
 
                         <div class="text">
-                            <span>Aqui Puedes Registrar a tus hijos.</span>
+                            <span>En este espacio puedes registrar a tus hijos a nuestra academia Alianza Petrolera.</span>
                         </div>
 
                          @Html.ActionLink("Registrar", "Create")
@@ -104,11 +104,11 @@ h3{
                         <i class="fas fa-users fa-5x"></i>
 
                         <div class="title">
-                            <h3>Ver Hijos Registrados</h3>
+                            <h3>Hijos Registrados</h3>
                         </div>
 
                         <div class="text">
-                            <span>Aqui Se Listan Tus Hijos</span>
+                            <span>Revisa la informacion ingresada de tus hijos en nuestra escuela Alianza Petrolera.</span>
                         </div>
 
                         @Html.ActionLink("Ver Hijos","Index")
@@ -120,16 +120,16 @@ h3{
 
                     <div class="box-part text-center">
 
-                        <i class="fas fa-user-edit fa-5x"></i>
+                        <i class="fas fa-book-open fa-5x"></i>
                         <div class="title">
-                            <h3>Ver Calificaciones Hijos</h3>
+                            <h3>Calificaciones</h3>
                         </div>
 
                         <div class="text">
-                            <span>Aqui Puedes Ver Las Calificaciones De Tus Hijos</span>
+                            <span>Realiza el seguimiento de las actividades y las calificaciones de tus hijos.</span>
                         </div>
 
-                        <a href="#">Ver calificaciones</a>
+                        @Html.ActionLink("Ver calificaciones", "PaginaConstruccionPadre", "Admin")
 
                     </div>
                 </div>

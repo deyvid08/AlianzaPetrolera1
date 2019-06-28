@@ -92,7 +92,7 @@ namespace AlianzaPetrolera.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
+                    ModelState.AddModelError("", "Usuario o Contraseña incorrectos.");
                     return View(model);
             }
         }
@@ -158,7 +158,7 @@ namespace AlianzaPetrolera.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Pers_Nom = model.Pers_Nom, Pers_Lstn1 = model.Pers_Lstn1, Pers_Lstn2 = model.Pers_Lstn2, Pers_TypeDoc = model.Pers_TypeDoc, Pers_Doc = model.Pers_Doc, RolP_Id = model.RolP_Id, Pers_Birth = model.Pers_Birth, Pers_Dir = model.Pers_Dir, Pers_Cel = model.Pers_Cel, Pers_Tel = model.Pers_Tel };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Pers_Nom = model.Pers_Nom, Pers_Lstn1 = model.Pers_Lstn1, Pers_Lstn2 = model.Pers_Lstn2, Pers_TypeDoc = model.Pers_TypeDoc, Pers_Doc = model.Pers_Doc, RolP_Id = model.RolP_Id, Pers_Birth = model.Pers_Birth, Pers_Dir = model.Pers_Dir, Pers_Cel = model.Pers_Cel, Pers_Tel = model.Pers_Tel, Ubic_Id= model.Ubic_Id };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

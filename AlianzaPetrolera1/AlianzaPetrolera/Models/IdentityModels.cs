@@ -32,7 +32,7 @@ namespace AlianzaPetrolera.Models
         [Display(Name = "Rol")]
         public Roles RolP_Id { get; set; }
 
-        [Display(Name = "Fecha de Cumpleaños")]
+        [Display(Name = "Fecha de Nacimiento")]
         [DataType(DataType.Date)]
         public DateTime Pers_Birth { get; set; }
 
@@ -45,6 +45,8 @@ namespace AlianzaPetrolera.Models
         [Display(Name = "Telefono")]
         public string Pers_Tel { get; set; }
 
+        [Display(Name = "Ciudad")]
+        public Ubic Ubic_Id { get; set; }
 
 
 
@@ -60,7 +62,7 @@ namespace AlianzaPetrolera.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ConexAlianzaPA", throwIfV1Schema: false)
+            : base("ConexAlianzaV2", throwIfV1Schema: false)
         {
         }
         public DbSet<Persona> Personas { set; get; }

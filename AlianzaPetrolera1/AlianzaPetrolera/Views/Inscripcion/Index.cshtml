@@ -1,72 +1,72 @@
 ﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Inscripcion>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inscripción";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<body class="fondo-tabla texto-contenido">
+    <br />
+    <div class="titulo-index">
+        <h1 class="col-sm-6">Usuarios Inscritos</h1>
+    </div>
+    <hr />
 
-<div class="titulosPrincipal">
-    <h1>Usuarios Inscritos</h1>
-</div>
-
-
-<div class="container">
-    <table class="table table-hover ">
-        <tr class="bg-warning text-white text-center">
-            <th style="border: none;">
-                @Html.DisplayNameFor(model => model.Pers_Doc)
-            </th>
-            <th style="border: none;">
-                @Html.DisplayNameFor(model => model.Insc_NomEst)
-            </th>
-            <th style="border: none;">
-                @Html.DisplayNameFor(model => model.Insc_ApeEst)
-            </th>
-            <th style="border: none;">
-                @Html.DisplayNameFor(model => model.Insc_DocEst)
-            </th>
-
-
-            <th style="border: none;">
-                @Html.DisplayNameFor(model => model.Insc_FechInsc)
-            </th>
-            <th style="border: none;"></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr class="text-center">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Pers_Doc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Insc_NomEst)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Insc_ApeEst)
-                </td>
-                    
-                <td>
-                    @Html.DisplayFor(modelItem => item.Insc_DocEst)
-
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Insc_FechInsc)
-                </td>
-
-                <td>
-
-
-
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
-                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })  </button>
-                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new {nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID,documentoestu= item.Insc_DocEst,apellidoestu=item.Insc_ApeEst,idestu=item.Pers_Doc }, htmlAttributes: new { @style = "color:#fff; " })      </button>
-                    </div>
-                </td>
-
+    <div class="container">
+        <table class="tabla-index table-hover table-dark">
+            <tr class="bg-warning text-white text-center">
+                <th style="border: none;" >
+                    @Html.DisplayNameFor(model => model.Pers_Doc)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Insc_NomEst)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Insc_ApeEst)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Insc_DocEst)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Insc_FechInsc)
+                </th>
+                <th style="border: none;"></th>
             </tr>
-        }
 
-    </table>
-</div>
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pers_Doc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Insc_NomEst)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Insc_ApeEst)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Insc_DocEst)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Insc_FechInsc)
+                    </td>
+
+                    <td>
+
+
+
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
+                            <button type="button" class="btn btn-warning"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "" })  </button>
+                            <button type="button" class="btn btn-warning"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID, documentoestu = item.Insc_DocEst, apellidoestu = item.Insc_ApeEst, idestu = item.Pers_Doc }, htmlAttributes: new { @style = "" })</button>
+                        </div>
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>

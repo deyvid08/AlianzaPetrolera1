@@ -1,98 +1,57 @@
 ﻿@model AlianzaPetrolera.Models.Admin.Matricula
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar Estudiante";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Eliminar Matricula</h2>
-
-<h3>Estas seguro de eliminar esta matricula?</h3>
-<div>
-    <h4>Matricula</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Insc_Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Insc_Id)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Mat_IdEst)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Mat_IdEst)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Mat_Nom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Mat_Nom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Mat_Apel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Mat_Apel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Mat_Doc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Mat_Doc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Peri_Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Peri_Id)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cate_Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cate_Id)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Matr_Fecha)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Matr_Fecha)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Matri_Esta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Matri_Esta)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar", "Index")
+<div class="row">
+    <div class="fondo-reg-hijo col-sm-5">
+        <div class="contenedorlogos">
+            <div class="imagenBanner">
+                <img src="~/Content/images/aasssd (2).png" alt="Alternate Text" style="width:90%" />
+            </div>
+            <div class="imagenBanner">
+                <img src="~/Content/images/logo.png" alt="Alternate Text" />
+            </div>
         </div>
-    }
+    </div>
+    <div class="col-sm-6">
+        <div>
+            <div class="titulo-detalles">
+                <h1>¿Quieres eliminar esta matrícula?</h1>
+            </div>
+            <hr />
+            <br />
+            <div class="row">
+                <div class="col-sm-6" style="left:25%">
+                    <table class="tabla-detal-inscp">
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Insc_Id)    </b></th><td>@Html.DisplayFor(model => model.Insc_Id)   </td></tr>
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Mat_IdEst)  </b></th><td>@Html.DisplayFor(model => model.Mat_IdEst) </td></tr>
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Mat_Nom)    </b></th><td>@Html.DisplayFor(model => model.Mat_Nom)   </td></tr>
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Mat_Apel)   </b></th><td>@Html.DisplayFor(model => model.Mat_Apel)  </td></tr>
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Mat_Doc)    </b></th><td>@Html.DisplayFor(model => model.Mat_Doc)   </td></tr>
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Peri_Id)    </b></th><td>@Html.DisplayFor(model => model.Peri_Id)   </td></tr>
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Cate_Id)    </b></th><td>@Html.DisplayFor(model => model.Cate_Id)   </td></tr>
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Matr_Fecha) </b></th><td>@Html.DisplayFor(model => model.Matr_Fecha)</td></tr>
+                        <tr><th><b>@Html.DisplayNameFor(model => model.Matri_Esta) </b></th><td>@Html.DisplayFor(model => model.Matri_Esta)</td></tr>
+                    </table>
+                    <br />
+                    <hr />
+                    <br />
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                         <div class="row" style="left:-20px">
+                             <div class="form-actions col-sm-6">
+                                 <input type="submit" value="Eliminar" class="btn btn-default" />
+                             </div>
+                             <div class="col-md-6">
+                                 <a href="~/Matricula/Index"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
+                             </div>
+                         </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

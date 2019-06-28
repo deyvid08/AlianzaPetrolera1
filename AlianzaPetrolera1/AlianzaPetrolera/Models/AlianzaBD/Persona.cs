@@ -38,11 +38,11 @@ namespace AlianzaPetrolera.Models.AlianzaBD
         public string Pers_Tel1 { get; set; }
         [Display(Name = "Telefono")]
         public string Pers_Tel2 { get; set; }
-        [Display(Name = "Correo 1")]
+        [Display(Name = "Correo1")]
         public string Pers_Mail1 { get; set; }
-        [Display(Name = "Correo 2")]
+        [Display(Name = "Correo2")]
         public string Pers_Mail2 { get; set; }
-        [Display(Name = "Fecha de Ingreso")]
+        [Display(Name = "Fecha de Registro")]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> Pers_Ingreso { get; set; }
         [Display(Name = "Total de Puntos")]

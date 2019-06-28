@@ -1,155 +1,59 @@
 ﻿@model AlianzaPetrolera.Models.AlianzaBD.Persona
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Información Hijo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>Persona</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_NickNom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_NickNom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Pwd)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Pwd)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Nom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Nom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Lstn1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Lstn1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Lstn2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Lstn2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_TypeDoc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_TypeDoc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Doc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Doc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Birth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Birth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Dir)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Dir)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Tel1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Tel1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Tel2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Tel2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Mail1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Mail1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Mail2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Mail2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_Ingreso)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_Ingreso)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pers_TotalPoints)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pers_TotalPoints)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ubic_Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ubic_Id)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rolp_Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rolp_Id)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Pers_Cod }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="row">
+    <div class="fondo-reg-hijo col-sm-5">
+        <div class="contenedorlogos">
+            <div class="imagenBanner">
+                <img src="~/Content/images/aasssd (2).png" alt="Alternate Text" style="width:90%" />
+            </div>
+            <div class="imagenBanner">
+                <img src="~/Content/images/logo.png" alt="Alternate Text" />
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="titulo-detalles">
+            <h2>Información de tu hijo</h2>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6" style="left:8%">
+                <table class="tabla-detalles" >
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Nom)            </b></th><td>    @Html.DisplayFor(model => model.Pers_Nom)           </td></tr>
+                    <tr><th><b>Apellido          </b></th><td>    @Html.DisplayFor(model => model.Pers_Lstn1)         </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_TypeDoc)        </b></th><td>    @Html.DisplayFor(model => model.Pers_TypeDoc)       </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Doc)            </b></th><td>    @Html.DisplayFor(model => model.Pers_Doc)           </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Birth)          </b></th><td>    @Html.DisplayFor(model => model.Pers_Birth)         </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Ubic_Id)             </b></th><td>    @Html.DisplayFor(model => model.Ubic_Id)            </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Dir)            </b></th><td>    @Html.DisplayFor(model => model.Pers_Dir)           </td></tr>
+                </table>
+            </div>
+            <div class="col-sm-6" style="left:8%">
+                <table class="tabla-detalles">
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Tel1)           </b></th><td>    @Html.DisplayFor(model => model.Pers_Tel1)          </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Tel2)           </b></th><td>    @Html.DisplayFor(model => model.Pers_Tel2)          </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Mail1)          </b></th><td>    @Html.DisplayFor(model => model.Pers_Mail1)         </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Mail2)          </b></th><td>    @Html.DisplayFor(model => model.Pers_Mail2)         </td></tr>
+                    <tr><th><b>Registro        </b></th><td>    @Html.DisplayFor(model => model.Pers_Ingreso)       </td></tr>
+                    <tr><th><b>Total Puntos   </b></th><td>    @Html.DisplayFor(model => model.Pers_TotalPoints)   </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Rolp_Id)             </b></th><td>    @Html.DisplayFor(model => model.Rolp_Id)            </td></tr>
+                </table>
+            </div>
+        </div>
+        <br />
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-warning centrar-contenido btn-edit-hijo">@Html.ActionLink("EDITAR", "Edit", new { id = Model.Pers_Cod }, htmlAttributes: new { @style = "" }) </button>                
+            </div>
+            <div class="col-md-6">
+                <a href="~/RegistroPersona/Index"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
+            </div>
+        </div>
+        
+    </div>
+    </div>

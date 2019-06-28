@@ -10,7 +10,10 @@ namespace AlianzaPetrolera.Models.Admin
 {
     public class Matricula
     {
-
+        public Matricula()
+        {// Genera automaticamente el campo tipo date.
+            Matr_Fecha = DateTime.Now;
+        }
         [Key]
         [Display(Name = "Id")]
         public int Matri_Id { get; set; }

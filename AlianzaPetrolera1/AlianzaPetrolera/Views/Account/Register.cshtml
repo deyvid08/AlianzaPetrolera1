@@ -1,104 +1,143 @@
 ﻿@model AlianzaPetrolera.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Registro Padre Familia";
+    ViewBag.Title = "Regístrate";
 }
 
-
-<div class="titulosPrincipal">
-    <h1>@ViewBag.Title</h1>
-</div>
-    
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-
-    <hr />
-
-    <h4>Datos Usuario</h4>
-    <div class="plegable">
-        <div class="formularioRegistro">
-            <br />
-            @Html.ValidationSummary("")
-            <br />
-            @Html.LabelFor(m => m.UserName)
-            <br />
-            @Html.TextBoxFor(m => m.UserName)
-
-            <br />
-            @Html.LabelFor(m => m.Email)
-            <br />
-            @Html.TextBoxFor(m => m.Email)
-            <br />
-            @Html.LabelFor(m => m.Password)
-            <br />
-            @Html.PasswordFor(m => m.Password)
-            <br />
-            @Html.LabelFor(m => m.ConfirmPassword)
-            <br />
-            @Html.PasswordFor(m => m.ConfirmPassword)
+<div class="row">
+    <div class="fondo-reg-padre col-sm-5">
+        <div class="contenedorlogos">
+            <div class="imagenBanner">
+                <img src="~/Content/images/aasssd (2).png" alt="Alternate Text" style="width:90%" />
+            </div>
+            <div class="imagenBanner">
+                <img src="~/Content/images/logo.png" alt="Alternate Text" />
+            </div>
         </div>
     </div>
-    <hr />
-    <h4>Datos Personales</h4>
-    <div class="plegable">
-        <div class="formularioRegistro">
-            @Html.LabelFor(m => m.Pers_Nom)
-            <br />
-            @Html.TextBoxFor(m => m.Pers_Nom)
-            <br />
-            @Html.LabelFor(m => m.Pers_Lstn1)
-            <br />
-            @Html.TextBoxFor(m => m.Pers_Lstn1)
-            <br />
-            @Html.LabelFor(m => m.Pers_Lstn2)
-            <br />
-            @Html.TextBoxFor(m => m.Pers_Lstn2)
-            <br />
-            @Html.LabelFor(m => m.Pers_TypeDoc)
-            <br />
-            @Html.EnumDropDownListFor(m => m.Pers_TypeDoc, new { @class = "form-control" })
-            <br />
-            @Html.LabelFor(m => m.Pers_Doc)
-            <br />
-            @Html.TextBoxFor(m => m.Pers_Doc)
-            <br />
-            @Html.LabelFor(m => m.RolP_Id)
-            <br />
-            @Html.EnumDropDownListFor(m => m.RolP_Id, new { @class = "form-control" })
+    <div class=" col-sm-7 scroll">
+        <div class="titulosPrincipal">
+            <h1>@ViewBag.Title</h1>
+        </div>
 
 
-            <br />
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
             <hr />
+            <div style="font-family: 'Comic Sans MS', arial; font-weight: bold; font-size: 20px; color:#000000;text-align:center;">
+                <h4>Datos Usuario</h4>
+            </div>
+            <hr />
+            <div class="">
+                <div class="formularioRegistro">
+                    @Html.ValidationSummary("")
+                    <div class="row">
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.UserName)
+                            <br />
+                            @Html.TextBoxFor(m => m.UserName)
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Email)
+                            @Html.TextBoxFor(m => m.Email)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Password )
+                           <br />
+                            @Html.PasswordFor(m => m.Password, new { @style= "border-bottom:2px solid #e0a800" })
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.ConfirmPassword)
+                            <br />
+                            @Html.PasswordFor(m => m.ConfirmPassword , new { @style = "border-bottom:2px solid #e0a800" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div style="font-family: 'Comic Sans MS', arial;font-weight: bold;font-size: 20px; color:#000000;text-align:center;">
+                <h4>Datos Personales</h4>
+            </div>
+            <hr />
+            <div class="">
+                <div class="formularioRegistro">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Pers_Nom)
+                            @Html.TextBoxFor(m => m.Pers_Nom)
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Pers_Lstn1)
+                            @Html.TextBoxFor(m => m.Pers_Lstn1)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Pers_Lstn2)
+                            @Html.TextBoxFor(m => m.Pers_Lstn2)
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Ubic_Id)
+                            @Html.EnumDropDownListFor(m => m.Ubic_Id, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Pers_TypeDoc)
+                            @Html.EnumDropDownListFor(m => m.Pers_TypeDoc, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Pers_Doc)
+                            @Html.TextBoxFor(m => m.Pers_Doc)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.RolP_Id)
+                            @Html.EnumDropDownListFor(m => m.RolP_Id, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-6">
+                            <h6>Fecha de Nacimiento</h6>
+                            @Html.EditorFor(m => m.Pers_Birth, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                            @Html.ValidationMessageFor(m => m.Pers_Birth, "")
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Pers_Tel)
+                            @Html.TextBoxFor(m => m.Pers_Tel)
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.LabelFor(m => m.Pers_Cel)
+                            @Html.TextBoxFor(m => m.Pers_Cel)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @Html.LabelFor(m => m.Pers_Dir)
+                            <div class="col-sm-12">
+                                @Html.TextBoxFor(m => m.Pers_Dir)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-5">
+                    <input type="submit" class="btn btn-warning" value="Registrarse" />
+                </div>
+                <div class="col-md-6">
+                    <a href="~/Home/Index"><input type="button" class="btn btn-warning centrar-contenido" value="Volver"/></a>
+                </div>
+            </div>
+         }
+    </div>
+</div>
 
-            @Html.LabelFor(m => m.Pers_Birth)
-            <br />
-            @Html.EditorFor(m => m.Pers_Birth, new { htmlAttributes = new { @class = "form-control datepicker" } })
-            <br />
-            @Html.ValidationMessageFor(m => m.Pers_Birth, "")
-            <br />
-            @Html.LabelFor(m => m.Pers_Dir)
-            <br />
-            @Html.TextBoxFor(m => m.Pers_Dir)
-            <br />
-            @Html.LabelFor(m => m.Pers_Cel)
-            <br />
-            @Html.TextBoxFor(m => m.Pers_Cel)
-            <br />
-            @Html.LabelFor(m => m.Pers_Tel)
-            <br />
-            @Html.TextBoxFor(m => m.Pers_Tel)
-        </div>
-        </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 
-        <br />
-        <input type="submit" class="btn btn-warning" value="Registrarse" />
-
-        }
-
-        @Html.ActionLink("Volver", "Index")
-
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-
-        }
+}

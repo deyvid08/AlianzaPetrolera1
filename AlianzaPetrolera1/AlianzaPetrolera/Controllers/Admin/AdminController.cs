@@ -93,6 +93,13 @@ namespace AlianzaPetrolera.Controllers.Admin
 
             return View();
         }
-
+        public ActionResult PaginaConstruccion()
+        {
+            return View();
+        }
+        public ActionResult PaginaConstruccionPadre()
+        {
+            return View();
+        }
     }
 }

@@ -1,91 +1,99 @@
 ﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Matricula>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Matrícula";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<body class="fondo-tabla">
+    <br />
+    <div class="row">
+        <div class="titulo-index col-sm-6 ">
+            <h1 class="col-sm-6">Matrículas</h1>
+        </div>
+        <div class="col-sm-2" style="height:50px; left:18%">
+            <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning" value="Regresar" /></a>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <table class="tabla-index table-hover table-dark">
+            <tr class="bg-warning text-white text-center">
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Insc_Id)
+                </th>
+                <th style="border: none;" hidden>
+                    @Html.DisplayNameFor(model => model.Mat_IdEst)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Mat_Nom)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Mat_Apel)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Mat_Doc)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Peri_Id)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Cate_Id)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Matr_Fecha)
+                </th>
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.Matri_Esta)
+                </th>
+                <th style="border: none;"></th>
+            </tr>
 
-<h2>Matriculas</h2>
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Insc_Id)
+                    </td>
+                    <td hidden>
+                        @Html.DisplayFor(modelItem => item.Mat_IdEst)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mat_Nom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mat_Apel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mat_Doc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Peri_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cate_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Matr_Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Matri_Esta)
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-warning">
+                                @Html.ActionLink("Activar", "Edit", new { id = item.Matri_Id }, htmlAttributes: new { @style = "" })
+                            </button>
+                            <button type="button" class="btn btn-warning text-white">
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.Matri_Id }, htmlAttributes: new { @style = "" })
+                            </button>
+                            <button type="button" class="btn btn-warning text-white">
+                                @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { id = item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom, idcod = item.Mat_IdEst, documentoestud = item.Mat_Doc, apellidoes = item.Mat_Apel }, htmlAttributes: new { @style = "" })
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            }
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
-<table class="table table-hover table-dark">
-    <tr class="bg-warning text-white text-center">
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Insc_Id)
-        </th>
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Mat_IdEst)
-        </th>
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Mat_Nom)
-        </th>
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Mat_Apel)
-        </th>
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Mat_Doc)
-        </th>
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Peri_Id)
-        </th>
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Cate_Id)
-        </th>
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Matr_Fecha)
-        </th>
-        <th style="border: none;">
-            @Html.DisplayNameFor(model => model.Matri_Esta)
-        </th>
-        <th style="border: none;"></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr class="text-center">
-            <td>
-                @Html.DisplayFor(modelItem => item.Insc_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mat_IdEst)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mat_Nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mat_Apel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mat_Doc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Peri_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cate_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matr_Fecha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matri_Esta)
-            </td>
-            <td>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-warning text-white">
-                        @Html.ActionLink("Activar", "Edit", new { id = item.Matri_Id })
-                    </button>
-                    <button type="button" class="btn btn-warning text-white">
-                        @Html.ActionLink("Eliminar", "Delete", new { id = item.Matri_Id })
-                    </button>
-                    <button type="button" class="btn btn-warning text-white">
-                        @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { id = item.Matri_Id, nombrecate = item.Cate_Id, nombreestu = item.Mat_Nom }, htmlAttributes: new { @style = "color:#fff; " })
-                    </button>
-                </div>
-            </td>
-        </tr>
-    }
-
-</table>
+        </table>
+    </div>
+</body>

@@ -12,18 +12,19 @@
     
     <div class="tituloBienvenida">
         <div class="titulosPrincipales">
-            <h1>¡Haz parte de nuestra Escuela!</h1>
-            <h3 class="centrarSub">Te estamos Esperando</h3>
+            <h1>
+                ¡Haz Parte de Nuestra Escuela!
+            </h1>
+            <h3 class="centrarSub">
+                Te Estamos Esperando
+            </h3>
         </div>
     </div>
     <img src="~/Content/images/background.jpg" class="img-fluid" id="fondo" alt="Responsive image">
 </div>
 <div class="imagenesEmpresariales">
     <div class="imagenBanner">
-        <img src="~/Content/images/aasssd (1).png" alt="Alternate Text" />
-    </div>
-    <div class="imagenBanner">
-        <img src="~/Content/images/aasssd (2).png" alt="Alternate Text" />
+        <img src="~/Content/images/aasssd (2).png" alt="Alternate Text" style="width:90%" />
     </div>
     <div class="imagenBanner">
         <img src="~/Content/images/logo.png" alt="Alternate Text" />
@@ -31,35 +32,45 @@
 </div>
 <div class="contenedorPrincipal">
     <div class="primerContenedor">
-            <h2 class="tituloRegistro">REGISTRO</h2>
-        <p>Haz clic en el botón registrarme para que inscribas a tu hijo(a) y comienza a ser parte de nuestra institucion</p>
-            <h2 class="tituloRegistro"><a class="btn btn-default" href="~/RegistroPersona/Create">RESGISTRARME</a></h2>
-    </div>
-    @*<div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        @*<div class="centrarSub">
+            <h2 class="tituloregindex">
+                REGISTRO
+            </h2>
         </div>*@
+        <br />
+        <div class="text-reg-index">
+            <p>Haz clic en el botón aquí abajo, e inscribe a tu hijo(a) y comienza a ser parte de nuestra institución.</p>
+        </div>
+        <br />
+        <br />
+        <div class="registrocontenedor">
+            <center><a class="imagenregistro" title="Registro" href="~/Account/Register"><img src="~/Content/images/RegistroIndex.png" id="icon" alt="Registro" /></a></center>
+        </div>
+    </div>
+    
     <div class="segundoContenedor">
             <!-- Tabs Titles -->
             <!-- Icon -->
             <div class="imagenFormulario">
-                <img src="~/Content/images/logo.png" id="icon" alt="User Icon"/>
+                <center><img src="~/Content/images/Loguser.png" id="icon" alt="User Icon" /></center>
             </div>
+            <br />
+            <br />
             <!-- Login Form -->
-            <div class="formularioIngreso">
+            <div class="formularioIngreso align-content-center">
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     @Html.AntiForgeryToken()
-                    <form>
-                        @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Usuario"})
-                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Contraseña", @id = "password" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger fadeIn third", @id = "password" })
-                        <input type="submit" value="Iniciar sesión" />
+                    <form >
+                        <center>@Html.TextBoxFor(m => m.UserName, new { @placeholder = "Usuario" })</center>
+                        <center>@Html.PasswordFor(m => m.Password, new { @placeholder = "Contraseña", @id = "password" })</center>
+                        <center>@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger fadeIn third", @id = "password" })</center>
+                        <div><center><input type="submit" value="Iniciar sesión" /></center></div>
+                        <div class="formFooter text-center">
+                                <a class="underlineHover">@Html.ActionLink("¿Olvidaste tu contraseña?", "ForgotPassword", "Account", htmlAttributes: new { @Style = "color:#ffffff" })</a>
+                        </div>
                     </form>
-                    @*<div class="formFooter">
-                        <a class="underlineHover" href="#">¿Olvido Su Contraseña?</a>
-                    </div>*@
+                    
                     <!-- Remind Passowrd -->
 
                 }

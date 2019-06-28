@@ -11,16 +11,16 @@
 
 </head>
 <body>
-    <div class="fondoBanner">
-        <div class="contenedorImagen">
-            <img src="~/Content/images/logo.png">
+    <div class="layout">
+        <div>
+            <a href="~/Home/Index"><img class="contenedorImagen col-sm-3" src="~/Content/images/logo-2.png" style="max-width: 88%;"></a>
         </div>
-        <div class="contenedorMenu">
+        @*<div class="contenedorMenu col-sm-4">
             <a class="nav-item nav-link active text-white">@Html.ActionLink("Inicio", "Index", "Home", new { @style = "color:#fff" })  <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link">@Html.ActionLink("Acerca de", "About", "Home", new { @style = "color:#fff" })  </a>
             <a class="nav-item nav-link"> @Html.ActionLink("Contacto", "Contact", "Home", new { @style = "color:#fff" }) </a>
-            @Html.Partial("_LoginPartial")
-        </div>
+        </div>*@
+        <div class="col-sm-9 loginindex">@Html.Partial("_LoginPartial")</div>
     </div>
     @*<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -44,8 +44,7 @@
         </div>*@
     <div>
         @RenderBody()
-        <hr />
-        <footer class="fotterPrincipal">
+        <footer class="fotterPrincipal" style = "color:#ffffff">
             <p>&copy; @DateTime.Now.Year - Content Group</p>
         </footer>
     </div>

@@ -1,20 +1,22 @@
 ﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Categoria>
 
     @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Categoría";
     Layout = "~/Views/Shared/_Layout.cshtml";
     }
-
+<body class="fondo-tabla">
     <br />
+    <div class="titulo-index" >
+        <h1 class="col-sm-8" style="left:17%" >Asigna la Categoría </h1>
+    </div>
     <br />
-    <h2>Gestión Matricula/Categoria</h2>
-
-    <div class="p-3 mb-2 bg-secondary text-white">@ViewBag.Message</div>
-
-    <br />
+    <div class=" col-sm-10  p-3 mb-2 bg-secondary text-white" style="left:9% ">
+        <label style="font-family: 'Comic Sans MS', arial; font-size: 18px;">Estudiante: @ViewBag.Message @ViewBag.apellidoes</label>
+        
+    </div>
     <br />
     <div class="container">
-        <table class="table table-hover table-dark">
+        <table class="tabla-index table-hover table-dark">
             <tr class="bg-warning text-white text-center">
                 <th style="border: none;">
                     @Html.DisplayNameFor(model => model.Cate_Name)
@@ -24,27 +26,28 @@
 
             @foreach (var item in Model)
             {
-            <tr class="text-center">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cate_Name)
-                </td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        @*<button type="button" class="btn btn-warning text-white">
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Cate_Id }, htmlAttributes: new { @style = "color:#fff; " })
-                        </button>*@
-                        @*<button type="button" class="btn btn-warning text-white">
-                            @Html.ActionLink("Details", "Details", new { id = item.Cate_Id }, htmlAttributes: new { @style = "color:#fff; " })
-                        </button>*@
-                        <button type="button" class="btn btn-warning text-white">
-                            @Html.ActionLink("Matricular", "Create", "Matricula", new { Nomcategoria = item.Cate_Name ,cod_persona= @ViewBag.idest, nom_estu=@ViewBag.Message, apell_estu = @ViewBag.apellidoes,documento_estu= @ViewBag.documentoestud,idinscripcion= @ViewBag.IdInscripcion }, htmlAttributes: new { @style = "color:#fff; " })
-                        </button>
-                        @*@Html.ActionLink("Generar Recibo", "index", "ReciboCaja", new { id = item.Cate_Id })*@
-                        @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { nombrecate = item.Cate_Name, nombreestu = ViewBag.Message }, htmlAttributes: new { @style = "color:#fff; " })      </button>*@
-                    </div>
-                </td>
-            </tr>
+                <tr class="text-center">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cate_Name)
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            @*<button type="button" class="btn btn-warning text-white">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Cate_Id }, htmlAttributes: new { @style = "color:#fff; " })
+                                </button>*@
+                            @*<button type="button" class="btn btn-warning text-white">
+                                    @Html.ActionLink("Details", "Details", new { id = item.Cate_Id }, htmlAttributes: new { @style = "color:#fff; " })
+                                </button>*@
+                            <button type="button" class="btn btn-warning">
+                                @Html.ActionLink("Matricular", "Create", "Matricula", new { Nomcategoria = item.Cate_Name, cod_persona = @ViewBag.idest, nom_estu = @ViewBag.Message, apell_estu = @ViewBag.apellidoes, documento_estu = @ViewBag.documentoestud, idinscripcion = @ViewBag.IdInscripcion }, htmlAttributes: new { @style = "" })
+                            </button>
+                            @*@Html.ActionLink("Generar Recibo", "index", "ReciboCaja", new { id = item.Cate_Id })*@
+                            @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "Create", "ReciboCaja", new { nombrecate = item.Cate_Name, nombreestu = ViewBag.Message }, htmlAttributes: new { @style = "color:#fff; " })      </button>*@
+                        </div>
+                    </td>
+                </tr>
             }
 
         </table>
     </div>
+</body>

@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "PaginaConstruccionPadre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/loginestilos.css")
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Pagina en construcción</title>
+</head>
+<body class="fondo-pag-construccion">
+    <style type="text/css">
+
+
+        body {
+            background: #f2f2f2;
+            font-family: 'Comic Sans MS', arial;
+        }
+
+        h3 {
+            font-family: 'Comic Sans MS', arial;
+        }
+
+        .box {
+            padding: 60px 0px;
+        }
+
+        .box-part {
+            background: #FFF;
+            border-radius: 10px;
+            padding: 60px 10px;
+            margin: 30px 0px;
+        }
+
+            .box-part:hover {
+                background: #000;
+            }
+
+        .tittle {
+            margin-top: -4em;
+        }
+
+        .box-part:hover .fas,
+        .box-part:hover .title,
+        .box-part:hover .text,
+        .box-part:hover a {
+            color: #FFF;
+            -webkit-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+        }
+
+        .text {
+            margin: 20px 0px;
+        }
+
+        .fas {
+            color: #FDEF02;
+        }
+    </style>
+    <div class="row">
+        <div class="col-sm-8 wrapper fadeInDown" style="left:-20px">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                <div class="box-part text-center">
+                    <i class="fas fa-wrench fa-5x"></i>
+
+                    <br>
+                    <div class="title">
+                        <h3>¡Disculpa las molestias!</h3>
+                    </div>
+
+                    <div class="text">
+                        <span>Sitio en construcción. Estamos trabajando para hacer de esta plataforma. ¡La mejor! </span>
+                    </div>
+
+                    @Html.ActionLink("Regresar", "PadreIndex", "RegistroPersona")
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+</body>
+
+

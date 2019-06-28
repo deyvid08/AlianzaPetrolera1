@@ -126,6 +126,9 @@ namespace AlianzaPetrolera.Models
         [Display(Name = "Telefono")]
         public string Pers_Tel { get; set; }
 
+        [Display(Name = "Ciudad")]
+        public Ubic Ubic_Id { get; set; }
+
     }
 
     public class ResetPasswordViewModel

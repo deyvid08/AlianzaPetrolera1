@@ -233,6 +233,18 @@
     <Compile Include="Migrations\201904041848291_matri2.Designer.cs">
       <DependentUpon>201904041848291_matri2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904292332081_reciboconce.cs" />
+    <Compile Include="Migrations\201904292332081_reciboconce.Designer.cs">
+      <DependentUpon>201904292332081_reciboconce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906172338321_ciudadp.cs" />
+    <Compile Include="Migrations\201906172338321_ciudadp.Designer.cs">
+      <DependentUpon>201906172338321_ciudadp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906272304171_camposnombres.cs" />
+    <Compile Include="Migrations\201906272304171_camposnombres.Designer.cs">
+      <DependentUpon>201906272304171_camposnombres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -294,7 +306,17 @@
     <Content Include="Content\images\aasssd %281%29.png" />
     <Content Include="Content\images\aasssd %282%29.png" />
     <Content Include="Content\images\background.jpg" />
+    <Content Include="Content\images\fondo-index-Admin.jpg" />
+    <Content Include="Content\images\fondo-index-padre.jpg" />
+    <Content Include="Content\images\fondologin.jpg" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\Loguser.png" />
+    <Content Include="Content\images\paginaconsturccion.jpg" />
+    <Content Include="Content\images\Regis-hijo.jpg" />
+    <Content Include="Content\images\Regis-padre.jpg" />
+    <Content Include="Content\images\Registro-padre.jpg" />
+    <Content Include="Content\images\RegistroIndex.png" />
+    <Content Include="Content\images\tablas.jpg" />
     <Content Include="Content\loginestilos.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -385,11 +407,12 @@
     <Content Include="Views\Admin\SuperAdmin.cshtml" />
     <Content Include="Views\Matricula\Index.cshtml" />
     <Content Include="Views\Matricula\Details.cshtml" />
-    <Content Include="Views\Matricula\Create.cshtml" />
     <Content Include="Views\Matricula\Edit.cshtml" />
     <Content Include="Views\Matricula\Delete.cshtml" />
-    <Content Include="Views\Matricula\Create.cshtml" />
     <Content Include="Views\Admin\BienvenidaPadre.cshtml" />
+    <Content Include="Views\Matricula\Create.cshtml" />
+    <Content Include="Views\Admin\PaginaConstruccion.cshtml" />
+    <Content Include="Views\Admin\PaginaConstruccionPadre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
@@ -418,6 +441,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903291909095_Matricula1.resx">
       <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904292332081_reciboconce.resx">
+      <DependentUpon>201904292332081_reciboconce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906172338321_ciudadp.resx">
+      <DependentUpon>201906172338321_ciudadp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906272304171_camposnombres.resx">
+      <DependentUpon>201906272304171_camposnombres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

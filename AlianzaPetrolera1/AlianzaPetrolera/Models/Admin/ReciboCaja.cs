@@ -13,32 +13,46 @@ namespace AlianzaPetrolera.Models.Admin
         [Key]
         [Display(Name = "Id")]
         public int Reci_Id { get; set; }
-
-        [Display(Name = "Matricula")]
-        public int Costo_Matri { get; set; }
-
-        [Display(Name = "Poliza de Accidente")]
-        public int Costo_Poli { get; set; }
-
-        [Display(Name = "Uniforme")]
-        public int Costo_Unif { get; set; }
-
-        [Display(Name = "Mensualidad")]
-        public int Costo_Mensu { get; set; }
-
-        [DataType(DataType.Date)]
-        [Display(Name = "Fecha Matricula")]
+        [Display(Name = "N° Recibo:")]
+        public int Reci_Num { get; set; }
+        [Display(Name = "Nombre Estudiante")]
+        public string Reci_NomUs { get; set; }
+        [Display(Name = "Apellido Estudiante")]
+        public string Reci_ApeUs { get; set; }
+        [Display(Name = "Documento")]
+        public string Reci_DocUs { get; set; }
+        [Display(Name = "Categoría")]
+        public string Reci_CateUs { get; set; }
+        [Display(Name = "Fecha de Pago")]
         public DateTime Matr_Fecha { get; set; }
 
-        [Display(Name = "Estado")]
-        public EstadoMatricula Matri_Esta { get; set; }
+        [Display(Name = "Matrícula")]
+        public Nullable<float> Costo_Matri { get; set; }
 
-        [Display(Name = "Costo Total")]
-        public Nullable<float> Matri_CosTota {get; set; }
+        [Display(Name = "Políza de Accidente")]
+        public Nullable<float> Costo_Poli { get; set; }
+
+        [Display(Name = "Uniforme")]
+        public Nullable<float> Costo_Unif { get; set; }
+
+        [Display(Name = "Mensualidad")]
+        public Nullable<float> Costo_Mensu { get; set; }
+
+        [Display(Name = "Descto. Matrícula")]
+        public Nullable<float> Desc_Matri { get; set; }
+        [Display(Name = "Descto. Políza de Accidentes")]
+        public Nullable<float> Desc_Poli { get; set; }
+        [Display(Name = "Descto. Uniforme")]
+        public Nullable<float> Desc_Unif { get; set; }
+        [Display(Name = "Descto. Mensualidad")]
+        public Nullable<float> Desc_Mensu { get; set; }
+
+        [Display(Name = "Total a Pagar")]
+        public Nullable<float> Matri_CosTota { get; set; }
     }
     public class Calculadora
     {
-        private float a, b, c, d;
+        private float a, b;
 
         public float A
         {
@@ -76,7 +90,7 @@ namespace AlianzaPetrolera.Models.Admin
             float totaldesc = 0;
             float totalpag = 0;
 
-            totaldesc = ((a * b)/100);
+            totaldesc = ((a * b) / 100);
             totalpag = (a - totaldesc);
             return totalpag;
         }
@@ -92,7 +106,7 @@ namespace AlianzaPetrolera.Models.Admin
         }
         public float Uniforme(float a, float b)
         {
-            float  totaldesc = 0;
+            float totaldesc = 0;
             float totalpag = 0;
 
             totaldesc = ((a * b) / 100);
@@ -101,7 +115,7 @@ namespace AlianzaPetrolera.Models.Admin
         }
         public float Mensualidad(float a, float b)
         {
-            float  totaldesc = 0;
+            float totaldesc = 0;
             float totalpag = 0;
 
             totaldesc = ((a * b) / 100);

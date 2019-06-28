@@ -1,101 +1,115 @@
 ﻿@model AlianzaPetrolera.Models.Admin.Matricula
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Matrícular";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="titulosPrincipal">
-    <h1>Crear Matricula</h1>
-</div>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="contenedorCrear">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div>
-            @Html.LabelFor(model => model.Insc_Id, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div>
-                @Html.EditorFor(model => model.Insc_Id, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.IdInscripcion } })
-                @Html.ValidationMessageFor(model => model.Insc_Id, "", new { @class = "text-danger" })
+    <div class="row" style="width:100%">
+        <div class="fondo-reg-hijo col-sm-5">
+            <div class="contenedorlogos">
+                <div class="imagenBanner">
+                    <img src="~/Content/images/aasssd (2).png" alt="Alternate Text" style="width:90%" />
+                </div>
+                <div class="imagenBanner">
+                    <img src="~/Content/images/logo.png" alt="Alternate Text" />
+                </div>
             </div>
         </div>
-
-        <div>
-            @Html.LabelFor(model => model.Mat_IdEst, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div>
-                @Html.EditorFor(model => model.Mat_IdEst, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.CodPers } })
-                @Html.ValidationMessageFor(model => model.Mat_IdEst, "", new { @class = "text-danger" })
+        <div class="col-sm-7">
+            <div class="titulo-crear">
+                <h1>Matrícula</h1>
             </div>
-        </div>
+            <hr />
+            <div class="texto-contenido">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <div>
-            @Html.LabelFor(model => model.Mat_Nom, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div>
-                @Html.EditorFor(model => model.Mat_Nom, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.NombreEstu } })
-                @Html.ValidationMessageFor(model => model.Mat_Nom, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="container">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @Html.LabelFor(model => model.Insc_Id, htmlAttributes: new { @class = "control-label col-md-10" })
+                                <div>
+                                    @Html.EditorFor(model => model.Insc_Id, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.IdInscripcion } })
+                                    @Html.ValidationMessageFor(model => model.Insc_Id, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-        <div>
-            @Html.LabelFor(model => model.Mat_Apel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div>
-                @Html.EditorFor(model => model.Mat_Apel, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.apellidoes } })
-                @Html.ValidationMessageFor(model => model.Mat_Apel, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div class="col-sm-6" hidden>
+                                @Html.LabelFor(model => model.Mat_IdEst, htmlAttributes: new { @class = "control-label col-md-10" })
+                                <div>
+                                    @Html.EditorFor(model => model.Mat_IdEst, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.CodPers } })
+                                    @Html.ValidationMessageFor(model => model.Mat_IdEst, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                @Html.LabelFor(model => model.Mat_Nom, htmlAttributes: new { @class = "control-label col-md-10" })
+                                <div>
+                                    @Html.EditorFor(model => model.Mat_Nom, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.NombreEstu } })
+                                    @Html.ValidationMessageFor(model => model.Mat_Nom, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-        <div>
-            @Html.LabelFor(model => model.Mat_Doc, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Mat_Doc, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.documentoestud } })
-                @Html.ValidationMessageFor(model => model.Mat_Doc, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div>
-            @Html.LabelFor(model => model.Peri_Id, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.Peri_Id, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Peri_Id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div>
-            @Html.LabelFor(model => model.Cate_Id, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div>
-                @Html.EditorFor(model => model.Cate_Id, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.Nomcategoria } })
-                @Html.ValidationMessageFor(model => model.Cate_Id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div>
-            @Html.LabelFor(model => model.Matr_Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div>
-                @Html.EditorFor(model => model.Matr_Fecha, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Matr_Fecha, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div>
-            @Html.LabelFor(model => model.Matri_Esta, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div>
-                @Html.EnumDropDownListFor(model => model.Matri_Esta, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Matri_Esta, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div>
-            <div>
-                <input type="submit" value="Create" class="btn btn-default" />
+                            <div class="col-sm-6">
+                                @Html.LabelFor(model => model.Mat_Apel, htmlAttributes: new { @class = "control-label col-md-10" })
+                                <div>
+                                    @Html.EditorFor(model => model.Mat_Apel, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.apellidoes } })
+                                    @Html.ValidationMessageFor(model => model.Mat_Apel, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                @Html.LabelFor(model => model.Mat_Doc, htmlAttributes: new { @class = "control-label col-md-10" })
+                                <div>
+                                    @Html.EditorFor(model => model.Mat_Doc, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.documentoestud } })
+                                    @Html.ValidationMessageFor(model => model.Mat_Doc, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                @Html.LabelFor(model => model.Cate_Id, htmlAttributes: new { @class = "control-label col-md-10" })
+                                <div>
+                                    @Html.EditorFor(model => model.Cate_Id, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.Nomcategoria } })
+                                    @Html.ValidationMessageFor(model => model.Cate_Id, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6" hidden>
+                                @Html.LabelFor(model => model.Peri_Id, htmlAttributes: new { @class = "control-label col-md-10" })
+                                <div>
+                                    @Html.EnumDropDownListFor(model => model.Peri_Id, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Peri_Id, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @*Campo de Registro oculto*@
+                                <label asp-for="MatriRegistro" class="col-md-4 control-label" >@Html.DisplayFor(Model => Model.Matr_Fecha)  </label>
+                            </div>
+                        </div>
+                        <div>
+                            <h6>Estado del Estudiante</h6>
+                            <div>
+                                @Html.EnumDropDownListFor(model => model.Matri_Esta, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Matri_Esta, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <br />
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="submit" value="Matricular" class="btn btn-default" />
+                            </div>
+                            <div class="col-md-6">
+                                <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" style="left: 20px"/></a>
+                            </div>
+                        </div>
+                    </div>
+                 }
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

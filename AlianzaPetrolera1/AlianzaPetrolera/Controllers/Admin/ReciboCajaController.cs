@@ -8,7 +8,6 @@ using iTextSharp.tool.xml.pipeline.css;
 using iTextSharp.tool.xml.pipeline.end;
 using iTextSharp.tool.xml.pipeline.html;
 using Microsoft.AspNet.Identity;
-using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,55 +40,119 @@ namespace AlianzaPetrolera.Controllers.Admin
             return View();
         }
 
+
+
+
+
+
         // GET: Recibo/Create
-        public ActionResult Create(string nombrecate, string nombreestu, string idcod)
+        public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
+            var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
+
+            var max2 = maxrecibirix + 1;
+            Session["maxrecibo"] = max2;
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
             Session["MySessionVariable3"] = nombrecate;
+            Session["MySessionVariable9"] = documentoestud;
+            Session["MySessionVariable1"] = apellidoes;
+            Session["matricula"] = 80000;
+            Session["poliza"] = 10000;
+            Session["uniforme"] = 50000;
+            Session["mensualidad"] = 80000;
             return View();
         }
 
+
+
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod)
+        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
+            var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
+
+            var max2 = maxrecibirix + 1;
+            Session["maxrecibo"] = max2;
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
             Session["MySessionVariable3"] = nombrecate;
-
-
-
-            //ViewBag.Message = nombrecate;
-            //ViewBag.Message2 = nombreestu;
-
+            Session["MySessionVariable9"] = documentoestud;
+            Session["MySessionVariable1"] = apellidoes;
 
             try
             {
-                ReciboCaja r = new ReciboCaja();
+                if (ModelState.IsValid)
+                {
 
-                Calculadora c = new Calculadora();
-                float totalma = 0;
-                float totalp = 0;
-                float totalu = 0;
-                float totalme = 0;
-                float totalpago = 0;
+                    ReciboCaja r = new ReciboCaja();
+
+                    //Operacion Matematica para efectuar los descuentos en la matricula del estudiante.
+                    Calculadora c = new Calculadora();
+                    float totalma = 0;
+                    float totalp = 0;
+                    float totalu = 0;
+                    float totalme = 0;
+                    float totalpago = 0;
+
+                    totalma = c.Matricula(value1, value2);
+                    totalp = c.Poliac(value3, value4);
+                    totalu = c.Uniforme(value5, value6);
+                    totalme = c.Mensualidad(value7, value8);
+                    totalpago = (totalma + totalp + totalu + totalme);
+
+                    //Variables para almacenar los datos en el pdf que se imprime
+                    Session["MySessionVariable4"] = totalpago;
+                    Session["MySessionVariable5"] = value2;
+                    Session["MySessionVariable6"] = value4;
+                    Session["MySessionVariable7"] = value6;
+                    Session["MySessionVariable8"] = value8;
+                    Session["matricula"] = 80000;
+                    Session["poliza"] = 10000;
+                    Session["uniforme"] = 50000;
+                    Session["mensualidad"] = 80000;
+
+                    //Registro de datos en la tabla recibo
+
+                    r.Reci_Id = ReciboCajas.Reci_Id;
+                    r.Costo_Matri = totalma;
+                    r.Costo_Poli = totalp;
+                    r.Costo_Unif = totalu;
+                    r.Costo_Mensu = totalme;
+                    r.Desc_Matri = value2;
+                    r.Desc_Poli = value4;
+                    r.Desc_Unif = value6;
+                    r.Desc_Mensu = value8;
+                    r.Matri_CosTota = totalpago;
 
 
-                totalma = c.Matricula(value1, value2);
-                totalp = c.Poliac(value3, value4);
-                totalu = c.Uniforme(value5, value6);
-                totalme = c.Mensualidad(value7, value8);
-                totalpago = (totalma + totalp + totalu + totalme);
-                Session["MySessionVariable4"] = totalpago;
-                Session["MySessionVariable5"] = value2;
-                Session["MySessionVariable6"] = value4;
-                Session["MySessionVariable7"] = value6;
-                Session["MySessionVariable8"] = value8;
-                r.Matri_CosTota = totalpago;
-                return View();
+                    //item.Reci_Id = ReciboCajas.Reci_Id;
+                    //item.Reci_Num = model.Pers_Cod;
+                    //item.Costo_Matri = model.Pers_NickNom;
+                    //item.Costo_Poli = model.Pers_Pwd;
+                    //item.Costo_Unif = model.Pers_Nom;
+                    //item.Costo_Mensu = model.Pers_Lstn1;
+                    //item.Desc_Matri = model.Pers_Lstn2;
+                    //item.Desc_Poli = model.Pers_TypeDoc;
+                    //item.Desc_Unif = model.Pers_Doc;
+                    //item.Desc_Mensu = model.Pers_Birth;
+                    //item. = model.Pers_Dir;
+                    //item. = model.Pers_Tel1;
+                    //item. = model.Pers_Tel2;
+                    //item. = model.Pers_Mail1;
+                    //item. = model.Pers_Mail2;
+                    //item. = model.Pers_Ingreso;
+                    //item. = model.Pers_TotalPoints;
+                    //item. = model.Ubic_Id;
+                    //item. = model.Rolp_Id;
 
-                //return RedirectToAction("Index");
+
+                    db.RecibosCajas.Add(ReciboCajas);
+                    db.SaveChanges();
+                    return View();
+
+                }
+                return View(ReciboCajas);
             }
             catch
             {
@@ -97,32 +160,6 @@ namespace AlianzaPetrolera.Controllers.Admin
             }
         }
 
-
-        public ActionResult ImprimirTodas(string nombrecate/*, string nombreestu*/)
-        {
-            ViewBag.Message = nombrecate;
-            //ViewBag.Data["nombreestu"] = nombreestu;
-
-            var report = new ViewAsPdf("Create")
-            {
-
-
-
-                CustomSwitches =
-            "--footer-center \"  Created Date: " +
-          DateTime.Now.Date.ToString("dd/MM/yyyy") + "  Page: [page]/[toPage]\"" +
-          " --footer-line --footer-font-size \"12\" --footer-spacing 1 --footer-font-name \"Segoe UI\""
-
-
-            };
-            return report;
-
-
-
-
-
-
-        }
         // GET: Recibo/Edit/5
         public ActionResult Edit(int id)
         {
@@ -396,7 +433,7 @@ namespace AlianzaPetrolera.Controllers.Admin
         }
 
         [HttpPost]
-        public ActionResult ConvertThisPageToPdf()
+        public ActionResult ConvertThisPageToPdf(string idcod)
         {
             // get the HTML code of this view
             string htmlToConvert = RenderViewAsString("Create", null);
