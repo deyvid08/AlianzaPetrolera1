@@ -15,7 +15,7 @@
         <table class="tabla-index table-hover table-dark">
             <tr class="bg-warning text-white text-center">
                 <th style="border: none;" >
-                    @Html.DisplayNameFor(model => model.Pers_Doc)
+                    @Html.DisplayNameFor(model => model.Pers_Id)
                 </th>
                 <th style="border: none;">
                     @Html.DisplayNameFor(model => model.Insc_NomEst)
@@ -36,7 +36,7 @@
             {
                 <tr class="text-center">
                     <td>
-                        @Html.DisplayFor(modelItem => item.Pers_Doc)
+                        @Html.DisplayFor(modelItem => item.Pers_Id)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Insc_NomEst)
@@ -60,7 +60,7 @@
                         <div class="btn-group" role="group" aria-label="Basic example">
                             @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
                             <button type="button" class="btn btn-warning"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "" })  </button>
-                            <button type="button" class="btn btn-warning"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID, documentoestu = item.Insc_DocEst, apellidoestu = item.Insc_ApeEst, idestu = item.Pers_Doc }, htmlAttributes: new { @style = "" })</button>
+                            <button type="button" class="btn btn-warning"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID, documentoestu = item.Insc_DocEst, apellidoestu = item.Insc_ApeEst, idestu = item.Pers_Id }, htmlAttributes: new { @style = "" })</button>
                         </div>
                     </td>
 

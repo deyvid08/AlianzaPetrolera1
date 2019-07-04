@@ -3,7 +3,7 @@ namespace AlianzaPetrolera.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class matri : DbMigration
+    public partial class uno : DbMigration
     {
         public override void Up()
         {
@@ -21,7 +21,7 @@ namespace AlianzaPetrolera.Migrations
                 c => new
                     {
                         Insc_ID = c.Int(nullable: false, identity: true),
-                        Pers_Doc = c.String(),
+                        Pers_Id = c.Int(nullable: false),
                         Insc_NomEst = c.String(),
                         Insc_ApeEst = c.String(),
                         Insc_DocEst = c.String(),
@@ -35,6 +35,10 @@ namespace AlianzaPetrolera.Migrations
                     {
                         Matri_Id = c.Int(nullable: false, identity: true),
                         Insc_Id = c.Int(nullable: false),
+                        Mat_IdEst = c.String(),
+                        Mat_Nom = c.String(),
+                        Mat_Apel = c.String(),
+                        Mat_Doc = c.String(),
                         Peri_Id = c.Int(nullable: false),
                         Cate_Id = c.String(),
                         Matr_Fecha = c.DateTime(nullable: false),
@@ -48,12 +52,9 @@ namespace AlianzaPetrolera.Migrations
                 "dbo.Personas",
                 c => new
                     {
-                        Pers_Cod = c.String(nullable: false, maxLength: 128),
-                        Pers_NickNom = c.String(),
-                        Pers_Pwd = c.String(),
+                        Pers_Id = c.Int(nullable: false, identity: true),
                         Pers_Nom = c.String(),
-                        Pers_Lstn1 = c.String(),
-                        Pers_Lstn2 = c.String(),
+                        Pers_Apel = c.String(),
                         Pers_TypeDoc = c.Int(nullable: false),
                         Pers_Doc = c.String(),
                         Pers_Birth = c.DateTime(),
@@ -61,14 +62,13 @@ namespace AlianzaPetrolera.Migrations
                         Pers_Tel1 = c.String(),
                         Pers_Tel2 = c.String(),
                         Pers_Mail1 = c.String(),
-                        Pers_Mail2 = c.String(),
                         Pers_Ingreso = c.DateTime(),
                         Pers_TotalPoints = c.Int(nullable: false),
                         Ubic_Id = c.Int(nullable: false),
                         Rolp_Id = c.Int(nullable: false),
                         Padre_Id = c.String(),
                     })
-                .PrimaryKey(t => t.Pers_Cod);
+                .PrimaryKey(t => t.Pers_Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -85,6 +85,7 @@ namespace AlianzaPetrolera.Migrations
                         Pers_Dir = c.String(),
                         Pers_Cel = c.String(),
                         Pers_Tel = c.String(),
+                        Ubic_Id = c.Int(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -96,12 +97,12 @@ namespace AlianzaPetrolera.Migrations
                         LockoutEnabled = c.Boolean(nullable: false),
                         AccessFailedCount = c.Int(nullable: false),
                         UserName = c.String(nullable: false, maxLength: 256),
-                        Persona_Pers_Cod = c.String(maxLength: 128),
+                        Persona_Pers_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Personas", t => t.Persona_Pers_Cod)
+                .ForeignKey("dbo.Personas", t => t.Persona_Pers_Id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex")
-                .Index(t => t.Persona_Pers_Cod);
+                .Index(t => t.Persona_Pers_Id);
             
             CreateTable(
                 "dbo.AspNetUserClaims",
@@ -146,12 +147,20 @@ namespace AlianzaPetrolera.Migrations
                 c => new
                     {
                         Reci_Id = c.Int(nullable: false, identity: true),
-                        Costo_Matri = c.Int(nullable: false),
-                        Costo_Poli = c.Int(nullable: false),
-                        Costo_Unif = c.Int(nullable: false),
-                        Costo_Mensu = c.Int(nullable: false),
+                        Reci_Num = c.Int(nullable: false),
+                        Reci_NomUs = c.String(),
+                        Reci_ApeUs = c.String(),
+                        Reci_DocUs = c.String(),
+                        Reci_CateUs = c.String(),
                         Matr_Fecha = c.DateTime(nullable: false),
-                        Matri_Esta = c.Int(nullable: false),
+                        Costo_Matri = c.Single(),
+                        Costo_Poli = c.Single(),
+                        Costo_Unif = c.Single(),
+                        Costo_Mensu = c.Single(),
+                        Desc_Matri = c.Single(),
+                        Desc_Poli = c.Single(),
+                        Desc_Unif = c.Single(),
+                        Desc_Mensu = c.Single(),
                         Matri_CosTota = c.Single(),
                     })
                 .PrimaryKey(t => t.Reci_Id);
@@ -180,7 +189,7 @@ namespace AlianzaPetrolera.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.AspNetUsers", "Persona_Pers_Cod", "dbo.Personas");
+            DropForeignKey("dbo.AspNetUsers", "Persona_Pers_Id", "dbo.Personas");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
@@ -190,7 +199,7 @@ namespace AlianzaPetrolera.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
-            DropIndex("dbo.AspNetUsers", new[] { "Persona_Pers_Cod" });
+            DropIndex("dbo.AspNetUsers", new[] { "Persona_Pers_Id" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.Matriculas", new[] { "Insc_Id" });
             DropTable("dbo.Ubicacions");

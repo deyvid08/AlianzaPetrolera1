@@ -29,7 +29,7 @@ namespace AlianzaPetrolera.Models.Admin
         [Display(Name = "Matrícula")]
         public Nullable<float> Costo_Matri { get; set; }
 
-        [Display(Name = "Políza de Accidente")]
+        [Display(Name = "Póliza de Accidente")]
         public Nullable<float> Costo_Poli { get; set; }
 
         [Display(Name = "Uniforme")]
@@ -40,7 +40,7 @@ namespace AlianzaPetrolera.Models.Admin
 
         [Display(Name = "Descto. Matrícula")]
         public Nullable<float> Desc_Matri { get; set; }
-        [Display(Name = "Descto. Políza de Accidentes")]
+        [Display(Name = "Descto. Póliza de Accidentes")]
         public Nullable<float> Desc_Poli { get; set; }
         [Display(Name = "Descto. Uniforme")]
         public Nullable<float> Desc_Unif { get; set; }

@@ -225,25 +225,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904041810239_matri.cs" />
-    <Compile Include="Migrations\201904041810239_matri.Designer.cs">
-      <DependentUpon>201904041810239_matri.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904041848291_matri2.cs" />
-    <Compile Include="Migrations\201904041848291_matri2.Designer.cs">
-      <DependentUpon>201904041848291_matri2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904292332081_reciboconce.cs" />
-    <Compile Include="Migrations\201904292332081_reciboconce.Designer.cs">
-      <DependentUpon>201904292332081_reciboconce.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906172338321_ciudadp.cs" />
-    <Compile Include="Migrations\201906172338321_ciudadp.Designer.cs">
-      <DependentUpon>201906172338321_ciudadp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906272304171_camposnombres.cs" />
-    <Compile Include="Migrations\201906272304171_camposnombres.Designer.cs">
-      <DependentUpon>201906272304171_camposnombres.cs</DependentUpon>
+    <Compile Include="Migrations\201907032237347_uno.cs" />
+    <Compile Include="Migrations\201907032237347_uno.Designer.cs">
+      <DependentUpon>201907032237347_uno.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -264,9 +248,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-AliPetrolera-20190308044741.mdf" />
-    <Content Include="App_Data\aspnet-AliPetrolera-20190308044741_log.ldf">
-      <DependentUpon>aspnet-AliPetrolera-20190308044741.mdf</DependentUpon>
+    <Content Include="App_Data\AlianzapetV2.mdf" />
+    <Content Include="App_Data\AlianzapetV2_log.ldf">
+      <DependentUpon>AlianzapetV2.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\dbo.Trigger.sql" />
     <Content Include="bin\Antlr3.Runtime.dll" />
@@ -416,8 +400,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\RegistroRolPersona\" />
-    <Folder Include="Views\RegistroUbicacion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -433,23 +415,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904041810239_matri.resx">
-      <DependentUpon>201904041810239_matri.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904041848291_matri2.resx">
-      <DependentUpon>201904041848291_matri2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903291909095_Matricula1.resx">
-      <DependentUpon>201903291909095_Matricula1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904292332081_reciboconce.resx">
-      <DependentUpon>201904292332081_reciboconce.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906172338321_ciudadp.resx">
-      <DependentUpon>201906172338321_ciudadp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906272304171_camposnombres.resx">
-      <DependentUpon>201906272304171_camposnombres.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907032237347_uno.resx">
+      <DependentUpon>201907032237347_uno.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

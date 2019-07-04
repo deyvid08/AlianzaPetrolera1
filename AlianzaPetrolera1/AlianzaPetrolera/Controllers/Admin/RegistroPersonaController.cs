@@ -25,7 +25,7 @@ namespace AlianzaPetrolera.Controllers
         }
 
         // GET: RegistroPersona/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -77,9 +77,9 @@ namespace AlianzaPetrolera.Controllers
         }
 
         // GET: RegistroPersona/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
-            var item = db.Personas.Where(x => x.Pers_Cod == id).First();
+            var item = db.Personas.Where(x => x.Pers_Id == id).First();
             return View(item);
         }
 
@@ -90,13 +90,10 @@ namespace AlianzaPetrolera.Controllers
             try
             {
                 // TODO: Add update logic here
-                var item = db.Personas.Where(x => x.Pers_Cod == model.Pers_Cod).First();
-                item.Pers_Cod =     model.Pers_Cod;
-                item.Pers_NickNom = model.Pers_NickNom;
-                item.Pers_Pwd =     model.Pers_Pwd;
+                var item = db.Personas.Where(x => x.Pers_Id == model.Pers_Id).First();
+                item.Pers_Id =     model.Pers_Id;
                 item.Pers_Nom =     model.Pers_Nom;
-                item.Pers_Lstn1 =   model.Pers_Lstn1;
-                item.Pers_Lstn2 =   model.Pers_Lstn2;
+                item.Pers_Apel =   model.Pers_Apel;
                 item.Pers_TypeDoc = model.Pers_TypeDoc;
                 item.Pers_Doc =     model.Pers_Doc;
                 item.Pers_Birth =   model.Pers_Birth;
@@ -104,7 +101,6 @@ namespace AlianzaPetrolera.Controllers
                 item.Pers_Tel1 =    model.Pers_Tel1;
                 item.Pers_Tel2 =    model.Pers_Tel2;
                 item.Pers_Mail1 =   model.Pers_Mail1;
-                item.Pers_Mail2 =   model.Pers_Mail2;
                 item.Pers_Ingreso = model.Pers_Ingreso;
                 item.Pers_TotalPoints = model.Pers_TotalPoints;
                 item.Ubic_Id =          model.Ubic_Id;

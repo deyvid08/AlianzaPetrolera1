@@ -4,7 +4,8 @@
     ViewBag.Title = "Recibo";
     Layout = null;
 }
-
+@Styles.Render("~/Content/Site.css")
+@Styles.Render("~/Content/bootstrap.css")
 <html>
 <head>
     <!-- Required meta tags -->
@@ -64,17 +65,17 @@
                         <h6>Estudiante</h6>
                         <div class="">
                             <!--Almacena Nombre del estudiante-->
-                            @Html.EditorFor(model => model.Reci_NomUs, new { htmlAttributes = new { @class = "control-label col-md-3", @Style = "border:none", @Value = @Session["MySessionVariable"].ToString(), @ReadOnly = "readonly" } })
+                            @Html.EditorFor(model => model.Reci_NomUs, new { htmlAttributes = new { @class = "control-label col-md-3", @Style = "border:none; height:20px; text-align:left; left:-35px;", @Value = @Session["MySessionVariable"].ToString(), @ReadOnly = "readonly" } })
                             @Html.ValidationMessageFor(model => model.Reci_NomUs, "", new { @class = "text-danger" })
                             <!--Almacena Apellido del estudiante-->
-                            @Html.EditorFor(model => model.Reci_ApeUs, new { htmlAttributes = new { @class = "control-label col-md-3", @Style = "border:none", @Value = @Session["MySessionVariable1"].ToString(), @ReadOnly = "readonly" } })
+                            @Html.EditorFor(model => model.Reci_ApeUs, new { htmlAttributes = new { @class = "control-label col-md-3", @Style = "border:none; height:20px; text-align:left; left:-50px;", @Value = @Session["MySessionVariable1"].ToString(), @ReadOnly = "readonly" } })
                             @Html.ValidationMessageFor(model => model.Reci_ApeUs, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group col-sm-4">
                         <h6>Fecha de Pago</h6>
                         <div class="">
-                            @Html.EditorFor(model => model.Matr_Fecha, new { htmlAttributes = new { @class = "control-label col-md-12", @Style = "border:none", @Value = @Session["MySessionVariable2"].ToString(), @ReadOnly = "ReadOnly" } })
+                            @Html.EditorFor(model => model.Matr_Fecha, new { htmlAttributes = new { @class = "control-label col-md-12", @Style = "border:none; left:-15px;", @Value = @Session["MySessionVariable2"].ToString(), @ReadOnly = "ReadOnly" } })
                             @Html.ValidationMessageFor(model => model.Matr_Fecha, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -85,15 +86,15 @@
                     <div class="form-group col-sm-8">
                         <h6>Documento</h6>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Reci_DocUs, new { htmlAttributes = new { @class = "control-label col-md-6", @Style = "border:none", @Value = @Session["MySessionVariable9"].ToString(), @ReadOnly = "readonly" } })
+                            @Html.EditorFor(model => model.Reci_DocUs, new { htmlAttributes = new { @class = "control-label col-md-6", @Style = "border:none; height:20px; text-align:left; left:-50px;", @Value = @Session["MySessionVariable9"].ToString(), @ReadOnly = "readonly" } })
                             @Html.ValidationMessageFor(model => model.Reci_DocUs, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="text-align:left; " >
                         <h6>Categoría</h6>
                         <div class="">
-                            @Html.EditorFor(model => model.Reci_CateUs, new { htmlAttributes = new { @class = "control-label col-md-6", @Style = "border:none", @Value = @Session["MySessionVariable3"].ToString(), @ReadOnly = "readonly" } })
+                            @Html.EditorFor(model => model.Reci_CateUs, new { htmlAttributes = new { @class = "control-label col-md-8", @Style = "border:none; height:20px; text-align:left; left:-38px;", @Value = @Session["MySessionVariable3"].ToString(), @ReadOnly = "readonly" } })
                             @Html.ValidationMessageFor(model => model.Reci_CateUs, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -115,127 +116,86 @@
                 <br />
                 <br />
                 <!--Recuadro para discriminar la parte de calculo de los descuentos-->
-                <div class="container" style=" border:1px solid;border-color: #A59D9B; padding:10px 10px 10px 10px;">
+                <div class="container" style=" border:1px solid;border-color: #A59D9B; padding:10px 10px 10px 10px; align-content:center;">
                     <!--Campos sobre los valores estipulados para los items en el recibo-->
                     <form method="post">
 
-                        <table class="egt">
+                        <div class="row">
+                            <div class="col-sm-3 pago">
+                                <h6>Matrícula</h6>
+                                <input type="text" name="value1" value="80000" class="text-center" readonly>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <h6>Póliza de Accidentes</h6>
+                                <input type="text" name="value3" value="10000" class="text-center" readonly>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <h6>Uniforme</h6>
+                                <input type="text" name="value5" value="50000" class="text-center" readonly>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <h6>Mensualidad</h6>
+                                <input type="text" name="value7" value="80000" class="text-center" readonly>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-3 pago">
+                                <select name="value2" style="width:13em;">
+                                    <option selected value="0"> Descuento </option>
+                                    <option value="0">0%</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <select name="value4" style="width:13em;">
+                                    <option selected value="0"> Descuento </option>
+                                    <option value="0">0%</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <select name="value6" style="width:13em;">
+                                    <option selected value="0"> Descuento </option>
+                                    <option value="0">0%</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <select name="value8" style="width:13em;">
+                                    <option selected value="0"> Descuento </option>
+                                    <option value="0">0%</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3 pago">
+                                <label> @Session["MySessionVariable5"] %</label>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <label> @Session["MySessionVariable6"] %</label>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <label> @Session["MySessionVariable7"] %</label>
+                            </div>
+                            <div class="col-sm-3 pago">
+                                <label> @Session["MySessionVariable8"] %</label>
+                            </div>
+                        </div>
 
-                            <tr class="text-center">
-
-                                <th scope="row">Matrícula</th>
-
-                                <th>Políza Accidentes</th>
-
-                                <th>Uniforme</th>
-
-                                <th>Mensualidad</th>
-
-
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <input type="text" name="value1" value="80000" class="text-center" readonly>
-
-                                </td>
-                                <td>
-                                    <input type="text" name="value3" value="10000" class="text-center" readonly>
-
-                                </td>
-
-                                <td>
-                                    <input type="text" name="value5" value="50000" class="text-center" readonly>
-                                </td>
-
-                                <td>
-                                    <input type="text" name="value7" value="80000" class="text-center" readonly>
-                                </td>
-
-                            </tr>
-
-                            <tr>
-
-                                <th>
-                                    <br />
-                                    <br />
-                                    <select name="value2" style="width:13em;">
-                                        <option selected value="0"> Descuento </option>
-                                        <option value="0">0%</option>
-                                        <option value="5">5%</option>
-                                        <option value="10">10%</option>
-                                        <option value="15">15%</option>
-                                        <option value="20">20%</option>
-                                    </select>
-                                </th>
-
-
-                                <th>
-                                    <br />
-                                    <br />
-                                    <select name="value4" style="width:13em;">
-                                        <option selected value="0"> Descuento </option>
-                                        <option value="0">0%</option>
-                                        <option value="5">5%</option>
-                                        <option value="10">10%</option>
-                                        <option value="15">15%</option>
-                                        <option value="20">20%</option>
-                                    </select>
-                                </th>
-
-
-                                <th>
-                                    <br />
-                                    <br />
-                                    <select name="value6" style="width:13em;">
-                                        <option selected value="0"> Descuento </option>
-                                        <option value="0">0%</option>
-                                        <option value="5">5%</option>
-                                        <option value="10">10%</option>
-                                        <option value="15">15%</option>
-                                        <option value="20">20%</option>
-                                    </select>
-                                </th>
-
-
-                                <th>
-                                    <br />
-                                    <br />
-                                    <select name="value8" style="width:13em;">
-                                        <option selected value="0"> Descuento </option>
-                                        <option value="0">0%</option>
-                                        <option value="5">5%</option>
-                                        <option value="10">10%</option>
-                                        <option value="15">15%</option>
-                                        <option value="20">20%</option>
-                                    </select>
-                                </th>
-
-                            </tr>
-
-                            <tr>
-                                <td class="text-center">
-                                    @*<input type="number" name="value2" class="text-center" value="0">*@
-                                    <label text-aling="center"> @Session["MySessionVariable5"] %</label>
-                                </td>
-
-                                <td class="text-center">
-                                    <label> @Session["MySessionVariable6"] %</label>
-                                </td>
-
-                                <td class="text-center">
-                                    <label> @Session["MySessionVariable7"] %</label>
-                                </td>
-
-                                <td class="text-center">
-                                    <label> @Session["MySessionVariable8"] %</label>
-                                </td>
-
-                            </tr>
-
-
-
-                        </table>
                         <div class="row" hidden>
                             <div class="form-group col-sm-3">
                                 @Html.LabelFor(model => model.Costo_Matri, htmlAttributes: new { @class = "control-label text-center" })
@@ -303,68 +263,51 @@
                                 </div>
                             </div>
                         </div>
+                        <hr />
                         <!--Costo total de la factura-->
-                        <div class="form-group col-sm-12">
-                            <h6>Total a pagar</h6>
+                        <div class="form-group col-sm-12 pago">
+                            <h5>Total a Pagar</h5>
                             <div class="col-dm-12">
                                 @Html.EditorFor(model => model.Matri_CosTota, new { htmlAttributes = new { @class = "control-label", @Value = @Session["MySessionVariable4"] } })
                                 @Html.ValidationMessageFor(model => model.Matri_CosTota, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        <div id="convertThisPageButtonDiv">
-                            <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="Totalizar" /> <br />
-                        </div>
-                        <div class="row" id="convertThisPageButtonDiv">
-                            <div class="form-group col-sm-6" id="convertThisPageButtonDiv">
-                                <div class="col-md-offset-2 col-md-10">
-                                    <input type="submit" value="Guardar Datos" class="btn btn-warning text-white" />
-                                </div>
-                            </div>
-                            @*<br />*@
-                            @using (Html.BeginForm("ConvertThisPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
-                            {
-                                <div id="convertThisPageButtonDiv">
-                                    @*<input type="submit" value="Convert
-                                        This Page To PDF" />*@
-                                </div>
-                            }
-                            @*<br />*@
-                            @*@using (Html.BeginForm("ConvertAboutPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
-                                {
-                                    <div id="convertAboutPageButtonDiv">
-                                        <input type="submit" value="Convert
-                                    About Page To PDF" />
-                                    </div>
-                                }*@
 
-                            <form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
-                                <div class="col-sm-6">
-                                    <div id="convertThisPageButtonDiv">
-                                        <input type="submit" value="Recibo Alianza PDF" class="btn btn-warning text-white" />
-                                    </div>
-                                </div>
-                            </form>
-                            <br />
-                            @*<form action="~/GeneracionRecibo/ConvertAboutPageToPdf" id="convertAboutPageForm"
-                                      method="post">
-                                    <div id="convertAboutPageButtonDiv">
-                                        <input type="submit" value="Convert
-                                    About Page To PDF" />
-                                    </div>
-                                </form>*@
-                        </div>
+
                     </form>
                 </div>
+                <br />
+                @*Botones de las funciones en el recibo*@
+                <div class="row" id="convertThisPageButtonDiv">
+
+                    @*Boton calculo matematico del pago total del recibo*@
+                    <div class="col-sm-3" id="convertThisPageButtonDiv">
+                        <input type="submit" class=" btn-lg btn-block" name="calc" id="calc" value="Totalizar" /> <br />
+                    </div>
+                    @*Boton para imprimir pdf del recibo*@
+                    <div class="col-sm-3">
+                        <form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
+                            <div id="convertThisPageButtonDiv">
+                                <input type="submit" value="IMPRIMIR RECIBO" class="btn btn-warning" style="width:100%" />
+                            </div>
+                        </form>
+                    </div>
+                    @*Boton Guardar datos del recibo*@
+                    <div class="form-group col-sm-3" id="convertThisPageButtonDiv">
+                        <input type="submit" value="Guardar Datos" class="btn btn-warning" style="width:100%"/>
+                    </div>
+                    @*Boton regresar al index de admin*@
+                    <div class="col-sm-3" id="convertThisPageButtonDiv">
+                        <a href="~/Admin/AdminIndex"><input type="button" class="pago btn btn-warning" value="REGRESAR" /></a>
+                        
+                    </div>
+                    <br />
+                </div>
+
             </div>
         }
 
-        <form method="post">
-            <div id="convertThisPageButtonDiv">
-                <button type="button" class="btn btn-warning text-white">
-                    @Html.ActionLink("Regresar", "AdminIndex", "Admin")
-                </button>
-            </div>
-        </form>
+        <form method="post"></form>
         <br />
     </div>
 

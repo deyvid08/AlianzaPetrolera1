@@ -26,8 +26,7 @@ namespace AlianzaPetrolera.Controllers.Enum
     }
     public enum RolHijo
     {
-        Seleccione,
-        Estudiante=1
+        Estudiante
     }
     public enum Roles_Admin
     {

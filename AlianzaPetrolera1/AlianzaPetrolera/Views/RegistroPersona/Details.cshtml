@@ -23,24 +23,23 @@
         <div class="row">
             <div class="col-sm-6" style="left:8%">
                 <table class="tabla-detalles" >
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Nom)            </b></th><td>    @Html.DisplayFor(model => model.Pers_Nom)           </td></tr>
-                    <tr><th><b>Apellido          </b></th><td>    @Html.DisplayFor(model => model.Pers_Lstn1)         </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_TypeDoc)        </b></th><td>    @Html.DisplayFor(model => model.Pers_TypeDoc)       </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Doc)            </b></th><td>    @Html.DisplayFor(model => model.Pers_Doc)           </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Birth)          </b></th><td>    @Html.DisplayFor(model => model.Pers_Birth)         </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Ubic_Id)             </b></th><td>    @Html.DisplayFor(model => model.Ubic_Id)            </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Dir)            </b></th><td>    @Html.DisplayFor(model => model.Pers_Dir)           </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Nom)</b></th><td>@Html.DisplayFor(model => model.Pers_Nom)</td></tr>
+                    <tr><th><b>Apellido</b></th><td>@Html.DisplayFor(model => model.Pers_Apel)</td></tr>
+                    <tr><th><b>T. Documento</b></th><td>@Html.DisplayFor(model => model.Pers_TypeDoc)</td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Doc)</b></th><td>@Html.DisplayFor(model => model.Pers_Doc)</td></tr>
+                    <tr><th><b>Fecha Nacimiento</b></th><td>@Html.DisplayFor(model => model.Pers_Birth)</td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Ubic_Id) </b></th><td>@Html.DisplayFor(model => model.Ubic_Id)</td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Dir)</b></th><td>@Html.DisplayFor(model => model.Pers_Dir)</td></tr>
                 </table>
             </div>
             <div class="col-sm-6" style="left:8%">
                 <table class="tabla-detalles">
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Tel1)           </b></th><td>    @Html.DisplayFor(model => model.Pers_Tel1)          </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Tel2)           </b></th><td>    @Html.DisplayFor(model => model.Pers_Tel2)          </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Mail1)          </b></th><td>    @Html.DisplayFor(model => model.Pers_Mail1)         </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Mail2)          </b></th><td>    @Html.DisplayFor(model => model.Pers_Mail2)         </td></tr>
-                    <tr><th><b>Registro        </b></th><td>    @Html.DisplayFor(model => model.Pers_Ingreso)       </td></tr>
-                    <tr><th><b>Total Puntos   </b></th><td>    @Html.DisplayFor(model => model.Pers_TotalPoints)   </td></tr>
-                    <tr><th><b>@Html.DisplayNameFor(model => model.Rolp_Id)             </b></th><td>    @Html.DisplayFor(model => model.Rolp_Id)            </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Tel1)</b></th><td>@Html.DisplayFor(model => model.Pers_Tel1)</td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Pers_Tel2)</b></th><td>@Html.DisplayFor(model => model.Pers_Tel2)</td></tr>
+                    <tr><th><b>Correo </b></th><td>@Html.DisplayFor(model => model.Pers_Mail1)</td></tr>                    
+                    <tr><th><b>Registro</b></th><td>@Html.DisplayFor(model => model.Pers_Ingreso) </td></tr>
+                    <tr><th><b>Total Puntos</b></th><td>@Html.DisplayFor(model => model.Pers_TotalPoints)</td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Rolp_Id)</b></th><td>@Html.DisplayFor(model => model.Rolp_Id)</td></tr>
                 </table>
             </div>
         </div>
@@ -48,7 +47,7 @@
         <hr />
         <div class="row">
             <div class="col-md-6">
-                <button type="button" class="btn btn-warning centrar-contenido btn-edit-hijo">@Html.ActionLink("EDITAR", "Edit", new { id = Model.Pers_Cod }, htmlAttributes: new { @style = "" }) </button>                
+                <button type="button" class="btn btn-warning centrar-contenido btn-edit-hijo">@Html.ActionLink("EDITAR", "Edit", new { id = Model.Pers_Id }, htmlAttributes: new { @style = "" }) </button>                
             </div>
             <div class="col-md-6">
                 <a href="~/RegistroPersona/Index"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>

@@ -13,7 +13,7 @@ namespace AlianzaPetrolera.Models.Admin
         [Display(Name = "Id")]
         public int Insc_ID { get; set; }
         [Display(Name = "Codigo Persona")]
-        public string Pers_Doc { get; set; }
+        public int Pers_Id { get; set; }
         [Display(Name = "Nombre")]
         public string Insc_NomEst { get; set; }
         [Display(Name = "Apellido")]
