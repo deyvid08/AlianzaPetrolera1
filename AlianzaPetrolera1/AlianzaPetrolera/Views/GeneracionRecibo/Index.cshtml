@@ -1,0 +1,242 @@
+﻿@model AlianzaPetrolera.Models.Admin.ReciboCaja
+
+@{
+    ViewBag.Title = "Recibo";
+    Layout = null;
+}
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Recibo</title>
+</head>
+<body>
+
+    <style type="text/css">
+        input[type=number] {
+            border: none;
+            border-bottom: 2px solid #808080;
+            width: 13em;
+        }
+
+        input[type=text] {
+            border: none;
+            border-bottom: 2px solid #808080;
+        }
+    </style>
+
+    <div class="container">
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-sm-10">
+                <img src="~/Content/images/logo.png" />
+            </div>
+
+            <div class="col-sm-2" style="margin-top:2em;">
+                <h5>N° Recibo 0001</h5>
+            </div>
+        </div>
+        <hr />
+        <br />
+        <div class="row">
+            <div class="col-sm-8">
+                <h6>Estudiante: @Session["MySessionVariable"].ToString() </h6>
+            </div>
+
+            <div class="col-sm-4">
+                <h6>Fecha de Generación Recibo</h6>
+                <h6> @Session["MySessionVariable2"].ToString() </h6>
+            </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div class="row">
+            <div class="col-sm-12">
+                <h6>Categoria: @Session["MySessionVariable3"].ToString() </h6>
+            </div>
+
+        </div>
+        <hr />
+        <br />
+
+        <div class="row">
+            <div class="col-sm-8">
+                <h6>Tipo Cuenta: Ahorros</h6>
+            </div>
+            <div class="col-sm-4">
+                <h6>Bancolombia</h6>
+            </div>
+            <div class="col-sm-12">
+                <h6>#1215684-154541-12152</h6>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="container" style=" border:1px solid;border-color: #A59D9B; padding:10px 10px 10px 10px;">
+            <div class="container">
+                <form method="post">
+
+                    <table class="egt">
+
+                        <tr>
+
+                            <th scope="row">Matricula</th>
+
+                            <th>Poliza Accidentes : </th>
+
+                            <th>Uniforme : </th>
+
+                            <th>Mensualidad : </th>
+
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="number" name="value1" value="80000" class="text-center">
+
+                            </td>
+                            <td>
+                                <input type="number" name="value3" value="10000" class="text-center">
+
+                            </td>
+
+                            <td>
+                                <input type="number" name="value5" value="50000" class="text-center">
+                            </td>
+
+                            <td>
+                                <input type="number" name="value7" value="80000" class="text-center">
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Descuento </th>
+
+
+                            <th>Descuento </th>
+
+
+                            <th>Descuento</th>
+
+
+                            <th>Descuento</th>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+
+                                <input type="number" name="value2" class="text-center" value="0">
+
+                            </td>
+                            <td>
+                                <input type="number" name="value4" class="text-center" value="0">
+
+                            </td>
+
+                            <td>
+                                <input type="number" name="value6" class="text-center" value="0">
+                            </td>
+
+                            <td>
+                                <input type="number" name="value8" class="text-center" value="0">
+                            </td>
+
+                        </tr>
+
+
+
+                    </table>
+
+                    <br />
+                    <br />
+                    <br />
+                    <B><h2>Total a pagar: @ViewData["totfin"]</h2></B>
+
+                    <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
+
+                    
+                    @*<br />*@
+                    @using (Html.BeginForm("ConvertThisPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
+                    {
+                        <div id="convertThisPageButtonDiv">
+                            @*<input type="submit" value="Convert
+                        This Page To PDF" />*@
+                        </div>
+                    }
+                    @*<br />*@
+                    @*@using (Html.BeginForm("ConvertAboutPageToPdf", "GeneracionRecibo", FormMethod.Post, new { id = "convertForm" }))
+                    {
+                        <div id="convertAboutPageButtonDiv">
+                            <input type="submit" value="Convert
+                        About Page To PDF" />
+                        </div>
+                    }*@
+
+                    <form action="~/GeneracionRecibo/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
+                        <div id="convertThisPageButtonDiv">
+                            <input type="submit" value="Recibo Alianza PDF" />
+                        </div>
+                    </form>
+                    <br />
+                    @*<form action="~/GeneracionRecibo/ConvertAboutPageToPdf" id="convertAboutPageForm"
+                          method="post">
+                        <div id="convertAboutPageButtonDiv">
+                            <input type="submit" value="Convert
+                        About Page To PDF" />
+                        </div>
+                    </form>*@
+                    <br />
+                    <br />
+                    
+                    <br />
+                    <br />
+                    
+                    </asp:Content>
+
+
+
+
+
+
+
+
+
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <br />
+    <br />
+    @section script {
+        <script>
+
+
+
+
+        </script>
+    }
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

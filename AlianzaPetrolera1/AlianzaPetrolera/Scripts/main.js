@@ -1,4 +1,4 @@
-﻿$(document).ready(function (){
+﻿$(document).ready(function () {
     $("#number").on({
         "focus": function (event) {
             $(event.target).select();
