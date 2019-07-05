@@ -229,6 +229,10 @@
     <Compile Include="Migrations\201907032237347_uno.Designer.cs">
       <DependentUpon>201907032237347_uno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907051404245_tres.cs" />
+    <Compile Include="Migrations\201907051404245_tres.Designer.cs">
+      <DependentUpon>201907051404245_tres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
@@ -417,6 +421,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907032237347_uno.resx">
       <DependentUpon>201907032237347_uno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907051404245_tres.resx">
+      <DependentUpon>201907051404245_tres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

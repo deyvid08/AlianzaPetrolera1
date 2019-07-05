@@ -42,7 +42,7 @@ namespace AlianzaPetrolera.Models
         [Display(Name = "Celular")]
         public string Pers_Cel { get; set; }
 
-        [Display(Name = "Telefono")]
+        [Display(Name = "Teléfono")]
         public string Pers_Tel { get; set; }
 
         [Display(Name = "Ciudad")]
