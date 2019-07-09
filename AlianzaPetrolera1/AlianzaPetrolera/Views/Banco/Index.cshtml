@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Banco>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body class="fondo-tabla">
+    <br />
+    <div class="row">
+        <div class="titulo-index col-sm-6 ">
+            <h1 class="col-sm-6">Bancos</h1>
+        </div>
+        <div class="col-sm-2" style="height:50px; left:18%">
+            <a href="~/Banco/Create"><input type="button" class="btn btn-warning" value="Agregar Cuenta" /></a>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <table class="tabla-index table-hover table-dark">
+            <tr class="bg-warning text-white text-center">
+                <th style="border: none;">
+                    <h5>Banco</h5>
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Banc_Nom)
+                    </td>
+
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-warning">
+                                @Html.ActionLink("Editar", "Edit", new { id = item.Banc_Id })
+                            </button>
+                            <button type="button" class="btn btn-warning">
+                                @Html.ActionLink("Detalles", "Details", new { id = item.Banc_Id })
+                            </button>
+                            <button type="button" class="btn btn-warning">
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.Banc_Id })
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        <div>
+            <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
+        </div>
+        <br />
+    </div>
+</body>

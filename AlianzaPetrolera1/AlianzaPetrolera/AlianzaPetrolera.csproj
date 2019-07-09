@@ -213,6 +213,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\BancoController.cs" />
     <Compile Include="Controllers\Admin\InscripcionController.cs" />
     <Compile Include="Controllers\Admin\MatriculaController.cs" />
     <Compile Include="Controllers\Admin\ReciboCajaController.cs" />
@@ -225,17 +226,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907032237347_uno.cs" />
-    <Compile Include="Migrations\201907032237347_uno.Designer.cs">
-      <DependentUpon>201907032237347_uno.cs</DependentUpon>
+    <Compile Include="Migrations\201907081523540_uno.cs" />
+    <Compile Include="Migrations\201907081523540_uno.Designer.cs">
+      <DependentUpon>201907081523540_uno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907051404245_tres.cs" />
-    <Compile Include="Migrations\201907051404245_tres.Designer.cs">
-      <DependentUpon>201907051404245_tres.cs</DependentUpon>
+    <Compile Include="Migrations\201907081854461_dos.cs" />
+    <Compile Include="Migrations\201907081854461_dos.Designer.cs">
+      <DependentUpon>201907081854461_dos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907082218520_tres.cs" />
+    <Compile Include="Migrations\201907082218520_tres.Designer.cs">
+      <DependentUpon>201907082218520_tres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907082230102_cuatro.cs" />
+    <Compile Include="Migrations\201907082230102_cuatro.Designer.cs">
+      <DependentUpon>201907082230102_cuatro.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
+    <Compile Include="Models\Admin\Banco.cs" />
     <Compile Include="Models\Admin\Categoria.cs" />
     <Compile Include="Models\Admin\Inscripcion.cs" />
     <Compile Include="Models\Admin\Matricula.cs" />
@@ -401,8 +410,14 @@
     <Content Include="Views\Matricula\Create.cshtml" />
     <Content Include="Views\Admin\PaginaConstruccion.cshtml" />
     <Content Include="Views\Admin\PaginaConstruccionPadre.cshtml" />
+    <Content Include="Views\Banco\Create.cshtml" />
+    <Content Include="Views\Banco\Delete.cshtml" />
+    <Content Include="Views\Banco\Details.cshtml" />
+    <Content Include="Views\Banco\Edit.cshtml" />
+    <Content Include="Views\Banco\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\ViewModel\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -419,11 +434,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907032237347_uno.resx">
-      <DependentUpon>201907032237347_uno.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907081523540_uno.resx">
+      <DependentUpon>201907081523540_uno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907051404245_tres.resx">
-      <DependentUpon>201907051404245_tres.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907081854461_dos.resx">
+      <DependentUpon>201907081854461_dos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907082218520_tres.resx">
+      <DependentUpon>201907082218520_tres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907082230102_cuatro.resx">
+      <DependentUpon>201907082230102_cuatro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

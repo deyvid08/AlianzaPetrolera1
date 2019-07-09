@@ -7,13 +7,13 @@ namespace AlianzaPetrolera.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class tres : IMigrationMetadata
+    public sealed partial class uno : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(tres));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(uno));
         
         string IMigrationMetadata.Id
         {
-            get { return "201907051404245_tres"; }
+            get { return "201907081523540_uno"; }
         }
         
         string IMigrationMetadata.Source
