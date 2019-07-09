@@ -48,6 +48,8 @@ namespace AlianzaPetrolera.Controllers.Admin
         // GET: Recibo/Create
         public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
+            ViewBag.Banco_Id = new SelectList(db.Bancos, "Banc_Id", "Banc_Nom");
+
             var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
 
             var max2 = maxrecibirix + 1;
@@ -68,8 +70,10 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
+        public ActionResult Create([Bind(Include = "Banc_Id")]ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
+            ViewBag.Banco_Id = new SelectList(db.Bancos, "Banc_Id", "Banc_Nom", ReciboCajas.Banco_Id);
+
             var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
 
             var max2 = maxrecibirix + 1;

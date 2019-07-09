@@ -103,13 +103,13 @@
                 <!--Cuarto contenedor campos Tipo cuenta y Banco-->
                 <div class="row">
                     <div class="col-sm-8">
-                        <h6><b>Tipo Cuenta:</b>  Ahorros</h6>
+                        <h6>Modo de Pago</h6>
+                        @Html.EnumDropDownListFor(m => m.Reci_Mpago, new { @class = "form-control", @Style="width:40%"})
                     </div>
                     <div class="col-sm-4">
-                        <h6>Bancolombia</h6>
-                    </div>
-                    <div class="col-sm-12">
-                        <h6>#1215684-154541-12152</h6>
+                        <h6>Banco</h6>
+                        @Html.DropDownList("Banco_Id", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Banco_Id, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <hr />
@@ -272,8 +272,16 @@
                                 @Html.ValidationMessageFor(model => model.Matri_CosTota, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
-
+                        <hr />
+                        <!--Campo de observaciones-->
+                        <div class="form">
+                            <div class="col-md-10">
+                                <h6>Observaciones:</h6>
+                                @Html.TextAreaFor(m => m.Reci_Obse, new { @class = "form-control", @style = "margin: 0px -146.75px 0px 0px;height: 100px;width: 120%;" })
+                                @Html.ValidationMessageFor(model => model.Reci_Obse, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <br />
                     </form>
                 </div>
                 <br />

@@ -1,0 +1,35 @@
+﻿@model AlianzaPetrolera.Models.Admin.Banco
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Banco</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Banc_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banc_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banc_Cuenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banc_Cuenta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Banc_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
