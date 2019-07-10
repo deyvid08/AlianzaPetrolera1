@@ -1,6 +1,6 @@
 ﻿using AlianzaPetrolera.Models;
 using AlianzaPetrolera.RPTDataSet;
-using AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters;
+using AlianzaPetrolera.RPTDataSet.ReciboTableAdapters;
 using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
@@ -27,13 +27,13 @@ namespace AlianzaPetrolera.Controllers.Admin
                     Height = Unit.Percentage(100)
                 };
 
-                DataSetTest.ReciboCajasDataTable data1 = new DataSetTest.ReciboCajasDataTable();
+                Recibo.ReciboCajasDataTable data1 = new Recibo.ReciboCajasDataTable();
                 ReciboCajasTableAdapter adapter = new ReciboCajasTableAdapter();
                 adapter.Fill(data1);
                 if (data1 != null && data1.Rows.Count > 0)
                 {
-                    reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSetTest", data1.CopyToDataTable()));
-                    reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"\RPTReports\Report1.rdlc.";
+                    reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Recibo1", data1.CopyToDataTable()));
+                    reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"\RPTReports\ReporteRecibo.rdlc.";
                     ViewBag.ReportViewer = reportViewer;
                 }
                 else

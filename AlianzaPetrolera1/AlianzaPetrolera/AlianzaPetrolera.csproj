@@ -225,6 +225,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\BancoController.cs" />
     <Compile Include="Controllers\Admin\InscripcionController.cs" />
     <Compile Include="Controllers\Admin\MatriculaController.cs" />
     <Compile Include="Controllers\Admin\ReciboCajaController.cs" />
@@ -238,17 +239,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907032237347_uno.cs" />
-    <Compile Include="Migrations\201907032237347_uno.Designer.cs">
-      <DependentUpon>201907032237347_uno.cs</DependentUpon>
+    <Compile Include="Migrations\201907081523540_uno.cs" />
+    <Compile Include="Migrations\201907081523540_uno.Designer.cs">
+      <DependentUpon>201907081523540_uno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907051404245_tres.cs" />
-    <Compile Include="Migrations\201907051404245_tres.Designer.cs">
-      <DependentUpon>201907051404245_tres.cs</DependentUpon>
+    <Compile Include="Migrations\201907081854461_dos.cs" />
+    <Compile Include="Migrations\201907081854461_dos.Designer.cs">
+      <DependentUpon>201907081854461_dos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907082218520_tres.cs" />
+    <Compile Include="Migrations\201907082218520_tres.Designer.cs">
+      <DependentUpon>201907082218520_tres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907082230102_cuatro.cs" />
+    <Compile Include="Migrations\201907082230102_cuatro.Designer.cs">
+      <DependentUpon>201907082230102_cuatro.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Admin\AdminRegistroPersona.cs" />
+    <Compile Include="Models\Admin\Banco.cs" />
     <Compile Include="Models\Admin\Categoria.cs" />
     <Compile Include="Models\Admin\Inscripcion.cs" />
     <Compile Include="Models\Admin\Matricula.cs" />
@@ -262,10 +271,10 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RPTDataSet\DataSetTest.Designer.cs">
+    <Compile Include="RPTDataSet\Recibo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetTest.xsd</DependentUpon>
+      <DependentUpon>Recibo.xsd</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -341,16 +350,16 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="App_Browsers\qt.browser" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="RPTDataSet\DataSetTest.xsc">
-      <DependentUpon>DataSetTest.xsd</DependentUpon>
+    <Content Include="RPTDataSet\Recibo.xsc">
+      <DependentUpon>Recibo.xsd</DependentUpon>
     </Content>
-    <None Include="RPTDataSet\DataSetTest.xsd">
+    <None Include="RPTDataSet\Recibo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetTest.Designer.cs</LastGenOutput>
+      <LastGenOutput>Recibo.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="RPTDataSet\DataSetTest.xss">
-      <DependentUpon>DataSetTest.xsd</DependentUpon>
+    <Content Include="RPTDataSet\Recibo.xss">
+      <DependentUpon>Recibo.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -432,6 +441,11 @@
     <Content Include="Views\Admin\PaginaConstruccion.cshtml" />
     <Content Include="Views\Admin\PaginaConstruccionPadre.cshtml" />
     <Content Include="Views\Report\ReporteReciboCaja.cshtml" />
+    <Content Include="Views\Banco\Create.cshtml" />
+    <Content Include="Views\Banco\Delete.cshtml" />
+    <Content Include="Views\Banco\Details.cshtml" />
+    <Content Include="Views\Banco\Edit.cshtml" />
+    <Content Include="Views\Banco\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
@@ -450,13 +464,19 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907032237347_uno.resx">
-      <DependentUpon>201907032237347_uno.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907081523540_uno.resx">
+      <DependentUpon>201907081523540_uno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907051404245_tres.resx">
-      <DependentUpon>201907051404245_tres.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907081854461_dos.resx">
+      <DependentUpon>201907081854461_dos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RPTReports\Report1.rdlc" />
+    <EmbeddedResource Include="Migrations\201907082218520_tres.resx">
+      <DependentUpon>201907082218520_tres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907082230102_cuatro.resx">
+      <DependentUpon>201907082230102_cuatro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTReports\ReporteRecibo.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

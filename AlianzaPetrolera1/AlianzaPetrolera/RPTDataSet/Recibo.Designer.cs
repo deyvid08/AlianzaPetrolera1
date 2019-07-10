@@ -20,9 +20,9 @@ namespace AlianzaPetrolera.RPTDataSet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetTest")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Recibo")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetTest : global::System.Data.DataSet {
+    public partial class Recibo : global::System.Data.DataSet {
         
         private ReciboCajasDataTable tableReciboCajas;
         
@@ -30,7 +30,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public DataSetTest() {
+        public Recibo() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected DataSetTest(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Recibo(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetTest cln = ((DataSetTest)(base.Clone()));
+            Recibo cln = ((Recibo)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace AlianzaPetrolera.RPTDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetTest";
+            this.DataSetName = "Recibo";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetTest.xsd";
+            this.Namespace = "http://tempuri.org/Recibo.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableReciboCajas = new ReciboCajasDataTable();
@@ -225,7 +225,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetTest ds = new DataSetTest();
+            Recibo ds = new Recibo();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -310,6 +310,12 @@ namespace AlianzaPetrolera.RPTDataSet {
             private global::System.Data.DataColumn columnDesc_Mensu;
             
             private global::System.Data.DataColumn columnMatri_CosTota;
+            
+            private global::System.Data.DataColumn columnBanco_Id;
+            
+            private global::System.Data.DataColumn columnReci_Mpago;
+            
+            private global::System.Data.DataColumn columnReci_Obse;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -474,6 +480,30 @@ namespace AlianzaPetrolera.RPTDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Banco_IdColumn {
+                get {
+                    return this.columnBanco_Id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Reci_MpagoColumn {
+                get {
+                    return this.columnReci_Mpago;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Reci_ObseColumn {
+                get {
+                    return this.columnReci_Obse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -509,7 +539,25 @@ namespace AlianzaPetrolera.RPTDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ReciboCajasRow AddReciboCajasRow(int Reci_Num, string Reci_NomUs, string Reci_ApeUs, string Reci_DocUs, string Reci_CateUs, System.DateTime Matr_Fecha, float Costo_Matri, float Costo_Poli, float Costo_Unif, float Costo_Mensu, float Desc_Matri, float Desc_Poli, float Desc_Unif, float Desc_Mensu, float Matri_CosTota) {
+            public ReciboCajasRow AddReciboCajasRow(
+                        int Reci_Num, 
+                        string Reci_NomUs, 
+                        string Reci_ApeUs, 
+                        string Reci_DocUs, 
+                        string Reci_CateUs, 
+                        System.DateTime Matr_Fecha, 
+                        float Costo_Matri, 
+                        float Costo_Poli, 
+                        float Costo_Unif, 
+                        float Costo_Mensu, 
+                        float Desc_Matri, 
+                        float Desc_Poli, 
+                        float Desc_Unif, 
+                        float Desc_Mensu, 
+                        float Matri_CosTota, 
+                        int Banco_Id, 
+                        int Reci_Mpago, 
+                        string Reci_Obse) {
                 ReciboCajasRow rowReciboCajasRow = ((ReciboCajasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -527,7 +575,10 @@ namespace AlianzaPetrolera.RPTDataSet {
                         Desc_Poli,
                         Desc_Unif,
                         Desc_Mensu,
-                        Matri_CosTota};
+                        Matri_CosTota,
+                        Banco_Id,
+                        Reci_Mpago,
+                        Reci_Obse};
                 rowReciboCajasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReciboCajasRow);
                 return rowReciboCajasRow;
@@ -573,6 +624,9 @@ namespace AlianzaPetrolera.RPTDataSet {
                 this.columnDesc_Unif = base.Columns["Desc_Unif"];
                 this.columnDesc_Mensu = base.Columns["Desc_Mensu"];
                 this.columnMatri_CosTota = base.Columns["Matri_CosTota"];
+                this.columnBanco_Id = base.Columns["Banco_Id"];
+                this.columnReci_Mpago = base.Columns["Reci_Mpago"];
+                this.columnReci_Obse = base.Columns["Reci_Obse"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,6 +664,12 @@ namespace AlianzaPetrolera.RPTDataSet {
                 base.Columns.Add(this.columnDesc_Mensu);
                 this.columnMatri_CosTota = new global::System.Data.DataColumn("Matri_CosTota", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMatri_CosTota);
+                this.columnBanco_Id = new global::System.Data.DataColumn("Banco_Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBanco_Id);
+                this.columnReci_Mpago = new global::System.Data.DataColumn("Reci_Mpago", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReci_Mpago);
+                this.columnReci_Obse = new global::System.Data.DataColumn("Reci_Obse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReci_Obse);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnReci_Id}, true));
                 this.columnReci_Id.AutoIncrement = true;
@@ -624,6 +684,8 @@ namespace AlianzaPetrolera.RPTDataSet {
                 this.columnReci_DocUs.MaxLength = 2147483647;
                 this.columnReci_CateUs.MaxLength = 2147483647;
                 this.columnMatr_Fecha.AllowDBNull = false;
+                this.columnReci_Mpago.AllowDBNull = false;
+                this.columnReci_Obse.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -691,7 +753,7 @@ namespace AlianzaPetrolera.RPTDataSet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetTest ds = new DataSetTest();
+                Recibo ds = new Recibo();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1007,6 +1069,49 @@ namespace AlianzaPetrolera.RPTDataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Banco_Id {
+                get {
+                    try {
+                        return ((int)(this[this.tableReciboCajas.Banco_IdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Banco_Id\' de la tabla \'ReciboCajas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableReciboCajas.Banco_IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Reci_Mpago {
+                get {
+                    return ((int)(this[this.tableReciboCajas.Reci_MpagoColumn]));
+                }
+                set {
+                    this[this.tableReciboCajas.Reci_MpagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Reci_Obse {
+                get {
+                    try {
+                        return ((string)(this[this.tableReciboCajas.Reci_ObseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Reci_Obse\' de la tabla \'ReciboCajas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableReciboCajas.Reci_ObseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsReci_NomUsNull() {
                 return this.IsNull(this.tableReciboCajas.Reci_NomUsColumn);
             }
@@ -1160,6 +1265,30 @@ namespace AlianzaPetrolera.RPTDataSet {
             public void SetMatri_CosTotaNull() {
                 this[this.tableReciboCajas.Matri_CosTotaColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsBanco_IdNull() {
+                return this.IsNull(this.tableReciboCajas.Banco_IdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetBanco_IdNull() {
+                this[this.tableReciboCajas.Banco_IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsReci_ObseNull() {
+                return this.IsNull(this.tableReciboCajas.Reci_ObseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetReci_ObseNull() {
+                this[this.tableReciboCajas.Reci_ObseColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1197,7 +1326,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         }
     }
 }
-namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
+namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
     
     
     /// <summary>
@@ -1337,6 +1466,9 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
             tableMapping.ColumnMappings.Add("Desc_Unif", "Desc_Unif");
             tableMapping.ColumnMappings.Add("Desc_Mensu", "Desc_Mensu");
             tableMapping.ColumnMappings.Add("Matri_CosTota", "Matri_CosTota");
+            tableMapping.ColumnMappings.Add("Banco_Id", "Banco_Id");
+            tableMapping.ColumnMappings.Add("Reci_Mpago", "Reci_Mpago");
+            tableMapping.ColumnMappings.Add("Reci_Obse", "Reci_Obse");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -1345,7 +1477,7 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reci_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ReciboCajas] ([Reci_Num], [Reci_NomUs], [Reci_ApeUs], [Reci_DocUs], [Reci_CateUs], [Matr_Fecha], [Costo_Matri], [Costo_Poli], [Costo_Unif], [Costo_Mensu], [Desc_Matri], [Desc_Poli], [Desc_Unif], [Desc_Mensu], [Matri_CosTota]) VALUES (@Reci_Num, @Reci_NomUs, @Reci_ApeUs, @Reci_DocUs, @Reci_CateUs, @Matr_Fecha, @Costo_Matri, @Costo_Poli, @Costo_Unif, @Costo_Mensu, @Desc_Matri, @Desc_Poli, @Desc_Unif, @Desc_Mensu, @Matri_CosTota)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ReciboCajas] ([Reci_Num], [Reci_NomUs], [Reci_ApeUs], [Reci_DocUs], [Reci_CateUs], [Matr_Fecha], [Costo_Matri], [Costo_Poli], [Costo_Unif], [Costo_Mensu], [Desc_Matri], [Desc_Poli], [Desc_Unif], [Desc_Mensu], [Matri_CosTota], [Banco_Id], [Reci_Mpago], [Reci_Obse]) VALUES (@Reci_Num, @Reci_NomUs, @Reci_ApeUs, @Reci_DocUs, @Reci_CateUs, @Matr_Fecha, @Costo_Matri, @Costo_Poli, @Costo_Unif, @Costo_Mensu, @Desc_Matri, @Desc_Poli, @Desc_Unif, @Desc_Mensu, @Matri_CosTota, @Banco_Id, @Reci_Mpago, @Reci_Obse)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reci_Num", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_Num", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reci_NomUs", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_NomUs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1362,9 +1494,12 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desc_Unif", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Desc_Unif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desc_Mensu", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Desc_Mensu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Matri_CosTota", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matri_CosTota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Banco_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Banco_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reci_Mpago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_Mpago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reci_Obse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_Obse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ReciboCajas] SET [Reci_Num] = @Reci_Num, [Reci_NomUs] = @Reci_NomUs, [Reci_ApeUs] = @Reci_ApeUs, [Reci_DocUs] = @Reci_DocUs, [Reci_CateUs] = @Reci_CateUs, [Matr_Fecha] = @Matr_Fecha, [Costo_Matri] = @Costo_Matri, [Costo_Poli] = @Costo_Poli, [Costo_Unif] = @Costo_Unif, [Costo_Mensu] = @Costo_Mensu, [Desc_Matri] = @Desc_Matri, [Desc_Poli] = @Desc_Poli, [Desc_Unif] = @Desc_Unif, [Desc_Mensu] = @Desc_Mensu, [Matri_CosTota] = @Matri_CosTota WHERE (([Reci_Id] = @Original_Reci_Id))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ReciboCajas] SET [Reci_Num] = @Reci_Num, [Reci_NomUs] = @Reci_NomUs, [Reci_ApeUs] = @Reci_ApeUs, [Reci_DocUs] = @Reci_DocUs, [Reci_CateUs] = @Reci_CateUs, [Matr_Fecha] = @Matr_Fecha, [Costo_Matri] = @Costo_Matri, [Costo_Poli] = @Costo_Poli, [Costo_Unif] = @Costo_Unif, [Costo_Mensu] = @Costo_Mensu, [Desc_Matri] = @Desc_Matri, [Desc_Poli] = @Desc_Poli, [Desc_Unif] = @Desc_Unif, [Desc_Mensu] = @Desc_Mensu, [Matri_CosTota] = @Matri_CosTota, [Banco_Id] = @Banco_Id, [Reci_Mpago] = @Reci_Mpago, [Reci_Obse] = @Reci_Obse WHERE (([Reci_Id] = @Original_Reci_Id))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reci_Num", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_Num", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reci_NomUs", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_NomUs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1381,6 +1516,9 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desc_Unif", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Desc_Unif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desc_Mensu", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Desc_Mensu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Matri_CosTota", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Matri_CosTota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Banco_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Banco_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reci_Mpago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_Mpago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reci_Obse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_Obse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reci_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reci_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -1388,7 +1526,7 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["AlianzapetrV2ConnectionString"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["AlianzapetroV2ConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1399,7 +1537,8 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Reci_Id, Reci_Num, Reci_NomUs, Reci_ApeUs, Reci_DocUs, Reci_CateUs, Matr_F" +
                 "echa, Costo_Matri, Costo_Poli, Costo_Unif, Costo_Mensu, Desc_Matri, Desc_Poli, D" +
-                "esc_Unif, Desc_Mensu, Matri_CosTota FROM dbo.ReciboCajas";
+                "esc_Unif, Desc_Mensu, Matri_CosTota, Banco_Id, Reci_Mpago, Reci_Obse FROM dbo.Re" +
+                "ciboCajas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1407,7 +1546,7 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetTest.ReciboCajasDataTable dataTable) {
+        public virtual int Fill(Recibo.ReciboCajasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1420,9 +1559,9 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetTest.ReciboCajasDataTable GetData() {
+        public virtual Recibo.ReciboCajasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetTest.ReciboCajasDataTable dataTable = new DataSetTest.ReciboCajasDataTable();
+            Recibo.ReciboCajasDataTable dataTable = new Recibo.ReciboCajasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1430,14 +1569,14 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetTest.ReciboCajasDataTable dataTable) {
+        public virtual int Update(Recibo.ReciboCajasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetTest dataSet) {
+        public virtual int Update(Recibo dataSet) {
             return this.Adapter.Update(dataSet, "ReciboCajas");
         }
         
@@ -1482,7 +1621,25 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Reci_Num, string Reci_NomUs, string Reci_ApeUs, string Reci_DocUs, string Reci_CateUs, System.DateTime Matr_Fecha, global::System.Nullable<float> Costo_Matri, global::System.Nullable<float> Costo_Poli, global::System.Nullable<float> Costo_Unif, global::System.Nullable<float> Costo_Mensu, global::System.Nullable<float> Desc_Matri, global::System.Nullable<float> Desc_Poli, global::System.Nullable<float> Desc_Unif, global::System.Nullable<float> Desc_Mensu, global::System.Nullable<float> Matri_CosTota) {
+        public virtual int Insert(
+                    int Reci_Num, 
+                    string Reci_NomUs, 
+                    string Reci_ApeUs, 
+                    string Reci_DocUs, 
+                    string Reci_CateUs, 
+                    System.DateTime Matr_Fecha, 
+                    global::System.Nullable<float> Costo_Matri, 
+                    global::System.Nullable<float> Costo_Poli, 
+                    global::System.Nullable<float> Costo_Unif, 
+                    global::System.Nullable<float> Costo_Mensu, 
+                    global::System.Nullable<float> Desc_Matri, 
+                    global::System.Nullable<float> Desc_Poli, 
+                    global::System.Nullable<float> Desc_Unif, 
+                    global::System.Nullable<float> Desc_Mensu, 
+                    global::System.Nullable<float> Matri_CosTota, 
+                    global::System.Nullable<int> Banco_Id, 
+                    int Reci_Mpago, 
+                    string Reci_Obse) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Reci_Num));
             if ((Reci_NomUs == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1563,6 +1720,19 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
+            if ((Banco_Id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((int)(Banco_Id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[16].Value = ((int)(Reci_Mpago));
+            if ((Reci_Obse == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Reci_Obse));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1599,6 +1769,9 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
                     global::System.Nullable<float> Desc_Unif, 
                     global::System.Nullable<float> Desc_Mensu, 
                     global::System.Nullable<float> Matri_CosTota, 
+                    global::System.Nullable<int> Banco_Id, 
+                    int Reci_Mpago, 
+                    string Reci_Obse, 
                     int Original_Reci_Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Reci_Num));
             if ((Reci_NomUs == null)) {
@@ -1680,7 +1853,20 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Reci_Id));
+            if ((Banco_Id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Banco_Id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Reci_Mpago));
+            if ((Reci_Obse == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Reci_Obse));
+            }
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Reci_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1789,7 +1975,7 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(DataSetTest dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Recibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._reciboCajasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ReciboCajas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1808,7 +1994,7 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(DataSetTest dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Recibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._reciboCajasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ReciboCajas.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1826,7 +2012,7 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(DataSetTest dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Recibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._reciboCajasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ReciboCajas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1868,7 +2054,7 @@ namespace AlianzaPetrolera.RPTDataSet.DataSetTestTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(DataSetTest dataSet) {
+        public virtual int UpdateAll(Recibo dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

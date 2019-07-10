@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.ReciboCaja>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista Recibo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <body class="fondo-tabla texto-contenido">
@@ -11,7 +11,7 @@
             <h1 class="col-sm-6">Recibos Generados</h1>
         </div>
         <div class="col-sm-2" style="height:50px; left:18%">
-            <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning" value="Regresar" /></a>
+            <a href="~/Report/ReporteReciboCaja"><input type="button" class="btn btn-warning" value="Reporte Recibos" /></a>
         </div>
     </div>
     <hr />
@@ -49,17 +49,17 @@
                     Costo Mensualidad
                 </th>
                 @*<th>
-                        @Html.DisplayNameFor(model => model.Desc_Matri)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Desc_Poli)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Desc_Unif)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Desc_Mensu)
-                    </th>*@
+                    @Html.DisplayNameFor(model => model.Desc_Matri)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desc_Poli)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desc_Unif)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desc_Mensu)
+                </th>*@
                 <th>
                     Costo Total
                 </th>
@@ -100,17 +100,17 @@
                         $@Html.DisplayFor(modelItem => item.Costo_Mensu)
                     </td>
                     @*<td>
-                            @Html.DisplayFor(modelItem => item.Desc_Matri)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Desc_Poli)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Desc_Unif)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Desc_Mensu)
-                        </td>*@
+                        @Html.DisplayFor(modelItem => item.Desc_Matri)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Desc_Poli)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Desc_Unif)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Desc_Mensu)
+                    </td>*@
                     <td>
                         $@Html.DisplayFor(modelItem => item.Matri_CosTota)
                     </td>
@@ -121,5 +121,10 @@
             }
 
         </table>
+        <br />
+        <div>
+            <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
+        </div>
+        <br />
     </div>
 </body>
