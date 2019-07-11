@@ -20,9 +20,9 @@ namespace AlianzaPetrolera.RPTDataSet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Recibo")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ReporteRecibo")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Recibo : global::System.Data.DataSet {
+    public partial class ReporteRecibo : global::System.Data.DataSet {
         
         private ReciboCajasDataTable tableReciboCajas;
         
@@ -30,7 +30,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Recibo() {
+        public ReporteRecibo() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected Recibo(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ReporteRecibo(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Recibo cln = ((Recibo)(base.Clone()));
+            ReporteRecibo cln = ((ReporteRecibo)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace AlianzaPetrolera.RPTDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Recibo";
+            this.DataSetName = "ReporteRecibo";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Recibo.xsd";
+            this.Namespace = "http://tempuri.org/ReporteRecibo.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableReciboCajas = new ReciboCajasDataTable();
@@ -225,7 +225,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Recibo ds = new Recibo();
+            ReporteRecibo ds = new ReporteRecibo();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -753,7 +753,7 @@ namespace AlianzaPetrolera.RPTDataSet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Recibo ds = new Recibo();
+                ReporteRecibo ds = new ReporteRecibo();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1326,7 +1326,7 @@ namespace AlianzaPetrolera.RPTDataSet {
         }
     }
 }
-namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
+namespace AlianzaPetrolera.RPTDataSet.ReporteReciboTableAdapters {
     
     
     /// <summary>
@@ -1526,7 +1526,7 @@ namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["AlianzapetroV2ConnectionString"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["AlianzapetrolV2ConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1546,7 +1546,7 @@ namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Recibo.ReciboCajasDataTable dataTable) {
+        public virtual int Fill(ReporteRecibo.ReciboCajasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1559,9 +1559,9 @@ namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Recibo.ReciboCajasDataTable GetData() {
+        public virtual ReporteRecibo.ReciboCajasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Recibo.ReciboCajasDataTable dataTable = new Recibo.ReciboCajasDataTable();
+            ReporteRecibo.ReciboCajasDataTable dataTable = new ReporteRecibo.ReciboCajasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1569,14 +1569,14 @@ namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Recibo.ReciboCajasDataTable dataTable) {
+        public virtual int Update(ReporteRecibo.ReciboCajasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Recibo dataSet) {
+        public virtual int Update(ReporteRecibo dataSet) {
             return this.Adapter.Update(dataSet, "ReciboCajas");
         }
         
@@ -1975,7 +1975,7 @@ namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(Recibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ReporteRecibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._reciboCajasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ReciboCajas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1994,7 +1994,7 @@ namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(Recibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ReporteRecibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._reciboCajasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ReciboCajas.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -2012,7 +2012,7 @@ namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(Recibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ReporteRecibo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._reciboCajasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ReciboCajas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -2054,7 +2054,7 @@ namespace AlianzaPetrolera.RPTDataSet.ReciboTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(Recibo dataSet) {
+        public virtual int UpdateAll(ReporteRecibo dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

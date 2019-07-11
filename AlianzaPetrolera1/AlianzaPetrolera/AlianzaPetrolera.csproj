@@ -271,10 +271,10 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RPTDataSet\Recibo.Designer.cs">
+    <Compile Include="RPTDataSet\ReporteRecibo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Recibo.xsd</DependentUpon>
+      <DependentUpon>ReporteRecibo.xsd</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -350,16 +350,16 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="App_Browsers\qt.browser" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="RPTDataSet\Recibo.xsc">
-      <DependentUpon>Recibo.xsd</DependentUpon>
+    <Content Include="RPTDataSet\ReporteRecibo.xsc">
+      <DependentUpon>ReporteRecibo.xsd</DependentUpon>
     </Content>
-    <None Include="RPTDataSet\Recibo.xsd">
+    <None Include="RPTDataSet\ReporteRecibo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Recibo.Designer.cs</LastGenOutput>
+      <LastGenOutput>ReporteRecibo.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="RPTDataSet\Recibo.xss">
-      <DependentUpon>Recibo.xsd</DependentUpon>
+    <Content Include="RPTDataSet\ReporteRecibo.xss">
+      <DependentUpon>ReporteRecibo.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -476,7 +476,7 @@
     <EmbeddedResource Include="Migrations\201907082230102_cuatro.resx">
       <DependentUpon>201907082230102_cuatro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RPTReports\ReporteRecibo.rdlc" />
+    <EmbeddedResource Include="RPTReports\ReporteRecibos.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

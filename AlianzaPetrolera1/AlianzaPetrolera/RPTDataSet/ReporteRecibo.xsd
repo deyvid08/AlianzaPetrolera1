@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="Recibo" targetNamespace="http://tempuri.org/Recibo.xsd" xmlns:mstns="http://tempuri.org/Recibo.xsd" xmlns="http://tempuri.org/Recibo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="ReporteRecibo" targetNamespace="http://tempuri.org/ReporteRecibo.xsd" xmlns:mstns="http://tempuri.org/ReporteRecibo.xsd" xmlns="http://tempuri.org/ReporteRecibo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="AlianzapetroV2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AlianzapetroV2ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.AlianzapetroV2ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="AlianzapetrolV2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AlianzapetrolV2ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.AlianzapetrolV2ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReciboCajasTableAdapter" GeneratorDataComponentClassName="ReciboCajasTableAdapter" Name="ReciboCajas" UserDataComponentName="ReciboCajasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="AlianzapetroV2ConnectionString (Web.config)" DbObjectName="AlianzapetroV2.dbo.ReciboCajas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="AlianzapetrolV2ConnectionString (Web.config)" DbObjectName="AlianzapetrolV2.dbo.ReciboCajas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[ReciboCajas] WHERE (([Reci_Id] = @Original_Reci_Id))</CommandText>
@@ -105,7 +105,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Recibo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Recibo" msprop:Generator_UserDSName="Recibo">
+  <xs:element name="ReporteRecibo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReporteRecibo" msprop:Generator_UserDSName="ReporteRecibo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="ReciboCajas" msprop:Generator_TableClassName="ReciboCajasDataTable" msprop:Generator_TableVarName="tableReciboCajas" msprop:Generator_TablePropName="ReciboCajas" msprop:Generator_RowDeletingName="ReciboCajasRowDeleting" msprop:Generator_RowChangingName="ReciboCajasRowChanging" msprop:Generator_RowEvHandlerName="ReciboCajasRowChangeEventHandler" msprop:Generator_RowDeletedName="ReciboCajasRowDeleted" msprop:Generator_UserTableName="ReciboCajas" msprop:Generator_RowChangedName="ReciboCajasRowChanged" msprop:Generator_RowEvArgName="ReciboCajasRowChangeEvent" msprop:Generator_RowClassName="ReciboCajasRow">
