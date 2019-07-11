@@ -1,5 +1,7 @@
-﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Inscripcion>
+﻿@model IPagedList<AlianzaPetrolera.Models.Admin.Inscripcion>
 
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Inscripción";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,23 +13,30 @@
     </div>
     <hr />
 
+    @using (Html.BeginForm("Index", "Inscripcion", FormMethod.Post))
+    {
+        <input type="text" name="search" placeholder="Nombre del estudiante" />
+        <input type="submit" name="submit" value="search" />
+    }
+
+
     <div class="container">
         <table class="tabla-index table-hover table-dark">
             <tr class="bg-warning text-white text-center">
-                <th style="border: none;" >
-                    @Html.DisplayNameFor(model => model.Pers_Id)
+                <th style="border: none;">
+                    @Html.DisplayNameFor(model => model.First().Pers_Id)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_NomEst)
+                    @Html.DisplayNameFor(model => model.First().Insc_NomEst)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_ApeEst)
+                    @Html.DisplayNameFor(model => model.First().Insc_ApeEst)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_DocEst)
+                    @Html.DisplayNameFor(model => model.First().Insc_DocEst)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_FechInsc)
+                    @Html.DisplayNameFor(model => model.First().Insc_FechInsc)
                 </th>
                 <th style="border: none;"></th>
             </tr>
@@ -68,5 +77,6 @@
             }
 
         </table>
+        @Html.PagedListPager(Model,i=>Url.Action("Index","Inscripcion", new {i, search = Request.QueryString ["search"]}))
     </div>
 </body>
