@@ -73,8 +73,8 @@ namespace AlianzaPetrolera.Controllers.Admin
         [HttpPost]
         public ActionResult Create([Bind(Include = "Banc_Id")]ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
         {
-            
 
+            ViewBag.Banco_Id = new SelectList(db.Bancos, "Banc_Id", "Banc_Nom", ReciboCajas.Banco_Id);
             var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
 
             var max2 = maxrecibirix + 1;
@@ -89,7 +89,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             {
                 if (ModelState.IsValid)
                 {
-
+                    ViewBag.Banco_Id = new SelectList(db.Bancos, "Banc_Id", "Banc_Nom", ReciboCajas.Banco_Id);
                     ReciboCaja r = new ReciboCaja();
 
                     //Operacion Matematica para efectuar los descuentos en la matricula del estudiante.
@@ -160,7 +160,7 @@ namespace AlianzaPetrolera.Controllers.Admin
                     return View();
 
                 }
-                ViewBag.Banco_Id = new SelectList(db.Bancos, "Banc_Id", "Banc_Nom", ReciboCajas.Banco_Id);
+                
                 return View(ReciboCajas);
             }
             catch
@@ -416,6 +416,7 @@ namespace AlianzaPetrolera.Controllers.Admin
         //}
         public ActionResult About()
         {
+            ViewBag.Banco_Id = new SelectList(db.Bancos, "Banc_Id", "Banc_Nom");
             return View();
         }
 
@@ -423,25 +424,15 @@ namespace AlianzaPetrolera.Controllers.Admin
         {
             // create a string writer to receive the HTML code
             StringWriter stringWriter = new StringWriter();
-
             // get the view to render
             ViewEngineResult viewResult = ViewEngines.Engines.FindView(ControllerContext, viewName, null);
             // create a context to render a view based on a model
-            ViewContext viewContext = new ViewContext(
-                    ControllerContext,
-                    viewResult.View,
-                    new ViewDataDictionary(model),
-                    new TempDataDictionary(),
-                    stringWriter
-                    );
-
+            ViewContext viewContext = new ViewContext(ControllerContext,viewResult.View,new ViewDataDictionary(model),new TempDataDictionary(),stringWriter);
             // render the view to a HTML code
             viewResult.View.Render(viewContext, stringWriter);
-
             // return the HTML code
             return stringWriter.ToString();
         }
-
         [HttpPost]
         public ActionResult ConvertThisPageToPdf(string idcod)
         {
