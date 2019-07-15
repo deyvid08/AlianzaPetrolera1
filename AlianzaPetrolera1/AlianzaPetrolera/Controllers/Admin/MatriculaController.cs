@@ -1,5 +1,6 @@
 ﻿using AlianzaPetrolera.Models;
 using AlianzaPetrolera.Models.Admin;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,12 @@ namespace AlianzaPetrolera.Controllers.Admin
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Matricula
-        public ActionResult Index()
+        public ActionResult Index(string search, int? i)
         {
-            return View(db.Matriculas.ToList());
+            List<Matricula> listInsc = db.Matriculas.ToList();
+            return View(db.Matriculas.Where(z => z.Mat_Nom.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
+
+            //return View(db.Matriculas.ToList());
         }
 
         // GET: Matricula/Details/5

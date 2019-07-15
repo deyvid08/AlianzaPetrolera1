@@ -20,7 +20,7 @@ namespace AlianzaPetrolera.Controllers.Admin
         public ActionResult Index(string search, int? i)
         {
             List<Inscripcion> listInsc = db.Inscripciones.ToList();
-            return View(db.Inscripciones.Where(z => z.Insc_NomEst.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1,3));
+            return View(db.Inscripciones.Where(z => z.Insc_NomEst.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1,5));
             
 
             //var datospersona = db.Inscripciones.Join(db.Users, ins => ins.Pers_Doc, use => use.Id, (ins, use) => new { ins, use }).ToString();

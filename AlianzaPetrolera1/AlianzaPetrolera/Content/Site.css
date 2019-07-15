@@ -677,3 +677,14 @@ input[type=text], input[type=password], input[type=email] {
     
 
 /*Fin Vistas Recibo*/
+
+/* Vistas Paginacion*/
+.pagination li a {
+    background: #fdef02;
+    padding: 10px;
+    margin: 0px 2px 3px 0px;
+}
+
+
+/*Fin Vistas paginación*/
+
