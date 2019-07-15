@@ -1,5 +1,7 @@
-﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Inscripcion>
+﻿@model IPagedList<AlianzaPetrolera.Models.Admin.Inscripcion>
 
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Inscripción";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,62 +13,81 @@
     </div>
     <hr />
 
-    <div class="container">
-        <table class="tabla-index table-hover table-dark">
-            <tr class="bg-warning text-white text-center">
-                <th style="border: none;" >
-                    @Html.DisplayNameFor(model => model.Pers_Id)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_NomEst)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_ApeEst)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_DocEst)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_FechInsc)
-                </th>
-                <th style="border: none;"></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr class="text-center">
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Pers_Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Insc_NomEst)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Insc_ApeEst)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Insc_DocEst)
-
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Insc_FechInsc)
-                    </td>
-
-                    <td>
+    @using (Html.BeginForm("Index", "Inscripcion", FormMethod.Post))
+     {
+        <div class="container">
+            
+                <input type="text" name="search" placeholder="Nombre del estudiante" style="width:75%"/>
+            
+            
+                <input type="submit" name="submit" value="Buscar" />
+           
+        </div>
+     }
 
 
-
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
-                            <button type="button" class="btn btn-warning"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "" })  </button>
-                            <button type="button" class="btn btn-warning"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID, documentoestu = item.Insc_DocEst, apellidoestu = item.Insc_ApeEst, idestu = item.Pers_Id }, htmlAttributes: new { @style = "" })</button>
-                        </div>
-                    </td>
-
+        <div class="container">
+            <table class="tabla-index table-hover table-dark">
+                <tr class="bg-warning text-white text-center">
+                    <th style="border: none;">
+                        @Html.DisplayNameFor(model => model.First().Pers_Id)
+                    </th>
+                    <th style="border: none;">
+                        @Html.DisplayNameFor(model => model.First().Insc_NomEst)
+                    </th>
+                    <th style="border: none;">
+                        @Html.DisplayNameFor(model => model.First().Insc_ApeEst)
+                    </th>
+                    <th style="border: none;">
+                        @Html.DisplayNameFor(model => model.First().Insc_DocEst)
+                    </th>
+                    <th style="border: none;">
+                        @Html.DisplayNameFor(model => model.First().Insc_FechInsc)
+                    </th>
+                    <th style="border: none;"></th>
                 </tr>
-            }
 
-        </table>
-    </div>
+                @foreach (var item in Model)
+                {
+                    <tr class="text-center">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pers_Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Insc_NomEst)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Insc_ApeEst)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Insc_DocEst)
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Insc_FechInsc)
+                        </td>
+
+                        <td>
+
+
+
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
+                                <button type="button" class="btn btn-warning"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "" })  </button>
+                                <button type="button" class="btn btn-warning"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID, documentoestu = item.Insc_DocEst, apellidoestu = item.Insc_ApeEst, idestu = item.Pers_Id }, htmlAttributes: new { @style = "" })</button>
+                            </div>
+                        </td>
+
+                    </tr>
+                 }
+
+            </table>
+            <br />
+            <div>
+                <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
+            </div>
+            <br />
+             @Html.PagedListPager(Model, i => Url.Action("Index", "Inscripcion", new { i, search = Request.QueryString["search"]  }))
+        </div>
 </body>

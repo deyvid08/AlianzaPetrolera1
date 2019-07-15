@@ -5,7 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using PagedList;
+using PagedList.Mvc;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
@@ -14,12 +17,15 @@ namespace AlianzaPetrolera.Controllers.Admin
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Inscripcion
-        public ActionResult Index()
+        public ActionResult Index(string search, int? i)
         {
+            List<Inscripcion> listInsc = db.Inscripciones.ToList();
+            return View(db.Inscripciones.Where(z => z.Insc_NomEst.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1,5));
+            
 
             //var datospersona = db.Inscripciones.Join(db.Users, ins => ins.Pers_Doc, use => use.Id, (ins, use) => new { ins, use }).ToString();
 
-            return View(db.Inscripciones.ToList());
+            //return View(db.Inscripciones.ToList());
         }
 
         // GET: Inscripcion/Details/5

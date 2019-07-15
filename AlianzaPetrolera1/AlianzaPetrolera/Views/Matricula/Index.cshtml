@@ -1,5 +1,7 @@
-﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.Matricula>
+﻿@model IPagedList<AlianzaPetrolera.Models.Admin.Matricula>
 
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Matrícula";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,43 +9,54 @@
 <body class="fondo-tabla">
     <br />
     <div class="row">
-        <div class="titulo-index col-sm-6 ">
+        <div class="titulo-index col-sm-5 ">
             <h1 class="col-sm-6">Matrículas</h1>
         </div>
-        <div class="col-sm-2" style="height:50px; left:18%">
-            <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning" value="Regresar" /></a>
+        <div class="col-sm-7" style="height:50px;">
+            @using (Html.BeginForm("Index", "Matricula", FormMethod.Post))
+            {
+                <div class="container">
+
+                    <input type="text" name="search" placeholder="Nombre del estudiante" style="width:55%" />
+
+
+                    <input type="submit" name="submit" value="Buscar" />
+
+                </div>
+            }
         </div>
     </div>
     <hr />
+    
     <div class="container">
         <table class="tabla-index table-hover table-dark">
             <tr class="bg-warning text-white text-center">
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Insc_Id)
+                    @Html.DisplayNameFor(model => model.First().Insc_Id)
                 </th>
                 <th style="border: none;" hidden>
-                    @Html.DisplayNameFor(model => model.Mat_IdEst)
+                    @Html.DisplayNameFor(model => model.First().Mat_IdEst)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Mat_Nom)
+                    @Html.DisplayNameFor(model => model.First().Mat_Nom)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Mat_Apel)
+                    @Html.DisplayNameFor(model => model.First().Mat_Apel)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Mat_Doc)
+                    @Html.DisplayNameFor(model => model.First().Mat_Doc)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Peri_Id)
+                    @Html.DisplayNameFor(model => model.First().Peri_Id)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Cate_Id)
+                    @Html.DisplayNameFor(model => model.First().Cate_Id)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Matr_Fecha)
+                    @Html.DisplayNameFor(model => model.First().Matr_Fecha)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.Matri_Esta)
+                    @Html.DisplayNameFor(model => model.First().Matri_Esta)
                 </th>
                 <th style="border: none;"></th>
             </tr>
@@ -95,5 +108,11 @@
             }
 
         </table>
+        <br />
+        <div>
+            <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
+        </div>
+        <br />
+        @Html.PagedListPager(Model, i => Url.Action("Index", "Inscripcion", new { i, search = Request.QueryString["search"] }))
     </div>
 </body>
