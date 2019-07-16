@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -25,7 +25,9 @@ namespace AlianzaPetrolera.Models.Admin
         public string Reci_CateUs { get; set; }
         [Display(Name = "Fecha de Pago")]
         public DateTime Matr_Fecha { get; set; }
-
+        [Display(Name = "Modo pago")]
+        public Tpago Reci_Mpago { get; set; }
+        
         [Display(Name = "Matrícula")]
         public Nullable<float> Costo_Matri { get; set; }
 
@@ -49,6 +51,16 @@ namespace AlianzaPetrolera.Models.Admin
 
         [Display(Name = "Total a Pagar")]
         public Nullable<float> Matri_CosTota { get; set; }
+
+        [Display(Name = "Observación")]
+        public string Reci_Obse { get; set; }
+
+        [ForeignKey("Banco")]
+        public int? Banco_Id { get; set; }
+        public Banco Banco { get; set; }
+
+
+
     }
     public class Calculadora
     {

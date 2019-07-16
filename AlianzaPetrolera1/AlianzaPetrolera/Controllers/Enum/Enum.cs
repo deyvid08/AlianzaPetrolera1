@@ -62,4 +62,10 @@ namespace AlianzaPetrolera.Controllers.Enum
         Bogotá,
         Medellin
     }
+    public enum Tpago
+    {
+        Seleccione,
+        Efectivo,
+        Consignación
+    }
 }
