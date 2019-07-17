@@ -62,7 +62,7 @@ namespace AlianzaPetrolera.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ConexAlianzapetroV2", throwIfV1Schema: false)
+            : base("ConexAlianzapetroleV2", throwIfV1Schema: false)
         {
         }
         public DbSet<Persona> Personas { set; get; }
@@ -71,7 +71,7 @@ namespace AlianzaPetrolera.Models
         public DbSet<Categoria> Categorias { set; get; }
         public DbSet<Matricula> Matriculas { set; get; }
         public DbSet<ReciboCaja> RecibosCajas { set; get; }
-        public DbSet<Banco> Bancos { set; get; }
+        //public DbSet<Banco> Bancos { set; get; }
         
         public static ApplicationDbContext Create()
         {

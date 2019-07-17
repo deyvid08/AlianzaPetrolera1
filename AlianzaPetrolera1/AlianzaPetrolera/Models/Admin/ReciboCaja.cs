@@ -55,9 +55,11 @@ namespace AlianzaPetrolera.Models.Admin
         [Display(Name = "Observación")]
         public string Reci_Obse { get; set; }
 
-        [ForeignKey("Banco")]
-        public int? Banco_Id { get; set; }
-        public Banco Banco { get; set; }
+        [Display(Name = "Modo pago")]
+        public Bank Banco_Id { get; set; }
+        //[ForeignKey("Banco")]
+        //public int? Banco_Id { get; set; }
+        //public Banco Banco { get; set; }
 
 
 

@@ -8,42 +8,6 @@ namespace AlianzaPetrolera.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Bancoes",
-                c => new
-                    {
-                        Banc_Id = c.Int(nullable: false, identity: true),
-                        Banc_Nom = c.String(),
-                        Banc_Cuenta = c.String(),
-                    })
-                .PrimaryKey(t => t.Banc_Id);
-            
-            CreateTable(
-                "dbo.ReciboCajas",
-                c => new
-                    {
-                        Reci_Id = c.Int(nullable: false, identity: true),
-                        Reci_Num = c.Int(nullable: false),
-                        Reci_NomUs = c.String(),
-                        Reci_ApeUs = c.String(),
-                        Reci_DocUs = c.String(),
-                        Reci_CateUs = c.String(),
-                        Matr_Fecha = c.DateTime(nullable: false),
-                        Costo_Matri = c.Single(),
-                        Costo_Poli = c.Single(),
-                        Costo_Unif = c.Single(),
-                        Costo_Mensu = c.Single(),
-                        Desc_Matri = c.Single(),
-                        Desc_Poli = c.Single(),
-                        Desc_Unif = c.Single(),
-                        Desc_Mensu = c.Single(),
-                        Matri_CosTota = c.Single(),
-                        Banco_Id = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Reci_Id)
-                .ForeignKey("dbo.Bancoes", t => t.Banco_Id, cascadeDelete: true)
-                .Index(t => t.Banco_Id);
-            
-            CreateTable(
                 "dbo.Categorias",
                 c => new
                     {
@@ -179,6 +143,32 @@ namespace AlianzaPetrolera.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
+                "dbo.ReciboCajas",
+                c => new
+                    {
+                        Reci_Id = c.Int(nullable: false, identity: true),
+                        Reci_Num = c.Int(nullable: false),
+                        Reci_NomUs = c.String(),
+                        Reci_ApeUs = c.String(),
+                        Reci_DocUs = c.String(),
+                        Reci_CateUs = c.String(),
+                        Matr_Fecha = c.DateTime(nullable: false),
+                        Reci_Mpago = c.Int(nullable: false),
+                        Costo_Matri = c.Single(),
+                        Costo_Poli = c.Single(),
+                        Costo_Unif = c.Single(),
+                        Costo_Mensu = c.Single(),
+                        Desc_Matri = c.Single(),
+                        Desc_Poli = c.Single(),
+                        Desc_Unif = c.Single(),
+                        Desc_Mensu = c.Single(),
+                        Matri_CosTota = c.Single(),
+                        Reci_Obse = c.String(),
+                        Banco_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Reci_Id);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -207,7 +197,6 @@ namespace AlianzaPetrolera.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Matriculas", "Insc_Id", "dbo.Inscripcions");
-            DropForeignKey("dbo.ReciboCajas", "Banco_Id", "dbo.Bancoes");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
@@ -216,9 +205,9 @@ namespace AlianzaPetrolera.Migrations
             DropIndex("dbo.AspNetUsers", new[] { "Persona_Pers_Id" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.Matriculas", new[] { "Insc_Id" });
-            DropIndex("dbo.ReciboCajas", new[] { "Banco_Id" });
             DropTable("dbo.Ubicacions");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.ReciboCajas");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
@@ -227,8 +216,6 @@ namespace AlianzaPetrolera.Migrations
             DropTable("dbo.Matriculas");
             DropTable("dbo.Inscripcions");
             DropTable("dbo.Categorias");
-            DropTable("dbo.ReciboCajas");
-            DropTable("dbo.Bancoes");
         }
     }
 }

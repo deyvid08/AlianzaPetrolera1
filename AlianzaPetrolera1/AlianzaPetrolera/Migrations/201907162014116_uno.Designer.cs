@@ -13,7 +13,7 @@ namespace AlianzaPetrolera.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201907081523540_uno"; }
+            get { return "201907162014116_uno"; }
         }
         
         string IMigrationMetadata.Source

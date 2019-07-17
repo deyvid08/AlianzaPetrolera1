@@ -68,4 +68,12 @@ namespace AlianzaPetrolera.Controllers.Enum
         Efectivo,
         Consignación
     }
+    public enum Bank
+    {
+        Seleccione,
+        Ninguno,
+        Bancolombia_Corriente_456_015655_06,
+        Banco_de_Bogotá_Ahorros_612_812155_07,
+        Avevillas_Corriente_786_913352_08,
+    }
 }
