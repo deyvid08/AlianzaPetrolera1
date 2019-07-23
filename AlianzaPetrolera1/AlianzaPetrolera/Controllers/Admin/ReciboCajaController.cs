@@ -18,6 +18,7 @@ using System.Web.Mvc;
 using System.IO;
 using HiQPdf;
 using System.Net;
+using PagedList;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
@@ -28,10 +29,13 @@ namespace AlianzaPetrolera.Controllers.Admin
         protected ApplicationDbContext ApplicationDbContext { get; set; }
         protected UserManager<ApplicationUser> UserManager { get; set; }
         // GET: RegistroPersona
-        public ActionResult Index()
+        public ActionResult Index(string search, int? i)
         {
-            var TodoRecibo = db.RecibosCajas.ToList();
-            return View(TodoRecibo);
+            List<ReciboCaja> listInsc = db.RecibosCajas.ToList();
+            return View(db.RecibosCajas.Where(z => z.Reci_NomUs.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
+
+            //var TodoRecibo = db.RecibosCajas.ToList();
+            //return View(TodoRecibo);
         }
 
 

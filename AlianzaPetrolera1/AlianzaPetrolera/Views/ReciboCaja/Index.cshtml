@@ -1,5 +1,7 @@
-﻿@model IEnumerable<AlianzaPetrolera.Models.Admin.ReciboCaja>
+﻿@model IPagedList<AlianzaPetrolera.Models.Admin.ReciboCaja>
 
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Lista Recibo";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,6 +17,17 @@
         </div>
     </div>
     <hr />
+    @using (Html.BeginForm("Index", "ReciboCaja", FormMethod.Post))
+    {
+        <div class="container">
+
+            <input type="text" name="search" placeholder="Nombre del estudiante" style="width:75%" />
+
+
+            <input type="submit" name="submit" value="Buscar" />
+
+        </div>
+    }
     <div class="container texto-contenido">
         <table class="tabla-index table-hover table-dark" style="box-shadow: 0 10px 30px 0 #585856; border-radius: 5px 5px 5px 5px;">
             <tr class="bg-warning text-white text-center" style="font-size:8px">
@@ -88,17 +101,17 @@
                         @Html.DisplayFor(modelItem => item.Matr_Fecha)
                     </td>
                     @*<td>
-                        $@Html.DisplayFor(modelItem => item.Costo_Matri)
-                    </td>
-                    <td>
-                        $@Html.DisplayFor(modelItem => item.Costo_Poli)
-                    </td>
-                    <td>
-                        $@Html.DisplayFor(modelItem => item.Costo_Unif)
-                    </td>
-                    <td>
-                        $@Html.DisplayFor(modelItem => item.Costo_Mensu)
-                    </td>*@
+                            $@Html.DisplayFor(modelItem => item.Costo_Matri)
+                        </td>
+                        <td>
+                            $@Html.DisplayFor(modelItem => item.Costo_Poli)
+                        </td>
+                        <td>
+                            $@Html.DisplayFor(modelItem => item.Costo_Unif)
+                        </td>
+                        <td>
+                            $@Html.DisplayFor(modelItem => item.Costo_Mensu)
+                        </td>*@
                     <td>
                         $@Html.DisplayFor(modelItem => item.Desc_Matri)
                     </td>
@@ -122,9 +135,15 @@
 
         </table>
         <br />
-        <div>
-            <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.PagedListPager(Model, i => Url.Action("Index", "ReciboCaja", new { i, search = Request.QueryString["search"] }))
+            </div>
+            <div class="col-md-6">
+                <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
+            </div>
         </div>
         <br />
+        
     </div>
 </body>
