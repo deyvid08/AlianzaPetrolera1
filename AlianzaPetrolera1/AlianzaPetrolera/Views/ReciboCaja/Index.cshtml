@@ -34,7 +34,7 @@
                     Categoría
                 </th>
                 <th>
-                    Generación
+                    Fecha Generación
                 </th>
                 <th>
                     Costo Matricula
@@ -87,7 +87,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Matr_Fecha)
                     </td>
-                    <td>
+                    @*<td>
                         $@Html.DisplayFor(modelItem => item.Costo_Matri)
                     </td>
                     <td>
@@ -98,24 +98,24 @@
                     </td>
                     <td>
                         $@Html.DisplayFor(modelItem => item.Costo_Mensu)
+                    </td>*@
+                    <td>
+                        $@Html.DisplayFor(modelItem => item.Desc_Matri)
                     </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.Desc_Matri)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Desc_Poli)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Desc_Unif)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Desc_Mensu)
-                        </td>*@
+                    <td>
+                        $@Html.DisplayFor(modelItem => item.Desc_Poli)
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(modelItem => item.Desc_Unif)
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(modelItem => item.Desc_Mensu)
+                    </td>
                     <td>
                         $@Html.DisplayFor(modelItem => item.Matri_CosTota)
                     </td>
                     <td>
-                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "PaginaConstruccion", "Admin", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
+                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", "ReciboCaja", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
                     </td>
                 </tr>
             }

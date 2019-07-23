@@ -64,13 +64,13 @@ namespace AlianzaPetrolera.Controllers.Enum
     }
     public enum Tpago
     {
-        Seleccione,
+        Modo_de_Pago,
         Efectivo,
         Consignación
     }
     public enum Bank
     {
-        Seleccione,
+        Banco,
         Ninguno,
         Bancolombia_Corriente_456_015655_06,
         Banco_de_Bogotá_Ahorros_612_812155_07,

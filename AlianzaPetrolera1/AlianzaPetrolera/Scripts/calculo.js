@@ -35,4 +35,8 @@
 
 
     $(Total).val(total);
+    $(CosMatri).val(finmatri);
+    $(CosPoli).val(finpoli);
+    $(CosUnif).val(finunif);
+    $(CosMensu).val(finmensu);
 }

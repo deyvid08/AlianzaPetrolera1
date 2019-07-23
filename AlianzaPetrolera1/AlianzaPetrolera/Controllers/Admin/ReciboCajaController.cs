@@ -17,6 +17,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.IO;
 using HiQPdf;
+using System.Net;
 
 namespace AlianzaPetrolera.Controllers.Admin
 {
@@ -35,22 +36,34 @@ namespace AlianzaPetrolera.Controllers.Admin
 
 
         // GET: Recibo/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                ReciboCaja X = db.RecibosCajas.Find(id);
+                if (X == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(X);
+                }
+            }
         }
-
-
-
-
+       
 
 
         // GET: Recibo/Create
-        public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
+        public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco)
         {
             var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
-
             var max2 = maxrecibirix + 1;
+            
             Session["maxrecibo"] = max2;
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
@@ -61,6 +74,12 @@ namespace AlianzaPetrolera.Controllers.Admin
             Session["poliza"] = 10000;
             Session["uniforme"] = 50000;
             Session["mensualidad"] = 80000;
+            Session["ModoPago"] = ModoPago;
+            Session["Banco"] = Banco;
+            //Session["CosMatri"] = totalma;
+            //Session["CosPoli"] = totalp;
+            //Session["CosUnif"] = totalu;
+            //Session["CosMensu"] = totalme;
             return View();
         }
 
@@ -68,10 +87,9 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes)
+        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco )
         {
             var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
-
             var max2 = maxrecibirix + 1;
             Session["maxrecibo"] = max2;
             Session["MySessionVariable"] = nombreestu;
@@ -79,6 +97,12 @@ namespace AlianzaPetrolera.Controllers.Admin
             Session["MySessionVariable3"] = nombrecate;
             Session["MySessionVariable9"] = documentoestud;
             Session["MySessionVariable1"] = apellidoes;
+            Session["MySessionVariable5"] = value2;
+            Session["MySessionVariable6"] = value4;
+            Session["MySessionVariable7"] = value6;
+            Session["MySessionVariable8"] = value8;
+            Session["ModoPago"] = ModoPago;
+            Session["Banco"] = Banco;
 
             try
             {
@@ -111,7 +135,10 @@ namespace AlianzaPetrolera.Controllers.Admin
                     Session["poliza"] = 10000;
                     Session["uniforme"] = 50000;
                     Session["mensualidad"] = 80000;
-
+                    Session["CosMatri"] = totalma;
+                    Session["CosPoli"] = totalp;
+                    Session["CosUnif"] = totalu;
+                    Session["CosMensu"] = totalme;
                     //Registro de datos en la tabla recibo
 
                     r.Reci_Id = ReciboCajas.Reci_Id;

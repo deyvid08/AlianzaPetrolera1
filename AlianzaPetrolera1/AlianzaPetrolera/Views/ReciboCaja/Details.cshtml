@@ -1,0 +1,163 @@
+﻿@model AlianzaPetrolera.Models.Admin.ReciboCaja
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReciboCaja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Reci_Num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reci_Num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reci_NomUs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reci_NomUs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reci_ApeUs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reci_ApeUs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reci_DocUs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reci_DocUs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reci_CateUs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reci_CateUs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matr_Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matr_Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reci_Mpago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reci_Mpago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo_Matri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo_Matri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo_Poli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo_Poli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo_Unif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo_Unif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo_Mensu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo_Mensu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desc_Matri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desc_Matri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desc_Poli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desc_Poli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desc_Unif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desc_Unif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desc_Mensu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desc_Mensu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matri_CosTota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matri_CosTota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reci_Obse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reci_Obse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banco_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banco_Id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Reci_Id })*@ |
+    @Html.ActionLink("Back to List", "Index")
+</p>
