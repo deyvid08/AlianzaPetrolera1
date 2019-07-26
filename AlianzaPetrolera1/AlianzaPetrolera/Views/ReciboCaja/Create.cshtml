@@ -100,21 +100,50 @@
                 </div>
             </div>
             <hr />
-            <!--Cuarto contenedor campos Tipo cuenta y Banco-->
+            <!--Campos ocultos para almacenar datos Modo de pago y Banco-->
+            <div class="row" hidden>
+                <div class="form-group col-sm-8">
+                    @Html.LabelFor(model => model.Reci_Mpago, htmlAttributes: new { @class = "control-label text-center" })
+                    <div class="">
+                        @Html.EditorFor(model => model.Reci_Mpago, new { htmlAttributes = new { @class = "form-control", @Value = @Session["ModoPago"], @name = "ModoPago" } })
+                        @Html.ValidationMessageFor(model => model.Reci_Mpago, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group col-sm-4">
+                    @Html.LabelFor(model => model.Banco_Id, htmlAttributes: new { @class = "control-label text-center" })
+                    <div class="">
+                        @Html.EditorFor(model => model.Banco_Id, new { htmlAttributes = new { @class = "form-control", @Value = @Session["Banco"], @name = "Banco" } })
+                        @Html.ValidationMessageFor(model => model.Banco_Id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <!--Cuarto contenedor campos Modo de pago y Banco-->
             <div class="row">
-                <div class="form-group col-md-8">
-                    <h6>Modo de Pago</h6>
-                    @Html.EnumDropDownListFor(model => model.Reci_Mpago, new { htmlAttributes = new { @class = "form-control", @Style = "width:40%", @Value = @Session["ModoPago"], @Name = "ModoPago" } })
-                    @Html.ValidationMessageFor(model => model.Reci_Mpago, "", new { @class = "text-danger" })
-                    <label> @Session["ModoPago"]</label>
+                <div class="col-sm-8">
+                    <select name="ModoPago" style="width:15em;" id="ModoPagos" onchange="changesbank();">
+                        <option selected value="Modo de Pago"> Modo de Pago </option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Consignación">Consignación</option>
+                    </select>
                 </div>
-                <div class="form-group col-md-4">
-                    <h6>Banco</h6>
-                    @Html.EnumDropDownListFor(model => model.Banco_Id, new { htmlAttributes = new { @class = "form-control", @Style = "left:-15px;", @Value = @Session["Banco"], @Name = "Banco" } })
-                    @Html.ValidationMessageFor(model => model.Banco_Id, "", new { @class = "text-danger" })
-                    <label> @Session["Banco"]</label>
+                <div class="col-sm-4">
+                    <select name="Banco" style="width:21em;" id="Bancos" onchange="changesbank();">
+                        <option selected value="Banco"> Banco </option>
+                        <option value="Ninguno">Ninguno</option>
+                        <option value="Bancolombia - Corriente - 456-015655-06">Bancolombia - Corriente - 456-015655-06</option>
+                        <option value="Banco de Bogotá - Ahorros - 612-812155-07">Banco de Bogotá - Ahorros - 612-812155-07</option>
+                        <option value="Avevillas - Corriente - 786-913352-08">Avevillas - Corriente - 786-913352-08</option>
+                    </select>
+
                 </div>
-                
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <label class="label-banco">@Session["ModoPago"]</label>
+                </div>
+                <div class="col-sm-4">
+                    <label class="label-banco"> @Session["Banco"]</label>
+                </div>
             </div>
             <hr />
             <br />
@@ -259,7 +288,7 @@
                     <div class="form">
                         <div class="col-md-10">
                             <h6>Observaciones:</h6>
-                            @Html.TextAreaFor(m => m.Reci_Obse, new { @class = "form-control", @style = "margin: 0px -146.75px 0px 0px;height: 100px;width: 120%;" })
+                            @Html.TextAreaFor(m => m.Reci_Obse, new { @class = "form-control", @style = "margin: 0px -146.75px 0px 0px;height: 100px;width: 120%;", @Value = @Session["Observacion"] })
                             @Html.ValidationMessageFor(model => model.Reci_Obse, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -269,8 +298,8 @@
             <br />
             <br />
             @*<div id="convertThisPageButtonDiv">
-            <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
-                </div>*@
+        <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
+            </div>*@
             <div class="row" id="convertThisPageButtonDiv">
                 <div class="form-group col-sm-6" id="convertThisPageButtonDiv">
                     <div class="col-md-offset-2 col-md-10">

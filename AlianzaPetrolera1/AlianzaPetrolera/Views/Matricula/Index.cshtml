@@ -105,14 +105,13 @@
                         </div>
                     </td>
                 </tr>
-            }
-
+             }
         </table>
+        @Html.PagedListPager(Model, i => Url.Action("Index", "Inscripcion", new { i, search = Request.QueryString["search"] }))
         <br />
         <div>
             <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
         </div>
         <br />
-        @Html.PagedListPager(Model, i => Url.Action("Index", "Inscripcion", new { i, search = Request.QueryString["search"] }))
     </div>
 </body>

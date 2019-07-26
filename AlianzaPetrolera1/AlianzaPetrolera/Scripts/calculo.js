@@ -19,6 +19,7 @@
     var calmensu
     var finmensu
 
+
     calmatri = ((matricula * descmatri) / 100);
     finmatri = (matricula - calmatri);
 
@@ -39,4 +40,19 @@
     $(CosPoli).val(finpoli);
     $(CosUnif).val(finunif);
     $(CosMensu).val(finmensu);
+
+
+}
+
+function changesbank() {
+
+
+    var select = document.getElementById("ModoPagos"), //El <select>
+        text = select.options[select.selectedIndex].innerText;
+    $(Reci_Mpago).val(text);
+
+    var select1 = document.getElementById("Bancos"), //El <select>
+        text1 = select1.options[select1.selectedIndex].innerText;
+    $(Banco_Id).val(text1);
+
 }

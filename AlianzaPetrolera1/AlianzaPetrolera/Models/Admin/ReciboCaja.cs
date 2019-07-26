@@ -25,9 +25,9 @@ namespace AlianzaPetrolera.Models.Admin
         public string Reci_CateUs { get; set; }
         [Display(Name = "Fecha de Pago")]
         public DateTime Matr_Fecha { get; set; }
-        [Required]
+        
         [Display(Name = "Modo pago")]
-        public Tpago Reci_Mpago { get; set; }
+        public string Reci_Mpago { get; set; }
         
         [Display(Name = "Matrícula")]
         public Nullable<float> Costo_Matri { get; set; }
@@ -56,9 +56,8 @@ namespace AlianzaPetrolera.Models.Admin
         [Display(Name = "Observación")]
         public string Reci_Obse { get; set; }
 
-        [Required]
         [Display(Name = "Banco")]
-        public Bank Banco_Id { get; set; }
+        public string Banco_Id { get; set; }
         //[ForeignKey("Banco")]
         //public int? Banco_Id { get; set; }
         //public Banco Banco { get; set; }

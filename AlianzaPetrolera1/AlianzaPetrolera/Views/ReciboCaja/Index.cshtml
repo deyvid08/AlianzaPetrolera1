@@ -50,7 +50,7 @@
                     Fecha Generación
                 </th>
                 <th>
-                    Costo Matricula
+                    Costo Matrícula
                 </th>
                 <th>
                     Costo Póliza
@@ -131,19 +131,14 @@
                         <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", "ReciboCaja", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
                     </td>
                 </tr>
-            }
+             }
 
         </table>
         <br />
-        <div class="row">
-            <div class="col-md-6">
-                @Html.PagedListPager(Model, i => Url.Action("Index", "ReciboCaja", new { i, search = Request.QueryString["search"] }))
-            </div>
-            <div class="col-md-6">
+            @Html.PagedListPager(Model, i => Url.Action("Index", "ReciboCaja", new { i, search = Request.QueryString["search"] }))
+            <div class="btn-recibo">
                 <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
             </div>
-        </div>
         <br />
-        
     </div>
 </body>

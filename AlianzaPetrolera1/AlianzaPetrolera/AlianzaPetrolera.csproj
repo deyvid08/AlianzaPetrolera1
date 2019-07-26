@@ -252,6 +252,14 @@
     <Compile Include="Migrations\201907162014116_uno.Designer.cs">
       <DependentUpon>201907162014116_uno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907252139303_dos.cs" />
+    <Compile Include="Migrations\201907252139303_dos.Designer.cs">
+      <DependentUpon>201907252139303_dos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907252152218_tres.cs" />
+    <Compile Include="Migrations\201907252152218_tres.Designer.cs">
+      <DependentUpon>201907252152218_tres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin\Banco.cs" />
@@ -483,6 +491,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907162014116_uno.resx">
       <DependentUpon>201907162014116_uno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907252139303_dos.resx">
+      <DependentUpon>201907252139303_dos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907252152218_tres.resx">
+      <DependentUpon>201907252152218_tres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPTReports\Report1.rdlc" />
   </ItemGroup>

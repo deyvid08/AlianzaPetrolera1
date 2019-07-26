@@ -63,7 +63,7 @@ namespace AlianzaPetrolera.Controllers.Admin
 
 
         // GET: Recibo/Create
-        public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco)
+        public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco, string Observacion)
         {
             var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
             var max2 = maxrecibirix + 1;
@@ -80,6 +80,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             Session["mensualidad"] = 80000;
             Session["ModoPago"] = ModoPago;
             Session["Banco"] = Banco;
+            Session["Observacion"] = Observacion;
             //Session["CosMatri"] = totalma;
             //Session["CosPoli"] = totalp;
             //Session["CosUnif"] = totalu;
@@ -91,7 +92,7 @@ namespace AlianzaPetrolera.Controllers.Admin
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco )
+        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco, string Observacion)
         {
             var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
             var max2 = maxrecibirix + 1;
@@ -107,6 +108,7 @@ namespace AlianzaPetrolera.Controllers.Admin
             Session["MySessionVariable8"] = value8;
             Session["ModoPago"] = ModoPago;
             Session["Banco"] = Banco;
+            Session["Observacion"] = Observacion;
 
             try
             {

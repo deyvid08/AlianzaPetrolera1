@@ -1,163 +1,64 @@
 ﻿@model AlianzaPetrolera.Models.Admin.ReciboCaja
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Información Recibo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row">
+    <div class="fondo-reg-hijo col-sm-5">
+        <div class="contenedorlogos">
+            <div class="imagenBanner">
+                <img src="~/Content/images/aasssd (2).png" alt="Alternate Text" style="width:90%" />
+            </div>
+            <div class="imagenBanner">
+                <img src="~/Content/images/logo.png" alt="Alternate Text" />
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <div class="titulo-detalles">
+            <h4>Información Recibo </h4>
+        </div>
+        <hr />
+        <br />
+        <div class="row">
+            <div class="col-sm-6 centrar-contenido" style="left:4%; width:100%">
+                <table class="tabla-detal-inscp">
 
-<h2>Details</h2>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Reci_Num)</b></th><td>  @Html.DisplayFor(model => model.Reci_Num) </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Reci_NomUs) </b></th><td>@Html.DisplayFor(model => model.Reci_NomUs) </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Reci_ApeUs) </b></th><td>@Html.DisplayFor(model => model.Reci_ApeUs) </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Reci_DocUs) </b></th><td>@Html.DisplayFor(model => model.Reci_DocUs) </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Reci_CateUs)</b></th><td>@Html.DisplayFor(model => model.Reci_CateUs)</td></tr>
+                    <tr><th><b>Fecha Generación </b></th><td>@Html.DisplayFor(model => model.Matr_Fecha) </td></tr>
+                    
+                    @*<tr><th><b>@Html.DisplayNameFor(model => model.Costo_Matri)</b></th><td>@Html.DisplayFor(model => model.Costo_Matri)</td></tr>
+                <tr><th><b>@Html.DisplayNameFor(model => model.Costo_Poli) </b></th><td>@Html.DisplayFor(model => model.Costo_Poli) </td></tr>
+                <tr><th><b>@Html.DisplayNameFor(model => model.Costo_Unif) </b></th><td>@Html.DisplayFor(model => model.Costo_Unif) </td></tr>
+                <tr><th><b>@Html.DisplayNameFor(model => model.Costo_Mensu)</b></th><td>@Html.DisplayFor(model => model.Costo_Mensu)</td></tr>*@
 
-<div>
-    <h4>ReciboCaja</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Reci_Num)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reci_Num)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Reci_NomUs)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reci_NomUs)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Reci_ApeUs)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reci_ApeUs)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Reci_DocUs)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reci_DocUs)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Reci_CateUs)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reci_CateUs)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Matr_Fecha)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Matr_Fecha)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Reci_Mpago)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reci_Mpago)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Costo_Matri)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Costo_Matri)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Costo_Poli)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Costo_Poli)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Costo_Unif)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Costo_Unif)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Costo_Mensu)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Costo_Mensu)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Desc_Matri)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Desc_Matri)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Desc_Poli)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Desc_Poli)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Desc_Unif)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Desc_Unif)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Desc_Mensu)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Desc_Mensu)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Matri_CosTota)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Matri_CosTota)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Reci_Obse)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reci_Obse)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Banco_Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Banco_Id)
-        </dd>
-
-    </dl>
+                </table>
+            </div>
+            <div class="col-sm-6 centrar-contenido" style="left:4%">
+                <table class="tabla-detal-inscp">
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Reci_Mpago) </b></th><td>@Html.DisplayFor(model => model.Reci_Mpago) </td></tr>
+                    <tr><th><b>Costo Matrícula </b></th><td width="50px">@Html.DisplayFor(model => model.Desc_Matri) </td></tr>
+                    <tr><th><b>Costo Póliza  </b></th><td>@Html.DisplayFor(model => model.Desc_Poli)  </td></tr>
+                    <tr><th><b>Costo Uniforme  </b></th><td>@Html.DisplayFor(model => model.Desc_Unif)  </td></tr>
+                    <tr><th><b>Costo Mensualidad </b></th><td>@Html.DisplayFor(model => model.Desc_Mensu) </td></tr>
+                    <tr><th><b>Costo Total</b></th><td>@Html.DisplayFor(model => model.Matri_CosTota)</td></tr>
+                </table>
+            </div>
+            <div class="col-sm-12 centrar-contenido" style="left:4%; margin-top: 20px;">
+                <table class="tabla-detal-inscp">
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Banco_Id) </b></th><td>@Html.DisplayFor(model => model.Banco_Id) </td></tr>
+                    <tr><th><b>@Html.DisplayNameFor(model => model.Reci_Obse)</b></th><td>@Html.DisplayFor(model => model.Reci_Obse)</td></tr>
+                </table>
+            </div>
+            <hr />
+            <br />
+            <div class="container btn-recibo">
+                <a href="~/ReciboCaja/Index"><input type="button" class="btn btn-warning" style="" value="Volver" /></a>
+            </div>
+        </div>
 </div>
-<p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Reci_Id })*@ |
-    @Html.ActionLink("Back to List", "Index")
-</p>

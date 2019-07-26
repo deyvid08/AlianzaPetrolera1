@@ -532,7 +532,7 @@ input[type=text], input[type=password], input[type=email] {
     background-color: #FDEF02;
     padding: 1%;
     margin-bottom: 3%;
-    margin: 0px -17.5% 0px -16px;
+    margin: 0px -4% 0px -16px;
     box-shadow: 0 8px 5px -2px #585856;
     border-radius: 5px 0px 0px 0px;
 }
@@ -599,7 +599,7 @@ input[type=text], input[type=password], input[type=email] {
     background-color: #ffffff;
     text-align: center;
     width: 100%;
-    margin-left: 10%;
+    margin-left: 0.5%;
     box-shadow: 0 10px 30px 0 #585856;
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
@@ -674,7 +674,15 @@ input[type=text], input[type=password], input[type=email] {
         border-radius: .25rem;
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
-    
+.btn-recibo {
+    margin: 50px 270px;
+}
+.label-banco {
+    width: 400px;
+    margin-top: 10px;
+    align-content: center;
+    font-weight:bold;
+}    
 
 /*Fin Vistas Recibo*/
 
