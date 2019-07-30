@@ -142,7 +142,7 @@
                     <label class="label-banco">@Session["ModoPago"]</label>
                 </div>
                 <div class="col-sm-4">
-                    <label class="label-banco"> @Session["Banco"]</label>
+                    <label class="label-banco">@Session["Banco"]</label>
                 </div>
             </div>
             <hr />
@@ -288,13 +288,23 @@
                     <div class="form">
                         <div class="col-md-10">
                             <h6>Observaciones:</h6>
-                            @Html.TextAreaFor(m => m.Reci_Obse, new { @class = "form-control", @style = "margin: 0px -146.75px 0px 0px;height: 100px;width: 120%;", @Value = @Session["Observacion"] })
+                            @Html.TextAreaFor(m => m.Reci_Obse, new { @class = "form-control", @style = "margin: 0px -146.75px 0px 0px;height: 100px;width: 120%;", @Value = @Session["Obser"], @name = "Obser" })
                             @Html.ValidationMessageFor(model => model.Reci_Obse, "", new { @class = "text-danger" })
                         </div>
                     </div>
+                    <label>@Session["Obser"]</label>
+                    @*<div class="form-group col-sm-4">
+                        @Html.LabelFor(model => model.Reci_Obse, htmlAttributes: new { @class = "control-label text-center" })
+                        <div class="">
+                            @Html.EditorFor(model => model.Reci_Obse, new { htmlAttributes = new { @class = "form-control", @Value = Session["Observacion"], @name = "Obser" } })
+                            @Html.ValidationMessageFor(model => model.Reci_Obse, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <label>@Session["Observacion"]</label>*@
                     <br />
                 </form>
             </div>
+            
             <br />
             <br />
             @*<div id="convertThisPageButtonDiv">
