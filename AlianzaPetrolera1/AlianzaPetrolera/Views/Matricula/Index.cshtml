@@ -3,14 +3,14 @@
 @using PagedList;
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Matrícula";
+    ViewBag.Title = "Pagos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <body class="fondo-tabla">
     <br />
     <div class="row">
         <div class="titulo-index col-sm-5 ">
-            <h1 class="col-sm-6">Matrículas</h1>
+            <h1 class="col-sm-6">Pagos</h1>
         </div>
         <div class="col-sm-7" style="height:50px;">
             @using (Html.BeginForm("Index", "Matricula", FormMethod.Post))
@@ -53,7 +53,7 @@
                     @Html.DisplayNameFor(model => model.First().Cate_Id)
                 </th>
                 <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.First().Matr_Fecha)
+                    <h7>Fecha Pago</h7>
                 </th>
                 <th style="border: none;">
                     @Html.DisplayNameFor(model => model.First().Matri_Esta)

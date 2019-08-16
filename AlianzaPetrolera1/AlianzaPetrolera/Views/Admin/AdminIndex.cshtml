@@ -105,14 +105,14 @@
                         <i class="fas fa-clipboard-list fa-5x"></i>
 
                         <div class="title">
-                            <h3>Matrículas</h3>
+                            <h3>Pagos</h3>
                         </div>
 
                         <div class="text">
-                            <span>Visualiza las matrículas que tienen pendiente la generación del recibo de pago.</span>
+                            <span>Visualiza los Pagos que tienen pendiente la generación del recibo.</span>
                         </div>
 
-                        @Html.ActionLink("Ver Matrículas", "Index", "Matricula")
+                        @Html.ActionLink("Ver Pagos", "Index", "Matricula")
 
                     </div>
                 </div>
@@ -142,16 +142,16 @@
 
                     <div class="box-part text-center">
 
-                        <center><i class="fas fa-chalkboard-teacher fa-5x"></i></center>
+                        <center><i class="fas fa-file-alt fa-5x"></i></center>
                         <div class="title">
-                            <h3>Entrenadores</h3>
+                            <h3>Reportes</h3>
                         </div>
 
                         <div class="text">
-                            <span>Visualiza los entrenadores de Alianza Petrolera.</span>
+                            <span>Visualiza los reportes de Alianza Petrolera.</span>
                         </div>
 
-                        @Html.ActionLink("Ver Entrenadores", "PaginaConstruccion", "Admin")
+                        @Html.ActionLink("Ver Reportes", "Reportes", "Admin")
 
                     </div>
                 </div>
@@ -207,7 +207,8 @@
                             <span>Agrega una nueva cuenta bancaria para el pago de los recibos.</span>
                         </div>
 
-                        <a href="#">@Html.ActionLink("Agregar Cuenta Bancaria", "Index", "Banco")</a>
+                        @*@Html.ActionLink("Agregar Cuenta Bancaria", "Index", "Banco")*@
+                        @Html.ActionLink("Agregar Cuenta Bancaria", "PaginaConstruccion", "Admin")
 
                     </div>
                 </div>

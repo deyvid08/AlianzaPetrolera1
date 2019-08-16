@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSetTest" targetNamespace="http://tempuri.org/DataSetTest.xsd" xmlns:mstns="http://tempuri.org/DataSetTest.xsd" xmlns="http://tempuri.org/DataSetTest.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DataRecibo" targetNamespace="http://tempuri.org/DataRecibo.xsd" xmlns:mstns="http://tempuri.org/DataRecibo.xsd" xmlns="http://tempuri.org/DataRecibo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="AlianzapetrV2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AlianzapetrV2ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.AlianzapetrV2ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="_95D8F205E450FE0FE1E2BD272FF0A452_IANZAPETROLERA_V2_ALIANZAV2_ALIANZAPETROLERA1_ALIANZAPETROLERA_APP_DATA_ALIANZAPETROLERAV21_MDFConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="_95D8F205E450FE0FE1E2BD272FF0A452_IANZAPETROLERA_V2_ALIANZAV2_ALIANZAPETROLERA1_ALIANZAPETROLERA_APP_DATA_ALIANZAPETROLERAV21_MDFConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings._95D8F205E450FE0FE1E2BD272FF0A452_IANZAPETROLERA_V2_ALIANZAV2_ALIANZAPETROLERA1_ALIANZAPETROLERA_APP_DATA_ALIANZAPETROLERAV21_MDFConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReciboCajasTableAdapter" GeneratorDataComponentClassName="ReciboCajasTableAdapter" Name="ReciboCajas" UserDataComponentName="ReciboCajasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="AlianzapetrV2ConnectionString (Web.config)" DbObjectName="AlianzapetrV2.dbo.ReciboCajas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="_95D8F205E450FE0FE1E2BD272FF0A452_IANZAPETROLERA_V2_ALIANZAV2_ALIANZAPETROLERA1_ALIANZAPETROLERA_APP_DATA_ALIANZAPETROLERAV21_MDFConnectionString (Web.config)" DbObjectName="[95D8F205E450FE0FE1E2BD272FF0A452_IANZAPETROLERA-V2\ALIANZAV2\ALIANZAPETROLERA1\ALIANZAPETROLERA\APP_DATA\ALIANZAPETROLERAV21.MDF].dbo.ReciboCajas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[ReciboCajas] WHERE (([Reci_Id] = @Original_Reci_Id))</CommandText>
@@ -20,7 +20,7 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[ReciboCajas] ([Reci_Num], [Reci_NomUs], [Reci_ApeUs], [Reci_DocUs], [Reci_CateUs], [Matr_Fecha], [Costo_Matri], [Costo_Poli], [Costo_Unif], [Costo_Mensu], [Desc_Matri], [Desc_Poli], [Desc_Unif], [Desc_Mensu], [Matri_CosTota]) VALUES (@Reci_Num, @Reci_NomUs, @Reci_ApeUs, @Reci_DocUs, @Reci_CateUs, @Matr_Fecha, @Costo_Matri, @Costo_Poli, @Costo_Unif, @Costo_Mensu, @Desc_Matri, @Desc_Poli, @Desc_Unif, @Desc_Mensu, @Matri_CosTota)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[ReciboCajas] ([Reci_Num], [Reci_NomUs], [Reci_ApeUs], [Reci_DocUs], [Reci_CateUs], [Matr_Fecha], [Reci_Mpago], [Costo_Matri], [Costo_Poli], [Costo_Unif], [Costo_Mensu], [Desc_Matri], [Desc_Poli], [Desc_Unif], [Desc_Mensu], [Matri_CosTota], [Reci_Obse], [Banco_Id]) VALUES (@Reci_Num, @Reci_NomUs, @Reci_ApeUs, @Reci_DocUs, @Reci_CateUs, @Matr_Fecha, @Reci_Mpago, @Costo_Matri, @Costo_Poli, @Costo_Unif, @Costo_Mensu, @Desc_Matri, @Desc_Poli, @Desc_Unif, @Desc_Mensu, @Matri_CosTota, @Reci_Obse, @Banco_Id)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Reci_Num" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Reci_Num" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_NomUs" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_NomUs" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -28,6 +28,7 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_DocUs" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_DocUs" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_CateUs" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_CateUs" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Matr_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Matr_Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_Mpago" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_Mpago" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Costo_Matri" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Costo_Matri" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Costo_Poli" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Costo_Poli" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Costo_Unif" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Costo_Unif" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -37,18 +38,20 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Desc_Unif" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Desc_Unif" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Desc_Mensu" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Desc_Mensu" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Matri_CosTota" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Matri_CosTota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_Obse" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_Obse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Banco_Id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Banco_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Reci_Id, Reci_Num, Reci_NomUs, Reci_ApeUs, Reci_DocUs, Reci_CateUs, Matr_Fecha, Costo_Matri, Costo_Poli, Costo_Unif, Costo_Mensu, Desc_Matri, Desc_Poli, Desc_Unif, Desc_Mensu, Matri_CosTota FROM dbo.ReciboCajas</CommandText>
+                    <CommandText>SELECT Reci_Id, Reci_Num, Reci_NomUs, Reci_ApeUs, Reci_DocUs, Reci_CateUs, Matr_Fecha, Reci_Mpago, Costo_Matri, Costo_Poli, Costo_Unif, Costo_Mensu, Desc_Matri, Desc_Poli, Desc_Unif, Desc_Mensu, Matri_CosTota, Reci_Obse, Banco_Id FROM dbo.ReciboCajas</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[ReciboCajas] SET [Reci_Num] = @Reci_Num, [Reci_NomUs] = @Reci_NomUs, [Reci_ApeUs] = @Reci_ApeUs, [Reci_DocUs] = @Reci_DocUs, [Reci_CateUs] = @Reci_CateUs, [Matr_Fecha] = @Matr_Fecha, [Costo_Matri] = @Costo_Matri, [Costo_Poli] = @Costo_Poli, [Costo_Unif] = @Costo_Unif, [Costo_Mensu] = @Costo_Mensu, [Desc_Matri] = @Desc_Matri, [Desc_Poli] = @Desc_Poli, [Desc_Unif] = @Desc_Unif, [Desc_Mensu] = @Desc_Mensu, [Matri_CosTota] = @Matri_CosTota WHERE (([Reci_Id] = @Original_Reci_Id))</CommandText>
+                    <CommandText>UPDATE [dbo].[ReciboCajas] SET [Reci_Num] = @Reci_Num, [Reci_NomUs] = @Reci_NomUs, [Reci_ApeUs] = @Reci_ApeUs, [Reci_DocUs] = @Reci_DocUs, [Reci_CateUs] = @Reci_CateUs, [Matr_Fecha] = @Matr_Fecha, [Reci_Mpago] = @Reci_Mpago, [Costo_Matri] = @Costo_Matri, [Costo_Poli] = @Costo_Poli, [Costo_Unif] = @Costo_Unif, [Costo_Mensu] = @Costo_Mensu, [Desc_Matri] = @Desc_Matri, [Desc_Poli] = @Desc_Poli, [Desc_Unif] = @Desc_Unif, [Desc_Mensu] = @Desc_Mensu, [Matri_CosTota] = @Matri_CosTota, [Reci_Obse] = @Reci_Obse, [Banco_Id] = @Banco_Id WHERE (([Reci_Id] = @Original_Reci_Id))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Reci_Num" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Reci_Num" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_NomUs" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_NomUs" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -56,6 +59,7 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_DocUs" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_DocUs" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_CateUs" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_CateUs" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Matr_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Matr_Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_Mpago" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_Mpago" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Costo_Matri" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Costo_Matri" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Costo_Poli" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Costo_Poli" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Costo_Unif" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Costo_Unif" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -65,6 +69,8 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Desc_Unif" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Desc_Unif" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Desc_Mensu" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Desc_Mensu" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Single" Direction="Input" ParameterName="@Matri_CosTota" Precision="0" ProviderType="Real" Scale="0" Size="0" SourceColumn="Matri_CosTota" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Reci_Obse" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Reci_Obse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Banco_Id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Banco_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Reci_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Reci_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
@@ -79,6 +85,7 @@
               <Mapping SourceColumn="Reci_DocUs" DataSetColumn="Reci_DocUs" />
               <Mapping SourceColumn="Reci_CateUs" DataSetColumn="Reci_CateUs" />
               <Mapping SourceColumn="Matr_Fecha" DataSetColumn="Matr_Fecha" />
+              <Mapping SourceColumn="Reci_Mpago" DataSetColumn="Reci_Mpago" />
               <Mapping SourceColumn="Costo_Matri" DataSetColumn="Costo_Matri" />
               <Mapping SourceColumn="Costo_Poli" DataSetColumn="Costo_Poli" />
               <Mapping SourceColumn="Costo_Unif" DataSetColumn="Costo_Unif" />
@@ -88,6 +95,8 @@
               <Mapping SourceColumn="Desc_Unif" DataSetColumn="Desc_Unif" />
               <Mapping SourceColumn="Desc_Mensu" DataSetColumn="Desc_Mensu" />
               <Mapping SourceColumn="Matri_CosTota" DataSetColumn="Matri_CosTota" />
+              <Mapping SourceColumn="Reci_Obse" DataSetColumn="Reci_Obse" />
+              <Mapping SourceColumn="Banco_Id" DataSetColumn="Banco_Id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -96,7 +105,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSetTest" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetTest" msprop:Generator_UserDSName="DataSetTest">
+  <xs:element name="DataRecibo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataRecibo" msprop:Generator_UserDSName="DataRecibo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="ReciboCajas" msprop:Generator_TableClassName="ReciboCajasDataTable" msprop:Generator_TableVarName="tableReciboCajas" msprop:Generator_TablePropName="ReciboCajas" msprop:Generator_RowDeletingName="ReciboCajasRowDeleting" msprop:Generator_RowChangingName="ReciboCajasRowChanging" msprop:Generator_RowEvHandlerName="ReciboCajasRowChangeEventHandler" msprop:Generator_RowDeletedName="ReciboCajasRowDeleted" msprop:Generator_UserTableName="ReciboCajas" msprop:Generator_RowChangedName="ReciboCajasRowChanged" msprop:Generator_RowEvArgName="ReciboCajasRowChangeEvent" msprop:Generator_RowClassName="ReciboCajasRow">
@@ -133,6 +142,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Matr_Fecha" msprop:Generator_ColumnVarNameInTable="columnMatr_Fecha" msprop:Generator_ColumnPropNameInRow="Matr_Fecha" msprop:Generator_ColumnPropNameInTable="Matr_FechaColumn" msprop:Generator_UserColumnName="Matr_Fecha" type="xs:dateTime" />
+              <xs:element name="Reci_Mpago" msprop:Generator_ColumnVarNameInTable="columnReci_Mpago" msprop:Generator_ColumnPropNameInRow="Reci_Mpago" msprop:Generator_ColumnPropNameInTable="Reci_MpagoColumn" msprop:Generator_UserColumnName="Reci_Mpago" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Costo_Matri" msprop:Generator_ColumnVarNameInTable="columnCosto_Matri" msprop:Generator_ColumnPropNameInRow="Costo_Matri" msprop:Generator_ColumnPropNameInTable="Costo_MatriColumn" msprop:Generator_UserColumnName="Costo_Matri" type="xs:float" minOccurs="0" />
               <xs:element name="Costo_Poli" msprop:Generator_ColumnVarNameInTable="columnCosto_Poli" msprop:Generator_ColumnPropNameInRow="Costo_Poli" msprop:Generator_ColumnPropNameInTable="Costo_PoliColumn" msprop:Generator_UserColumnName="Costo_Poli" type="xs:float" minOccurs="0" />
               <xs:element name="Costo_Unif" msprop:Generator_ColumnVarNameInTable="columnCosto_Unif" msprop:Generator_ColumnPropNameInRow="Costo_Unif" msprop:Generator_ColumnPropNameInTable="Costo_UnifColumn" msprop:Generator_UserColumnName="Costo_Unif" type="xs:float" minOccurs="0" />
@@ -142,6 +158,20 @@
               <xs:element name="Desc_Unif" msprop:Generator_ColumnVarNameInTable="columnDesc_Unif" msprop:Generator_ColumnPropNameInRow="Desc_Unif" msprop:Generator_ColumnPropNameInTable="Desc_UnifColumn" msprop:Generator_UserColumnName="Desc_Unif" type="xs:float" minOccurs="0" />
               <xs:element name="Desc_Mensu" msprop:Generator_ColumnVarNameInTable="columnDesc_Mensu" msprop:Generator_ColumnPropNameInRow="Desc_Mensu" msprop:Generator_ColumnPropNameInTable="Desc_MensuColumn" msprop:Generator_UserColumnName="Desc_Mensu" type="xs:float" minOccurs="0" />
               <xs:element name="Matri_CosTota" msprop:Generator_ColumnVarNameInTable="columnMatri_CosTota" msprop:Generator_ColumnPropNameInRow="Matri_CosTota" msprop:Generator_ColumnPropNameInTable="Matri_CosTotaColumn" msprop:Generator_UserColumnName="Matri_CosTota" type="xs:float" minOccurs="0" />
+              <xs:element name="Reci_Obse" msprop:Generator_ColumnVarNameInTable="columnReci_Obse" msprop:Generator_ColumnPropNameInRow="Reci_Obse" msprop:Generator_ColumnPropNameInTable="Reci_ObseColumn" msprop:Generator_UserColumnName="Reci_Obse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Banco_Id" msprop:Generator_ColumnVarNameInTable="columnBanco_Id" msprop:Generator_ColumnPropNameInRow="Banco_Id" msprop:Generator_ColumnPropNameInTable="Banco_IdColumn" msprop:Generator_UserColumnName="Banco_Id" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

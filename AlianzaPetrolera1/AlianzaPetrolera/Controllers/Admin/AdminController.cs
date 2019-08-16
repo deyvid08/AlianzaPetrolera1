@@ -101,5 +101,9 @@ namespace AlianzaPetrolera.Controllers.Admin
         {
             return View();
         }
+        public ActionResult Reportes()
+        {
+            return View();
+        }
     }
 }

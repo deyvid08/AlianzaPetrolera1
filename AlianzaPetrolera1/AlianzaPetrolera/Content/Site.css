@@ -61,6 +61,7 @@
     font-family: 'Comic Sans MS', arial;
     padding-top: 30px
 }
+
 .registrocontenedor {
     display: flex;
     width: 100%;
@@ -260,7 +261,6 @@ input[type=button], input[type=submit], input[type=reset] {
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 10px 30px 0 #585856;
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
 }
@@ -630,10 +630,12 @@ input[type=text], input[type=password], input[type=email] {
     text-align: center;
     font-weight: bold;
 }
-    .pago h6,h5 {
+
+    .pago h6, h5 {
         text-align: center;
         font-weight: bold;
     }
+
     .pago input[type=number] {
         border: none;
         border-top: 2px solid #808080;
@@ -648,41 +650,46 @@ input[type=text], input[type=password], input[type=email] {
         border-bottom: 2px solid #808080;
         height: 15px
     }
+
     .pago button[type="button"]:not(:disabled) {
-        cursor:pointer;
+        cursor: pointer;
     }
-    .btn-warning {
-        color: #000000;
-        background-color: #FDEF02;
-        border-color: #FDEF02;
-    }
-    .pago btn {
-        display: inline-block;
-        font-weight: 400;
-        color: #212529;
-        text-align: center;
-        vertical-align: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background-color: transparent;
-        border: 1px solid transparent;
-        padding: .375rem .75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        border-radius: .25rem;
-        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    }
+
+.btn-warning {
+    color: #000000;
+    background-color: #FDEF02;
+    border-color: #FDEF02;
+}
+
+.pago btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
 .btn-recibo {
     margin: 50px 270px;
 }
+
 .label-banco {
     width: 400px;
     margin-top: 10px;
     align-content: center;
-    font-weight:bold;
-}    
+    font-weight: bold;
+}
 
 /*Fin Vistas Recibo*/
 
