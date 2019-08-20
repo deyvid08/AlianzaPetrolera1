@@ -48,5 +48,38 @@ namespace AlianzaPetrolera.Controllers.Admin
 
             return View();
         }
+        public ActionResult ReporteCategoriaBaby()
+        {
+            try
+            {
+                ReportViewer reportViewer = new ReportViewer()
+                {
+                    ProcessingMode = ProcessingMode.Local,
+                    SizeToReportContent = true,
+                    Width = Unit.Percentage(100),
+                    Height = Unit.Percentage(100)
+                };
+
+                DataRecibo.ReciboCajasDataTable data1 = new DataRecibo.ReciboCajasDataTable();
+                ReciboCajasTableAdapter adapter = new ReciboCajasTableAdapter();
+                adapter.Fill(data1);
+                if (data1 != null && data1.Rows.Count > 0)
+                {
+                    reportViewer.LocalReport.DataSources.Add(new ReportDataSource("ReciboCajaReport", data1.CopyToDataTable()));
+                    reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"\RPTReports\ReportRecibo.rdlc.";
+                    ViewBag.ReportViewer = reportViewer;
+                }
+                else
+                {
+                    ViewBag.TextError = "No hay data valida para esta auto evaluacion";
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.TextError = ex.Message;
+            }
+
+            return View();
+        }
     }
 }
