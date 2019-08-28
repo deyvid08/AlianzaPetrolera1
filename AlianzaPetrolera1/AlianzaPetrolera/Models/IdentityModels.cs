@@ -62,7 +62,7 @@ namespace AlianzaPetrolera.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ConexAlianzapetroleV2", throwIfV1Schema: false)
+            : base("ConexAlianzapetroleV2snies", throwIfV1Schema: false)
         {
         }
         public DbSet<Persona> Personas { set; get; }

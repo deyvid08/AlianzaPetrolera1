@@ -1,0 +1,30 @@
+﻿@using ReportViewerForMvc;
+@{
+    ViewBag.Title = "Reporte Categoría Infantil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body class="fondo-tabla texto-contenido">
+    <br />
+    <div class="row">
+        <div class="titulo-index col-sm-6 ">
+            <h1 class="col-sm-12">Reporte Categoría <br /> Infantil 12 y 13 años</h1>
+        </div>
+        <div class="col-sm-2" style="height:50px; left:18%">
+            <a href="@Url.Action("Reportes","Admin")"><input type="button" class="btn btn-warning" value="Regresar" /></a>
+        </div>
+    </div>
+    <hr />
+    <div>
+        <div class="row">
+            <label class="text-danger">@ViewBag.TextError</label>
+        </div>
+        @if (ViewBag.ReportViewer != null)
+        {
+            <div class="row">
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" style="overflow-x:scroll; height:80vh; left:8%">
+                    @Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer, new { scrolling = "no", style = "width: 100%; height: 100%;" })
+                </div>
+            </div>
+        }
+    </div>
+</body>

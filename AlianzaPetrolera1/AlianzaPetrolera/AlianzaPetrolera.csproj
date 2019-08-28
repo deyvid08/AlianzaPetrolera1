@@ -276,6 +276,11 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPTDataSet\DataCategoria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataCategoria.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPTDataSet\DataRecibo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -364,6 +369,17 @@
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="RPTDataSet\DataRecibo.xsc">
       <DependentUpon>DataRecibo.xsd</DependentUpon>
+    </Content>
+    <Content Include="RPTDataSet\DataCategoria.xsc">
+      <DependentUpon>DataCategoria.xsd</DependentUpon>
+    </Content>
+    <None Include="RPTDataSet\DataCategoria.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataCategoria.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPTDataSet\DataCategoria.xss">
+      <DependentUpon>DataCategoria.xsd</DependentUpon>
     </Content>
     <None Include="RPTDataSet\DataRecibo.xsd">
       <SubType>Designer</SubType>
@@ -479,6 +495,11 @@
     <Content Include="Views\Banco\Index.cshtml" />
     <Content Include="Views\ReciboCaja\Details.cshtml" />
     <Content Include="Views\Admin\Reportes.cshtml" />
+    <Content Include="Views\Report\ReporteCategoriaSemillero.cshtml" />
+    <Content Include="Views\Report\ReporteCategoriaPreBaby.cshtml" />
+    <Content Include="Views\Report\ReporteCategoriaBaby.cshtml" />
+    <Content Include="Views\Report\ReporteCategoriaPreInfantil.cshtml" />
+    <Content Include="Views\Report\ReporteCategoriaInfantil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
@@ -499,6 +520,11 @@
     <EmbeddedResource Include="Migrations\201907252152218_tres.resx">
       <DependentUpon>201907252152218_tres.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPTReports\ReportCateBaby.rdlc" />
+    <EmbeddedResource Include="RPTReports\ReportCateInfantil.rdlc" />
+    <EmbeddedResource Include="RPTReports\ReportCatePreBaby.rdlc" />
+    <EmbeddedResource Include="RPTReports\ReportCatePreInfantil.rdlc" />
+    <EmbeddedResource Include="RPTReports\ReportCateSemilleros.rdlc" />
     <EmbeddedResource Include="RPTReports\ReportRecibo.rdlc" />
   </ItemGroup>
   <ItemGroup>

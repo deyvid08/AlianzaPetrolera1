@@ -194,7 +194,7 @@
                                     <option value="10">10%</option>
                                     <option value="15">15%</option>
                                     <option value="20">20%</option>
-                                    <option value="20">100%</option>
+                                    <option value="100">100%</option>
                                 </select>
                             </div>
                             <div class="col-sm-3 pago">
@@ -205,7 +205,7 @@
                                     <option value="10">10%</option>
                                     <option value="15">15%</option>
                                     <option value="20">20%</option>
-                                    <option value="20">100%</option>
+                                    <option value="100">100%</option>
                                 </select>
                             </div>
                             <div class="col-sm-3 pago">
@@ -216,7 +216,7 @@
                                     <option value="10">10%</option>
                                     <option value="15">15%</option>
                                     <option value="20">20%</option>
-                                    <option value="20">100%</option>
+                                    <option value="100">100%</option>
                                 </select>
                             </div>
                             <div class="col-sm-3 pago">
@@ -227,7 +227,7 @@
                                     <option value="10">10%</option>
                                     <option value="15">15%</option>
                                     <option value="20">20%</option>
-                                    <option value="20">100%</option>
+                                    <option value="100">100%</option>
                                 </select>
                             </div>
                         </div>
@@ -292,11 +292,11 @@
                         <div class="form">
                             <div class="col-md-10">
                                 <h6>Observaciones:</h6>
-                                @Html.TextAreaFor(m => m.Reci_Obse, new { @class = "form-control", @style = "margin: 0px -146.75px 0px 0px;height: 100px;width: 120%;", @Value = @Session["Obser"], @name = "Obser" })
+                                @Html.TextAreaFor(m => m.Reci_Obse, new { @class = "form-control", @style = "margin: 0px -146.75px 0px 0px;height: 100px;width: 120%;", @Value = @Session["Observacion"], @name = "observacion" })
                                 @Html.ValidationMessageFor(model => model.Reci_Obse, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        <label>@Session["Obser"]</label>
+                        <label>@Session["CosMensu"]</label>
                         @*<div class="form-group col-sm-4">
                                 @Html.LabelFor(model => model.Reci_Obse, htmlAttributes: new { @class = "control-label text-center" })
                                 <div class="">
