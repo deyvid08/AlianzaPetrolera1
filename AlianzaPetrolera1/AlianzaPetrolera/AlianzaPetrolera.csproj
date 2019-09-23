@@ -407,6 +407,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\ReciboObservacion.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -500,6 +501,8 @@
     <Content Include="Views\Report\ReporteCategoriaBaby.cshtml" />
     <Content Include="Views\Report\ReporteCategoriaPreInfantil.cshtml" />
     <Content Include="Views\Report\ReporteCategoriaInfantil.cshtml" />
+    <Content Include="Views\Report\ReporteRecibopdf.cshtml" />
+    <Content Include="Views\Report\ReporteReciboCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
@@ -526,6 +529,8 @@
     <EmbeddedResource Include="RPTReports\ReportCatePreInfantil.rdlc" />
     <EmbeddedResource Include="RPTReports\ReportCateSemilleros.rdlc" />
     <EmbeddedResource Include="RPTReports\ReportRecibo.rdlc" />
+    <EmbeddedResource Include="RPTReports\ReportReciboCreate.rdlc" />
+    <EmbeddedResource Include="RPTReports\ReportReciboPDF.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

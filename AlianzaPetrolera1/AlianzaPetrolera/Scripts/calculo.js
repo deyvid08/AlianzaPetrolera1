@@ -46,7 +46,6 @@
 
 function changesbank() {
 
-
     var select = document.getElementById("ModoPagos"), //El <select>
         text = select.options[select.selectedIndex].innerText;
     $(Reci_Mpago).val(text);
@@ -55,4 +54,23 @@ function changesbank() {
         text1 = select1.options[select1.selectedIndex].innerText;
     $(Banco_Id).val(text1);
 
+
+}
+function agregar() {
+
+    document.getElementById("Text2").value = document.getElementById("Text1").value;
+
+}
+
+
+function capturar() {
+
+    var porId = document.getElementById("nombre").value;
+
+    document.getElementById("resultado").innerHTML = porId;
+
+
+    //var porId = document.getElementById("observaciones").value;
+    //alert(porId);
+    //$(observacio1n).val(porId);
 }

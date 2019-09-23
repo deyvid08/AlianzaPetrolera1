@@ -129,6 +129,7 @@
                     </td>
                     <td>
                         <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", "ReciboCaja", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
+                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "ReporteRecibopdf", "Report", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
                     </td>
                 </tr>
              }

@@ -15,12 +15,12 @@ namespace AlianzaPetrolera.Controllers.Admin
 {
     public class ReportController : Controller
     {
-        
+
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Report
         public ActionResult ReporteReciboCaja()
         {
-            try { 
+            try {
                 ReportViewer reportViewer = new ReportViewer()
                 {
                     ProcessingMode = ProcessingMode.Local,
@@ -61,7 +61,7 @@ namespace AlianzaPetrolera.Controllers.Admin
                     Width = Unit.Percentage(100),
                     Height = Unit.Percentage(100)
                 };
-                
+
                 DataCategoria.MatriculasSemillerosDataTable data2 = new DataCategoria.MatriculasSemillerosDataTable();
                 MatriculasSemillerosTableAdapter adapter = new MatriculasSemillerosTableAdapter();
                 adapter.Fill(data2);
@@ -201,6 +201,72 @@ namespace AlianzaPetrolera.Controllers.Admin
                 {
                     reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataCategoriaInfantil", data2.CopyToDataTable()));
                     reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"\RPTReports\ReportCateInfantil.rdlc.";
+                    ViewBag.ReportViewer = reportViewer;
+                }
+                else
+                {
+                    ViewBag.TextError = "No hay datos validos para este reporte";
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.TextError = ex.Message;
+            }
+
+            return View();
+        }
+        public ActionResult ReporteRecibopdf(int id)
+        {
+            try
+            {
+                ReportViewer reportViewer = new ReportViewer()
+                {
+                    ProcessingMode = ProcessingMode.Local,
+                    SizeToReportContent = true,
+                    Width = Unit.Percentage(100),
+                    Height = Unit.Percentage(100)
+                };
+
+                DataRecibo.ReciboPDFDataTable data3 = new DataRecibo.ReciboPDFDataTable();
+                ReciboPDFTableAdapter adapter3 = new ReciboPDFTableAdapter();
+                adapter3.Fill(data3,id);
+                if (data3 != null && data3.Rows.Count > 0)
+                {
+                    reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataReciboPDF", data3.CopyToDataTable()));
+                    reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"\RPTReports\ReportReciboPDF.rdlc.";
+                    ViewBag.ReportViewer = reportViewer;
+                }
+                else
+                {
+                    ViewBag.TextError = "No hay datos validos para este reporte";
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.TextError = ex.Message;
+            }
+
+            return View();
+        }
+        public ActionResult ReporteReciboCreate(int Num)
+        {
+            try
+            {
+                ReportViewer reportViewer = new ReportViewer()
+                {
+                    ProcessingMode = ProcessingMode.Local,
+                    SizeToReportContent = true,
+                    Width = Unit.Percentage(100),
+                    Height = Unit.Percentage(100)
+                };
+
+                DataRecibo.ReciboCreateDataTable data3 = new DataRecibo.ReciboCreateDataTable();
+                ReciboCreateTableAdapter adapter3 = new ReciboCreateTableAdapter();
+                adapter3.Fill(data3, Num);
+                if (data3 != null && data3.Rows.Count > 0)
+                {
+                    reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataReciboCreate", data3.CopyToDataTable()));
+                    reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"\RPTReports\ReportReciboCreate.rdlc.";
                     ViewBag.ReportViewer = reportViewer;
                 }
                 else
