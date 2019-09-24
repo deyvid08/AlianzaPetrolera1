@@ -304,10 +304,10 @@
                 @*<div id="convertThisPageButtonDiv">
                     <input type="submit" class="btn btn-warning text-white btn-lg btn-block" name="calc" id="calc" value="factura" /> <br />
                         </div>*@
-                <div class="row" id="convertThisPageButtonDiv">
-                    <div class="form-group col-sm-4" id="convertThisPageButtonDiv">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Guardar Datos" class="btn btn-warning text-white" onclick="capturar()"/>
+                <div class="row" style="align-content:center" id="convertThisPageButtonDiv">
+                    <div class="form-group col-sm-6" id="convertThisPageButtonDiv">
+                        <div class="col-md-offset-2">
+                            <input type="submit" value="Guardar Datos" class="btn btn-warning text-white" onclick="capturar()" style="margin: 5px 20px 4px 200px;"/>
                         </div>
                     </div>
                     @*<br />*@
@@ -325,13 +325,16 @@
                             About Page To PDF" />
                             </div>
                         }*@
-                    <form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
+
+                    @*ESTE ES EL METODO O BOTON QUE IMPRIME EL HTML EN PDF CON LA LIBRERIA HiQPDF2*@
+
+                    @*<form action="~/ReciboCaja/ConvertThisPageToPdf" id="convertThisPageForm" method="post">
                         <div class="col-sm-4">
                             <div id="convertThisPageButtonDiv">
                                 <input type="submit" value="Recibo Alianza PDF" class="btn btn-warning text-white" />
                             </div>
                         </div>
-                    </form>
+                    </form>*@
                     <br />
                     @*<form action="~/GeneracionRecibo/ConvertAboutPageToPdf" id="convertAboutPageForm" method="post">
                           <div id="convertAboutPageButtonDiv">
@@ -339,8 +342,8 @@
                           </div>
                         </form>*@
                     <form method="post">
-                        <div class="col-sm-4" id="convertThisPageButtonDiv">
-                            <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning text-white" value="Volver" style="left:10%" /></a>
+                        <div class="col-sm-8" style="align-content:center" id="convertThisPageButtonDiv">
+                            <a href="~/Matricula/Index"><input type="button" class="btn btn-warning text-white" value="Volver" style="margin: 5px 20px 4px 200px;" /></a>
                         </div>
                     </form>
                     <br />

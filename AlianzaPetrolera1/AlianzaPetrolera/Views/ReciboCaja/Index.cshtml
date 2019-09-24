@@ -31,105 +31,38 @@
     <div class="container texto-contenido">
         <table class="tabla-index table-hover table-dark" style="box-shadow: 0 10px 30px 0 #585856; border-radius: 5px 5px 5px 5px;">
             <tr class="bg-warning text-white text-center" style="font-size:8px">
-                <th>
-                    Recibo
-                </th>
-                <th>
-                    Nombre
-                </th>
-                <th>
-                    Apellido
-                </th>
-                <th>
-                    Documento
-                </th>
-                <th>
-                    Categoría
-                </th>
-                <th>
-                    Fecha Generación
-                </th>
-                <th>
-                    Costo Matrícula
-                </th>
-                <th>
-                    Costo Póliza
-                </th>
-                <th>
-                    Costo Uniforme
-                </th>
-                <th>
-                    Costo Mensualidad
-                </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.Desc_Matri)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Desc_Poli)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Desc_Unif)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Desc_Mensu)
-                    </th>*@
-                <th>
-                    Costo Total
-                </th>
-                <th></th>
+                <th style="width:15px;">Recibo</th>
+                <th style="width:150px;">Nombre</th>
+                <th style="width:500px;">Apellido</th>
+                <th style="width:15px;">Documento</th>
+                <th>Categoría</th>
+                <th style="width:15px;">Fecha Generación</th>
+                @*<th>@Html.DisplayNameFor(model => model.Desc_Matri)</th>
+                <th>@Html.DisplayNameFor(model => model.Desc_Poli)</th>
+                <th>@Html.DisplayNameFor(model => model.Desc_Unif)</th>
+                <th>@Html.DisplayNameFor(model => model.Desc_Mensu)</th>*@
+                <th style="width:15px;">Costo Total</th>
+                <th ></th>
             </tr>
-
             @foreach (var item in Model)
             {
                 <tr class="text-center">
+                    <td style="width:15px;">@Html.DisplayFor(modelItem => item.Reci_Num)</td>
+                    <td style="width:150px;">@Html.DisplayFor(modelItem => item.Reci_NomUs)</td>
+                    <td style="width:500px;">@Html.DisplayFor(modelItem => item.Reci_ApeUs)</td>
+                    <td style="width:15px;">@Html.DisplayFor(modelItem => item.Reci_DocUs)</td>
+                    <td >@Html.DisplayFor(modelItem => item.Reci_CateUs)</td>
+                    <td style="width:150px;">@Html.DisplayFor(modelItem => item.Matr_Fecha.Day)/@Html.DisplayFor(modelItem => item.Matr_Fecha.Month)/@Html.DisplayFor(modelItem => item.Matr_Fecha.Year)</td>
+                    @*<td style="width:15px">$@Html.DisplayFor(modelItem => item.Desc_Matri)</td>
+                    <td style="width:15px">$@Html.DisplayFor(modelItem => item.Desc_Poli)</td>
+                    <td style="width:15px">$@Html.DisplayFor(modelItem => item.Desc_Unif)</td>
+                    <td style="width:15px">$@Html.DisplayFor(modelItem => item.Desc_Mensu)</td>*@
+                    <td style="width:15px;">$@Html.DisplayFor(modelItem => item.Matri_CosTota)</td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Reci_Num)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Reci_NomUs)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Reci_ApeUs)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Reci_DocUs)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Reci_CateUs)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Matr_Fecha)
-                    </td>
-                    @*<td>
-                            $@Html.DisplayFor(modelItem => item.Costo_Matri)
-                        </td>
-                        <td>
-                            $@Html.DisplayFor(modelItem => item.Costo_Poli)
-                        </td>
-                        <td>
-                            $@Html.DisplayFor(modelItem => item.Costo_Unif)
-                        </td>
-                        <td>
-                            $@Html.DisplayFor(modelItem => item.Costo_Mensu)
-                        </td>*@
-                    <td>
-                        $@Html.DisplayFor(modelItem => item.Desc_Matri)
-                    </td>
-                    <td>
-                        $@Html.DisplayFor(modelItem => item.Desc_Poli)
-                    </td>
-                    <td>
-                        $@Html.DisplayFor(modelItem => item.Desc_Unif)
-                    </td>
-                    <td>
-                        $@Html.DisplayFor(modelItem => item.Desc_Mensu)
-                    </td>
-                    <td>
-                        $@Html.DisplayFor(modelItem => item.Matri_CosTota)
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", "ReciboCaja", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
-                        <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Recibo", "ReporteRecibopdf", "Report", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Detalles", "Details", "ReciboCaja", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
+                            <button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Generar Recibo", "ReporteRecibopdf", "Report", new { id = item.Reci_Id }, htmlAttributes: new { @style = "" }) </button>
+                        </div>
                     </td>
                 </tr>
              }
@@ -137,7 +70,7 @@
         </table>
         <br />
             @Html.PagedListPager(Model, i => Url.Action("Index", "ReciboCaja", new { i, search = Request.QueryString["search"] }))
-            <div class="btn-recibo">
+            <div style="margin: 50px 10px;">
                 <a href="~/Admin/AdminIndex"><input type="button" class="btn btn-warning centrar-contenido" value="Volver" /></a>
             </div>
         <br />

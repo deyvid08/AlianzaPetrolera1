@@ -31,66 +31,30 @@
     <div class="container">
         <table class="tabla-index table-hover table-dark">
             <tr class="bg-warning text-white text-center">
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.First().Insc_Id)
-                </th>
-                <th style="border: none;" hidden>
-                    @Html.DisplayNameFor(model => model.First().Mat_IdEst)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.First().Mat_Nom)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.First().Mat_Apel)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.First().Mat_Doc)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.First().Peri_Id)
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.First().Cate_Id)
-                </th>
-                <th style="border: none;">
-                    <h7>Fecha Pago</h7>
-                </th>
-                <th style="border: none;">
-                    @Html.DisplayNameFor(model => model.First().Matri_Esta)
-                </th>
+                <th style="border: none; width:15px;">@Html.DisplayNameFor(model => model.First().Insc_Id)</th>
+                <th style="border: none;" hidden>@Html.DisplayNameFor(model => model.First().Mat_IdEst)</th>
+                <th style="border: none;">@Html.DisplayNameFor(model => model.First().Mat_Nom)</th>
+                <th style="border: none;">@Html.DisplayNameFor(model => model.First().Mat_Apel)</th>
+                <th style="border: none; width:15px;">@Html.DisplayNameFor(model => model.First().Mat_Doc)</th>
+                <th style="border: none;" hidden>@Html.DisplayNameFor(model => model.First().Peri_Id)</th>
+                <th style="border: none;">@Html.DisplayNameFor(model => model.First().Cate_Id)</th>
+                <th style="border: none; width:15px;"><h7>Fecha Pago</h7></th>
+                <th style="border: none;">@Html.DisplayNameFor(model => model.First().Matri_Esta)</th>
                 <th style="border: none;"></th>
             </tr>
 
             @foreach (var item in Model)
             {
                 <tr class="text-center">
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Insc_Id)
-                    </td>
-                    <td hidden>
-                        @Html.DisplayFor(modelItem => item.Mat_IdEst)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mat_Nom)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mat_Apel)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mat_Doc)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Peri_Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cate_Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Matr_Fecha)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Matri_Esta)
-                    </td>
+                    <td style="width:15px;">@Html.DisplayFor(modelItem => item.Insc_Id)</td>
+                    <td hidden>@Html.DisplayFor(modelItem => item.Mat_IdEst)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Mat_Nom)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Mat_Apel)</td>
+                    <td style="width:15px;">@Html.DisplayFor(modelItem => item.Mat_Doc)</td>
+                    <td hidden>@Html.DisplayFor(modelItem => item.Peri_Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Cate_Id)</td>
+                    <td style="width:15px;">@Html.DisplayFor(modelItem => item.Matr_Fecha)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Matri_Esta)</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-warning">
