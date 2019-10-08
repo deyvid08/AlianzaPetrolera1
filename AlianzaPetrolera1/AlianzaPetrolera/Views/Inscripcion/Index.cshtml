@@ -35,7 +35,7 @@
                         @Html.DisplayNameFor(model => model.First().Insc_DocEst)
                     </th>
                     <th style="border: none;">
-                        @Html.DisplayNameFor(model => model.First().Insc_FechInsc)
+                        Fecha Nacimiento
                     </th>
                     <th style="border: none;"></th>
                 </tr>
@@ -61,7 +61,7 @@
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 @*<button type="button" class="btn btn-warning text-white"> @Html.ActionLink("Editar", "Edit", new { id = item.Insc_ID }, htmlAttributes: new { @style = "color:#fff; " })        </button>*@
                                 <button type="button" class="btn btn-warning"> @Html.ActionLink("Detalles", "Details", new { id = item.Insc_ID }, htmlAttributes: new { @style = "" })  </button>
-                                <button type="button" class="btn btn-warning"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID, documentoestu = item.Insc_DocEst, apellidoestu = item.Insc_ApeEst, idestu = item.Pers_Id }, htmlAttributes: new { @style = "" })</button>
+                                <button type="button" class="btn btn-warning"> @Html.ActionLink("Matricular", "index", "RegistroCategoria", new { nombreestudiante = item.Insc_NomEst, Insc_Id1 = item.Insc_ID, documentoestu = item.Insc_DocEst, apellidoestu = item.Insc_ApeEst, idestu = item.Pers_Id, FechaNaci = item.Insc_FechInsc }, htmlAttributes: new { @style = "" })</button>
                             </div>
                         </td>
                     </tr>

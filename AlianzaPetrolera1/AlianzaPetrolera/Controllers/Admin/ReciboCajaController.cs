@@ -33,11 +33,7 @@ namespace AlianzaPetrolera.Controllers.Admin
         {
             List<ReciboCaja> listInsc = db.RecibosCajas.ToList();
             return View(db.RecibosCajas.Where(z => z.Reci_NomUs.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
-
-            //var TodoRecibo = db.RecibosCajas.ToList();
-            //return View(TodoRecibo);
         }
-
 
         // GET: Recibo/Details/5
         public ActionResult Details(int? id)
@@ -59,16 +55,31 @@ namespace AlianzaPetrolera.Controllers.Admin
                 }
             }
         }
-       
-
+        public int? NumRecibo(int? MaxNum)
+        {
+            //verificar si hay datos en la tabla ReciboCajas
+            MaxNum = db.RecibosCajas.Count();
+            //Si esta vacia agrega el asignado a la variable Maxnum
+            if (MaxNum <= 0 || MaxNum == null)
+            {
+                MaxNum = 1001;
+            }
+            else
+            {
+              //Busca el numero del ultimo recibo generado y agrega un numero mas para el nuevo recibo.
+              var UltiReci = db.RecibosCajas.Max(x => x.Reci_Num);
+              MaxNum = UltiReci + 1;
+                 
+            }
+            return MaxNum;
+        }
 
         // GET: Recibo/Create
-        public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco, string observacion)
+        public ActionResult Create(string nombrecate, string nombreestu, string idcod, string documentoestud,string apellidoes, 
+                                   string ModoPago, string Banco, string observacion, int? MaxNum)
         {
-            var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
-            var max2 = maxrecibirix + 1;
-            
-            Session["maxrecibo"] = max2;
+            //Obtiene los datos del estudiante matriculado
+            Session["maxrecibo"] = NumRecibo(MaxNum);
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
             Session["MySessionVariable3"] = nombrecate;
@@ -82,18 +93,14 @@ namespace AlianzaPetrolera.Controllers.Admin
             Session["Banco"] = Banco;
             Session["observacion"] = observacion;
             return View();
-        }                
-
-
+        }      
 
         // POST: Recibo/Create
         [HttpPost]
-        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc, 
-                                    string nombrecate, string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco, string observacion, int id)
+        public ActionResult Create(ReciboCaja ReciboCajas, float value1, float value2, float value3, float value4, float value5, float value6, float value7, float value8, String calc,string nombrecate, 
+                                    string nombreestu, string idcod, string documentoestud, string apellidoes, string ModoPago, string Banco, string observacion, int id, int? MaxNum)
         {
-            var maxrecibirix = db.RecibosCajas.Max(x => x.Reci_Num);
-            var max2 = maxrecibirix + 1;
-            Session["maxrecibo"] = max2;
+            Session["maxrecibo"] = NumRecibo(MaxNum);
             Session["MySessionVariable"] = nombreestu;
             Session["MySessionVariable2"] = DateTime.Now;
             Session["MySessionVariable3"] = nombrecate;
@@ -111,7 +118,6 @@ namespace AlianzaPetrolera.Controllers.Admin
             {
                 if (ModelState.IsValid)
                 {
-
                     ReciboCaja r = new ReciboCaja();
 
                     //Operacion Matematica para efectuar los descuentos en la matricula del estudiante.
@@ -142,8 +148,8 @@ namespace AlianzaPetrolera.Controllers.Admin
                     Session["CosPoli"] = totalp;
                     Session["CosUnif"] = totalu;
                     Session["CosMensu"] = totalme;
-                    //Registro de datos en la tabla recibo
 
+                    //Registro de datos en la tabla recibo
                     r.Reci_Id = ReciboCajas.Reci_Id;
                     r.Costo_Matri = totalma;
                     r.Costo_Poli = totalp;
@@ -156,31 +162,9 @@ namespace AlianzaPetrolera.Controllers.Admin
                     r.Matri_CosTota = totalpago;
                     r.Reci_Obse = observacion;
 
-                    //item.Reci_Id = ReciboCajas.Reci_Id;
-                    //item.Reci_Num = model.Pers_Cod;
-                    //item.Costo_Matri = model.Pers_NickNom;
-                    //item.Costo_Poli = model.Pers_Pwd;
-                    //item.Costo_Unif = model.Pers_Nom;
-                    //item.Costo_Mensu = model.Pers_Lstn1;
-                    //item.Desc_Matri = model.Pers_Lstn2;
-                    //item.Desc_Poli = model.Pers_TypeDoc;
-                    //item.Desc_Unif = model.Pers_Doc;
-                    //item.Desc_Mensu = model.Pers_Birth;
-                    //item. = model.Pers_Dir;
-                    //item. = model.Pers_Tel1;
-                    //item. = model.Pers_Tel2;
-                    //item. = model.Pers_Mail1;
-                    //item. = model.Pers_Mail2;
-                    //item. = model.Pers_Ingreso;
-                    //item. = model.Pers_TotalPoints;
-                    //item. = model.Ubic_Id;
-                    //item. = model.Rolp_Id;
-
-
                     db.RecibosCajas.Add(ReciboCajas);
                     db.SaveChanges();
-                    return RedirectToAction("ReporteReciboCreate","Report", new { Num= max2 });
-
+                    return RedirectToAction("ReporteReciboCreate","Report", new { Num= NumRecibo(MaxNum)-1 });
                 }
                 return RedirectToAction("ReporteReciboPDF", "Report");
             }

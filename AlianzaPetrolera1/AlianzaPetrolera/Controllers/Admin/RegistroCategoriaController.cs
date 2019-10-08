@@ -14,7 +14,23 @@ namespace AlianzaPetrolera.Controllers.Admin
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Categoria
-        public ActionResult Index(string nombreestudiante, int Insc_Id1, int documentoestu, string apellidoestu, string idestu)
+        public int CalcEdad(DateTime FechaNaci) {
+
+            DateTime now = DateTime.Today;
+            int edadest = DateTime.Today.Year - FechaNaci.Year;
+
+            if (now < FechaNaci.AddYears(edadest))
+            {
+                edadest--;
+                return edadest;
+            }
+            else
+            {
+                return edadest;
+            }
+
+        }
+        public ActionResult Index(string nombreestudiante, int Insc_Id1, int documentoestu, string apellidoestu, string idestu, DateTime FechaNaci)
         {
 
             ViewBag.Message = nombreestudiante;
@@ -22,8 +38,8 @@ namespace AlianzaPetrolera.Controllers.Admin
             ViewBag.documentoestud = documentoestu;
             ViewBag.apellidoes = apellidoestu;
             ViewBag.idest = idestu;
-
-
+            ViewBag.FechaNaci = FechaNaci;
+            ViewBag.Edad = CalcEdad(FechaNaci);
 
             var TodasCate = db.Categorias.ToList();
             return View(TodasCate);
